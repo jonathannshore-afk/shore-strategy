@@ -69,9 +69,12 @@ const Blog = () => {
                       <Clock size={12} /> {post.readTime}
                     </span>
                   </div>
-                  <span className="inline-flex items-center gap-1 text-gold font-body font-semibold text-sm group-hover:gap-2 transition-all cursor-pointer">
+                  <Link
+                    to={`/blog/${post.slug}`}
+                    className="inline-flex items-center gap-1 text-gold font-body font-semibold text-sm group-hover:gap-2 transition-all"
+                  >
                     Read Article <ArrowRight size={14} />
-                  </span>
+                  </Link>
                 </div>
               </article>
             ))}
