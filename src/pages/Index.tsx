@@ -33,16 +33,14 @@ const services = [
   },
 ];
 
-const testimonials = [
+const highlights = [
   {
-    quote: "Shore Strategy transformed our partner program from a cost center into our fastest-growing revenue channel.",
-    author: "Sarah Chen",
-    role: "VP of Partnerships, TechScale Inc.",
+    stat: "19% YoY Growth",
+    desc: "Reversed multi-year channel sales decline at Lumen Technologies while reducing OpEx by 20%.",
   },
   {
-    quote: "Their GTM frameworks gave us the structure we needed to scale from 5 partners to 50 in under a year.",
-    author: "Michael Torres",
-    role: "CEO, CloudBridge Solutions",
+    stat: "$12M ARR in Year One",
+    desc: "Built and launched a new ISV partner motion from scratch, establishing the foundation for future ecosystem expansion.",
   },
 ];
 
