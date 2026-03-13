@@ -33,7 +33,7 @@ const Contact = () => {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
             {/* Form */}
             <div className="lg:col-span-3">
-              <h2 className="font-display text-2xl font-bold text-foreground mb-8">Send Us a Message</h2>
+              <h2 className="font-display text-2xl font-bold text-foreground mb-8">Send a Message</h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>

@@ -3,10 +3,10 @@ import { Award, BookOpen, Compass, Linkedin, Shield } from "lucide-react";
 import headshot from "@/assets/jonathan-headshot.jpeg";
 
 const values = [
-  { icon: Compass, title: "Strategic Clarity", desc: "Cutting through complexity to deliver focused, actionable strategies that drive measurable outcomes." },
-  { icon: Shield, title: "Trusted Partnership", desc: "Operating as an extension of your team, fully invested in your success at every stage." },
-  { icon: Award, title: "Proven Results", desc: "Every engagement is anchored to measurable business outcomes — from revenue growth to operational efficiency." },
-  { icon: BookOpen, title: "Deep Expertise", desc: "15+ years across Salesforce, ServiceNow, and Lumen building and scaling partner ecosystems." },
+  { icon: Compass, title: "Strategic Clarity", desc: "I cut through complexity to deliver focused, actionable strategies that drive measurable outcomes." },
+  { icon: Shield, title: "Embedded Partnership", desc: "I operate as an extension of your team — fully invested in your success, not as a distant advisor." },
+  { icon: Award, title: "Outcome-Driven", desc: "Every engagement is anchored to measurable business results — from revenue growth to operational efficiency." },
+  { icon: BookOpen, title: "Practitioner, Not Theorist", desc: "15+ years of hands-on experience building and scaling partner ecosystems at Salesforce, ServiceNow, and Lumen." },
 ];
 
 const experience = [
@@ -47,12 +47,14 @@ const About = () => {
       {/* Hero */}
       <section className="bg-navy section-padding">
         <div className="container">
-          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">About</p>
+          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">About Me</p>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
-            Meet <span className="text-gold">Jonathan Shore</span>
+            Partner Ecosystem Executive.
+            <br />
+            <span className="text-gold">Builder. Operator. Strategist.</span>
           </h1>
           <p className="font-body text-lg text-primary-foreground/70 max-w-2xl">
-            Partner Ecosystem Strategy & Operations executive with 15+ years driving growth through strategic partner ecosystems at Salesforce, ServiceNow, and Lumen Technologies.
+            15+ years driving partner-led growth at Salesforce, ServiceNow, and Lumen Technologies. Now available for fractional leadership and full-time opportunities.
           </p>
         </div>
       </section>
@@ -64,31 +66,33 @@ const About = () => {
             <div className="md:w-1/3 shrink-0">
               <img
                 src={headshot}
-                alt="Jonathan Shore — Founder, Shore Strategy Consulting"
+                alt="Jonathan Shore"
                 className="w-full rounded-lg shadow-lg border border-border"
               />
             </div>
             <div className="md:w-2/3">
-          <h2 className="font-display text-3xl font-bold text-foreground mb-6">The Story</h2>
-          <div className="font-body text-foreground/80 leading-relaxed space-y-4">
-            <p>
-              After 15+ years building and leading partner programs at some of the world's most influential enterprise technology companies — including Salesforce, ServiceNow, and Lumen Technologies — I founded Shore Strategy Consulting to help B2B companies unlock the full power of strategic partnerships.
-            </p>
-            <p>
-              I've led ecosystem strategy and operations across businesses ranging from $100M consulting organizations to $1.6B partner ecosystems, influencing $800M+ in annual bookings and securing executive alignment for major ecosystem transformation initiatives. My work has consistently delivered measurable results: reversing multi-year revenue declines, launching new routes-to-market, and building partner programs from the ground up.
-            </p>
-            <p>
-              Shore Strategy Consulting was born from a clear insight: companies recognize the power of partnerships but often lack the strategic frameworks and operational rigor to fully capitalize on them. I bring practitioner-level experience to every engagement — not theory, but battle-tested playbooks that scale.
-            </p>
-          </div>
-          <a
-            href="https://www.linkedin.com/in/jonathan-shore/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 mt-6 text-gold font-body font-semibold hover:text-gold-dark transition-colors"
-          >
-            <Linkedin size={18} /> Connect on LinkedIn
-          </a>
+              <h2 className="font-display text-3xl font-bold text-foreground mb-6">My Story</h2>
+              <div className="font-body text-foreground/80 leading-relaxed space-y-4">
+                <p>
+                  I've spent the last 15+ years building and leading partner programs at some of the world's most influential enterprise technology companies — Salesforce, ServiceNow, and most recently Lumen Technologies, where I led ecosystem strategy across a $1.6B ARR partner business.
+                </p>
+                <p>
+                  My experience spans the full spectrum: designing partner programs from scratch, launching new routes-to-market (ISV, SI, VAR), transforming operating models, and scaling ecosystems that influence hundreds of millions in revenue. I've consistently delivered results — reversing revenue declines, driving double-digit growth, and securing executive alignment for major transformation initiatives.
+                </p>
+                <p>
+                  I'm now channeling that practitioner-level experience into fractional leadership engagements — helping B2B companies build the strategic frameworks and operational muscle they need to unlock partner-led growth. I'm also open to the right full-time opportunity where I can build and lead a partner ecosystem at scale.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-4 mt-6">
+                <a
+                  href="https://www.linkedin.com/in/jonathan-shore/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-gold font-body font-semibold hover:text-gold-dark transition-colors"
+                >
+                  <Linkedin size={18} /> Connect on LinkedIn
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -98,7 +102,7 @@ const About = () => {
       <section className="section-padding bg-cream">
         <div className="container max-w-3xl">
           <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Track Record</p>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-12">Career Experience</h2>
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-12">Where I've Built</h2>
           <div className="space-y-10">
             {experience.map((exp) => (
               <div key={exp.company} className="bg-card p-8 rounded-lg border border-border">
@@ -121,12 +125,12 @@ const About = () => {
         </div>
       </section>
 
-      {/* Values */}
+      {/* Core Competencies */}
       <section className="section-padding bg-background">
         <div className="container">
           <div className="text-center mb-16">
-            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Guiding Principles</p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">What Guides My Work</h2>
+            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Core Competencies</p>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">How I Work</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((v) => (

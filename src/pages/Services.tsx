@@ -35,13 +35,31 @@ const services = [
   },
   {
     icon: Lightbulb,
-    title: "Executive Advisory",
-    desc: "Fractional Chief Partner Officer services for companies building their first partner function or transforming existing programs.",
+    title: "Fractional Partner Leadership",
+    desc: "Step in as your fractional VP/Director of Partnerships — leading strategy, building teams, and driving execution while you hire for the long term.",
   },
   {
     icon: Zap,
     title: "Rapid Assessments",
     desc: "30-day partner program audits that identify quick wins, strategic gaps, and a prioritized roadmap for improvement.",
+  },
+];
+
+const engagementModels = [
+  {
+    title: "Fractional Leadership",
+    desc: "Embedded, part-time executive leadership for companies building or transforming their partner function.",
+    fit: "Best for companies that need senior partner strategy leadership but aren't ready for a full-time hire.",
+  },
+  {
+    title: "Project-Based Engagement",
+    desc: "Scoped, time-bound projects with clear deliverables — program design, GTM planning, operational buildouts.",
+    fit: "Best for companies with a specific initiative or transformation in mind.",
+  },
+  {
+    title: "Advisory & Coaching",
+    desc: "Ongoing strategic guidance for partner leaders navigating complex ecosystem decisions.",
+    fit: "Best for existing partnership leaders who want a seasoned sounding board.",
   },
 ];
 
@@ -51,12 +69,12 @@ const Services = () => {
       {/* Hero */}
       <section className="bg-navy section-padding">
         <div className="container">
-          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Our Services</p>
+          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Services</p>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
-            End-to-End <span className="text-gold">Partner GTM</span> Consulting
+            How I Can <span className="text-gold">Help</span>
           </h1>
           <p className="font-body text-lg text-primary-foreground/70 max-w-2xl">
-            From strategy through execution, we provide the expertise and frameworks to build world-class partner programs.
+            From fractional leadership to focused project work, I bring hands-on expertise to help you build, fix, or scale your partner ecosystem.
           </p>
         </div>
       </section>
@@ -79,20 +97,39 @@ const Services = () => {
         </div>
       </section>
 
+      {/* Engagement Models */}
+      <section className="section-padding bg-cream">
+        <div className="container">
+          <div className="text-center mb-16">
+            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Ways to Work Together</p>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Engagement Models</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {engagementModels.map((model) => (
+              <div key={model.title} className="bg-card p-8 rounded-lg border border-border">
+                <h3 className="font-display text-lg font-semibold text-foreground mb-3">{model.title}</h3>
+                <p className="font-body text-muted-foreground text-sm leading-relaxed mb-4">{model.desc}</p>
+                <p className="font-body text-xs text-gold font-medium uppercase tracking-wider">{model.fit}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
-      <section className="bg-cream section-padding">
+      <section className="bg-navy section-padding">
         <div className="container text-center">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mb-6">
             Not Sure Where to Start?
           </h2>
-          <p className="font-body text-lg text-muted-foreground max-w-xl mx-auto mb-10">
-            Book a complimentary discovery call and we'll help you identify the highest-impact opportunities for your partner program.
+          <p className="font-body text-lg text-primary-foreground/70 max-w-xl mx-auto mb-10">
+            Let's have a conversation. I'll help you identify the highest-impact opportunities for your partner program — no commitment required.
           </p>
           <Link
             to="/contact"
             className="inline-flex items-center gap-2 px-8 py-3 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors"
           >
-            Book a Discovery Call <ArrowRight size={18} />
+            Start a Conversation <ArrowRight size={18} />
           </Link>
         </div>
       </section>
