@@ -18,12 +18,12 @@ const Contact = () => {
       {/* Hero */}
       <section className="bg-navy section-padding">
         <div className="container">
-          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Contact Us</p>
+          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Get in Touch</p>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
-            Let's Start a <span className="text-gold">Conversation</span>
+            Let's <span className="text-gold">Connect</span>
           </h1>
           <p className="font-body text-lg text-primary-foreground/70 max-w-2xl">
-            Whether you're exploring partnerships for the first time or optimizing an existing program, we'd love to hear from you.
+            Whether you're looking for a fractional partner leader, exploring a full-time opportunity, or just want to exchange ideas — I'd love to hear from you.
           </p>
         </div>
       </section>
