@@ -56,7 +56,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-navy-dark/60" />
         <div className="relative z-10 container text-center">
           <p className="text-gold font-body text-sm uppercase tracking-[0.3em] mb-6 animate-fade-in-up">
-            Partner GTM Strategy Consulting
+            Partner GTM Strategy Consulting · ex-Salesforce, ServiceNow, Lumen
           </p>
           <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-in-up" style={{ animationDelay: "0.15s" }}>
             Navigate Growth Through
