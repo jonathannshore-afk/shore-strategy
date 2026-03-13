@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import { ArrowRight, CalendarCheck, ClipboardCheck, Handshake, Rocket, Search, Target, TrendingUp, Users } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import headshot from "@/assets/jonathan-headshot.jpeg";
+import logoSalesforce from "@/assets/logo-salesforce.png";
+import logoServicenow from "@/assets/logo-servicenow.png";
+import logoLumen from "@/assets/logo-lumen.png";
 import Layout from "@/components/Layout";
 
 const stats = [
