@@ -28,6 +28,11 @@ const Contact = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Contact"
+        description="Book a call or send a message to discuss your partner ecosystem strategy. Jonathan Shore is available for fractional leadership and consulting engagements."
+        path="/contact"
+      />
       {/* Hero */}
       <section className="bg-navy section-padding">
         <div className="container">

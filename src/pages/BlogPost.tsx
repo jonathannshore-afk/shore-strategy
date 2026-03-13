@@ -33,6 +33,17 @@ const BlogPost = () => {
 
   return (
     <Layout>
+      <SEO
+        title={post.title}
+        description={post.excerpt}
+        path={`/blog/${post.slug}`}
+        type="article"
+        article={{
+          publishedTime: post.date,
+          author: post.author,
+          section: post.category,
+        }}
+      />
       {/* Hero */}
       <section className="bg-navy section-padding">
         <div className="container max-w-3xl">

@@ -67,6 +67,11 @@ const engagementModels = [
 const Services = () => {
   return (
     <Layout>
+      <SEO
+        title="Services"
+        description="Partner program design, GTM planning, revenue acceleration, and ecosystem development. Explore Shore Strategy's consulting services."
+        path="/services"
+      />
       {/* Hero */}
       <section className="bg-navy section-padding">
         <div className="container">
