@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import { Award, BookOpen, Compass, Linkedin, Shield } from "lucide-react";
+import headshot from "@/assets/jonathan-headshot.jpeg";
 
 const values = [
   { icon: Compass, title: "Strategic Clarity", desc: "Cutting through complexity to deliver focused, actionable strategies that drive measurable outcomes." },
