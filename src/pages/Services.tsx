@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { ArrowRight, BarChart3, Handshake, Layers, Lightbulb, Target, TrendingUp, Users, Zap } from "lucide-react";
 
 const services = [

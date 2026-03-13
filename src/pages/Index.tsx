@@ -79,6 +79,36 @@ const highlights = [
 const Index = () => {
   return (
     <Layout>
+      <SEO
+        title="Partner Ecosystem Strategy Executive"
+        description="Jonathan Shore helps founders, CEOs, and CROs build, fix, and scale partner ecosystems that drive measurable revenue growth. 15+ years at Salesforce, ServiceNow, and Lumen."
+        path="/"
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            name: "Shore Strategy",
+            description:
+              "Partner ecosystem strategy and operations consulting for B2B technology companies.",
+            founder: {
+              "@type": "Person",
+              name: "Jonathan Shore",
+              jobTitle: "Partner Ecosystem Strategy Executive",
+              url: "https://www.linkedin.com/in/jonathan-shore/",
+            },
+            url: "https://shorestrategy.com",
+            serviceType: [
+              "Partner Strategy Consulting",
+              "GTM Planning",
+              "Revenue Acceleration",
+              "Ecosystem Development",
+            ],
+          }),
+        }}
+      />
       {/* Hero */}
       <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
         <div
