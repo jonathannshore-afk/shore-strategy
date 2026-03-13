@@ -111,7 +111,7 @@ const Contact = () => {
                   <MapPin className="text-gold mt-1" size={22} />
                   <div>
                     <div className="font-body font-semibold text-foreground">Location</div>
-                    <div className="font-body text-muted-foreground">San Francisco, CA</div>
+                    <div className="font-body text-muted-foreground">San Francisco Bay Area</div>
                   </div>
                 </div>
               </div>
