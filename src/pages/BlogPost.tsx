@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { posts } from "@/data/blogPosts";
-import { ArrowLeft, Calendar, Clock, User } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, User, Linkedin } from "lucide-react";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -57,6 +57,14 @@ const BlogPost = () => {
             <span className="flex items-center gap-1.5">
               <Clock size={14} /> {post.readTime}
             </span>
+            <a
+              href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-auto inline-flex items-center gap-1.5 px-4 py-1.5 bg-gold/10 border border-gold/30 text-gold rounded-full text-xs font-semibold hover:bg-gold hover:text-accent-foreground transition-colors"
+            >
+              <Linkedin size={14} /> Share on LinkedIn
+            </a>
           </div>
         </div>
       </section>
