@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import { Award, BookOpen, Compass, Linkedin, Shield } from "lucide-react";
+import headshot from "@/assets/jonathan-headshot.jpeg";
 
 const values = [
   { icon: Compass, title: "Strategic Clarity", desc: "Cutting through complexity to deliver focused, actionable strategies that drive measurable outcomes." },
@@ -58,7 +59,16 @@ const About = () => {
 
       {/* Bio */}
       <section className="section-padding bg-background">
-        <div className="container max-w-3xl">
+        <div className="container max-w-4xl">
+          <div className="flex flex-col md:flex-row gap-12 items-start">
+            <div className="md:w-1/3 shrink-0">
+              <img
+                src={headshot}
+                alt="Jonathan Shore — Founder, Shore Strategy Consulting"
+                className="w-full rounded-lg shadow-lg border border-border"
+              />
+            </div>
+            <div className="md:w-2/3">
           <h2 className="font-display text-3xl font-bold text-foreground mb-6">The Story</h2>
           <div className="font-body text-foreground/80 leading-relaxed space-y-4">
             <p>
@@ -79,6 +89,8 @@ const About = () => {
           >
             <Linkedin size={18} /> Connect on LinkedIn
           </a>
+            </div>
+          </div>
         </div>
       </section>
 
