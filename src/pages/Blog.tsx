@@ -1,71 +1,7 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
-import { ArrowRight, Calendar, Clock, User } from "lucide-react";
-
-const posts = [
-  {
-    slug: "building-partner-program-from-scratch",
-    title: "Building a Partner Program From Scratch: A Step-by-Step Framework",
-    excerpt:
-      "Most companies launch partner programs without a clear architecture. Here's the framework we use to design programs that scale from day one.",
-    author: "Shore Strategy Team",
-    date: "March 10, 2026",
-    readTime: "8 min read",
-    category: "Partner Strategy",
-  },
-  {
-    slug: "co-sell-motions-that-work",
-    title: "Co-Sell Motions That Actually Work: Lessons From 150+ Partnerships",
-    excerpt:
-      "Co-selling fails when it's bolted on. We break down the three co-sell models that consistently drive pipeline and how to choose the right one.",
-    author: "Shore Strategy Team",
-    date: "February 24, 2026",
-    readTime: "6 min read",
-    category: "GTM Strategy",
-  },
-  {
-    slug: "measuring-partner-influenced-revenue",
-    title: "Beyond Sourced Revenue: How to Measure True Partner Influence",
-    excerpt:
-      "Partner-sourced revenue tells only half the story. Learn how leading companies quantify the full impact of their partner ecosystems.",
-    author: "Shore Strategy Team",
-    date: "February 10, 2026",
-    readTime: "7 min read",
-    category: "Revenue & Analytics",
-  },
-  {
-    slug: "ecosystem-led-growth-playbook",
-    title: "The Ecosystem-Led Growth Playbook for B2B SaaS",
-    excerpt:
-      "Ecosystem-led growth is replacing channel-led strategies. Here's how B2B SaaS companies can make the shift without losing momentum.",
-    author: "Shore Strategy Team",
-    date: "January 28, 2026",
-    readTime: "10 min read",
-    category: "Ecosystem Development",
-  },
-  {
-    slug: "partner-enablement-mistakes",
-    title: "5 Partner Enablement Mistakes That Kill Deal Velocity",
-    excerpt:
-      "Enablement is where most partner programs silently fail. We identify the five most common mistakes and how to fix each one.",
-    author: "Shore Strategy Team",
-    date: "January 14, 2026",
-    readTime: "5 min read",
-    category: "Partner Operations",
-  },
-  {
-    slug: "fractional-cpo-when-to-hire",
-    title: "When Does Your Company Need a Fractional Chief Partner Officer?",
-    excerpt:
-      "Not every company needs a full-time partnership leader from day one. Here's how to know when fractional CPO support is the right move.",
-    author: "Shore Strategy Team",
-    date: "December 30, 2025",
-    readTime: "6 min read",
-    category: "Executive Advisory",
-  },
-];
-
-const categories = [...new Set(posts.map((p) => p.category))];
+import { ArrowRight, Calendar, Clock } from "lucide-react";
+import { posts, categories } from "@/data/blogPosts";
 
 const Blog = () => {
   return (
