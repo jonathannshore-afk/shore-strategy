@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { posts } from "@/data/blogPosts";
-import { ArrowLeft, Calendar, Clock, User } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, User, Linkedin } from "lucide-react";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
