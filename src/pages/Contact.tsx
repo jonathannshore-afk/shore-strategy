@@ -1,15 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Layout from "@/components/Layout";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Calendar, Mail, MapPin, Phone } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+
+const CALENDLY_URL = "https://calendly.com/jonathan-n-shore";
 
 const Contact = () => {
   const { toast } = useToast();
   const [form, setForm] = useState({ name: "", email: "", company: "", message: "" });
 
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast({ title: "Message sent!", description: "We'll be in touch within 24 hours." });
+    toast({ title: "Message sent!", description: "I'll be in touch within 24 hours." });
     setForm({ name: "", email: "", company: "", message: "" });
   };
 
@@ -28,12 +40,31 @@ const Contact = () => {
         </div>
       </section>
 
+      {/* Calendly */}
+      <section className="section-padding bg-cream">
+        <div className="container">
+          <div className="text-center mb-10">
+            <Calendar className="text-gold mx-auto mb-4" size={36} strokeWidth={1.5} />
+            <h2 className="font-display text-3xl font-bold text-foreground mb-3">Book a Conversation</h2>
+            <p className="font-body text-muted-foreground max-w-lg mx-auto">
+              Pick a time that works for you — no commitment, just a conversation about how I can help.
+            </p>
+          </div>
+          <div
+            className="calendly-inline-widget rounded-lg overflow-hidden border border-border"
+            data-url={`${CALENDLY_URL}?hide_gdpr_banner=1`}
+            style={{ minWidth: "320px", height: "700px" }}
+          />
+        </div>
+      </section>
+
+      {/* Form + Contact Info */}
       <section className="section-padding bg-background">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
             {/* Form */}
             <div className="lg:col-span-3">
-              <h2 className="font-display text-2xl font-bold text-foreground mb-8">Send a Message</h2>
+              <h2 className="font-display text-2xl font-bold text-foreground mb-8">Or Send a Message</h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
@@ -77,7 +108,7 @@ const Contact = () => {
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     className="w-full px-4 py-3 bg-card border border-border rounded font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring resize-none"
-                    placeholder="Tell us about your partnership goals..."
+                    placeholder="Tell me about your partnership goals..."
                   />
                 </div>
                 <button
@@ -91,7 +122,7 @@ const Contact = () => {
 
             {/* Contact Info */}
             <div className="lg:col-span-2">
-              <h2 className="font-display text-2xl font-bold text-foreground mb-8">Get in Touch</h2>
+              <h2 className="font-display text-2xl font-bold text-foreground mb-8">Direct Contact</h2>
               <div className="space-y-8">
                 <div className="flex items-start gap-4">
                   <Mail className="text-gold mt-1" size={22} />
