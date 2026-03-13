@@ -6,6 +6,7 @@ import logoSalesforce from "@/assets/logo-salesforce.png";
 import logoServicenow from "@/assets/logo-servicenow.png";
 import logoLumen from "@/assets/logo-lumen.png";
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 
 const stats = [
   { value: "$1.6B", label: "Partner Ecosystem Managed" },
