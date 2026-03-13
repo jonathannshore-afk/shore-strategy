@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { posts } from "@/data/blogPosts";
 import { ArrowLeft, Calendar, Clock, User, Linkedin } from "lucide-react";
 
