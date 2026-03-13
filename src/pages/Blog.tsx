@@ -1,11 +1,17 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
 import { posts, categories } from "@/data/blogPosts";
 
 const Blog = () => {
   return (
     <Layout>
+      <SEO
+        title="Blog — Insights on Partner Strategy"
+        description="Practical frameworks, emerging trends, and lessons from decades of building partner ecosystems. Read the latest from Shore Strategy."
+        path="/blog"
+      />
       {/* Hero */}
       <section className="bg-navy section-padding">
         <div className="container">

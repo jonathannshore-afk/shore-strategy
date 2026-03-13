@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { Calendar, Mail, MapPin, Phone } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -27,6 +28,11 @@ const Contact = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Contact"
+        description="Book a call or send a message to discuss your partner ecosystem strategy. Jonathan Shore is available for fractional leadership and consulting engagements."
+        path="/contact"
+      />
       {/* Hero */}
       <section className="bg-navy section-padding">
         <div className="container">

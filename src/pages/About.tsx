@@ -5,6 +5,7 @@ import headshot from "@/assets/jonathan-headshot.jpeg";
 import logoSalesforce from "@/assets/logo-salesforce.png";
 import logoServicenow from "@/assets/logo-servicenow.png";
 import logoLumen from "@/assets/logo-lumen.png";
+import SEO from "@/components/SEO";
 
 const careerHighlights = [
   { value: "15+", label: "Years in Partner Ecosystem Strategy & Operations" },
@@ -65,6 +66,11 @@ const competencies = [
 const About = () => {
   return (
     <Layout>
+      <SEO
+        title="About Jonathan Shore"
+        description="15+ years leading partner ecosystems at Salesforce, ServiceNow, and Lumen Technologies. Learn about Jonathan Shore's background, experience, and approach."
+        path="/about"
+      />
       {/* Hero — KFlynn inspired */}
       <section className="bg-navy section-padding">
         <div className="container text-center">

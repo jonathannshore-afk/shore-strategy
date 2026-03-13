@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { ArrowRight, BarChart3, Handshake, Layers, Lightbulb, Target, TrendingUp, Users, Zap } from "lucide-react";
 
 const services = [
@@ -66,6 +67,11 @@ const engagementModels = [
 const Services = () => {
   return (
     <Layout>
+      <SEO
+        title="Services"
+        description="Partner program design, GTM planning, revenue acceleration, and ecosystem development. Explore Shore Strategy's consulting services."
+        path="/services"
+      />
       {/* Hero */}
       <section className="bg-navy section-padding">
         <div className="container">
