@@ -89,6 +89,8 @@ const About = () => {
           >
             <Linkedin size={18} /> Connect on LinkedIn
           </a>
+            </div>
+          </div>
         </div>
       </section>
 
