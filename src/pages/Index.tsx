@@ -4,10 +4,10 @@ import heroBg from "@/assets/hero-bg.jpg";
 import Layout from "@/components/Layout";
 
 const stats = [
-  { value: "150+", label: "Partnerships Launched" },
-  { value: "$2B+", label: "Revenue Influenced" },
-  { value: "95%", label: "Client Retention" },
-  { value: "20+", label: "Years Experience" },
+  { value: "$1.6B", label: "Partner Ecosystem Managed" },
+  { value: "$800M+", label: "Annual Bookings Influenced" },
+  { value: "2K+", label: "Partners Across Ecosystems" },
+  { value: "15+", label: "Years Experience" },
 ];
 
 const services = [
@@ -33,16 +33,14 @@ const services = [
   },
 ];
 
-const testimonials = [
+const highlights = [
   {
-    quote: "Shore Strategy transformed our partner program from a cost center into our fastest-growing revenue channel.",
-    author: "Sarah Chen",
-    role: "VP of Partnerships, TechScale Inc.",
+    stat: "19% YoY Growth",
+    desc: "Reversed multi-year channel sales decline at Lumen Technologies while reducing OpEx by 20%.",
   },
   {
-    quote: "Their GTM frameworks gave us the structure we needed to scale from 5 partners to 50 in under a year.",
-    author: "Michael Torres",
-    role: "CEO, CloudBridge Solutions",
+    stat: "$12M ARR in Year One",
+    desc: "Built and launched a new ISV partner motion from scratch, establishing the foundation for future ecosystem expansion.",
   },
 ];
 
@@ -58,7 +56,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-navy-dark/60" />
         <div className="relative z-10 container text-center">
           <p className="text-gold font-body text-sm uppercase tracking-[0.3em] mb-6 animate-fade-in-up">
-            Partner GTM Strategy Consulting
+            Partner GTM Strategy Consulting · ex-Salesforce, ServiceNow, Lumen
           </p>
           <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-in-up" style={{ animationDelay: "0.15s" }}>
             Navigate Growth Through
@@ -131,26 +129,22 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Proven Results */}
       <section className="section-padding bg-background">
         <div className="container">
           <div className="text-center mb-16">
-            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Client Success</p>
+            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Proven Results</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-              What Our Clients Say
+              Real-World Impact
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {testimonials.map((t) => (
-              <div key={t.author} className="bg-card p-8 rounded-lg border border-border">
-                <div className="text-gold text-4xl font-display mb-4">"</div>
-                <p className="font-body text-foreground/80 leading-relaxed mb-6 italic">
-                  {t.quote}
+            {highlights.map((h) => (
+              <div key={h.stat} className="bg-card p-8 rounded-lg border border-border">
+                <div className="font-display text-3xl font-bold text-gold mb-3">{h.stat}</div>
+                <p className="font-body text-foreground/80 leading-relaxed">
+                  {h.desc}
                 </p>
-                <div>
-                  <div className="font-display font-semibold text-foreground">{t.author}</div>
-                  <div className="font-body text-sm text-muted-foreground">{t.role}</div>
-                </div>
               </div>
             ))}
           </div>

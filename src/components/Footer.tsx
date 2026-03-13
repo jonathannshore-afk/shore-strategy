@@ -45,8 +45,8 @@ const Footer = () => {
               Contact
             </h4>
             <div className="flex flex-col gap-2 text-sm">
-              <span>info@shorestrategy.com</span>
-              <span>San Francisco, CA</span>
+              <span>jonathan.n.shore@gmail.com</span>
+              <span>San Francisco Bay Area</span>
             </div>
           </div>
         </div>
