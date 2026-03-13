@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Handshake, Target, TrendingUp, Users } from "lucide-react";
+import { ArrowRight, CalendarCheck, ClipboardCheck, Handshake, Rocket, Search, Target, TrendingUp, Users } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import headshot from "@/assets/jonathan-headshot.jpeg";
 import Layout from "@/components/Layout";
@@ -8,7 +8,34 @@ const stats = [
   { value: "$1.6B", label: "Partner Ecosystem Managed" },
   { value: "$800M+", label: "Annual Bookings Influenced" },
   { value: "2K+", label: "Partners Across Ecosystems" },
-  { value: "15+", label: "Years Experience" },
+  { value: "15+", label: "Years of Experience" },
+];
+
+const methodology = [
+  {
+    step: "01",
+    icon: Search,
+    title: "Assess",
+    desc: "Deep-dive into your current partner landscape, GTM motion, and ecosystem maturity to identify gaps and opportunities.",
+  },
+  {
+    step: "02",
+    icon: Target,
+    title: "Strategize",
+    desc: "Design a tailored partner strategy with clear routes-to-market, partner tiers, incentive models, and joint value propositions.",
+  },
+  {
+    step: "03",
+    icon: ClipboardCheck,
+    title: "Execute",
+    desc: "Build the operational playbooks, launch partner motions, negotiate agreements, and stand up enablement frameworks.",
+  },
+  {
+    step: "04",
+    icon: Rocket,
+    title: "Scale",
+    desc: "Optimize for growth with performance analytics, coverage models, and continuous program iteration to compound results.",
+  },
 ];
 
 const services = [
@@ -59,26 +86,29 @@ const Index = () => {
           <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
             <div className="flex-1 text-center md:text-left">
               <p className="text-gold font-body text-sm uppercase tracking-[0.3em] mb-6 animate-fade-in-up">
-                Partner Ecosystem Strategy · ex-Salesforce, ServiceNow, Lumen
+                ex-Salesforce · ServiceNow · Lumen Technologies
               </p>
               <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-in-up" style={{ animationDelay: "0.15s" }}>
                 Jonathan
                 <br />
                 <span className="text-gold">Shore</span>
               </h1>
-              <p className="font-body text-lg md:text-xl text-primary-foreground/80 max-w-xl mb-10 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-                Partner Ecosystem Strategy & Operations executive helping B2B companies design, launch, and scale partner-led growth. Available for fractional leadership and full-time roles.
+              <p className="font-body text-lg md:text-xl text-primary-foreground/80 max-w-xl mb-4 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
+                I work directly with founders, CEOs, and CROs to build, fix, and scale partner ecosystems that drive measurable revenue growth.
+              </p>
+              <p className="font-body text-base text-gold/80 max-w-xl mb-10 animate-fade-in-up" style={{ animationDelay: "0.35s" }}>
+                Available for fractional leadership &amp; full-time opportunities.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start animate-fade-in-up" style={{ animationDelay: "0.45s" }}>
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-2 px-8 py-3 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors"
+                  className="inline-flex items-center gap-2 px-8 py-3.5 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors"
                 >
-                  Let's Connect <ArrowRight size={18} />
+                  <CalendarCheck size={18} /> Book a Call
                 </Link>
                 <Link
                   to="/about"
-                  className="inline-flex items-center gap-2 px-8 py-3 border border-primary-foreground/30 text-primary-foreground font-body font-semibold rounded hover:border-gold hover:text-gold transition-colors"
+                  className="inline-flex items-center gap-2 px-8 py-3.5 border border-primary-foreground/30 text-primary-foreground font-body font-semibold rounded hover:border-gold hover:text-gold transition-colors"
                 >
                   My Background
                 </Link>
@@ -109,8 +139,43 @@ const Index = () => {
         </div>
       </section>
 
-      {/* What I Do */}
+      {/* Who I Work With */}
+      <section className="section-padding bg-background">
+        <div className="container text-center max-w-3xl">
+          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Who I Work With</p>
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
+            Built for Leadership Teams
+          </h2>
+          <p className="font-body text-lg text-muted-foreground leading-relaxed">
+            I partner with <span className="text-foreground font-semibold">founders, CEOs, CROs, and VP-level partnership leaders</span> at B2B SaaS and enterprise technology companies — from Series B startups building their first partner motion to established enterprises transforming legacy channel programs.
+          </p>
+        </div>
+      </section>
+
+      {/* Methodology */}
       <section className="section-padding bg-cream">
+        <div className="container">
+          <div className="text-center mb-16">
+            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">My Methodology</p>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
+              A Proven Process for Partner-Led Growth
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {methodology.map((step) => (
+              <div key={step.step} className="bg-card p-8 rounded-lg border border-border hover:shadow-lg hover:border-gold/30 transition-all group text-center">
+                <div className="font-display text-5xl font-bold text-gold/20 mb-4">{step.step}</div>
+                <step.icon className="text-gold mx-auto mb-4" size={36} strokeWidth={1.5} />
+                <h3 className="font-display text-xl font-semibold text-foreground mb-3">{step.title}</h3>
+                <p className="font-body text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section className="section-padding bg-background">
         <div className="container">
           <div className="text-center mb-16">
             <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">What I Do</p>
@@ -142,7 +207,7 @@ const Index = () => {
       </section>
 
       {/* Proven Results */}
-      <section className="section-padding bg-background">
+      <section className="section-padding bg-cream">
         <div className="container">
           <div className="text-center mb-16">
             <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Proven Results</p>
@@ -154,9 +219,7 @@ const Index = () => {
             {highlights.map((h) => (
               <div key={h.stat} className="bg-card p-8 rounded-lg border border-border">
                 <div className="font-display text-3xl font-bold text-gold mb-3">{h.stat}</div>
-                <p className="font-body text-foreground/80 leading-relaxed">
-                  {h.desc}
-                </p>
+                <p className="font-body text-foreground/80 leading-relaxed">{h.desc}</p>
               </div>
             ))}
           </div>
@@ -175,15 +238,15 @@ const Index = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-3.5 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors"
             >
-              Get in Touch <ArrowRight size={18} />
+              <CalendarCheck size={18} /> Book a Call
             </Link>
             <a
               href="https://www.linkedin.com/in/jonathan-shore/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-3 border border-primary-foreground/30 text-primary-foreground font-body font-semibold rounded hover:border-gold hover:text-gold transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-3.5 border border-primary-foreground/30 text-primary-foreground font-body font-semibold rounded hover:border-gold hover:text-gold transition-colors"
             >
               Connect on LinkedIn
             </a>
