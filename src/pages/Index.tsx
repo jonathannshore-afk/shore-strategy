@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import { ArrowRight, CalendarCheck, ClipboardCheck, Handshake, Rocket, Search, Target, TrendingUp, Users } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import headshot from "@/assets/jonathan-headshot.jpeg";
+import logoSalesforce from "@/assets/logo-salesforce.png";
+import logoServicenow from "@/assets/logo-servicenow.png";
+import logoLumen from "@/assets/logo-lumen.png";
 import Layout from "@/components/Layout";
 
 const stats = [
@@ -121,6 +124,20 @@ const Index = () => {
                 className="w-full rounded-lg shadow-2xl border-2 border-gold/20"
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trusted By Logos */}
+      <section className="bg-navy border-t border-primary-foreground/10">
+        <div className="container py-10">
+          <p className="font-body text-xs uppercase tracking-[0.2em] text-primary-foreground/40 text-center mb-8">
+            Experience Built At
+          </p>
+          <div className="flex items-center justify-center gap-12 md:gap-20 flex-wrap">
+            <img src={logoSalesforce} alt="Salesforce" className="h-10 md:h-12 object-contain brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
+            <img src={logoServicenow} alt="ServiceNow" className="h-8 md:h-10 object-contain brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
+            <img src={logoLumen} alt="Lumen Technologies" className="h-8 md:h-10 object-contain brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
           </div>
         </div>
       </section>

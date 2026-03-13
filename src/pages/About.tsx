@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { ArrowRight, CalendarCheck, Linkedin } from "lucide-react";
 import headshot from "@/assets/jonathan-headshot.jpeg";
+import logoSalesforce from "@/assets/logo-salesforce.png";
+import logoServicenow from "@/assets/logo-servicenow.png";
+import logoLumen from "@/assets/logo-lumen.png";
 
 const careerHighlights = [
   { value: "15+", label: "Years in Partner Ecosystem Strategy & Operations" },
@@ -71,6 +74,20 @@ const About = () => {
           <p className="font-body text-lg md:text-xl text-primary-foreground/70 max-w-2xl mx-auto">
             I work directly with founders, CEOs, and CROs to bring structure, strategy, and senior leadership to their partner ecosystem motion.
           </p>
+        </div>
+      </section>
+
+      {/* Trusted By Logos */}
+      <section className="bg-background border-b border-border">
+        <div className="container py-10">
+          <p className="font-body text-xs uppercase tracking-[0.2em] text-muted-foreground text-center mb-8">
+            Experience Built At
+          </p>
+          <div className="flex items-center justify-center gap-12 md:gap-20 flex-wrap">
+            <img src={logoSalesforce} alt="Salesforce" className="h-10 md:h-12 object-contain opacity-70 hover:opacity-100 transition-opacity" />
+            <img src={logoServicenow} alt="ServiceNow" className="h-8 md:h-10 object-contain opacity-70 hover:opacity-100 transition-opacity" />
+            <img src={logoLumen} alt="Lumen Technologies" className="h-8 md:h-10 object-contain opacity-70 hover:opacity-100 transition-opacity" />
+          </div>
         </div>
       </section>
 
