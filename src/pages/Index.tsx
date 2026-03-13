@@ -4,10 +4,10 @@ import heroBg from "@/assets/hero-bg.jpg";
 import Layout from "@/components/Layout";
 
 const stats = [
-  { value: "150+", label: "Partnerships Launched" },
-  { value: "$2B+", label: "Revenue Influenced" },
-  { value: "95%", label: "Client Retention" },
-  { value: "20+", label: "Years Experience" },
+  { value: "$1.6B", label: "Partner Ecosystem Managed" },
+  { value: "$800M+", label: "Annual Bookings Influenced" },
+  { value: "2K+", label: "Partners Across Ecosystems" },
+  { value: "15+", label: "Years Experience" },
 ];
 
 const services = [
