@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -8,12 +9,20 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <span className="font-display text-xl font-bold text-gold">Shore</span>
-              <span className="font-display text-xl font-light text-primary-foreground">Strategy</span>
+              <span className="font-display text-xl font-bold text-gold">Jonathan</span>
+              <span className="font-display text-xl font-light text-primary-foreground">Shore</span>
             </Link>
             <p className="text-sm leading-relaxed max-w-xs">
-              Partner GTM strategy consulting that drives measurable growth through strategic alliances and channel partnerships.
+              Partner Ecosystem Strategy & Operations executive. Available for fractional leadership roles and full-time opportunities.
             </p>
+            <a
+              href="https://www.linkedin.com/in/jonathan-shore/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 mt-4 text-sm text-gold hover:text-gold-dark transition-colors"
+            >
+              <Linkedin size={16} /> LinkedIn
+            </a>
           </div>
 
           {/* Quick Links */}
@@ -23,7 +32,7 @@ const Footer = () => {
             </h4>
             <nav className="flex flex-col gap-2">
               {[
-                { label: "About Us", path: "/about" },
+                { label: "About", path: "/about" },
                 { label: "Services", path: "/services" },
                 { label: "Insights", path: "/blog" },
                 { label: "Contact", path: "/contact" },
@@ -52,7 +61,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-navy-light mt-12 pt-8 text-center text-xs text-primary-foreground/40">
-          © {new Date().getFullYear()} Shore Strategy Consulting. All rights reserved.
+          © {new Date().getFullYear()} Jonathan Shore. All rights reserved.
         </div>
       </div>
     </footer>
