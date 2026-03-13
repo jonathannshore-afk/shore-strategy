@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
 import { posts, categories } from "@/data/blogPosts";
 
