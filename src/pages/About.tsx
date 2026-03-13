@@ -1,12 +1,15 @@
+import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
-import { Award, BookOpen, Compass, Linkedin, Shield } from "lucide-react";
+import { ArrowRight, CalendarCheck, Linkedin } from "lucide-react";
 import headshot from "@/assets/jonathan-headshot.jpeg";
 
-const values = [
-  { icon: Compass, title: "Strategic Clarity", desc: "I cut through complexity to deliver focused, actionable strategies that drive measurable outcomes." },
-  { icon: Shield, title: "Embedded Partnership", desc: "I operate as an extension of your team — fully invested in your success, not as a distant advisor." },
-  { icon: Award, title: "Outcome-Driven", desc: "Every engagement is anchored to measurable business results — from revenue growth to operational efficiency." },
-  { icon: BookOpen, title: "Practitioner, Not Theorist", desc: "15+ years of hands-on experience building and scaling partner ecosystems at Salesforce, ServiceNow, and Lumen." },
+const careerHighlights = [
+  { value: "15+", label: "Years in Partner Ecosystem Strategy & Operations" },
+  { value: "$1.6B", label: "ARR Partner Ecosystem Managed at Lumen" },
+  { value: "$800M+", label: "Annual Bookings Influenced at Salesforce" },
+  { value: "2K+", label: "Partners Across Managed Ecosystems" },
+  { value: "19%", label: "YoY Revenue Growth After Reversing Decline" },
+  { value: "$12M", label: "ARR Built From New ISV Motion in Year One" },
 ];
 
 const experience = [
@@ -18,6 +21,7 @@ const experience = [
       "Led partner ecosystem transformation across $1.6B ARR and 2K+ partners",
       "Reversed multi-year channel sales decline, delivering 19% YoY growth and 20% OpEx reduction",
       "Built and launched ISV partner motion, scaling to $12M ARR in the first 12 months",
+      "Designed and launched Lumen's first tiered partner program with certification framework",
     ],
   },
   {
@@ -27,81 +31,115 @@ const experience = [
     highlights: [
       "Led strategy and operations delivering $1B+ influenced revenue and 110% quota attainment",
       "Architected Top 250 Accounts partner strategy with GSIs, increasing joint pipeline by 20%",
+      "Designed unified partner GTM strategy aligning partnerships with core business units",
     ],
   },
   {
     company: "Salesforce",
-    role: "Senior Manager → Manager, Strategy & Operations",
+    role: "Senior Manager → Analyst, Strategy & Operations",
     period: "2012 – 2023",
     highlights: [
       "Led strategy for a 300+ person consulting org generating $100M revenue, influencing $800M+ bookings",
-      "Managed $3B services ecosystem across 50 GSI/RSI partners, driving 40% YoY growth",
+      "Managed $3B services ecosystem across 50 GSI/RSI partners, driving 40% YoY growth and 120% quota attainment",
       "Led cross-functional planning for a 400-person sales org, delivering 30% YoY growth",
     ],
   },
 ];
 
+const competencies = [
+  "Partner Ecosystem Strategy",
+  "Channel & Partner GTM",
+  "Partner Program Design",
+  "ISV / SI / VAR Ecosystem Development",
+  "Routes-to-Market Strategy",
+  "Operating Model Transformation",
+  "Revenue Growth Strategy",
+  "Business Planning & Forecasting",
+  "Executive Advisory",
+  "Cross-Functional Leadership",
+];
+
 const About = () => {
   return (
     <Layout>
-      {/* Hero */}
+      {/* Hero — KFlynn inspired */}
       <section className="bg-navy section-padding">
-        <div className="container">
-          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">About Me</p>
-          <h1 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
-            Partner Ecosystem Executive.
-            <br />
-            <span className="text-gold">Builder. Operator. Strategist.</span>
+        <div className="container text-center">
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
+            About <span className="text-gold">Jonathan</span>
           </h1>
-          <p className="font-body text-lg text-primary-foreground/70 max-w-2xl">
-            15+ years driving partner-led growth at Salesforce, ServiceNow, and Lumen Technologies. Now available for fractional leadership and full-time opportunities.
+          <p className="font-body text-lg md:text-xl text-primary-foreground/70 max-w-2xl mx-auto">
+            I work directly with founders, CEOs, and CROs to bring structure, strategy, and senior leadership to their partner ecosystem motion.
           </p>
         </div>
       </section>
 
-      {/* Bio */}
+      {/* Career Highlights — KFlynn stat cards */}
       <section className="section-padding bg-background">
-        <div className="container max-w-4xl">
-          <div className="flex flex-col md:flex-row gap-12 items-start">
-            <div className="md:w-1/3 shrink-0">
+        <div className="container">
+          <div className="text-center mb-12">
+            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Career Highlights</p>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">By the Numbers</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div className="md:row-span-3 flex items-center justify-center">
               <img
                 src={headshot}
                 alt="Jonathan Shore"
-                className="w-full rounded-lg shadow-lg border border-border"
+                className="w-full max-w-[280px] rounded-lg shadow-lg border border-border"
               />
             </div>
-            <div className="md:w-2/3">
-              <h2 className="font-display text-3xl font-bold text-foreground mb-6">My Story</h2>
-              <div className="font-body text-foreground/80 leading-relaxed space-y-4">
-                <p>
-                  I've spent the last 15+ years building and leading partner programs at some of the world's most influential enterprise technology companies — Salesforce, ServiceNow, and most recently Lumen Technologies, where I led ecosystem strategy across a $1.6B ARR partner business.
-                </p>
-                <p>
-                  My experience spans the full spectrum: designing partner programs from scratch, launching new routes-to-market (ISV, SI, VAR), transforming operating models, and scaling ecosystems that influence hundreds of millions in revenue. I've consistently delivered results — reversing revenue declines, driving double-digit growth, and securing executive alignment for major transformation initiatives.
-                </p>
-                <p>
-                  I'm now channeling that practitioner-level experience into fractional leadership engagements — helping B2B companies build the strategic frameworks and operational muscle they need to unlock partner-led growth. I'm also open to the right full-time opportunity where I can build and lead a partner ecosystem at scale.
-                </p>
+            {careerHighlights.map((h) => (
+              <div
+                key={h.label}
+                className="bg-card p-6 rounded-lg border border-border flex items-start gap-4"
+              >
+                <span className="font-display text-3xl font-bold text-gold shrink-0">{h.value}</span>
+                <span className="font-body text-sm text-muted-foreground leading-relaxed pt-1">{h.label}</span>
               </div>
-              <div className="flex flex-wrap gap-4 mt-6">
-                <a
-                  href="https://www.linkedin.com/in/jonathan-shore/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-gold font-body font-semibold hover:text-gold-dark transition-colors"
-                >
-                  <Linkedin size={18} /> Connect on LinkedIn
-                </a>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Experience */}
+      {/* Bio */}
       <section className="section-padding bg-cream">
         <div className="container max-w-3xl">
-          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Track Record</p>
+          <h2 className="font-display text-3xl font-bold text-foreground mb-6">My Story</h2>
+          <div className="font-body text-foreground/80 leading-relaxed space-y-4">
+            <p>
+              I've spent the last 15+ years building and leading partner programs at some of the world's most influential enterprise technology companies — Salesforce, ServiceNow, and most recently Lumen Technologies, where I led ecosystem strategy across a $1.6B ARR partner business.
+            </p>
+            <p>
+              My experience spans the full spectrum: designing partner programs from scratch, launching new routes-to-market (ISV, SI, VAR), transforming operating models, and scaling ecosystems that influence hundreds of millions in revenue. I've consistently delivered results — reversing revenue declines, driving double-digit growth, and securing executive alignment for major transformation initiatives.
+            </p>
+            <p>
+              I'm now channeling that practitioner-level experience into fractional leadership engagements — helping B2B companies build the strategic frameworks and operational muscle they need to unlock partner-led growth. I'm also open to the right full-time opportunity where I can build and lead a partner ecosystem at scale.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-4 mt-8">
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors"
+            >
+              <CalendarCheck size={16} /> Book a Call
+            </Link>
+            <a
+              href="https://www.linkedin.com/in/jonathan-shore/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 border border-border text-foreground font-body font-semibold rounded hover:border-gold hover:text-gold transition-colors"
+            >
+              <Linkedin size={16} /> LinkedIn
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Experience Timeline */}
+      <section className="section-padding bg-background">
+        <div className="container max-w-3xl">
+          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Experience</p>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-12">Where I've Built</h2>
           <div className="space-y-10">
             {experience.map((exp) => (
@@ -126,26 +164,25 @@ const About = () => {
       </section>
 
       {/* Core Competencies */}
-      <section className="section-padding bg-background">
-        <div className="container">
-          <div className="text-center mb-16">
-            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Core Competencies</p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">How I Work</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((v) => (
-              <div key={v.title} className="text-center">
-                <v.icon className="text-gold mx-auto mb-4" size={40} strokeWidth={1.5} />
-                <h3 className="font-display text-lg font-semibold text-foreground mb-2">{v.title}</h3>
-                <p className="font-body text-sm text-muted-foreground">{v.desc}</p>
-              </div>
+      <section className="section-padding bg-cream">
+        <div className="container max-w-3xl">
+          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Expertise</p>
+          <h2 className="font-display text-3xl font-bold text-foreground mb-8">Core Competencies</h2>
+          <div className="flex flex-wrap gap-3">
+            {competencies.map((c) => (
+              <span
+                key={c}
+                className="px-4 py-2 bg-card border border-border rounded-full font-body text-sm text-foreground"
+              >
+                {c}
+              </span>
             ))}
           </div>
         </div>
       </section>
 
       {/* Education & Affiliations */}
-      <section className="section-padding bg-cream">
+      <section className="section-padding bg-background">
         <div className="container max-w-3xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
