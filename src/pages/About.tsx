@@ -77,6 +77,20 @@ const About = () => {
         </div>
       </section>
 
+      {/* Trusted By Logos */}
+      <section className="bg-background border-b border-border">
+        <div className="container py-10">
+          <p className="font-body text-xs uppercase tracking-[0.2em] text-muted-foreground text-center mb-8">
+            Experience Built At
+          </p>
+          <div className="flex items-center justify-center gap-12 md:gap-20 flex-wrap">
+            <img src={logoSalesforce} alt="Salesforce" className="h-10 md:h-12 object-contain opacity-70 hover:opacity-100 transition-opacity" />
+            <img src={logoServicenow} alt="ServiceNow" className="h-8 md:h-10 object-contain opacity-70 hover:opacity-100 transition-opacity" />
+            <img src={logoLumen} alt="Lumen Technologies" className="h-8 md:h-10 object-contain opacity-70 hover:opacity-100 transition-opacity" />
+          </div>
+        </div>
+      </section>
+
       {/* Career Highlights — KFlynn stat cards */}
       <section className="section-padding bg-background">
         <div className="container">
