@@ -159,30 +159,26 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Trusted By Logos */}
-      <section className="bg-navy border-t border-navy-light">
-        <div className="container py-10">
-          <p className="font-body text-xs uppercase tracking-[0.2em] text-primary-foreground/50 text-center mb-8">
-            Experience Built At
-          </p>
-          <div className="flex items-center justify-center gap-12 md:gap-20 flex-wrap">
-            <img alt="Salesforce" className="h-20 md:h-24 object-contain opacity-80 hover:opacity-100 transition-opacity brightness-0 invert" src="/lovable-uploads/f6d67dad-429a-49a3-8c20-fff68acb27d4.png" />
-            <img src={logoServicenow} alt="ServiceNow" className="h-16 md:h-20 object-contain opacity-80 hover:opacity-100 transition-opacity brightness-0 invert" />
-            <img src={logoLumen} alt="Lumen Technologies" className="h-16 md:h-20 object-contain opacity-80 hover:opacity-100 transition-opacity brightness-0 invert" />
-          </div>
-        </div>
-      </section>
-
-      {/* Stats */}
+      {/* Experience & Stats */}
       <section className="bg-navy">
         <div className="container py-16">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat) =>
-            <div key={stat.label} className="text-center">
-                <div className="font-display text-3xl md:text-4xl font-bold text-gold mb-2">{stat.value}</div>
-                <div className="font-body text-sm text-primary-foreground/60 uppercase tracking-wider">{stat.label}</div>
-              </div>
-            )}
+          <p className="font-body text-xs uppercase tracking-[0.2em] text-primary-foreground/50 text-center mb-6">
+            Experience Built At
+          </p>
+          <div className="flex items-center justify-center gap-10 md:gap-16 flex-wrap mb-14">
+            <img alt="Salesforce" className="h-10 md:h-12 object-contain opacity-60 hover:opacity-90 transition-opacity brightness-0 invert" src="/lovable-uploads/f6d67dad-429a-49a3-8c20-fff68acb27d4.png" />
+            <img src={logoServicenow} alt="ServiceNow" className="h-8 md:h-10 object-contain opacity-60 hover:opacity-90 transition-opacity brightness-0 invert" />
+            <img src={logoLumen} alt="Lumen Technologies" className="h-8 md:h-10 object-contain opacity-60 hover:opacity-90 transition-opacity brightness-0 invert" />
+          </div>
+          <div className="border-t border-primary-foreground/10 pt-14">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {stats.map((stat) =>
+              <div key={stat.label} className="text-center">
+                  <div className="font-display text-4xl md:text-5xl font-bold text-gold mb-2">{stat.value}</div>
+                  <div className="font-body text-sm text-primary-foreground/60 uppercase tracking-wider">{stat.label}</div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </section>
