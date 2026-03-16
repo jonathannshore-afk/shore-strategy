@@ -160,15 +160,15 @@ const Index = () => {
       </section>
 
       {/* Trusted By Logos */}
-      <section className="bg-cream border-t border-border">
+      <section className="bg-navy border-t border-navy-light">
         <div className="container py-10">
-          <p className="font-body text-xs uppercase tracking-[0.2em] text-muted-foreground text-center mb-8">
+          <p className="font-body text-xs uppercase tracking-[0.2em] text-primary-foreground/50 text-center mb-8">
             Experience Built At
           </p>
           <div className="flex items-center justify-center gap-12 md:gap-20 flex-wrap">
-            <img alt="Salesforce" className="h-20 md:h-24 object-contain opacity-80 hover:opacity-100 transition-opacity" src="/lovable-uploads/f6d67dad-429a-49a3-8c20-fff68acb27d4.png" />
-            <img src={logoServicenow} alt="ServiceNow" className="h-16 md:h-20 object-contain opacity-80 hover:opacity-100 transition-opacity" />
-            <img src={logoLumen} alt="Lumen Technologies" className="h-16 md:h-20 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+            <img alt="Salesforce" className="h-20 md:h-24 object-contain opacity-80 hover:opacity-100 transition-opacity brightness-0 invert" src="/lovable-uploads/f6d67dad-429a-49a3-8c20-fff68acb27d4.png" />
+            <img src={logoServicenow} alt="ServiceNow" className="h-16 md:h-20 object-contain opacity-80 hover:opacity-100 transition-opacity brightness-0 invert" />
+            <img src={logoLumen} alt="Lumen Technologies" className="h-16 md:h-20 object-contain opacity-80 hover:opacity-100 transition-opacity brightness-0 invert" />
           </div>
         </div>
       </section>
