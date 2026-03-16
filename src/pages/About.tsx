@@ -192,14 +192,14 @@ const About = () => {
 
       {/* Core Competencies */}
       <section className="section-padding bg-background">
-        <div className="container max-w-3xl">
+        <div className="container">
           <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Expertise</p>
           <h2 className="font-display text-3xl font-bold text-foreground mb-8">Core Competencies</h2>
           <div className="flex flex-wrap gap-3">
             {competencies.map((c) => (
               <span
                 key={c}
-                className="px-4 py-2 bg-card border border-border rounded-full font-body text-sm text-foreground"
+                className="px-4 py-2 bg-card border border-border rounded-full font-body text-sm text-foreground text-center"
               >
                 {c}
               </span>
