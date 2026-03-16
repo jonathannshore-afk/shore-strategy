@@ -166,9 +166,9 @@ const Index = () => {
             Experience Built At
           </p>
           <div className="flex items-center justify-center gap-12 md:gap-20 flex-wrap">
-            <img alt="Salesforce" className="h-10 md:h-12 object-contain opacity-80 hover:opacity-100 transition-opacity" src="/lovable-uploads/f6d67dad-429a-49a3-8c20-fff68acb27d4.png" />
-            <img src={logoServicenow} alt="ServiceNow" className="h-8 md:h-10 object-contain opacity-80 hover:opacity-100 transition-opacity" />
-            <img src={logoLumen} alt="Lumen Technologies" className="h-8 md:h-10 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+            <img alt="Salesforce" className="h-20 md:h-24 object-contain opacity-80 hover:opacity-100 transition-opacity" src="/lovable-uploads/f6d67dad-429a-49a3-8c20-fff68acb27d4.png" />
+            <img src={logoServicenow} alt="ServiceNow" className="h-16 md:h-20 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+            <img src={logoLumen} alt="Lumen Technologies" className="h-16 md:h-20 object-contain opacity-80 hover:opacity-100 transition-opacity" />
           </div>
         </div>
       </section>
