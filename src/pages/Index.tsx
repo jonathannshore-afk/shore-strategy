@@ -3,8 +3,8 @@ import { ArrowRight, CalendarCheck, ClipboardCheck, Handshake, Rocket, Search, T
 import heroBg from "@/assets/hero-bg.jpg";
 import headshot from "@/assets/jonathan-headshot.jpeg";
 import logoSalesforce from "@/assets/logo-salesforce.png";
-import logoServicenow from "@/assets/logo-servicenow.png";
-import logoLumen from "@/assets/logo-lumen.png";
+import logoServicenow from "@/assets/logo-servicenow.svg";
+import logoLumen from "@/assets/logo-lumen-new.png";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 
