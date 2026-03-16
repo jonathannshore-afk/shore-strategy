@@ -13,7 +13,7 @@ interface SEOProps {
 }
 
 const SITE_NAME = "Shore Strategy";
-const BASE_URL = "https://shorestrategy.com";
+const BASE_URL = "https://shore-strategy.com";
 const DEFAULT_TITLE = "Jonathan Shore — Partner Ecosystem Strategy Executive";
 const DEFAULT_DESCRIPTION =
   "Jonathan Shore is a Partner Ecosystem Strategy & Operations executive with 15+ years at Salesforce, ServiceNow, and Lumen. Available for fractional leadership and full-time roles.";
