@@ -119,14 +119,14 @@ const Index = () => {
         <div className="relative z-10 container">
           <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
             <div className="flex-1 text-center md:text-left">
-              <p className="text-gold font-body text-sm uppercase tracking-[0.3em] mb-6 animate-fade-in-up">
-                ex-Salesforce · ServiceNow · Lumen Technologies
-              </p>
-              <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-in-up" style={{ animationDelay: "0.15s" }}>
+              <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-4 animate-fade-in-up">
                 Jonathan
                 <br />
                 <span className="text-gold">Shore</span>
               </h1>
+              <p className="text-gold font-body text-sm uppercase tracking-[0.3em] mb-6 animate-fade-in-up" style={{ animationDelay: "0.15s" }}>
+                ex-Salesforce · ServiceNow · Lumen Technologies
+              </p>
               <p className="font-body text-lg md:text-xl text-primary-foreground/80 max-w-xl mb-4 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
                 I work directly with founders, CEOs, and CROs to build, fix, and scale partner ecosystems that drive measurable revenue growth.
               </p>
