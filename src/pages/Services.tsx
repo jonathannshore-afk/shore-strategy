@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
+import FlipCard from "@/components/FlipCard";
 import { ArrowRight, BarChart3, Handshake, Layers, Lightbulb, Target, TrendingUp, Users, Zap } from "lucide-react";
 
 const capabilities = [
@@ -115,14 +116,61 @@ const Services = () => {
             <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Ways to Work Together</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Engagement Models</h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {engagementModels.map((model) => (
-              <div key={model.title} className="bg-card p-7 rounded-lg border border-border">
-                <h3 className="font-display text-lg font-semibold text-foreground mb-3">{model.title}</h3>
-                <p className="font-body text-muted-foreground text-sm leading-relaxed mb-4">{model.desc}</p>
-                <p className="font-body text-xs text-gold font-medium uppercase tracking-wider">{model.fit}</p>
-              </div>
-            ))}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto" style={{ minHeight: "280px" }}>
+            {engagementModels.map((model) =>
+              model.title === "Fractional Leadership" ? (
+                <FlipCard
+                  key={model.title}
+                  front={
+                    <>
+                      <h3 className="font-display text-lg font-semibold text-foreground mb-3">{model.title}</h3>
+                      <p className="font-body text-muted-foreground text-sm leading-relaxed mb-4">{model.desc}</p>
+                      <p className="font-body text-xs text-gold font-medium uppercase tracking-wider">{model.fit}</p>
+                    </>
+                  }
+                  back={
+                    <>
+                      <h3 className="font-display text-lg font-semibold text-primary-foreground mb-3">
+                        Fractional Leadership
+                      </h3>
+                      <p className="font-body text-xs text-gold font-medium uppercase tracking-wider mb-3">Who It's For</p>
+                      <ul className="space-y-2 mb-4">
+                        <li className="font-body text-sm text-primary-foreground/80 flex gap-2">
+                          <span className="text-gold shrink-0">•</span>Mid-Market & Enterprise companies
+                        </li>
+                        <li className="font-body text-sm text-primary-foreground/80 flex gap-2">
+                          <span className="text-gold shrink-0">•</span>Scaling from founder-led to structured partnerships
+                        </li>
+                        <li className="font-body text-sm text-primary-foreground/80 flex gap-2">
+                          <span className="text-gold shrink-0">•</span>Bridging the gap before a full-time hire
+                        </li>
+                      </ul>
+                      <p className="font-body text-xs text-gold font-medium uppercase tracking-wider mb-2">Key Outcomes</p>
+                      <ul className="space-y-1">
+                        <li className="font-body text-xs text-primary-foreground/70 flex gap-2">
+                          <span className="text-gold shrink-0">→</span>Partner strategy & roadmap
+                        </li>
+                        <li className="font-body text-xs text-primary-foreground/70 flex gap-2">
+                          <span className="text-gold shrink-0">→</span>Program launch & operationalization
+                        </li>
+                        <li className="font-body text-xs text-primary-foreground/70 flex gap-2">
+                          <span className="text-gold shrink-0">→</span>Team hiring & enablement
+                        </li>
+                        <li className="font-body text-xs text-primary-foreground/70 flex gap-2">
+                          <span className="text-gold shrink-0">→</span>Executive-level partner engagement
+                        </li>
+                      </ul>
+                    </>
+                  }
+                />
+              ) : (
+                <div key={model.title} className="bg-card p-7 rounded-lg border border-border">
+                  <h3 className="font-display text-lg font-semibold text-foreground mb-3">{model.title}</h3>
+                  <p className="font-body text-muted-foreground text-sm leading-relaxed mb-4">{model.desc}</p>
+                  <p className="font-body text-xs text-gold font-medium uppercase tracking-wider">{model.fit}</p>
+                </div>
+              )
+            )}
           </div>
         </div>
       </section>
