@@ -10,9 +10,9 @@ import SEO from "@/components/SEO";
 
 const stats = [
 { value: "15+", label: "Years of Experience" },
-{ value: "$800M+", label: "Annual Bookings Influenced" },
-{ value: "2K+", label: "Partners Across Ecosystems" },
-{ value: "15+", label: "Years of Experience" }];
+{ value: "3", label: "Fortune 500 Ecosystems Transformed" },
+{ value: "20%+", label: "Avg YoY Channel Revenue Growth" },
+{ value: "6+", label: "Routes-to-Market Launched" }];
 
 
 const methodology = [
