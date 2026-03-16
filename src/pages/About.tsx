@@ -71,11 +71,11 @@ const About = () => {
         description="15+ years leading partner ecosystems at Salesforce, ServiceNow, and Lumen Technologies. Learn about Jonathan Shore's background, experience, and approach."
         path="/about"
       />
-      {/* Hero — Photo right, intro left */}
-      <section className="bg-navy section-padding">
+      {/* Hero — Photo right, intro left + logos */}
+      <section className="bg-navy section-padding pb-12">
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-            <div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+            <div className="pt-2">
               <h1 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
                 About <span className="text-gold">Jonathan</span>
               </h1>
@@ -107,19 +107,20 @@ const About = () => {
               />
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Experience Built At Logos */}
-      <section className="bg-background border-b border-border">
-        <div className="container py-10">
-          <p className="font-body text-xs uppercase tracking-[0.2em] text-muted-foreground text-center mb-8">
-            Experience Built At
-          </p>
-          <div className="flex items-center justify-center gap-12 md:gap-20 flex-wrap">
-            <img src={logoSalesforce} alt="Salesforce" className="h-10 md:h-12 object-contain opacity-70 hover:opacity-100 transition-opacity" />
-            <img src={logoServicenow} alt="ServiceNow" className="h-8 md:h-10 object-contain opacity-70 hover:opacity-100 transition-opacity" />
-            <img src={logoLumen} alt="Lumen Technologies" className="h-8 md:h-10 object-contain opacity-70 hover:opacity-100 transition-opacity" />
+          {/* Divider */}
+          <div className="border-t border-primary-foreground/15 mt-12 mb-10" />
+
+          {/* Experience Built At — inside navy section */}
+          <div className="text-center">
+            <p className="font-body text-xs uppercase tracking-[0.2em] text-primary-foreground/50 mb-6">
+              Experience Built At
+            </p>
+            <div className="flex items-center justify-center gap-12 md:gap-20 flex-wrap">
+              <img src={logoSalesforce} alt="Salesforce" className="h-10 md:h-12 object-contain opacity-60 hover:opacity-100 transition-opacity brightness-0 invert" />
+              <img src={logoServicenow} alt="ServiceNow" className="h-8 md:h-10 object-contain opacity-60 hover:opacity-100 transition-opacity brightness-0 invert" />
+              <img src={logoLumen} alt="Lumen Technologies" className="h-8 md:h-10 object-contain opacity-60 hover:opacity-100 transition-opacity brightness-0 invert" />
+            </div>
           </div>
         </div>
       </section>
