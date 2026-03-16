@@ -127,8 +127,8 @@ const Index = () => {
                 <br />
                 <span className="text-gold">Shore</span>
               </h1>
-              <p className="font-body text-lg md:text-xl text-primary-foreground/80 max-w-xl mb-4 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>P{ar
-
+              <p className="font-body text-lg md:text-xl text-primary-foreground/80 max-w-xl mb-4 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
+                I am a Partner Ecosystem Strategist with 15+ years of experience building global alliances and partner routes-to-market across enterprise technology companies.
               </p>
               <p className="font-body text-base text-gold/80 max-w-xl mb-10 animate-fade-in-up" style={{ animationDelay: "0.35s" }}>
                 Available for fractional leadership &amp; full-time opportunities.
