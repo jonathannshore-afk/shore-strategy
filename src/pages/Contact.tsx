@@ -99,7 +99,7 @@ const Contact = () => {
       </section>
 
       {/* Summary + Calendly side by side */}
-      <section className="section-padding bg-cream">
+      <section id="calendly" className="section-padding bg-cream">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Summary */}
