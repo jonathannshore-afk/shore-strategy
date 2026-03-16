@@ -82,7 +82,27 @@ const About = () => {
               <p className="font-body text-lg text-primary-foreground/80 leading-relaxed">
                 15+ years building and transforming partner ecosystems at Salesforce, ServiceNow, and Lumen Technologies. I help B2B leaders unlock partner-led revenue through fractional executive leadership.
               </p>
-              <div className="flex flex-wrap gap-4 mt-6">
+
+              {/* Divider */}
+              <div className="border-t border-primary-foreground/15 mt-6 mb-6" />
+
+              {/* Experience Built At */}
+              <div>
+                <p className="font-body text-xs uppercase tracking-[0.2em] text-primary-foreground/50 mb-4">
+                  Experience Built At
+                </p>
+                <div className="flex items-center gap-8 flex-wrap">
+                  <img src={logoSalesforce} alt="Salesforce" className="h-8 md:h-10 object-contain opacity-60 hover:opacity-100 transition-opacity brightness-0 invert" />
+                  <img src={logoServicenow} alt="ServiceNow" className="h-6 md:h-8 object-contain opacity-60 hover:opacity-100 transition-opacity brightness-0 invert" />
+                  <img src={logoLumen} alt="Lumen Technologies" className="h-6 md:h-8 object-contain opacity-60 hover:opacity-100 transition-opacity brightness-0 invert" />
+                </div>
+              </div>
+
+              {/* Divider */}
+              <div className="border-t border-primary-foreground/15 mt-6 mb-6" />
+
+              {/* Buttons */}
+              <div className="flex flex-wrap gap-4">
                 <Link
                   to="/contact"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors"
@@ -97,21 +117,6 @@ const About = () => {
                 >
                   <Linkedin size={16} /> LinkedIn
                 </a>
-              </div>
-
-              {/* Divider */}
-              <div className="border-t border-primary-foreground/15 mt-8 mb-6" />
-
-              {/* Experience Built At */}
-              <div>
-                <p className="font-body text-xs uppercase tracking-[0.2em] text-primary-foreground/50 mb-4">
-                  Experience Built At
-                </p>
-                <div className="flex items-center gap-8 flex-wrap">
-                  <img src={logoSalesforce} alt="Salesforce" className="h-8 md:h-10 object-contain opacity-60 hover:opacity-100 transition-opacity brightness-0 invert" />
-                  <img src={logoServicenow} alt="ServiceNow" className="h-6 md:h-8 object-contain opacity-60 hover:opacity-100 transition-opacity brightness-0 invert" />
-                  <img src={logoLumen} alt="Lumen Technologies" className="h-6 md:h-8 object-contain opacity-60 hover:opacity-100 transition-opacity brightness-0 invert" />
-                </div>
               </div>
             </div>
             <div className="flex justify-center md:justify-end">
