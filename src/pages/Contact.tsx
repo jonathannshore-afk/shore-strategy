@@ -98,30 +98,34 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Summary text — inspired by Vyver */}
-      <section className="bg-cream py-12">
-        <div className="container max-w-3xl text-center">
-          <p className="font-body text-muted-foreground leading-relaxed">
-            I partner with B2B SaaS and enterprise technology companies to build, scale, and operationalize partner ecosystems. With deep expertise in strategic alliances, channel programs, and ecosystem go-to-market, I help organizations turn partnerships into a measurable growth engine. Whether you need a fractional VP of Partnerships or a full-time leader — let's talk.
-          </p>
-        </div>
-      </section>
-
-      {/* Calendly */}
-      <section className="section-padding bg-background">
+      {/* Summary + Calendly side by side */}
+      <section className="section-padding bg-cream">
         <div className="container">
-          <div className="text-center mb-10">
-            <Calendar className="text-gold mx-auto mb-4" size={36} strokeWidth={1.5} />
-            <h2 className="font-display text-3xl font-bold text-foreground mb-3">Book a Conversation</h2>
-            <p className="font-body text-muted-foreground max-w-lg mx-auto">
-              Pick a time that works for you — no commitment, just a conversation about how I can help.
-            </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            {/* Summary */}
+            <div>
+              <h2 className="font-display text-3xl font-bold text-foreground mb-6">How I Can Help</h2>
+              <p className="font-body text-muted-foreground leading-relaxed mb-6">
+                I partner with B2B SaaS and enterprise technology companies to build, scale, and operationalize partner ecosystems. With deep expertise in strategic alliances, channel programs, and ecosystem go-to-market, I help organizations turn partnerships into a measurable growth engine.
+              </p>
+              <p className="font-body text-muted-foreground leading-relaxed">
+                Whether you need a fractional VP of Partnerships or a full-time leader — let's talk. Pick a time that works for you, no commitment required.
+              </p>
+            </div>
+
+            {/* Calendly */}
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <Calendar className="text-gold" size={28} strokeWidth={1.5} />
+                <h2 className="font-display text-2xl font-bold text-foreground">Book a Conversation</h2>
+              </div>
+              <div
+                className="calendly-inline-widget rounded-lg overflow-hidden border border-border"
+                data-url={`${CALENDLY_URL}?hide_gdpr_banner=1`}
+                style={{ minWidth: "320px", height: "630px" }}
+              />
+            </div>
           </div>
-          <div
-            className="calendly-inline-widget rounded-lg overflow-hidden border border-border"
-            data-url={`${CALENDLY_URL}?hide_gdpr_banner=1`}
-            style={{ minWidth: "320px", height: "630px" }}
-          />
         </div>
       </section>
 
