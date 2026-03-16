@@ -3,7 +3,7 @@ import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { ArrowRight, BarChart3, Handshake, Layers, Lightbulb, Target, TrendingUp, Users, Zap } from "lucide-react";
 
-const services = [
+const capabilities = [
   {
     icon: Handshake,
     title: "Partner Program Design",
@@ -36,8 +36,8 @@ const services = [
   },
   {
     icon: Lightbulb,
-    title: "Fractional Partner Leadership",
-    desc: "Step in as your fractional VP/Director of Partnerships — leading strategy, building teams, and driving execution while you hire for the long term.",
+    title: "Strategic Planning & Alignment",
+    desc: "Drive executive alignment on partner strategy, investment priorities, and cross-functional integration with sales, product, and marketing.",
   },
   {
     icon: Zap,
@@ -62,6 +62,11 @@ const engagementModels = [
     desc: "Ongoing strategic guidance for partner leaders navigating complex ecosystem decisions.",
     fit: "Best for existing partnership leaders who want a seasoned sounding board.",
   },
+  {
+    title: "Full-Time Leadership",
+    desc: "For the right opportunity, I'm open to leading a partner ecosystem full-time — building the team, strategy, and infrastructure from the inside.",
+    fit: "Best for companies ready to invest in a dedicated partnerships leader.",
+  },
 ];
 
 const Services = () => {
@@ -69,34 +74,34 @@ const Services = () => {
     <Layout>
       <SEO
         title="Services"
-        description="Partner program design, GTM planning, revenue acceleration, and ecosystem development. Explore Shore Strategy's consulting services."
+        description="Partner ecosystem strategy, program design, GTM planning, and revenue acceleration. Explore how Jonathan Shore drives partner-led growth."
         path="/services"
       />
       {/* Hero */}
       <section className="bg-navy section-padding">
         <div className="container">
-          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Services</p>
+          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Capabilities</p>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
-            How I Can <span className="text-gold">Help</span>
+            What I <span className="text-gold">Build</span>
           </h1>
           <p className="font-body text-lg text-primary-foreground/70 max-w-2xl">
-            From fractional leadership to focused project work, I bring hands-on expertise to help you build, fix, or scale your partner ecosystem.
+            Whether embedded as a fractional leader, engaged on a project, or hired full-time — these are the capabilities I bring to drive partner-led growth.
           </p>
         </div>
       </section>
 
-      {/* Services Grid */}
+      {/* Capabilities Grid */}
       <section className="section-padding bg-background">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {services.map((service) => (
+            {capabilities.map((cap) => (
               <div
-                key={service.title}
+                key={cap.title}
                 className="bg-card p-8 rounded-lg border border-border hover:shadow-lg hover:border-gold/30 transition-all group"
               >
-                <service.icon className="text-gold mb-4" size={36} strokeWidth={1.5} />
-                <h3 className="font-display text-xl font-semibold text-foreground mb-3">{service.title}</h3>
-                <p className="font-body text-muted-foreground leading-relaxed">{service.desc}</p>
+                <cap.icon className="text-gold mb-4" size={36} strokeWidth={1.5} />
+                <h3 className="font-display text-xl font-semibold text-foreground mb-3">{cap.title}</h3>
+                <p className="font-body text-muted-foreground leading-relaxed">{cap.desc}</p>
               </div>
             ))}
           </div>
@@ -110,9 +115,9 @@ const Services = () => {
             <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Ways to Work Together</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Engagement Models</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {engagementModels.map((model) => (
-              <div key={model.title} className="bg-card p-8 rounded-lg border border-border">
+              <div key={model.title} className="bg-card p-7 rounded-lg border border-border">
                 <h3 className="font-display text-lg font-semibold text-foreground mb-3">{model.title}</h3>
                 <p className="font-body text-muted-foreground text-sm leading-relaxed mb-4">{model.desc}</p>
                 <p className="font-body text-xs text-gold font-medium uppercase tracking-wider">{model.fit}</p>
@@ -126,10 +131,10 @@ const Services = () => {
       <section className="bg-navy section-padding">
         <div className="container text-center">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mb-6">
-            Not Sure Where to Start?
+            Let's Build Something <span className="text-gold">Together</span>
           </h2>
           <p className="font-body text-lg text-primary-foreground/70 max-w-xl mx-auto mb-10">
-            Let's have a conversation. I'll help you identify the highest-impact opportunities for your partner program — no commitment required.
+            Whether you're looking for a strategic partner or your next partnerships leader — let's have a conversation about what's possible.
           </p>
           <Link
             to="/contact"
