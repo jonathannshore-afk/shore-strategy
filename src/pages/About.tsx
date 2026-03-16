@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
-import { ArrowRight, CalendarCheck, Linkedin, ChevronDown } from "lucide-react";
-import { useState } from "react";
+import { CalendarCheck, Linkedin } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
