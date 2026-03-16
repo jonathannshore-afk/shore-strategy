@@ -164,7 +164,7 @@ const Services = () => {
             <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Ways to Work Together</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Engagement Models</h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto auto-rows-[320px]">
             {engagementModels.map((model) => (
               <FlipCard
                 key={model.title}
