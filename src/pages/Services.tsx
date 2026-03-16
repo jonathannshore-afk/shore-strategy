@@ -130,22 +130,22 @@ const Services = () => {
                   }
                   back={
                     <>
-                      <h3 className="font-display text-lg font-semibold text-primary-foreground mb-3">
+                      <h3 className="font-display text-base font-semibold text-primary-foreground mb-2">
                         Fractional Leadership
                       </h3>
-                      <p className="font-body text-xs text-gold font-medium uppercase tracking-wider mb-3">Who It's For</p>
-                      <ul className="space-y-2 mb-4">
-                        <li className="font-body text-sm text-primary-foreground/80 flex gap-2">
+                      <p className="font-body text-xs text-gold font-medium uppercase tracking-wider mb-2">Who It's For</p>
+                      <ul className="space-y-1 mb-3">
+                        <li className="font-body text-xs text-primary-foreground/80 flex gap-2">
                           <span className="text-gold shrink-0">•</span>Mid-Market & Enterprise companies
                         </li>
-                        <li className="font-body text-sm text-primary-foreground/80 flex gap-2">
-                          <span className="text-gold shrink-0">•</span>Scaling from founder-led to structured partnerships
+                        <li className="font-body text-xs text-primary-foreground/80 flex gap-2">
+                          <span className="text-gold shrink-0">•</span>Scaling founder-led → structured partnerships
                         </li>
-                        <li className="font-body text-sm text-primary-foreground/80 flex gap-2">
+                        <li className="font-body text-xs text-primary-foreground/80 flex gap-2">
                           <span className="text-gold shrink-0">•</span>Bridging the gap before a full-time hire
                         </li>
                       </ul>
-                      <p className="font-body text-xs text-gold font-medium uppercase tracking-wider mb-2">Key Outcomes</p>
+                      <p className="font-body text-xs text-gold font-medium uppercase tracking-wider mb-1">Key Outcomes</p>
                       <ul className="space-y-1">
                         <li className="font-body text-xs text-primary-foreground/70 flex gap-2">
                           <span className="text-gold shrink-0">→</span>Partner strategy & roadmap
