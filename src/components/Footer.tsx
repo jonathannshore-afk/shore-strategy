@@ -1,67 +1,40 @@
 import { Link } from "react-router-dom";
-import { Linkedin } from "lucide-react";
+import { CalendarCheck, Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
     <footer className="bg-navy text-primary-foreground/70">
-      <div className="container py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {/* Brand */}
-          <div>
-            <Link to="/" className="flex items-center gap-2 mb-4">
-              <span className="font-display text-xl font-bold text-gold">Jonathan</span>
-              <span className="font-display text-xl font-light text-primary-foreground">Shore</span>
-            </Link>
-            <p className="text-sm leading-relaxed max-w-xs">
-              Partner Ecosystem Strategy & Operations executive. Available for fractional leadership roles and full-time opportunities.
-            </p>
-            <a
-              href="https://www.linkedin.com/in/jonathan-shore/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 mt-4 text-sm text-gold hover:text-gold-dark transition-colors"
-            >
-              <Linkedin size={16} /> LinkedIn
-            </a>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-display text-sm font-semibold uppercase tracking-wider text-gold mb-4">
-              Quick Links
-            </h4>
-            <nav className="flex flex-col gap-2">
-              {[
-                { label: "About", path: "/about" },
-                { label: "Services", path: "/services" },
-                { label: "Insights", path: "/blog" },
-                { label: "Contact", path: "/contact" },
-              ].map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className="text-sm hover:text-gold transition-colors"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h4 className="font-display text-sm font-semibold uppercase tracking-wider text-gold mb-4">
-              Contact
-            </h4>
-            <div className="flex flex-col gap-2 text-sm">
-              <span>jonathan.n.shore@gmail.com</span>
-              <span>San Francisco Bay Area</span>
-            </div>
-          </div>
+      {/* CTA */}
+      <div className="container pt-16 pb-12 text-center">
+        <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
+          Looking for a Partner Ecosystem Leader?
+        </h2>
+        <p className="font-body text-lg text-primary-foreground/70 max-w-xl mx-auto mb-8">
+          I'm available for fractional or full-time partner strategy roles. Let's talk about how I can help accelerate your partner-led growth.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link
+            to="/contact"
+            className="inline-flex items-center gap-2 px-8 py-3.5 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors"
+          >
+            <CalendarCheck size={18} /> Book a Call
+          </Link>
+          <a
+            href="https://www.linkedin.com/in/jonathan-shore/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-3.5 border border-primary-foreground/30 text-primary-foreground font-body font-semibold rounded hover:border-gold hover:text-gold transition-colors"
+          >
+            <Linkedin size={16} /> Connect on LinkedIn
+          </a>
         </div>
+      </div>
 
-        <div className="border-t border-navy-light mt-12 pt-8 text-center text-xs text-primary-foreground/40">
-          © {new Date().getFullYear()} Jonathan Shore. All rights reserved.
+      {/* Bottom bar */}
+      <div className="border-t border-navy-light">
+        <div className="container py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-primary-foreground/40">
+          <span>© {new Date().getFullYear()} Jonathan Shore. All rights reserved.</span>
+          <span>jonathan.n.shore@gmail.com · San Francisco Bay Area</span>
         </div>
       </div>
     </footer>
