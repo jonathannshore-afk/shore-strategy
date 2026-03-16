@@ -17,9 +17,12 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-navy/95 backdrop-blur-sm border-b border-navy-light">
       <div className="container flex items-center justify-between h-16 md:h-20">
-        <Link to="/" className="flex items-center gap-2">
-          <span className="font-display text-xl md:text-2xl font-bold text-gold">Jonathan</span>
-          <span className="font-display text-xl md:text-2xl font-light text-primary-foreground">Shore</span>
+        <Link to="/" className="flex flex-col">
+          <div className="flex items-center gap-2">
+            <span className="font-display text-xl md:text-2xl font-bold text-gold">Jonathan</span>
+            <span className="font-display text-xl md:text-2xl font-light text-primary-foreground">Shore</span>
+          </div>
+          <span className="font-body text-[10px] md:text-xs uppercase tracking-[0.15em] text-primary-foreground/60">Partner Ecosystem Strategy Executive</span>
         </Link>
 
         {/* Desktop nav */}
