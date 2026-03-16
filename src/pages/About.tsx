@@ -71,19 +71,46 @@ const About = () => {
         description="15+ years leading partner ecosystems at Salesforce, ServiceNow, and Lumen Technologies. Learn about Jonathan Shore's background, experience, and approach."
         path="/about"
       />
-      {/* Hero — KFlynn inspired */}
+      {/* Hero — Photo right, intro left */}
       <section className="bg-navy section-padding">
-        <div className="container text-center">
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
-            About <span className="text-gold">Jonathan</span>
-          </h1>
-          <p className="font-body text-lg md:text-xl text-primary-foreground/70 max-w-2xl mx-auto">
-            I work directly with founders, CEOs, and CROs to bring structure, strategy, and senior leadership to their partner ecosystem motion.
-          </p>
+        <div className="container">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div>
+              <h1 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
+                About <span className="text-gold">Jonathan</span>
+              </h1>
+              <p className="font-body text-lg text-primary-foreground/80 leading-relaxed">
+                15+ years building and transforming partner ecosystems at Salesforce, ServiceNow, and Lumen Technologies. I help B2B leaders unlock partner-led revenue through fractional executive leadership.
+              </p>
+              <div className="flex flex-wrap gap-4 mt-6">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors"
+                >
+                  <CalendarCheck size={16} /> Book a Call
+                </Link>
+                <a
+                  href="https://www.linkedin.com/in/jonathan-shore/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 border border-primary-foreground/30 text-primary-foreground font-body font-semibold rounded hover:border-gold hover:text-gold transition-colors"
+                >
+                  <Linkedin size={16} /> LinkedIn
+                </a>
+              </div>
+            </div>
+            <div className="flex justify-center md:justify-end">
+              <img
+                src={headshot}
+                alt="Jonathan Shore"
+                className="w-full max-w-[360px] md:max-w-[420px] rounded-lg shadow-lg border border-border"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Trusted By Logos */}
+      {/* Experience Built At Logos */}
       <section className="bg-background border-b border-border">
         <div className="container py-10">
           <p className="font-body text-xs uppercase tracking-[0.2em] text-muted-foreground text-center mb-8">
@@ -97,35 +124,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Career Highlights — KFlynn stat cards */}
-      <section className="section-padding bg-background">
-        <div className="container">
-          <div className="text-center mb-12">
-            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Career Highlights</p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">By the Numbers</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            <div className="md:row-span-3 flex items-center justify-center">
-              <img
-                src={headshot}
-                alt="Jonathan Shore"
-                className="w-full max-w-[280px] rounded-lg shadow-lg border border-border"
-              />
-            </div>
-            {careerHighlights.map((h) => (
-              <div
-                key={h.label}
-                className="bg-card p-6 rounded-lg border border-border flex items-start gap-4"
-              >
-                <span className="font-display text-3xl font-bold text-gold shrink-0">{h.value}</span>
-                <span className="font-body text-sm text-muted-foreground leading-relaxed pt-1">{h.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Bio */}
+      {/* My Story */}
       <section className="section-padding bg-cream">
         <div className="container max-w-3xl">
           <h2 className="font-display text-3xl font-bold text-foreground mb-6">My Story</h2>
@@ -140,21 +139,32 @@ const About = () => {
               I'm now channeling that practitioner-level experience into fractional leadership engagements — helping B2B companies build the strategic frameworks and operational muscle they need to unlock partner-led growth. I'm also open to the right full-time opportunity where I can build and lead a partner ecosystem at scale.
             </p>
           </div>
-          <div className="flex flex-wrap gap-4 mt-8">
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors"
-            >
-              <CalendarCheck size={16} /> Book a Call
-            </Link>
-            <a
-              href="https://www.linkedin.com/in/jonathan-shore/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 border border-border text-foreground font-body font-semibold rounded hover:border-gold hover:text-gold transition-colors"
-            >
-              <Linkedin size={16} /> LinkedIn
-            </a>
+        </div>
+      </section>
+
+      {/* By the Numbers — 2x3 grid divider */}
+      <section className="section-padding bg-navy">
+        <div className="container max-w-5xl">
+          <div className="text-center mb-10">
+            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Career Highlights</p>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground">By the Numbers</h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {careerHighlights.slice(0, 3).map((h) => (
+              <div key={h.label} className="text-center p-6">
+                <span className="font-display text-4xl font-bold text-gold block mb-2">{h.value}</span>
+                <span className="font-body text-sm text-primary-foreground/70 leading-relaxed">{h.label}</span>
+              </div>
+            ))}
+          </div>
+          <div className="border-t border-primary-foreground/10 my-2" />
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {careerHighlights.slice(3, 6).map((h) => (
+              <div key={h.label} className="text-center p-6">
+                <span className="font-display text-4xl font-bold text-gold block mb-2">{h.value}</span>
+                <span className="font-body text-sm text-primary-foreground/70 leading-relaxed">{h.label}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
