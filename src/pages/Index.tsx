@@ -167,6 +167,7 @@ const Index = () => {
             <img src={logoLumen} alt="Lumen Technologies" className="h-8 md:h-10 object-contain opacity-60 hover:opacity-90 transition-opacity brightness-0 invert" />
           </div>
         </div>
+      </section>
 
       {/* Stats */}
       <section className="bg-navy">
