@@ -141,12 +141,12 @@ const About = () => {
       <StatsMarquee />
 
       {/* My Story + Experience */}
-      <section className="section-padding bg-cream">
+      <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream">
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
             <div>
-              <h2 className="font-display text-3xl font-bold text-foreground mb-6">My Story</h2>
-              <div className="font-body text-foreground/80 leading-relaxed space-y-4">
+              <h2 className="font-display text-3xl font-bold text-foreground mb-4">My Story</h2>
+              <div className="font-body text-foreground/80 leading-relaxed space-y-3 text-[15px]">
                 <p>
                   I've spent the last 15+ years building and leading partner programs at some of the world's most influential enterprise technology companies — Salesforce, ServiceNow, and most recently Lumen Technologies, where I led ecosystem strategy across a $1.6B ARR partner business.
                 </p>
@@ -159,11 +159,11 @@ const About = () => {
               </div>
             </div>
             <div>
-              <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-4">Experience</p>
-              <Accordion type="single" collapsible className="space-y-3">
+              <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Experience</p>
+              <Accordion type="single" collapsible className="space-y-2">
                 {experience.map((exp) => (
                   <AccordionItem key={exp.company} value={exp.company} className="bg-card rounded-lg border border-border px-5">
-                    <AccordionTrigger className="py-4 hover:no-underline">
+                    <AccordionTrigger className="py-3 hover:no-underline">
                       <div className="text-left">
                         <div className="flex items-center gap-3">
                           <h3 className="font-display text-base font-semibold text-foreground">{exp.company}</h3>
@@ -191,10 +191,10 @@ const About = () => {
       </section>
 
       {/* Core Competencies */}
-      <section className="section-padding bg-background">
+      <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-background">
         <div className="container">
-          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Expertise</p>
-          <h2 className="font-display text-3xl font-bold text-foreground mb-8">Core Competencies</h2>
+          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-2">Expertise</p>
+          <h2 className="font-display text-3xl font-bold text-foreground mb-6">Core Competencies</h2>
           <div className="flex flex-wrap gap-3">
             {competencies.map((c) => (
               <span
