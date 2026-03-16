@@ -4,7 +4,7 @@ import heroBg from "@/assets/hero-bg.jpg";
 import headshot from "@/assets/jonathan-headshot.jpeg";
 import logoSalesforce from "@/assets/logo-salesforce.png";
 import logoServicenow from "@/assets/logo-servicenow.svg";
-import logoLumen from "@/assets/logo-lumen-generated.png";
+import logoLumen from "@/assets/logo-lumen.png";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 
