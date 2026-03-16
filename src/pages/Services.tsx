@@ -53,6 +53,7 @@ const engagementModels = [
     desc: "Embedded, part-time executive leadership for companies building or transforming their partner function.",
     fit: "Best for companies that need senior partner strategy leadership but aren't ready for a full-time hire.",
     backTitle: "Fractional Leadership",
+    timeline: "Ongoing · Part-Time",
     audience: [
       "Mid-Market & Enterprise companies",
       "Scaling founder-led → structured partnerships",
@@ -70,6 +71,7 @@ const engagementModels = [
     desc: "Scoped, time-bound projects with clear deliverables — program design, GTM planning, operational buildouts.",
     fit: "Best for companies with a specific initiative or transformation in mind.",
     backTitle: "Project-Based",
+    timeline: "Fixed Scope · Weeks to Months",
     audience: [
       "Companies with a defined initiative",
       "Pre/post-M&A partner integration",
@@ -87,6 +89,7 @@ const engagementModels = [
     desc: "Ongoing strategic guidance for partner leaders navigating complex ecosystem decisions.",
     fit: "Best for existing partnership leaders who want a seasoned sounding board.",
     backTitle: "Advisory & Coaching",
+    timeline: "Scheduled Sessions · As Needed",
     audience: [
       "VP/Director-level partner leaders",
       "Founders building partner motions",
@@ -104,6 +107,7 @@ const engagementModels = [
     desc: "For the right opportunity, I'm open to leading a partner ecosystem full-time — building the team, strategy, and infrastructure from the inside.",
     fit: "Best for companies ready to invest in a dedicated partnerships leader.",
     backTitle: "Full-Time Leadership",
+    timeline: "Full-Time · Permanent",
     audience: [
       "Enterprise companies scaling partnerships",
       "Organizations needing ecosystem transformation",
