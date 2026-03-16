@@ -4,36 +4,44 @@ import { CalendarCheck, Linkedin } from "lucide-react";
 const Footer = () => {
   return (
     <footer className="bg-navy text-primary-foreground/70">
-      {/* CTA */}
-      <div className="container pt-16 pb-12 text-center">
-        <Link to="/" className="inline-flex items-center gap-2 mb-3">
-          <span className="font-display text-2xl font-bold text-gold">Jonathan</span>
-          <span className="font-display text-2xl font-light text-primary-foreground">Shore</span>
-        </Link>
-        <p className="font-body text-sm text-primary-foreground/60 max-w-md mx-auto mb-6">
-          Partner Ecosystem Strategy & Operations executive. Available for fractional leadership roles and full-time opportunities.
-        </p>
-        <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
-          Looking for a Partner Ecosystem Leader?
-        </h2>
-        <p className="font-body text-lg text-primary-foreground/70 max-w-xl mx-auto mb-8">
-          I'm available for fractional or full-time partner strategy roles. Let's talk about how I can help accelerate your partner-led growth.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors"
-          >
-            <CalendarCheck size={18} /> Book a Call
-          </Link>
-          <a
-            href="https://www.linkedin.com/in/jonathan-shore/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-3.5 border border-primary-foreground/30 text-primary-foreground font-body font-semibold rounded hover:border-gold hover:text-gold transition-colors"
-          >
-            <Linkedin size={16} /> Connect on LinkedIn
-          </a>
+      <div className="container pt-16 pb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          {/* Left — Brand */}
+          <div>
+            <Link to="/" className="inline-flex items-center gap-2 mb-3">
+              <span className="font-display text-2xl font-bold text-gold">Jonathan</span>
+              <span className="font-display text-2xl font-light text-primary-foreground">Shore</span>
+            </Link>
+            <p className="font-body text-sm text-primary-foreground/60 max-w-sm leading-relaxed">
+              Partner Ecosystem Strategy & Operations executive. Available for fractional leadership roles and full-time opportunities.
+            </p>
+          </div>
+
+          {/* Right — CTA */}
+          <div className="text-left md:text-right">
+            <h2 className="font-display text-2xl md:text-3xl font-bold text-primary-foreground mb-3">
+              Looking for a Partner Ecosystem Leader?
+            </h2>
+            <p className="font-body text-sm text-primary-foreground/60 mb-6">
+              Let's talk about how I can help accelerate your partner-led growth.
+            </p>
+            <div className="flex flex-wrap gap-4 md:justify-end">
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors"
+              >
+                <CalendarCheck size={16} /> Book a Call
+              </Link>
+              <a
+                href="https://www.linkedin.com/in/jonathan-shore/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 border border-primary-foreground/30 text-primary-foreground font-body font-semibold rounded hover:border-gold hover:text-gold transition-colors"
+              >
+                <Linkedin size={16} /> Connect on LinkedIn
+              </a>
+            </div>
+          </div>
         </div>
       </div>
 
