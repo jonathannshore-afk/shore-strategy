@@ -147,24 +147,28 @@ const Index = () => {
                   My Background
                 </Link>
               </div>
-              {/* Logos inside hero */}
-              <div className="mt-12 animate-fade-in-up" style={{ animationDelay: "0.55s" }}>
-                <p className="font-body text-[10px] uppercase tracking-[0.2em] text-primary-foreground/40 mb-4 text-center md:text-left">
-                  Experience Built At
-                </p>
-                <div className="flex items-center gap-8 md:gap-12 flex-wrap justify-center md:justify-start">
-                  <img alt="Salesforce" className="h-8 md:h-10 object-contain opacity-80 hover:opacity-100 transition-opacity" src="/lovable-uploads/f6d67dad-429a-49a3-8c20-fff68acb27d4.png" />
-                  <img src={logoServicenow} alt="ServiceNow" className="h-6 md:h-8 object-contain opacity-80 hover:opacity-100 transition-opacity" />
-                  <img src={logoLumen} alt="Lumen Technologies" className="h-6 md:h-8 object-contain opacity-80 hover:opacity-100 transition-opacity" />
-                </div>
-              </div>
             </div>
             <div className="hidden md:block w-64 lg:w-72 shrink-0 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
               <img
                 src={headshot}
                 alt="Jonathan Shore"
                 className="w-full rounded-lg shadow-2xl border-2 border-gold/20" />
+              
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trusted By Logos */}
+      <section className="bg-cream border-t border-border">
+        <div className="container py-10">
+          <p className="font-body text-xs uppercase tracking-[0.2em] text-muted-foreground text-center mb-8">
+            Experience Built At
+          </p>
+          <div className="flex items-center justify-center gap-12 md:gap-20 flex-wrap">
+            <img alt="Salesforce" className="h-20 md:h-24 object-contain opacity-80 hover:opacity-100 transition-opacity" src="/lovable-uploads/f6d67dad-429a-49a3-8c20-fff68acb27d4.png" />
+            <img src={logoServicenow} alt="ServiceNow" className="h-16 md:h-20 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+            <img src={logoLumen} alt="Lumen Technologies" className="h-16 md:h-20 object-contain opacity-80 hover:opacity-100 transition-opacity" />
           </div>
         </div>
       </section>
