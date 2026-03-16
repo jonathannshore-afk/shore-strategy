@@ -131,6 +131,9 @@ const About = () => {
         </div>
       </section>
 
+      {/* Stats Marquee */}
+      <StatsMarquee />
+
       {/* My Story */}
       <section className="section-padding bg-cream">
         <div className="container max-w-3xl">
