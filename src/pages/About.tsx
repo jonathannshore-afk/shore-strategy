@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
-import { ArrowRight, CalendarCheck, Linkedin, ChevronDown } from "lucide-react";
-import { useState } from "react";
+import { CalendarCheck, Linkedin } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -141,51 +140,9 @@ const About = () => {
       {/* Stats Marquee */}
       <StatsMarquee />
 
-      {/* ===== OPTION A: Condensed Cards ===== */}
+      {/* My Story + Experience */}
       <section className="section-padding bg-cream">
         <div className="container">
-          <div className="text-center mb-6">
-            <span className="inline-block px-4 py-1 bg-gold text-accent-foreground font-body text-xs font-bold uppercase tracking-widest rounded">Option A — Condensed Cards</span>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-            <div>
-              <h2 className="font-display text-3xl font-bold text-foreground mb-6">My Story</h2>
-              <div className="font-body text-foreground/80 leading-relaxed space-y-4">
-                <p>
-                  I've spent the last 15+ years building and leading partner programs at some of the world's most influential enterprise technology companies — Salesforce, ServiceNow, and most recently Lumen Technologies, where I led ecosystem strategy across a $1.6B ARR partner business.
-                </p>
-                <p>
-                  My experience spans the full spectrum: designing partner programs from scratch, launching new routes-to-market (ISV, SI, VAR), transforming operating models, and scaling ecosystems that influence hundreds of millions in revenue.
-                </p>
-                <p>
-                  I'm now channeling that practitioner-level experience into fractional leadership engagements — helping B2B companies build the strategic frameworks and operational muscle they need to unlock partner-led growth.
-                </p>
-              </div>
-            </div>
-            <div>
-              <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-4">Experience</p>
-              <div className="space-y-4">
-                {experience.map((exp) => (
-                  <div key={exp.company} className="bg-card p-5 rounded-lg border border-border">
-                    <div className="flex items-center justify-between gap-2 mb-1">
-                      <h3 className="font-display text-base font-semibold text-foreground">{exp.company}</h3>
-                      <span className="font-body text-xs text-muted-foreground shrink-0">{exp.period}</span>
-                    </div>
-                    <p className="font-body text-gold text-sm font-medium">{exp.role}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== OPTION B: Accordion Cards ===== */}
-      <section className="section-padding bg-background">
-        <div className="container">
-          <div className="text-center mb-6">
-            <span className="inline-block px-4 py-1 bg-gold text-accent-foreground font-body text-xs font-bold uppercase tracking-widest rounded">Option B — Accordion Cards</span>
-          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
             <div>
               <h2 className="font-display text-3xl font-bold text-foreground mb-6">My Story</h2>
