@@ -1,8 +1,8 @@
 import { useParams, Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
-import { posts } from "@/data/blogPosts";
-import { ArrowLeft, Calendar, Clock, User, Linkedin } from "lucide-react";
+import { posts, defaultAuthor } from "@/data/blogPosts";
+import { ArrowLeft, Calendar, Clock, Linkedin } from "lucide-react";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -60,9 +60,17 @@ const BlogPost = () => {
             {post.title}
           </h1>
           <div className="flex flex-wrap items-center gap-4 text-sm text-primary-foreground/60 font-body">
-            <span className="flex items-center gap-1.5">
-              <User size={14} /> {post.author}
-            </span>
+            <div className="flex items-center gap-3">
+              <img
+                src={post.authorImage || defaultAuthor.image}
+                alt={post.author}
+                className="w-10 h-10 rounded-full object-cover border border-primary-foreground/20"
+              />
+              <div>
+                <span className="text-primary-foreground font-semibold block text-sm leading-tight">{post.author}</span>
+                <span className="text-primary-foreground/50 text-xs">{defaultAuthor.title}</span>
+              </div>
+            </div>
             <span className="flex items-center gap-1.5">
               <Calendar size={14} /> {post.date}
             </span>
@@ -78,6 +86,18 @@ const BlogPost = () => {
               <Linkedin size={14} /> Share on LinkedIn
             </a>
           </div>
+
+          {/* Key Stats */}
+          {post.keyStats && post.keyStats.length > 0 && (
+            <div className="grid grid-cols-3 gap-4 mt-8 pt-6 border-t border-primary-foreground/10">
+              {post.keyStats.map((stat, i) => (
+                <div key={i} className="text-center">
+                  <span className="font-display text-2xl font-bold text-gold block">{stat.value}</span>
+                  <span className="font-body text-xs text-primary-foreground/50">{stat.label}</span>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

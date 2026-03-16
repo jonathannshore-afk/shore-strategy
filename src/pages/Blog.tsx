@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
-import { posts, categories } from "@/data/blogPosts";
+import { posts, categories, defaultAuthor } from "@/data/blogPosts";
 
 const Blog = () => {
   return (
@@ -67,13 +67,16 @@ const Blog = () => {
                   <p className="font-body text-muted-foreground text-sm leading-relaxed mb-6 flex-1">
                     {post.excerpt}
                   </p>
-                  <div className="flex items-center gap-4 text-xs text-muted-foreground font-body mb-4">
-                    <span className="flex items-center gap-1">
-                      <Calendar size={12} /> {post.date}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <Clock size={12} /> {post.readTime}
-                    </span>
+                  <div className="flex items-center gap-3 mb-4">
+                    <img
+                      src={post.authorImage || defaultAuthor.image}
+                      alt={post.author}
+                      className="w-8 h-8 rounded-full object-cover"
+                    />
+                    <div>
+                      <span className="font-body text-xs font-semibold text-foreground block leading-tight">{post.author}</span>
+                      <span className="font-body text-xs text-muted-foreground">{post.date} · {post.readTime}</span>
+                    </div>
                   </div>
                   <Link
                     to={`/blog/${post.slug}`}
