@@ -6,6 +6,7 @@ import logoSalesforce from "@/assets/logo-salesforce.png";
 import logoServicenow from "@/assets/logo-servicenow.png";
 import logoLumen from "@/assets/logo-lumen.png";
 import SEO from "@/components/SEO";
+import StatsMarquee from "@/components/StatsMarquee";
 
 const careerHighlights = [
   { value: "15+", label: "Years in Partner Ecosystem Strategy & Operations" },
