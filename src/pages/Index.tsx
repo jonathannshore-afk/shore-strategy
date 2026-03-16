@@ -99,7 +99,7 @@ const Index = () => {
               jobTitle: "Partner Ecosystem Strategy Executive",
               url: "https://www.linkedin.com/in/jonathan-shore/"
             },
-            url: "https://shorestrategy.com",
+            url: "https://shore-strategy.com",
             serviceType: [
             "Partner Strategy Consulting",
             "GTM Planning",
