@@ -9,72 +9,72 @@ import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 
 const stats = [
-  { value: "$1.6B", label: "Partner Ecosystem Managed" },
-  { value: "$800M+", label: "Annual Bookings Influenced" },
-  { value: "2K+", label: "Partners Across Ecosystems" },
-  { value: "15+", label: "Years of Experience" },
-];
+{ value: "$1.6B", label: "Partner Ecosystem Managed" },
+{ value: "$800M+", label: "Annual Bookings Influenced" },
+{ value: "2K+", label: "Partners Across Ecosystems" },
+{ value: "15+", label: "Years of Experience" }];
+
 
 const methodology = [
-  {
-    step: "01",
-    icon: Search,
-    title: "Assess",
-    desc: "Deep-dive into your current partner landscape, GTM motion, and ecosystem maturity to identify gaps and opportunities.",
-  },
-  {
-    step: "02",
-    icon: Target,
-    title: "Strategize",
-    desc: "Design a tailored partner strategy with clear routes-to-market, partner tiers, incentive models, and joint value propositions.",
-  },
-  {
-    step: "03",
-    icon: ClipboardCheck,
-    title: "Execute",
-    desc: "Build the operational playbooks, launch partner motions, negotiate agreements, and stand up enablement frameworks.",
-  },
-  {
-    step: "04",
-    icon: Rocket,
-    title: "Scale",
-    desc: "Optimize for growth with performance analytics, coverage models, and continuous program iteration to compound results.",
-  },
-];
+{
+  step: "01",
+  icon: Search,
+  title: "Assess",
+  desc: "Deep-dive into your current partner landscape, GTM motion, and ecosystem maturity to identify gaps and opportunities."
+},
+{
+  step: "02",
+  icon: Target,
+  title: "Strategize",
+  desc: "Design a tailored partner strategy with clear routes-to-market, partner tiers, incentive models, and joint value propositions."
+},
+{
+  step: "03",
+  icon: ClipboardCheck,
+  title: "Execute",
+  desc: "Build the operational playbooks, launch partner motions, negotiate agreements, and stand up enablement frameworks."
+},
+{
+  step: "04",
+  icon: Rocket,
+  title: "Scale",
+  desc: "Optimize for growth with performance analytics, coverage models, and continuous program iteration to compound results."
+}];
+
 
 const services = [
-  {
-    icon: Handshake,
-    title: "Partner Strategy",
-    desc: "Design and implement partner programs that align with your growth objectives and market positioning.",
-  },
-  {
-    icon: Target,
-    title: "GTM Planning",
-    desc: "Build joint go-to-market plans with clear milestones, co-sell motions, and measurable outcomes.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Revenue Acceleration",
-    desc: "Optimize partner-sourced and partner-influenced revenue through data-driven engagement models.",
-  },
-  {
-    icon: Users,
-    title: "Ecosystem Development",
-    desc: "Cultivate technology and services ecosystems that create compounding value for all stakeholders.",
-  },
-];
+{
+  icon: Handshake,
+  title: "Partner Strategy",
+  desc: "Design and implement partner programs that align with your growth objectives and market positioning."
+},
+{
+  icon: Target,
+  title: "GTM Planning",
+  desc: "Build joint go-to-market plans with clear milestones, co-sell motions, and measurable outcomes."
+},
+{
+  icon: TrendingUp,
+  title: "Revenue Acceleration",
+  desc: "Optimize partner-sourced and partner-influenced revenue through data-driven engagement models."
+},
+{
+  icon: Users,
+  title: "Ecosystem Development",
+  desc: "Cultivate technology and services ecosystems that create compounding value for all stakeholders."
+}];
+
 
 const highlights = [
-  {
-    stat: "19% YoY Growth",
-    desc: "Reversed multi-year channel sales decline at Lumen Technologies while reducing OpEx by 20%.",
-  },
-  {
-    stat: "$12M ARR in Year One",
-    desc: "Built and launched a new ISV partner motion from scratch, establishing the foundation for future ecosystem expansion.",
-  },
-];
+{
+  stat: "19% YoY Growth",
+  desc: "Reversed multi-year channel sales decline at Lumen Technologies while reducing OpEx by 20%."
+},
+{
+  stat: "$12M ARR in Year One",
+  desc: "Built and launched a new ISV partner motion from scratch, establishing the foundation for future ecosystem expansion."
+}];
+
 
 const Index = () => {
   return (
@@ -82,8 +82,8 @@ const Index = () => {
       <SEO
         title="Partner Ecosystem Strategy Executive"
         description="Jonathan Shore helps founders, CEOs, and CROs build, fix, and scale partner ecosystems that drive measurable revenue growth. 15+ years at Salesforce, ServiceNow, and Lumen."
-        path="/"
-      />
+        path="/" />
+      
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -92,29 +92,29 @@ const Index = () => {
             "@type": "ProfessionalService",
             name: "Shore Strategy",
             description:
-              "Partner ecosystem strategy and operations consulting for B2B technology companies.",
+            "Partner ecosystem strategy and operations consulting for B2B technology companies.",
             founder: {
               "@type": "Person",
               name: "Jonathan Shore",
               jobTitle: "Partner Ecosystem Strategy Executive",
-              url: "https://www.linkedin.com/in/jonathan-shore/",
+              url: "https://www.linkedin.com/in/jonathan-shore/"
             },
             url: "https://shorestrategy.com",
             serviceType: [
-              "Partner Strategy Consulting",
-              "GTM Planning",
-              "Revenue Acceleration",
-              "Ecosystem Development",
-            ],
-          }),
-        }}
-      />
+            "Partner Strategy Consulting",
+            "GTM Planning",
+            "Revenue Acceleration",
+            "Ecosystem Development"]
+
+          })
+        }} />
+      
       {/* Hero */}
       <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroBg})` }}
-        />
+          style={{ backgroundImage: `url(${heroBg})` }} />
+        
         <div className="absolute inset-0 bg-navy-dark/60" />
         <div className="relative z-10 container">
           <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
@@ -136,14 +136,14 @@ const Index = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start animate-fade-in-up" style={{ animationDelay: "0.45s" }}>
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-2 px-8 py-3.5 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors"
-                >
+                  className="inline-flex items-center gap-2 px-8 py-3.5 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors">
+                  
                   <CalendarCheck size={18} /> Book a Call
                 </Link>
                 <Link
                   to="/about"
-                  className="inline-flex items-center gap-2 px-8 py-3.5 border border-primary-foreground/30 text-primary-foreground font-body font-semibold rounded hover:border-gold hover:text-gold transition-colors"
-                >
+                  className="inline-flex items-center gap-2 px-8 py-3.5 border border-primary-foreground/30 text-primary-foreground font-body font-semibold rounded hover:border-gold hover:text-gold transition-colors">
+                  
                   My Background
                 </Link>
               </div>
@@ -152,8 +152,8 @@ const Index = () => {
               <img
                 src={headshot}
                 alt="Jonathan Shore"
-                className="w-full rounded-lg shadow-2xl border-2 border-gold/20"
-              />
+                className="w-full rounded-lg shadow-2xl border-2 border-gold/20" />
+              
             </div>
           </div>
         </div>
@@ -166,7 +166,7 @@ const Index = () => {
             Experience Built At
           </p>
           <div className="flex items-center justify-center gap-12 md:gap-20 flex-wrap">
-            <img src={logoSalesforce} alt="Salesforce" className="h-10 md:h-12 object-contain brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
+            <img alt="Salesforce" className="h-10 md:h-12 object-contain brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" src="/lovable-uploads/f6d67dad-429a-49a3-8c20-fff68acb27d4.png" />
             <img src={logoServicenow} alt="ServiceNow" className="h-8 md:h-10 object-contain brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
             <img src={logoLumen} alt="Lumen Technologies" className="h-8 md:h-10 object-contain brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
           </div>
@@ -177,12 +177,12 @@ const Index = () => {
       <section className="bg-navy">
         <div className="container py-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat) => (
-              <div key={stat.label} className="text-center">
+            {stats.map((stat) =>
+            <div key={stat.label} className="text-center">
                 <div className="font-display text-3xl md:text-4xl font-bold text-gold mb-2">{stat.value}</div>
                 <div className="font-body text-sm text-primary-foreground/60 uppercase tracking-wider">{stat.label}</div>
               </div>
-            ))}
+            )}
           </div>
         </div>
       </section>
@@ -210,14 +210,14 @@ const Index = () => {
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {methodology.map((step) => (
-              <div key={step.step} className="bg-card p-8 rounded-lg border border-border hover:shadow-lg hover:border-gold/30 transition-all group text-center">
+            {methodology.map((step) =>
+            <div key={step.step} className="bg-card p-8 rounded-lg border border-border hover:shadow-lg hover:border-gold/30 transition-all group text-center">
                 <div className="font-display text-5xl font-bold text-gold/20 mb-4">{step.step}</div>
                 <step.icon className="text-gold mx-auto mb-4" size={36} strokeWidth={1.5} />
                 <h3 className="font-display text-xl font-semibold text-foreground mb-3">{step.title}</h3>
                 <p className="font-body text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
               </div>
-            ))}
+            )}
           </div>
         </div>
       </section>
@@ -232,22 +232,22 @@ const Index = () => {
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {services.map((service) => (
-              <div
-                key={service.title}
-                className="bg-card p-8 rounded-lg border border-border hover:shadow-lg transition-shadow group"
-              >
+            {services.map((service) =>
+            <div
+              key={service.title}
+              className="bg-card p-8 rounded-lg border border-border hover:shadow-lg transition-shadow group">
+              
                 <service.icon className="text-gold mb-4" size={36} strokeWidth={1.5} />
                 <h3 className="font-display text-xl font-semibold text-foreground mb-3">{service.title}</h3>
                 <p className="font-body text-muted-foreground leading-relaxed">{service.desc}</p>
               </div>
-            ))}
+            )}
           </div>
           <div className="text-center mt-12">
             <Link
               to="/services"
-              className="inline-flex items-center gap-2 text-gold font-body font-semibold hover:text-gold-dark transition-colors"
-            >
+              className="inline-flex items-center gap-2 text-gold font-body font-semibold hover:text-gold-dark transition-colors">
+              
               See All Services <ArrowRight size={18} />
             </Link>
           </div>
@@ -264,12 +264,12 @@ const Index = () => {
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {highlights.map((h) => (
-              <div key={h.stat} className="bg-card p-8 rounded-lg border border-border">
+            {highlights.map((h) =>
+            <div key={h.stat} className="bg-card p-8 rounded-lg border border-border">
                 <div className="font-display text-3xl font-bold text-gold mb-3">{h.stat}</div>
                 <p className="font-body text-foreground/80 leading-relaxed">{h.desc}</p>
               </div>
-            ))}
+            )}
           </div>
         </div>
       </section>
@@ -286,23 +286,23 @@ const Index = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-8 py-3.5 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors"
-            >
+              className="inline-flex items-center gap-2 px-8 py-3.5 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors">
+              
               <CalendarCheck size={18} /> Book a Call
             </Link>
             <a
               href="https://www.linkedin.com/in/jonathan-shore/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-3.5 border border-primary-foreground/30 text-primary-foreground font-body font-semibold rounded hover:border-gold hover:text-gold transition-colors"
-            >
+              className="inline-flex items-center gap-2 px-8 py-3.5 border border-primary-foreground/30 text-primary-foreground font-body font-semibold rounded hover:border-gold hover:text-gold transition-colors">
+              
               Connect on LinkedIn
             </a>
           </div>
         </div>
       </section>
-    </Layout>
-  );
+    </Layout>);
+
 };
 
 export default Index;
