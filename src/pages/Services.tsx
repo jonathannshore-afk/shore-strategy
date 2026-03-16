@@ -209,23 +209,6 @@ const Services = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-navy section-padding">
-        <div className="container text-center">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mb-6">
-            Let's Build Something <span className="text-gold">Together</span>
-          </h2>
-          <p className="font-body text-lg text-primary-foreground/70 max-w-xl mx-auto mb-10">
-            Whether you're looking for a strategic partner or your next partnerships leader — let's have a conversation about what's possible.
-          </p>
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 px-8 py-3 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors"
-          >
-            Start a Conversation <ArrowRight size={18} />
-          </Link>
-        </div>
-      </section>
     </Layout>
   );
 };
