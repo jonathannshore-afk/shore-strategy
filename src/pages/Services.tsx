@@ -52,21 +52,69 @@ const engagementModels = [
     title: "Fractional Leadership",
     desc: "Embedded, part-time executive leadership for companies building or transforming their partner function.",
     fit: "Best for companies that need senior partner strategy leadership but aren't ready for a full-time hire.",
+    backTitle: "Fractional Leadership",
+    audience: [
+      "Mid-Market & Enterprise companies",
+      "Scaling founder-led → structured partnerships",
+      "Bridging the gap before a full-time hire",
+    ],
+    outcomes: [
+      "Partner strategy & roadmap",
+      "Program launch & operationalization",
+      "Team hiring & enablement",
+      "Executive-level partner engagement",
+    ],
   },
   {
     title: "Project-Based Engagement",
     desc: "Scoped, time-bound projects with clear deliverables — program design, GTM planning, operational buildouts.",
     fit: "Best for companies with a specific initiative or transformation in mind.",
+    backTitle: "Project-Based",
+    audience: [
+      "Companies with a defined initiative",
+      "Pre/post-M&A partner integration",
+      "New market or segment launches",
+    ],
+    outcomes: [
+      "Partner program design & launch",
+      "GTM strategy & playbooks",
+      "Operational infrastructure buildout",
+      "Partner segmentation & tiering",
+    ],
   },
   {
     title: "Advisory & Coaching",
     desc: "Ongoing strategic guidance for partner leaders navigating complex ecosystem decisions.",
     fit: "Best for existing partnership leaders who want a seasoned sounding board.",
+    backTitle: "Advisory & Coaching",
+    audience: [
+      "VP/Director-level partner leaders",
+      "Founders building partner motions",
+      "Teams navigating ecosystem complexity",
+    ],
+    outcomes: [
+      "Strategic sounding board",
+      "Board & exec presentation prep",
+      "Partner negotiation guidance",
+      "Leadership development",
+    ],
   },
   {
     title: "Full-Time Leadership",
     desc: "For the right opportunity, I'm open to leading a partner ecosystem full-time — building the team, strategy, and infrastructure from the inside.",
     fit: "Best for companies ready to invest in a dedicated partnerships leader.",
+    backTitle: "Full-Time Leadership",
+    audience: [
+      "Enterprise companies scaling partnerships",
+      "Organizations needing ecosystem transformation",
+      "Companies ready for a dedicated leader",
+    ],
+    outcomes: [
+      "End-to-end ecosystem ownership",
+      "Team building & organizational design",
+      "Multi-year strategy & execution",
+      "Cross-functional alignment at scale",
+    ],
   },
 ];
 
@@ -116,61 +164,42 @@ const Services = () => {
             <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Ways to Work Together</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Engagement Models</h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto" style={{ minHeight: "280px" }}>
-            {engagementModels.map((model) =>
-              model.title === "Fractional Leadership" ? (
-                <FlipCard
-                  key={model.title}
-                  front={
-                    <>
-                      <h3 className="font-display text-lg font-semibold text-foreground mb-3">{model.title}</h3>
-                      <p className="font-body text-muted-foreground text-sm leading-relaxed mb-4">{model.desc}</p>
-                      <p className="font-body text-xs text-gold font-medium uppercase tracking-wider">{model.fit}</p>
-                    </>
-                  }
-                  back={
-                    <>
-                      <h3 className="font-display text-base font-semibold text-primary-foreground mb-2">
-                        Fractional Leadership
-                      </h3>
-                      <p className="font-body text-xs text-gold font-medium uppercase tracking-wider mb-2">Who It's For</p>
-                      <ul className="space-y-1 mb-3">
-                        <li className="font-body text-xs text-primary-foreground/80 flex gap-2">
-                          <span className="text-gold shrink-0">•</span>Mid-Market & Enterprise companies
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {engagementModels.map((model) => (
+              <FlipCard
+                key={model.title}
+                front={
+                  <>
+                    <h3 className="font-display text-lg font-semibold text-foreground mb-3">{model.title}</h3>
+                    <p className="font-body text-muted-foreground text-sm leading-relaxed mb-4">{model.desc}</p>
+                    <p className="font-body text-xs text-gold font-medium uppercase tracking-wider">{model.fit}</p>
+                  </>
+                }
+                back={
+                  <>
+                    <h3 className="font-display text-base font-semibold text-primary-foreground mb-2">
+                      {model.backTitle}
+                    </h3>
+                    <p className="font-body text-xs text-gold font-medium uppercase tracking-wider mb-2">Who It's For</p>
+                    <ul className="space-y-1 mb-3">
+                      {model.audience.map((item, i) => (
+                        <li key={i} className="font-body text-xs text-primary-foreground/80 flex gap-2">
+                          <span className="text-gold shrink-0">•</span>{item}
                         </li>
-                        <li className="font-body text-xs text-primary-foreground/80 flex gap-2">
-                          <span className="text-gold shrink-0">•</span>Scaling founder-led → structured partnerships
+                      ))}
+                    </ul>
+                    <p className="font-body text-xs text-gold font-medium uppercase tracking-wider mb-1">Key Outcomes</p>
+                    <ul className="space-y-1">
+                      {model.outcomes.map((item, i) => (
+                        <li key={i} className="font-body text-xs text-primary-foreground/70 flex gap-2">
+                          <span className="text-gold shrink-0">→</span>{item}
                         </li>
-                        <li className="font-body text-xs text-primary-foreground/80 flex gap-2">
-                          <span className="text-gold shrink-0">•</span>Bridging the gap before a full-time hire
-                        </li>
-                      </ul>
-                      <p className="font-body text-xs text-gold font-medium uppercase tracking-wider mb-1">Key Outcomes</p>
-                      <ul className="space-y-1">
-                        <li className="font-body text-xs text-primary-foreground/70 flex gap-2">
-                          <span className="text-gold shrink-0">→</span>Partner strategy & roadmap
-                        </li>
-                        <li className="font-body text-xs text-primary-foreground/70 flex gap-2">
-                          <span className="text-gold shrink-0">→</span>Program launch & operationalization
-                        </li>
-                        <li className="font-body text-xs text-primary-foreground/70 flex gap-2">
-                          <span className="text-gold shrink-0">→</span>Team hiring & enablement
-                        </li>
-                        <li className="font-body text-xs text-primary-foreground/70 flex gap-2">
-                          <span className="text-gold shrink-0">→</span>Executive-level partner engagement
-                        </li>
-                      </ul>
-                    </>
-                  }
-                />
-              ) : (
-                <div key={model.title} className="bg-card p-7 rounded-lg border border-border">
-                  <h3 className="font-display text-lg font-semibold text-foreground mb-3">{model.title}</h3>
-                  <p className="font-body text-muted-foreground text-sm leading-relaxed mb-4">{model.desc}</p>
-                  <p className="font-body text-xs text-gold font-medium uppercase tracking-wider">{model.fit}</p>
-                </div>
-              )
-            )}
+                      ))}
+                    </ul>
+                  </>
+                }
+              />
+            ))}
           </div>
         </div>
       </section>
