@@ -32,6 +32,7 @@ const Footer = () => {
               >
                 <CalendarCheck size={16} /> Book a Call
               </Link>
+
               <a
                 href="https://www.linkedin.com/in/jonathan-shore/"
                 target="_blank"
