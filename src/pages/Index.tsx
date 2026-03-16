@@ -191,7 +191,7 @@ const Index = () => {
             Built for Leadership Teams
           </h2>
           <p className="font-body text-lg text-muted-foreground leading-relaxed">
-            I partner with <span className="text-foreground font-semibold">founders, CEOs, CROs, and VP-level partnership leaders</span> at B2B SaaS and enterprise technology companies — from Series B startups building their first partner motion to established enterprises transforming legacy channel programs.
+            I partner with <span className="text-foreground font-semibold">CROs, SVP, and VP-level partnership leaders</span> at B2B SaaS and enterprise technology companies — from Series D startups building their first partner motion to established enterprises transforming legacy channel programs.
           </p>
         </div>
       </section>
