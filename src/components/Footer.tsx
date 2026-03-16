@@ -6,6 +6,13 @@ const Footer = () => {
     <footer className="bg-navy text-primary-foreground/70">
       {/* CTA */}
       <div className="container pt-16 pb-12 text-center">
+        <Link to="/" className="inline-flex items-center gap-2 mb-3">
+          <span className="font-display text-2xl font-bold text-gold">Jonathan</span>
+          <span className="font-display text-2xl font-light text-primary-foreground">Shore</span>
+        </Link>
+        <p className="font-body text-sm text-primary-foreground/60 max-w-md mx-auto mb-6">
+          Partner Ecosystem Strategy & Operations executive. Available for fractional leadership roles and full-time opportunities.
+        </p>
         <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
           Looking for a Partner Ecosystem Leader?
         </h2>
