@@ -3,11 +3,21 @@ export interface BlogPost {
   title: string;
   excerpt: string;
   author: string;
+  authorImage?: string;
   date: string;
   readTime: string;
   category: string;
+  heroImage?: string;
+  keyStats?: { value: string; label: string }[];
   content: string;
 }
+
+export const defaultAuthor = {
+  name: "Jonathan Shore",
+  image: "/author-jonathan.jpeg",
+  title: "Founder, Shore Strategy",
+  linkedin: "https://www.linkedin.com/in/jonathan-shore/",
+};
 
 export const posts: BlogPost[] = [
   {
@@ -15,10 +25,16 @@ export const posts: BlogPost[] = [
     title: "Building a Partner Program From Scratch: A Step-by-Step Framework",
     excerpt:
       "Most companies launch partner programs without a clear architecture. Here's the framework we use to design programs that scale from day one.",
-    author: "Shore Strategy Team",
+    author: "Jonathan Shore",
+    authorImage: defaultAuthor.image,
     date: "March 10, 2026",
     readTime: "8 min read",
     category: "Partner Strategy",
+    keyStats: [
+      { value: "4", label: "Pillars of Program Design" },
+      { value: "12–18mo", label: "Typical Planning Horizon" },
+      { value: "2", label: "Max Starting Tiers" },
+    ],
     content: `
 ## Why Most Partner Programs Fail Early
 
@@ -73,10 +89,16 @@ If you're building a partner program from scratch, start with strategic alignmen
     title: "Co-Sell Motions That Actually Work: Lessons From 150+ Partnerships",
     excerpt:
       "Co-selling fails when it's bolted on. We break down the three co-sell models that consistently drive pipeline and how to choose the right one.",
-    author: "Shore Strategy Team",
+    author: "Jonathan Shore",
+    authorImage: defaultAuthor.image,
     date: "February 24, 2026",
     readTime: "6 min read",
     category: "GTM Strategy",
+    keyStats: [
+      { value: "3", label: "Proven Co-Sell Models" },
+      { value: "150+", label: "Partnerships Analyzed" },
+      { value: "2–3x", label: "Pipeline Lift With Co-Sell" },
+    ],
     content: `
 ## The Co-Sell Problem
 
@@ -123,10 +145,16 @@ Regardless of model, successful co-selling depends on:
     title: "Beyond Sourced Revenue: How to Measure True Partner Influence",
     excerpt:
       "Partner-sourced revenue tells only half the story. Learn how leading companies quantify the full impact of their partner ecosystems.",
-    author: "Shore Strategy Team",
+    author: "Jonathan Shore",
+    authorImage: defaultAuthor.image,
     date: "February 10, 2026",
     readTime: "7 min read",
     category: "Revenue & Analytics",
+    keyStats: [
+      { value: "2–4x", label: "Influence vs. Sourced Revenue" },
+      { value: "4", label: "Steps to Measure Influence" },
+      { value: "30%+", label: "Higher Retention With Partners" },
+    ],
     content: `
 ## The Sourced Revenue Trap
 
@@ -169,10 +197,16 @@ In our experience, partner-influenced revenue typically runs 2–4x higher than 
     title: "The Ecosystem-Led Growth Playbook for B2B SaaS",
     excerpt:
       "Ecosystem-led growth is replacing channel-led strategies. Here's how B2B SaaS companies can make the shift without losing momentum.",
-    author: "Shore Strategy Team",
+    author: "Jonathan Shore",
+    authorImage: defaultAuthor.image,
     date: "January 28, 2026",
     readTime: "10 min read",
     category: "Ecosystem Development",
+    keyStats: [
+      { value: "3", label: "Phases to ELG Maturity" },
+      { value: "12mo", label: "Timeline to Scale" },
+      { value: "20%+", label: "Pipeline From Ecosystem Plays" },
+    ],
     content: `
 ## From Channel to Ecosystem
 
@@ -221,10 +255,16 @@ Traditional partner metrics still matter, but add ecosystem-specific KPIs:
     title: "5 Partner Enablement Mistakes That Kill Deal Velocity",
     excerpt:
       "Enablement is where most partner programs silently fail. We identify the five most common mistakes and how to fix each one.",
-    author: "Shore Strategy Team",
+    author: "Jonathan Shore",
+    authorImage: defaultAuthor.image,
     date: "January 14, 2026",
     readTime: "5 min read",
     category: "Partner Operations",
+    keyStats: [
+      { value: "5", label: "Critical Mistakes Identified" },
+      { value: "90 days", label: "Max Content Shelf Life" },
+      { value: "2–4hrs", label: "Ideal Certification Length" },
+    ],
     content: `
 ## The Silent Killer
 
@@ -260,10 +300,16 @@ Start by auditing your current enablement against these five mistakes. Prioritiz
     title: "When Does Your Company Need a Fractional Chief Partner Officer?",
     excerpt:
       "Not every company needs a full-time partnership leader from day one. Here's how to know when fractional CPO support is the right move.",
-    author: "Shore Strategy Team",
+    author: "Jonathan Shore",
+    authorImage: defaultAuthor.image,
     date: "December 30, 2025",
     readTime: "6 min read",
     category: "Executive Advisory",
+    keyStats: [
+      { value: "2–4", label: "Days/Month Typical Engagement" },
+      { value: "20%+", label: "Revenue Threshold for FTE" },
+      { value: "5+", label: "Team Size Signals Full-Time" },
+    ],
     content: `
 ## The Partnership Leadership Gap
 
