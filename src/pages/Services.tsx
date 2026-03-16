@@ -181,9 +181,10 @@ const Services = () => {
                 }
                 back={
                   <>
-                    <h3 className="font-display text-base font-semibold text-primary-foreground mb-2">
+                    <h3 className="font-display text-base font-semibold text-primary-foreground mb-1">
                       {model.backTitle}
                     </h3>
+                    <p className="font-body text-xs text-primary-foreground/50 mb-3">{model.timeline}</p>
                     <p className="font-body text-xs text-gold font-medium uppercase tracking-wider mb-2">Who It's For</p>
                     <ul className="space-y-1 mb-3">
                       {model.audience.map((item, i) => (
