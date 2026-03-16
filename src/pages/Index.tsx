@@ -270,33 +270,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-navy section-padding">
-        <div className="container text-center">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mb-6">
-            Looking for a Partner Ecosystem Leader?
-          </h2>
-          <p className="font-body text-lg text-primary-foreground/70 max-w-xl mx-auto mb-10">
-            I'm available for fractional or full-time partner strategy roles. Let's talk about how I can help accelerate your partner-led growth.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 px-8 py-3.5 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors">
-              
-              <CalendarCheck size={18} /> Book a Call
-            </Link>
-            <a
-              href="https://www.linkedin.com/in/jonathan-shore/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-3.5 border border-primary-foreground/30 text-primary-foreground font-body font-semibold rounded hover:border-gold hover:text-gold transition-colors">
-              
-              Connect on LinkedIn
-            </a>
-          </div>
-        </div>
-      </section>
     </Layout>);
 
 };
