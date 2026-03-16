@@ -191,7 +191,7 @@ const About = () => {
       </section>
 
       {/* Core Competencies */}
-      <section className="section-padding bg-cream">
+      <section className="section-padding bg-background">
         <div className="container max-w-3xl">
           <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Expertise</p>
           <h2 className="font-display text-3xl font-bold text-foreground mb-8">Core Competencies</h2>
@@ -204,28 +204,6 @@ const About = () => {
                 {c}
               </span>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Education & Affiliations */}
-      <section className="section-padding bg-background">
-        <div className="container max-w-3xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div>
-              <h3 className="font-display text-xl font-bold text-foreground mb-4">Education</h3>
-              <p className="font-body text-foreground/80">
-                <span className="font-semibold">B.S. Business Administration</span>
-                <br />
-                Finance & Accounting
-                <br />
-                California State University, Chico
-              </p>
-            </div>
-            <div>
-              <h3 className="font-display text-xl font-bold text-foreground mb-4">Industry Affiliations</h3>
-              <p className="font-body text-foreground/80">Partnership Leaders — Member</p>
-            </div>
           </div>
         </div>
       </section>
