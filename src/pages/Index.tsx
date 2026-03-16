@@ -110,14 +110,14 @@ const Index = () => {
         }} />
       
       {/* Hero */}
-      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[85vh] flex flex-col justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroBg})` }} />
         
         <div className="absolute inset-0 bg-navy-dark/60" />
-        <div className="relative z-10 container">
-          <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+        <div className="relative z-10 container flex-1 flex items-center">
+          <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16 w-full">
             <div className="flex-1 text-center md:text-left">
               <p className="text-gold font-body text-sm uppercase tracking-[0.3em] mb-6 animate-fade-in-up">
                 ex-Salesforce · ServiceNow · Lumen Technologies
@@ -157,19 +157,17 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Experience & Stats */}
-      <section className="bg-navy">
-        <div className="container py-16">
-          <p className="font-body text-xs uppercase tracking-[0.2em] text-primary-foreground/50 text-center mb-6">
+        <div className="relative z-10 container pb-8 pt-6">
+          <p className="font-body text-xs uppercase tracking-[0.2em] text-primary-foreground/40 text-center mb-5">
             Experience Built At
           </p>
-          <div className="flex items-center justify-center gap-10 md:gap-16 flex-wrap mb-14">
+          <div className="flex items-center justify-center gap-10 md:gap-16 flex-wrap">
             <img alt="Salesforce" className="h-10 md:h-12 object-contain opacity-60 hover:opacity-90 transition-opacity brightness-0 invert" src="/lovable-uploads/f6d67dad-429a-49a3-8c20-fff68acb27d4.png" />
             <img src={logoServicenow} alt="ServiceNow" className="h-8 md:h-10 object-contain opacity-60 hover:opacity-90 transition-opacity brightness-0 invert" />
             <img src={logoLumen} alt="Lumen Technologies" className="h-8 md:h-10 object-contain opacity-60 hover:opacity-90 transition-opacity brightness-0 invert" />
           </div>
+        </div>
+      </section>
           <div className="border-t border-primary-foreground/10 pt-14">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat) =>
