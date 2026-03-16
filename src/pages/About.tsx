@@ -152,33 +152,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* By the Numbers — 2x3 grid divider */}
-      <section className="section-padding bg-navy">
-        <div className="container max-w-5xl">
-          <div className="text-center mb-10">
-            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Career Highlights</p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground">By the Numbers</h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {careerHighlights.slice(0, 3).map((h) => (
-              <div key={h.label} className="text-center p-6">
-                <span className="font-display text-4xl font-bold text-gold block mb-2">{h.value}</span>
-                <span className="font-body text-sm text-primary-foreground/70 leading-relaxed">{h.label}</span>
-              </div>
-            ))}
-          </div>
-          <div className="border-t border-primary-foreground/10 my-2" />
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {careerHighlights.slice(3, 6).map((h) => (
-              <div key={h.label} className="text-center p-6">
-                <span className="font-display text-4xl font-bold text-gold block mb-2">{h.value}</span>
-                <span className="font-body text-sm text-primary-foreground/70 leading-relaxed">{h.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Experience Timeline */}
       <section className="section-padding bg-background">
         <div className="container max-w-3xl">
