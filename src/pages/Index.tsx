@@ -167,16 +167,17 @@ const Index = () => {
             <img src={logoLumen} alt="Lumen Technologies" className="h-8 md:h-10 object-contain opacity-60 hover:opacity-90 transition-opacity brightness-0 invert" />
           </div>
         </div>
-      </section>
-          <div className="border-t border-primary-foreground/10 pt-14">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {stats.map((stat) =>
-              <div key={stat.label} className="text-center">
-                  <div className="font-display text-4xl md:text-5xl font-bold text-gold mb-2">{stat.value}</div>
-                  <div className="font-body text-sm text-primary-foreground/60 uppercase tracking-wider">{stat.label}</div>
-                </div>
-              )}
-            </div>
+
+      {/* Stats */}
+      <section className="bg-navy">
+        <div className="container py-16">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat) =>
+            <div key={stat.label} className="text-center">
+                <div className="font-display text-4xl md:text-5xl font-bold text-gold mb-2">{stat.value}</div>
+                <div className="font-body text-sm text-primary-foreground/60 uppercase tracking-wider">{stat.label}</div>
+              </div>
+            )}
           </div>
         </div>
       </section>
