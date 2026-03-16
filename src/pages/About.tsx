@@ -98,6 +98,21 @@ const About = () => {
                   <Linkedin size={16} /> LinkedIn
                 </a>
               </div>
+
+              {/* Divider */}
+              <div className="border-t border-primary-foreground/15 mt-8 mb-6" />
+
+              {/* Experience Built At */}
+              <div>
+                <p className="font-body text-xs uppercase tracking-[0.2em] text-primary-foreground/50 mb-4">
+                  Experience Built At
+                </p>
+                <div className="flex items-center gap-8 flex-wrap">
+                  <img src={logoSalesforce} alt="Salesforce" className="h-8 md:h-10 object-contain opacity-60 hover:opacity-100 transition-opacity brightness-0 invert" />
+                  <img src={logoServicenow} alt="ServiceNow" className="h-6 md:h-8 object-contain opacity-60 hover:opacity-100 transition-opacity brightness-0 invert" />
+                  <img src={logoLumen} alt="Lumen Technologies" className="h-6 md:h-8 object-contain opacity-60 hover:opacity-100 transition-opacity brightness-0 invert" />
+                </div>
+              </div>
             </div>
             <div className="flex justify-center md:justify-end">
               <img
@@ -105,21 +120,6 @@ const About = () => {
                 alt="Jonathan Shore"
                 className="w-full max-w-[360px] md:max-w-[420px] rounded-lg shadow-lg border border-border"
               />
-            </div>
-          </div>
-
-          {/* Divider */}
-          <div className="border-t border-primary-foreground/15 mt-12 mb-10" />
-
-          {/* Experience Built At — inside navy section */}
-          <div className="text-center">
-            <p className="font-body text-xs uppercase tracking-[0.2em] text-primary-foreground/50 mb-6">
-              Experience Built At
-            </p>
-            <div className="flex items-center justify-center gap-12 md:gap-20 flex-wrap">
-              <img src={logoSalesforce} alt="Salesforce" className="h-10 md:h-12 object-contain opacity-60 hover:opacity-100 transition-opacity brightness-0 invert" />
-              <img src={logoServicenow} alt="ServiceNow" className="h-8 md:h-10 object-contain opacity-60 hover:opacity-100 transition-opacity brightness-0 invert" />
-              <img src={logoLumen} alt="Lumen Technologies" className="h-8 md:h-10 object-contain opacity-60 hover:opacity-100 transition-opacity brightness-0 invert" />
             </div>
           </div>
         </div>
