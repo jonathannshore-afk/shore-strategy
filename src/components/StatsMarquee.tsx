@@ -9,8 +9,11 @@ const stats = [
 
 const StatsMarquee = () => {
   return (
-    <section className="bg-navy/95 border-t border-b border-primary-foreground/10 py-4 overflow-hidden">
-      <div className="relative">
+    <section className="bg-navy/95 border-t border-b border-primary-foreground/10 overflow-hidden flex items-center">
+      <div className="shrink-0 bg-gold px-6 py-4">
+        <span className="font-display text-sm font-bold uppercase tracking-[0.15em] text-accent-foreground whitespace-nowrap">Career Highlights</span>
+      </div>
+      <div className="relative flex-1 overflow-hidden py-4">
         <div className="flex animate-marquee whitespace-nowrap">
           {[...stats, ...stats].map((stat, i) => (
             <div key={i} className="flex items-center gap-2 mx-8 shrink-0">
