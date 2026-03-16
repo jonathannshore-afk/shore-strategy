@@ -9,7 +9,7 @@ import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 
 const stats = [
-{ value: "$1.6B", label: "Partner Ecosystem Managed" },
+{ value: "15+", label: "Years of Experience" },
 { value: "$800M+", label: "Annual Bookings Influenced" },
 { value: "2K+", label: "Partners Across Ecosystems" },
 { value: "15+", label: "Years of Experience" }];
