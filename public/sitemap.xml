@@ -16,14 +16,15 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://shore-strategy.com/blog</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://shore-strategy.com/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <!-- Blog URLs commented out until Insights section is ready
+  <url>
+    <loc>https://shore-strategy.com/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://shore-strategy.com/blog/building-partner-program-from-scratch</loc>
@@ -55,4 +56,5 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  -->
 </urlset>
