@@ -14,7 +14,7 @@ const StatsMarquee = () => {
         <span className="font-display text-sm font-bold uppercase tracking-[0.15em] text-accent-foreground whitespace-nowrap">Career Highlights</span>
       </div>
       <div className="relative flex-1 overflow-hidden py-4">
-        <div className="flex animate-marquee whitespace-nowrap">
+        <div className="flex animate-marquee-fast md:animate-marquee whitespace-nowrap">
           {[...stats, ...stats].map((stat, i) => (
             <div key={i} className="flex items-center gap-2 mx-8 shrink-0">
               <span className="font-display text-xl font-bold text-gold">{stat.value}</span>
