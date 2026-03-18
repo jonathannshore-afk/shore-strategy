@@ -50,7 +50,7 @@ const Footer = () => {
       <div className="border-t border-navy-light">
         <div className="container py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-primary-foreground/40">
           <span>© {new Date().getFullYear()} Jonathan Shore. All rights reserved.</span>
-          <span><a href="mailto:jonathan.n.shore@gmail.com?subject=Partner%20Strategy%20Inquiry" className="hover:text-gold transition-colors">jonathan.n.shore@gmail.com</a> · San Francisco Bay Area</span>
+          <span><a href="mailto:jonathan@shore-strategy.com?subject=Partner%20Strategy%20Inquiry" className="hover:text-gold transition-colors">jonathan@shore-strategy.com</a> · San Francisco Bay Area</span>
         </div>
       </div>
     </footer>
