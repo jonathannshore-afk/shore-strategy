@@ -43,6 +43,7 @@ const ExpertiseRadar = ({ variant = "dark" }: ExpertiseRadarProps) => {
             stroke={radarStroke}
             fill={radarFill}
             strokeWidth={2}
+            dot={false}
           />
         </RadarChart>
       </ResponsiveContainer>
