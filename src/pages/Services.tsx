@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import FlipCard from "@/components/FlipCard";
-import { BarChart3, CalendarCheck, ClipboardCheck, Handshake, Layers, Lightbulb, Rocket, Search, Target, TrendingUp, Users, Zap } from "lucide-react";
+import { BarChart3, CalendarCheck, CheckCircle, ClipboardCheck, Handshake, Layers, Lightbulb, Rocket, Search, Target, TrendingUp, Users, Zap } from "lucide-react";
 
 const capabilities = [
   {
@@ -185,6 +185,39 @@ const pillars = [
   },
 ];
 
+const first90Days = [
+  {
+    phase: "Days 1–30",
+    title: "Listen & Assess",
+    items: [
+      "Stakeholder interviews across Sales, Product, Marketing, and existing partners",
+      "Full ecosystem audit — partner landscape, program maturity, pipeline contribution",
+      "Identify quick wins and structural gaps",
+      "Deliver initial assessment report with prioritized recommendations",
+    ],
+  },
+  {
+    phase: "Days 31–60",
+    title: "Design & Align",
+    items: [
+      "Draft partner strategy and routes-to-market framework",
+      "Design program structure — tiers, incentives, enablement",
+      "Align executive stakeholders on investment priorities and success metrics",
+      "Begin key partner engagement and relationship building",
+    ],
+  },
+  {
+    phase: "Days 61–90",
+    title: "Launch & Operationalize",
+    items: [
+      "Launch initial partner motions — co-sell plays, deal registration, onboarding",
+      "Stand up operational cadences — QBRs, pipeline reviews, partner scorecards",
+      "Deliver 90-day progress report with go-forward roadmap",
+      "Transition from assessment mode to execution mode",
+    ],
+  },
+];
+
 const Services = () => {
   return (
     <Layout>
@@ -219,6 +252,44 @@ const Services = () => {
                 <cap.icon className="text-gold mb-4" size={36} strokeWidth={1.5} />
                 <h3 className="font-display text-xl font-semibold text-foreground mb-3">{cap.title}</h3>
                 <p className="font-body text-muted-foreground leading-relaxed">{cap.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* First 90 Days */}
+      <section className="section-padding bg-cream">
+        <div className="container max-w-4xl">
+          <div className="text-center mb-12">
+            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">What to Expect</p>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
+              The First 90 Days
+            </h2>
+            <p className="font-body text-muted-foreground mt-3 max-w-2xl mx-auto">
+              Whether fractional or full-time, here's how I approach the first 90 days of any engagement.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {first90Days.map((phase) => (
+              <div
+                key={phase.phase}
+                className="bg-card p-8 rounded-lg border border-border hover:shadow-lg hover:border-gold/30 transition-all"
+              >
+                <p className="font-body text-xs text-gold font-semibold uppercase tracking-[0.15em] mb-1">
+                  {phase.phase}
+                </p>
+                <h3 className="font-display text-xl font-semibold text-foreground mb-4">
+                  {phase.title}
+                </h3>
+                <ul className="space-y-3">
+                  {phase.items.map((item, i) => (
+                    <li key={i} className="font-body text-sm text-muted-foreground leading-relaxed flex gap-2">
+                      <CheckCircle className="text-gold shrink-0 mt-0.5" size={14} strokeWidth={2} />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
