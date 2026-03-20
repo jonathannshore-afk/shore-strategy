@@ -18,6 +18,7 @@ import ExpertiseRadar from "@/components/ExpertiseRadar";
 const experience = [
   {
     company: "Lumen Technologies",
+    logo: logoLumen,
     role: "Senior Director, Partner Ecosystem Strategy",
     period: "2024 – 2026",
     highlights: [
@@ -29,6 +30,7 @@ const experience = [
   },
   {
     company: "ServiceNow",
+    logo: logoServicenow,
     role: "Chief of Staff, Strategy & Planning — Global Partnerships",
     period: "2023 – 2024",
     highlights: [
@@ -39,6 +41,7 @@ const experience = [
   },
   {
     company: "Salesforce",
+    logo: logoSalesforce,
     role: "Senior Manager → Analyst, Strategy & Operations",
     period: "2012 – 2023",
     highlights: [
@@ -192,12 +195,15 @@ const About = () => {
                 {experience.map((exp) => (
                   <AccordionItem key={exp.company} value={exp.company} className="bg-card rounded-lg border border-border px-5">
                     <AccordionTrigger className="py-3 hover:no-underline">
-                      <div className="text-left">
-                        <div className="flex items-center gap-3">
-                          <h3 className="font-display text-base font-semibold text-foreground">{exp.company}</h3>
-                          <span className="font-body text-xs text-muted-foreground">{exp.period}</span>
+                      <div className="flex items-center gap-4 text-left">
+                        <img src={exp.logo} alt={exp.company} className="h-6 w-auto object-contain shrink-0 opacity-70" />
+                        <div>
+                          <div className="flex items-center gap-3">
+                            <h3 className="font-display text-base font-semibold text-foreground">{exp.company}</h3>
+                            <span className="font-body text-xs text-muted-foreground">{exp.period}</span>
+                          </div>
+                          <p className="font-body text-gold text-sm font-medium">{exp.role}</p>
                         </div>
-                        <p className="font-body text-gold text-sm font-medium">{exp.role}</p>
                       </div>
                     </AccordionTrigger>
                     <AccordionContent>
