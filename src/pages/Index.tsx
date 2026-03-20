@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, CalendarCheck, ClipboardCheck, Handshake, Rocket, Search, Target, TrendingUp, Users } from "lucide-react";
+import ExpertiseRadar from "@/components/ExpertiseRadar";
 import heroBg from "@/assets/hero-bg.jpg";
 import headshot from "@/assets/jonathan-headshot.jpeg";
 import logoSalesforce from "@/assets/logo-salesforce.png";
@@ -158,13 +159,20 @@ const Index = () => {
           </div>
         </div>
         <div className="relative z-10 container pb-8 pt-6">
-          <p className="font-body text-xs uppercase tracking-[0.2em] text-primary-foreground/40 text-center mb-5">
-            Experience Built At
-          </p>
-          <div className="flex items-center justify-center gap-10 md:gap-16 flex-wrap">
-            <img alt="Salesforce" className="h-10 md:h-12 object-contain opacity-60 hover:opacity-90 transition-opacity brightness-0 invert" src="/lovable-uploads/f6d67dad-429a-49a3-8c20-fff68acb27d4.png" />
-            <img src={logoServicenow} alt="ServiceNow" className="h-8 md:h-10 object-contain opacity-60 hover:opacity-90 transition-opacity brightness-0 invert" />
-            <img src={logoLumen} alt="Lumen Technologies" className="h-8 md:h-10 object-contain opacity-60 hover:opacity-90 transition-opacity brightness-0 invert" />
+          <div className="flex flex-col md:flex-row items-center justify-center gap-12">
+            <div>
+              <p className="font-body text-xs uppercase tracking-[0.2em] text-primary-foreground/40 text-center mb-5">
+                Experience Built At
+              </p>
+              <div className="flex items-center justify-center gap-10 md:gap-16 flex-wrap">
+                <img alt="Salesforce" className="h-10 md:h-12 object-contain opacity-60 hover:opacity-90 transition-opacity brightness-0 invert" src="/lovable-uploads/f6d67dad-429a-49a3-8c20-fff68acb27d4.png" />
+                <img src={logoServicenow} alt="ServiceNow" className="h-8 md:h-10 object-contain opacity-60 hover:opacity-90 transition-opacity brightness-0 invert" />
+                <img src={logoLumen} alt="Lumen Technologies" className="h-8 md:h-10 object-contain opacity-60 hover:opacity-90 transition-opacity brightness-0 invert" />
+              </div>
+            </div>
+            <div className="hidden md:block">
+              <ExpertiseRadar variant="dark" />
+            </div>
           </div>
         </div>
       </section>

@@ -12,6 +12,7 @@ import logoSalesforce from "@/assets/logo-salesforce.png";
 import logoServicenow from "@/assets/logo-servicenow.png";
 import logoLumen from "@/assets/logo-lumen.png";
 import SEO from "@/components/SEO";
+import ExpertiseRadar from "@/components/ExpertiseRadar";
 import StatsMarquee from "@/components/StatsMarquee";
 
 const careerHighlights = [
@@ -190,20 +191,27 @@ const About = () => {
         </div>
       </section>
 
-      {/* Core Competencies */}
+      {/* Core Competencies + Radar */}
       <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-background">
         <div className="container">
-          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-2">Expertise</p>
-          <h2 className="font-display text-3xl font-bold text-foreground mb-6">Core Competencies</h2>
-          <div className="flex flex-wrap gap-3">
-            {competencies.map((c) => (
-              <span
-                key={c}
-                className="px-4 py-2 bg-card border border-border rounded-full font-body text-sm text-foreground text-center"
-              >
-                {c}
-              </span>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+            <div>
+              <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-2">Expertise</p>
+              <h2 className="font-display text-3xl font-bold text-foreground mb-6">Core Competencies</h2>
+              <div className="flex flex-wrap gap-3">
+                {competencies.map((c) => (
+                  <span
+                    key={c}
+                    className="px-4 py-2 bg-card border border-border rounded-full font-body text-sm text-foreground text-center"
+                  >
+                    {c}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="flex justify-center">
+              <ExpertiseRadar variant="light" />
+            </div>
           </div>
         </div>
       </section>
