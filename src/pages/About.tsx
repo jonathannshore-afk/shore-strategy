@@ -18,6 +18,7 @@ import ExpertiseRadar from "@/components/ExpertiseRadar";
 const experience = [
   {
     company: "Lumen Technologies",
+    logo: logoLumen,
     role: "Senior Director, Partner Ecosystem Strategy",
     period: "2024 – 2026",
     highlights: [
@@ -29,6 +30,7 @@ const experience = [
   },
   {
     company: "ServiceNow",
+    logo: logoServicenow,
     role: "Chief of Staff, Strategy & Planning — Global Partnerships",
     period: "2023 – 2024",
     highlights: [
@@ -39,6 +41,7 @@ const experience = [
   },
   {
     company: "Salesforce",
+    logo: logoSalesforce,
     role: "Senior Manager → Analyst, Strategy & Operations",
     period: "2012 – 2023",
     highlights: [
