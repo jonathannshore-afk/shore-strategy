@@ -16,16 +16,6 @@ const stats = [
   { value: "6+", label: "Routes-to-Market Launched" },
 ];
 
-const highlights = [
-  {
-    stat: "19% YoY Growth",
-    desc: "Reversed multi-year channel sales decline at Lumen Technologies while reducing OpEx by 20%.",
-  },
-  {
-    stat: "$12M ARR in Year One",
-    desc: "Built and launched a new ISV partner motion from scratch, establishing the foundation for future ecosystem expansion.",
-  },
-];
 
 const Index = () => {
   return (

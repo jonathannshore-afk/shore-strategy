@@ -226,43 +226,6 @@ const Services = () => {
         </div>
       </section>
 
-      {/* First 90 Days */}
-      <section className="section-padding bg-cream">
-        <div className="container max-w-4xl">
-          <div className="text-center mb-12">
-            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">What to Expect</p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-              The First 90 Days
-            </h2>
-            <p className="font-body text-muted-foreground mt-3 max-w-2xl mx-auto">
-              Whether fractional or full-time, here's how I approach the first 90 days of any engagement.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {first90Days.map((phase) => (
-              <div
-                key={phase.phase}
-                className="bg-card p-8 rounded-lg border border-border hover:shadow-lg hover:border-gold/30 transition-all"
-              >
-                <p className="font-body text-xs text-gold font-semibold uppercase tracking-[0.15em] mb-1">
-                  {phase.phase}
-                </p>
-                <h3 className="font-display text-xl font-semibold text-foreground mb-4">
-                  {phase.title}
-                </h3>
-                <ul className="space-y-3">
-                  {phase.items.map((item, i) => (
-                    <li key={i} className="font-body text-sm text-muted-foreground leading-relaxed flex gap-2">
-                      <CheckCircle className="text-gold shrink-0 mt-0.5" size={14} strokeWidth={2} />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Methodology */}
       <section className="section-padding bg-background">
