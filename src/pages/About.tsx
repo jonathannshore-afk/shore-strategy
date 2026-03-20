@@ -256,20 +256,7 @@ const About = () => {
           <ExpertiseRadar variant="light" />
         </div>
       </section>
-                  <div>
-                    <h3 className="font-display text-lg font-semibold text-foreground mb-1.5">
-                      {p.title}
-                    </h3>
-                    <p className="font-body text-sm text-muted-foreground leading-relaxed">
-                      {p.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
     </Layout>
   );
 };
