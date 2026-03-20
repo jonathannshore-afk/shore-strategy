@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
-import { CalendarCheck, Linkedin, Shield, Eye, Layers, Compass, Users, Sparkles, Quote } from "lucide-react";
+import { CalendarCheck, Linkedin, Shield, Eye, Layers, Compass, Users, Sparkles } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
