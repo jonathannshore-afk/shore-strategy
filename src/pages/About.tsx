@@ -218,33 +218,8 @@ const About = () => {
         </div>
       </section>
 
-      {/* Core Competencies + Radar */}
-      <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-background">
-        <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-            <div>
-              <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-2">Expertise</p>
-              <h2 className="font-display text-3xl font-bold text-foreground mb-6">Core Competencies</h2>
-              <div className="flex flex-wrap gap-3">
-                {competencies.map((c) => (
-                  <span
-                    key={c}
-                    className="px-4 py-2 bg-card border border-border rounded-full font-body text-sm text-foreground text-center"
-                  >
-                    {c}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <div className="flex justify-center">
-              <ExpertiseRadar variant="light" />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Leadership Philosophy */}
-      <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream">
+      <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-background">
         <div className="container">
           <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-2">How I Lead</p>
           <h2 className="font-display text-3xl font-bold text-foreground mb-8">Leadership Philosophy</h2>
@@ -258,6 +233,29 @@ const About = () => {
                   <div className="shrink-0 w-10 h-10 rounded-lg bg-navy/5 flex items-center justify-center group-hover:bg-gold/10 transition-colors">
                     <p.icon className="text-gold" size={20} strokeWidth={1.5} />
                   </div>
+                  <div>
+                    <h3 className="font-display text-lg font-semibold text-foreground mb-1.5">
+                      {p.title}
+                    </h3>
+                    <p className="font-body text-sm text-muted-foreground leading-relaxed">
+                      {p.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Core Competencies — Radar Only */}
+      <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream">
+        <div className="container max-w-lg">
+          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-2 text-center">Expertise</p>
+          <h2 className="font-display text-3xl font-bold text-foreground mb-6 text-center">Core Competencies</h2>
+          <ExpertiseRadar variant="light" />
+        </div>
+      </section>
                   <div>
                     <h3 className="font-display text-lg font-semibold text-foreground mb-1.5">
                       {p.title}
