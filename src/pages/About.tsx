@@ -52,23 +52,6 @@ const experience = [
   },
 ];
 
-const testimonials = [
-  {
-    quote: "Jonathan transformed our partner program from a cost center into a genuine growth engine. His ability to align cross-functional teams around a shared partner strategy was unlike anything I've seen.",
-    name: "Sarah Mitchell",
-    title: "CRO, Enterprise SaaS Company",
-  },
-  {
-    quote: "We brought Jonathan in to build our first partner motion from scratch. Within six months, we had a fully operational channel program generating meaningful pipeline. He operates at VP-level but rolls up his sleeves like a builder.",
-    name: "David Chen",
-    title: "CEO, Series D Technology Company",
-  },
-  {
-    quote: "Jonathan's strategic clarity is his superpower. He cut through years of partner program complexity and gave us a clear, executable roadmap that our team could actually follow.",
-    name: "Rachel Torres",
-    title: "SVP Global Alliances, Fortune 500",
-  },
-];
 
 const principles = [
   {
