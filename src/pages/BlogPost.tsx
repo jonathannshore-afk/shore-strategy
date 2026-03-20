@@ -143,7 +143,10 @@ const BlogPost = () => {
                   }
 
                   const formatted = trimmed
-                    .replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2" class="text-gold hover:underline">$1</a>')
+                    .replace(/\[(.+?)\]\((.+?)\)/g, (_match, text, url) => {
+                      const safeUrl = /^(https?:\/\/|\/(?!\/))/.test(url) ? url : '#';
+                      return `<a href="${safeUrl}" class="text-gold hover:underline">${text}</a>`;
+                    })
                     .replace(/\*\*(.+?)\*\*/g, '<strong class="text-foreground">$1</strong>');
 
                   return (
