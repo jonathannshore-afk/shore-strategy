@@ -12,6 +12,7 @@ import logoSalesforce from "@/assets/logo-salesforce.png";
 import logoServicenow from "@/assets/logo-servicenow.png";
 import logoLumen from "@/assets/logo-lumen.png";
 import SEO from "@/components/SEO";
+import ExpertiseRadar from "@/components/ExpertiseRadar";
 import StatsMarquee from "@/components/StatsMarquee";
 
 const careerHighlights = [
