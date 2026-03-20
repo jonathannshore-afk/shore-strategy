@@ -10,6 +10,7 @@ import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import WhyMe from "./pages/WhyMe";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/why-me" element={<WhyMe />} />
           {/* <Route path="/blog" element={<Blog />} /> */}
           {/* <Route path="/blog/:slug" element={<BlogPost />} /> */}
           <Route path="/contact" element={<Contact />} />

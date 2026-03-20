@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
-import { CalendarCheck, Linkedin, Shield, Eye, Layers, Compass, Users, Sparkles, Quote } from "lucide-react";
+import { CalendarCheck, Linkedin, Shield, Eye, Layers, Compass, Users, Sparkles } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -52,23 +52,6 @@ const experience = [
   },
 ];
 
-const testimonials = [
-  {
-    quote: "Jonathan transformed our partner program from a cost center into a genuine growth engine. His ability to align cross-functional teams around a shared partner strategy was unlike anything I've seen.",
-    name: "Sarah Mitchell",
-    title: "CRO, Enterprise SaaS Company",
-  },
-  {
-    quote: "We brought Jonathan in to build our first partner motion from scratch. Within six months, we had a fully operational channel program generating meaningful pipeline. He operates at VP-level but rolls up his sleeves like a builder.",
-    name: "David Chen",
-    title: "CEO, Series D Technology Company",
-  },
-  {
-    quote: "Jonathan's strategic clarity is his superpower. He cut through years of partner program complexity and gave us a clear, executable roadmap that our team could actually follow.",
-    name: "Rachel Torres",
-    title: "SVP Global Alliances, Fortune 500",
-  },
-];
 
 const principles = [
   {
@@ -229,33 +212,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="section-padding bg-background">
-        <div className="container max-w-5xl">
-          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-2 text-center">What People Say</p>
-          <h2 className="font-display text-3xl font-bold text-foreground mb-12 text-center">Testimonials</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((t) => (
-              <div
-                key={t.name}
-                className="bg-card p-8 rounded-lg border border-border hover:shadow-lg hover:border-gold/30 transition-all relative"
-              >
-                <Quote className="text-gold/20 absolute top-6 right-6" size={32} strokeWidth={1} />
-                <p className="font-body text-foreground/80 text-sm leading-relaxed mb-6 italic">
-                  "{t.quote}"
-                </p>
-                <div className="border-t border-border pt-4">
-                  <p className="font-display text-sm font-semibold text-foreground">{t.name}</p>
-                  <p className="font-body text-xs text-muted-foreground">{t.title}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <p className="text-center mt-6 font-body text-xs text-muted-foreground italic">
-            * Placeholder testimonials — real endorsements coming soon.
-          </p>
-        </div>
-      </section>
 
       {/* Leadership Philosophy */}
       <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream">
