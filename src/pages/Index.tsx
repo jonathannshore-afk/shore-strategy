@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, CalendarCheck, ClipboardCheck, Handshake, Rocket, Search, Target, TrendingUp, Users } from "lucide-react";
+import ExpertiseRadar from "@/components/ExpertiseRadar";
 import heroBg from "@/assets/hero-bg.jpg";
 import headshot from "@/assets/jonathan-headshot.jpeg";
 import logoSalesforce from "@/assets/logo-salesforce.png";
