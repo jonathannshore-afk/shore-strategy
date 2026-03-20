@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
-import { CalendarCheck, Linkedin } from "lucide-react";
+import { CalendarCheck, Linkedin, Shield, Eye, Layers, Compass, Users, Sparkles } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -12,17 +12,8 @@ import logoSalesforce from "@/assets/logo-salesforce.png";
 import logoServicenow from "@/assets/logo-servicenow.png";
 import logoLumen from "@/assets/logo-lumen.png";
 import SEO from "@/components/SEO";
-import ExpertiseRadar from "@/components/ExpertiseRadar";
 import StatsMarquee from "@/components/StatsMarquee";
-
-const careerHighlights = [
-  { value: "15+", label: "Years in Partner Ecosystem Strategy & Operations" },
-  { value: "$1.6B", label: "ARR Partner Ecosystem Managed at Lumen" },
-  { value: "$800M+", label: "Annual Bookings Influenced at Salesforce" },
-  { value: "2K+", label: "Partners Across Managed Ecosystems" },
-  { value: "19%", label: "YoY Revenue Growth After Reversing Decline" },
-  { value: "$12M", label: "ARR Built From New ISV Motion in Year One" },
-];
+import ExpertiseRadar from "@/components/ExpertiseRadar";
 
 const experience = [
   {
@@ -71,6 +62,45 @@ const competencies = [
   "Cross-Functional Leadership",
 ];
 
+const principles = [
+  {
+    icon: Shield,
+    title: "Trust Is the Operating System",
+    description:
+      "High-performing ecosystems are built on trust — between internal teams, with partners, and across leadership. I lead by earning trust first, then extending it generously.",
+  },
+  {
+    icon: Eye,
+    title: "Clarity Over Complexity",
+    description:
+      "Partner ecosystems are inherently complex. My job is to cut through the noise: clear strategy, clear ownership, clear metrics. Ambiguity kills momentum.",
+  },
+  {
+    icon: Layers,
+    title: "Systems Over Heroics",
+    description:
+      "A partner win that depends on one relationship isn't scalable. I build repeatable frameworks so the ecosystem compounds value over time.",
+  },
+  {
+    icon: Compass,
+    title: "Strategic Patience, Operational Urgency",
+    description:
+      "Ecosystem transformation doesn't happen overnight, but that's no excuse for slow execution. Move fast on what matters now; stay disciplined on what matters long-term.",
+  },
+  {
+    icon: Users,
+    title: "Alignment Is a Contact Sport",
+    description:
+      "Partnerships fail when Sales, Product, Marketing, and the partner team operate in silos. I actively broker alignment across functions.",
+  },
+  {
+    icon: Sparkles,
+    title: "Lead With the 'Why' for Partners",
+    description:
+      "Partners invest where they see mutual value. I design programs that answer the partner's 'what's in it for me' clearly — a motivated ecosystem is a revenue multiplier.",
+  },
+];
+
 const About = () => {
   return (
     <Layout>
@@ -79,6 +109,7 @@ const About = () => {
         description="15+ years leading partner ecosystems at Salesforce, ServiceNow, and Lumen Technologies. Learn about Jonathan Shore's background, experience, and approach."
         path="/about"
       />
+
       {/* Hero — Photo right, intro left + logos */}
       <section className="bg-navy section-padding pb-12">
         <div className="container">
@@ -91,10 +122,8 @@ const About = () => {
                 15+ years building and transforming partner ecosystems at Salesforce, ServiceNow, and Lumen Technologies. I help B2B leaders unlock partner-led revenue through fractional executive leadership.
               </p>
 
-              {/* Divider */}
               <div className="border-t border-primary-foreground/15 mt-6 mb-6" />
 
-              {/* Experience Built At */}
               <div>
                 <p className="font-body text-xs uppercase tracking-[0.2em] text-primary-foreground/50 mb-4">
                   Experience Built At
@@ -106,10 +135,8 @@ const About = () => {
                 </div>
               </div>
 
-              {/* Divider */}
               <div className="border-t border-primary-foreground/15 mt-6 mb-6" />
 
-              {/* Buttons */}
               <div className="flex flex-wrap gap-4">
                 <Link
                   to="/contact"
@@ -212,6 +239,36 @@ const About = () => {
             <div className="flex justify-center">
               <ExpertiseRadar variant="light" />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership Philosophy */}
+      <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream">
+        <div className="container">
+          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-2">How I Lead</p>
+          <h2 className="font-display text-3xl font-bold text-foreground mb-8">Leadership Philosophy</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {principles.map((p) => (
+              <div
+                key={p.title}
+                className="group bg-card p-6 rounded-lg border border-border hover:border-gold/30 hover:shadow-lg transition-all"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="shrink-0 w-10 h-10 rounded-lg bg-navy/5 flex items-center justify-center group-hover:bg-gold/10 transition-colors">
+                    <p.icon className="text-gold" size={20} strokeWidth={1.5} />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-lg font-semibold text-foreground mb-1.5">
+                      {p.title}
+                    </h3>
+                    <p className="font-body text-sm text-muted-foreground leading-relaxed">
+                      {p.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
