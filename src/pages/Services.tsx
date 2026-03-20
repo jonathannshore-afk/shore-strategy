@@ -185,38 +185,6 @@ const pillars = [
   },
 ];
 
-const first90Days = [
-  {
-    phase: "Days 1–30",
-    title: "Listen & Assess",
-    items: [
-      "Stakeholder interviews across Sales, Product, Marketing, and existing partners",
-      "Full ecosystem audit — partner landscape, program maturity, pipeline contribution",
-      "Identify quick wins and structural gaps",
-      "Deliver initial assessment report with prioritized recommendations",
-    ],
-  },
-  {
-    phase: "Days 31–60",
-    title: "Design & Align",
-    items: [
-      "Draft partner strategy and routes-to-market framework",
-      "Design program structure — tiers, incentives, enablement",
-      "Align executive stakeholders on investment priorities and success metrics",
-      "Begin key partner engagement and relationship building",
-    ],
-  },
-  {
-    phase: "Days 61–90",
-    title: "Launch & Operationalize",
-    items: [
-      "Launch initial partner motions — co-sell plays, deal registration, onboarding",
-      "Stand up operational cadences — QBRs, pipeline reviews, partner scorecards",
-      "Deliver 90-day progress report with go-forward roadmap",
-      "Transition from assessment mode to execution mode",
-    ],
-  },
-];
 
 const Services = () => {
   return (
