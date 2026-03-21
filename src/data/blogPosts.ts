@@ -36,6 +36,7 @@ export const posts: BlogPost[] = [
       { value: "12–18mo", label: "Typical Planning Horizon" },
       { value: "2", label: "Max Starting Tiers" },
     ],
+    tldr: "Design your partner program around four pillars — strategic alignment, program architecture, operational readiness, and measurement. Start with two tiers max and iterate based on data, not assumptions.",
     content: `
 ## Why Most Partner Programs Fail Early
 
