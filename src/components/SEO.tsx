@@ -10,6 +10,7 @@ interface SEOProps {
     author?: string;
     section?: string;
   };
+  jsonLd?: Record<string, unknown>;
 }
 
 const SITE_NAME = "Shore Strategy";
