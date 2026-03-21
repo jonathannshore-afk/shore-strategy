@@ -211,6 +211,7 @@ In our experience, partner-influenced revenue typically runs 2–4x higher than 
       { value: "12mo", label: "Timeline to Scale" },
       { value: "20%+", label: "Pipeline From Ecosystem Plays" },
     ],
+    tldr: "Ecosystem-led growth replaces one-directional channel models with interconnected partner networks. Build in three phases — foundation, activation, scale — and measure ecosystem-level KPIs alongside traditional partner metrics.",
     content: `
 ## From Channel to Ecosystem
 
