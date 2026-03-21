@@ -80,12 +80,14 @@ const Blog = () => {
                 )}
               </div>
               <div className="space-y-4">
-                <div className="flex items-center gap-3 text-xs font-body uppercase tracking-[0.15em] text-muted-foreground">
+                <div className="flex items-center flex-wrap gap-3 text-xs font-body uppercase tracking-[0.15em] text-muted-foreground">
                   <span className="font-semibold">{featuredPost.author}</span>
                   <span>—</span>
                   <span>{featuredPost.category}</span>
                   <span>—</span>
                   <span>{featuredPost.date}</span>
+                  <span>—</span>
+                  <span className="inline-flex items-center gap-1"><Clock size={12} /> {featuredPost.readTime}</span>
                 </div>
                 <h1 className="font-display text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-foreground leading-tight group-hover:text-gold transition-colors">
                   {featuredPost.title}
