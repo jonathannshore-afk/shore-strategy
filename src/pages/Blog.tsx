@@ -184,9 +184,12 @@ const ArticleCard = ({ post }: { post: BlogPost }) => (
       <h3 className="font-display text-lg font-bold text-foreground mb-2 leading-snug group-hover:text-gold transition-colors">
         {post.title}
       </h3>
-      <p className="font-body text-sm text-muted-foreground leading-relaxed line-clamp-2">
+      <p className="font-body text-sm text-muted-foreground leading-relaxed line-clamp-2 mb-4">
         {post.excerpt}
       </p>
+      <span className="mt-auto inline-flex items-center gap-2 text-sm font-body font-semibold text-foreground uppercase tracking-wider group-hover:gap-3 transition-all">
+        Read More <ArrowRight size={14} />
+      </span>
     </div>
   </Link>
 );
