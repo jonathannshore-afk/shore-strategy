@@ -74,20 +74,15 @@ const BlogPost = () => {
       <section className="bg-background section-padding pb-8">
         <div className="container max-w-3xl">
           <div className="flex items-center gap-2 text-xs font-body uppercase tracking-[0.15em] text-muted-foreground mb-6">
-            <span className="font-semibold">{post.author}</span>
-            <span>—</span>
             <span>{post.category}</span>
             <span>—</span>
             <span>{post.date}</span>
             <span>—</span>
             <span>{post.readTime}</span>
           </div>
-          <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-6">
+          <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
             {post.title}
           </h1>
-          <p className="font-body text-lg text-muted-foreground leading-relaxed">
-            {post.excerpt}
-          </p>
         </div>
       </section>
 
@@ -117,34 +112,32 @@ const BlogPost = () => {
                   </div>
                 </div>
 
-                {/* Key Stats */}
-                {post.keyStats && post.keyStats.length > 0 && (
+                {/* TL;DR + Key Takeaways merged */}
+                {(post.tldr || (post.keyStats && post.keyStats.length > 0)) && (
                   <div className="border border-border rounded-lg p-6 space-y-4">
-                    <p className="font-body text-xs text-muted-foreground font-semibold uppercase tracking-[0.15em]">
-                      Key Takeaways
-                    </p>
-                    {post.keyStats.map((stat, i) => (
-                      <div key={i} className="flex items-baseline gap-3">
-                        <span className="font-display text-2xl font-bold text-foreground">
-                          {stat.value}
-                        </span>
-                        <span className="font-body text-sm text-muted-foreground">
-                          {stat.label}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                )}
-
-                {/* TL;DR */}
-                {post.tldr && (
-                  <div className="border border-border rounded-lg p-6 space-y-3">
                     <p className="font-body text-xs text-muted-foreground font-semibold uppercase tracking-[0.15em]">
                       TL;DR
                     </p>
-                    <p className="font-body text-sm text-foreground leading-relaxed">
-                      {post.tldr}
-                    </p>
+                    {post.tldr && (
+                      <p className="font-body text-sm text-foreground leading-relaxed">
+                        {post.tldr}
+                      </p>
+                    )}
+                    {post.keyStats && post.keyStats.length > 0 && (
+                      <>
+                        <hr className="border-border" />
+                        {post.keyStats.map((stat, i) => (
+                          <div key={i} className="flex items-baseline gap-3">
+                            <span className="font-display text-2xl font-bold text-foreground">
+                              {stat.value}
+                            </span>
+                            <span className="font-body text-sm text-muted-foreground">
+                              {stat.label}
+                            </span>
+                          </div>
+                        ))}
+                      </>
+                    )}
                   </div>
                 )}
               </div>
