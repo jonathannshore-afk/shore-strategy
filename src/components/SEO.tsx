@@ -67,5 +67,6 @@ const SEO = ({
       )}
     </Helmet>
   );
+};
 
 export default SEO;
