@@ -158,6 +158,7 @@ Regardless of model, successful co-selling depends on:
       { value: "4", label: "Steps to Measure Influence" },
       { value: "30%+", label: "Higher Retention With Partners" },
     ],
+    tldr: "Partner-sourced revenue understates your ecosystem's true value by 2–4x. Measure influence across deal acceleration, expansion, and retention to make better investment decisions about your partner program.",
     content: `
 ## The Sourced Revenue Trap
 
