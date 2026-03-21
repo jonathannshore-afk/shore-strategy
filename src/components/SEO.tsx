@@ -25,6 +25,7 @@ const SEO = ({
   path = "/",
   type = "website",
   article,
+  jsonLd,
 }: SEOProps) => {
   const fullTitle = title ? `${title} | ${SITE_NAME}` : DEFAULT_TITLE;
   const url = `${BASE_URL}${path}`;
