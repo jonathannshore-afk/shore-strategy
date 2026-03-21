@@ -95,14 +95,8 @@ const BlogPost = () => {
       <section className="bg-background pb-16">
         <div className="container max-w-5xl">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            {/* Article Content */}
-            <div className="lg:col-span-2">
-              <hr className="border-border mb-10" />
-              <ArticleContent content={post.content} />
-            </div>
-
-            {/* Sidebar */}
-            <div className="lg:col-span-1">
+            {/* Sidebar — shows FIRST on mobile, second on desktop */}
+            <div className="lg:col-span-1 order-first lg:order-last">
               <div className="sticky top-24 space-y-6">
                 {/* Author Card */}
                 <div className="border border-border rounded-lg p-6 space-y-4">
@@ -141,7 +135,25 @@ const BlogPost = () => {
                     ))}
                   </div>
                 )}
+
+                {/* TL;DR */}
+                {post.tldr && (
+                  <div className="border border-border rounded-lg p-6 space-y-3">
+                    <p className="font-body text-xs text-muted-foreground font-semibold uppercase tracking-[0.15em]">
+                      TL;DR
+                    </p>
+                    <p className="font-body text-sm text-foreground leading-relaxed">
+                      {post.tldr}
+                    </p>
+                  </div>
+                )}
               </div>
+            </div>
+
+            {/* Article Content */}
+            <div className="lg:col-span-2 order-last lg:order-first">
+              <hr className="border-border mb-10" />
+              <ArticleContent content={post.content} />
             </div>
           </div>
         </div>

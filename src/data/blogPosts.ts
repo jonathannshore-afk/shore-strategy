@@ -9,6 +9,7 @@ export interface BlogPost {
   category: string;
   heroImage?: string;
   keyStats?: { value: string; label: string }[];
+  tldr?: string;
   content: string;
 }
 
@@ -35,6 +36,7 @@ export const posts: BlogPost[] = [
       { value: "12–18mo", label: "Typical Planning Horizon" },
       { value: "2", label: "Max Starting Tiers" },
     ],
+    tldr: "Design your partner program around four pillars — strategic alignment, program architecture, operational readiness, and measurement. Start with two tiers max and iterate based on data, not assumptions.",
     content: `
 ## Why Most Partner Programs Fail Early
 
@@ -99,6 +101,7 @@ If you're building a partner program from scratch, start with strategic alignmen
       { value: "150+", label: "Partnerships Analyzed" },
       { value: "2–3x", label: "Pipeline Lift With Co-Sell" },
     ],
+    tldr: "Co-selling works when it's treated as a structured motion, not an ad hoc activity. Start with warm introductions, graduate to joint solutions, and reserve embedded models for your most strategic partners.",
     content: `
 ## The Co-Sell Problem
 
@@ -155,6 +158,7 @@ Regardless of model, successful co-selling depends on:
       { value: "4", label: "Steps to Measure Influence" },
       { value: "30%+", label: "Higher Retention With Partners" },
     ],
+    tldr: "Partner-sourced revenue understates your ecosystem's true value by 2–4x. Measure influence across deal acceleration, expansion, and retention to make better investment decisions about your partner program.",
     content: `
 ## The Sourced Revenue Trap
 
@@ -207,6 +211,7 @@ In our experience, partner-influenced revenue typically runs 2–4x higher than 
       { value: "12mo", label: "Timeline to Scale" },
       { value: "20%+", label: "Pipeline From Ecosystem Plays" },
     ],
+    tldr: "Ecosystem-led growth replaces one-directional channel models with interconnected partner networks. Build in three phases — foundation, activation, scale — and measure ecosystem-level KPIs alongside traditional partner metrics.",
     content: `
 ## From Channel to Ecosystem
 
@@ -265,6 +270,7 @@ Traditional partner metrics still matter, but add ecosystem-specific KPIs:
       { value: "90 days", label: "Max Content Shelf Life" },
       { value: "2–4hrs", label: "Ideal Certification Length" },
     ],
+    tldr: "Partner enablement fails when it mirrors internal sales training. Segment content by partner type, build a lightweight certification, refresh materials quarterly, and create a feedback loop with your partners.",
     content: `
 ## The Silent Killer
 
@@ -310,6 +316,7 @@ Start by auditing your current enablement against these five mistakes. Prioritiz
       { value: "20%+", label: "Revenue Threshold for FTE" },
       { value: "5+", label: "Team Size Signals Full-Time" },
     ],
+    tldr: "A fractional CPO gives you senior partnership leadership at 2–4 days per month — ideal if you're exploring partnerships, have a small team, or need expertise for a specific initiative. Go full-time when partnerships hit 20%+ of revenue.",
     content: `
 ## The Partnership Leadership Gap
 
