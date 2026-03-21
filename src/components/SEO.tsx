@@ -10,6 +10,7 @@ interface SEOProps {
     author?: string;
     section?: string;
   };
+  jsonLd?: Record<string, unknown>;
 }
 
 const SITE_NAME = "Shore Strategy";
@@ -24,6 +25,7 @@ const SEO = ({
   path = "/",
   type = "website",
   article,
+  jsonLd,
 }: SEOProps) => {
   const fullTitle = title ? `${title} | ${SITE_NAME}` : DEFAULT_TITLE;
   const url = `${BASE_URL}${path}`;
@@ -55,6 +57,13 @@ const SEO = ({
       )}
       {article?.section && (
         <meta property="article:section" content={article.section} />
+      )}
+
+      {/* JSON-LD Structured Data */}
+      {jsonLd && (
+        <script type="application/ld+json">
+          {JSON.stringify(jsonLd)}
+        </script>
       )}
     </Helmet>
   );

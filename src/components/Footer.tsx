@@ -39,7 +39,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 border border-primary-foreground/30 text-primary-foreground font-body font-semibold rounded hover:border-gold hover:text-gold transition-colors"
               >
-                <Linkedin size={16} /> Connect on LinkedIn
+                <Linkedin size={16} /> Follow on LinkedIn
               </a>
             </div>
           </div>
