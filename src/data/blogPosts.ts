@@ -101,6 +101,7 @@ If you're building a partner program from scratch, start with strategic alignmen
       { value: "150+", label: "Partnerships Analyzed" },
       { value: "2–3x", label: "Pipeline Lift With Co-Sell" },
     ],
+    tldr: "Co-selling works when it's treated as a structured motion, not an ad hoc activity. Start with warm introductions, graduate to joint solutions, and reserve embedded models for your most strategic partners.",
     content: `
 ## The Co-Sell Problem
 
