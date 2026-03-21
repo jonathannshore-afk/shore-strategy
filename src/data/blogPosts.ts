@@ -270,6 +270,7 @@ Traditional partner metrics still matter, but add ecosystem-specific KPIs:
       { value: "90 days", label: "Max Content Shelf Life" },
       { value: "2–4hrs", label: "Ideal Certification Length" },
     ],
+    tldr: "Partner enablement fails when it mirrors internal sales training. Segment content by partner type, build a lightweight certification, refresh materials quarterly, and create a feedback loop with your partners.",
     content: `
 ## The Silent Killer
 
