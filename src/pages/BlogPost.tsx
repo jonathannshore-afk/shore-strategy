@@ -3,6 +3,11 @@ import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { posts, defaultAuthor } from "@/data/blogPosts";
 import { ArrowLeft, Linkedin } from "lucide-react";
+import ArticleContent from "@/components/blog/ArticleContent";
+import ShareToolbar from "@/components/blog/ShareToolbar";
+import LinkedInDraftCard from "@/components/blog/LinkedInDraftCard";
+
+const BASE_URL = "https://shore-strategy.com";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -31,10 +36,30 @@ const BlogPost = () => {
     );
   }
 
-  // Find related posts (same category, excluding current)
   const relatedPosts = posts
     .filter((p) => p.category === post.category && p.slug !== post.slug)
     .slice(0, 3);
+
+  // JSON-LD Article structured data
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt,
+    author: {
+      "@type": "Person",
+      name: post.author,
+      url: defaultAuthor.linkedin,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Shore Strategy",
+      url: BASE_URL,
+    },
+    datePublished: post.date,
+    mainEntityOfPage: `${BASE_URL}/blog/${post.slug}`,
+    articleSection: post.category,
+  };
 
   return (
     <Layout>
@@ -48,6 +73,7 @@ const BlogPost = () => {
           author: post.author,
           section: post.category,
         }}
+        jsonLd={articleJsonLd}
       />
 
       {/* Top Nav Bar */}
@@ -59,14 +85,7 @@ const BlogPost = () => {
           >
             <ArrowLeft size={14} /> All Articles
           </Link>
-          <a
-            href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : '')}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-sm font-body text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <Linkedin size={14} /> Share
-          </a>
+          <ShareToolbar post={post} />
         </div>
       </section>
 
@@ -90,10 +109,10 @@ const BlogPost = () => {
       <section className="bg-background pb-16">
         <div className="container max-w-5xl">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            {/* Sidebar — shows FIRST on mobile, second on desktop */}
+            {/* Sidebar */}
             <div className="lg:col-span-1 order-first lg:order-last">
               <div className="sticky top-24 space-y-6">
-                {/* Author Card */}
+                {/* Author Card with Follow CTA */}
                 <div className="border border-border rounded-lg p-6 space-y-4">
                   <div className="flex items-center gap-3">
                     <img
@@ -110,6 +129,14 @@ const BlogPost = () => {
                       </span>
                     </div>
                   </div>
+                  <a
+                    href={defaultAuthor.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 w-full justify-center px-4 py-2 border border-border rounded text-sm font-body font-semibold text-foreground hover:border-gold hover:text-gold transition-colors"
+                  >
+                    <Linkedin size={14} /> Follow on LinkedIn
+                  </a>
                 </div>
 
                 {/* TL;DR + Key Takeaways merged */}
@@ -140,6 +167,9 @@ const BlogPost = () => {
                     )}
                   </div>
                 )}
+
+                {/* LinkedIn Post Draft */}
+                <LinkedInDraftCard post={post} />
               </div>
             </div>
 
@@ -202,72 +232,5 @@ const BlogPost = () => {
     </Layout>
   );
 };
-
-/** Renders markdown-like content safely */
-const ArticleContent = ({ content }: { content: string }) => (
-  <div className="prose prose-lg max-w-none font-body text-foreground prose-headings:font-display prose-headings:text-foreground prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3 prose-p:text-muted-foreground prose-p:leading-relaxed prose-li:text-muted-foreground prose-strong:text-foreground">
-    {content.split("\n").map((line, i) => {
-      const trimmed = line.trim();
-      if (!trimmed) return null;
-
-      if (trimmed.startsWith("## ")) {
-        return (
-          <h2 key={i} className="font-display text-2xl font-bold text-foreground mt-10 mb-4">
-            {trimmed.replace("## ", "")}
-          </h2>
-        );
-      }
-      if (trimmed.startsWith("### ")) {
-        return (
-          <h3 key={i} className="font-display text-xl font-semibold text-foreground mt-8 mb-3">
-            {trimmed.replace("### ", "")}
-          </h3>
-        );
-      }
-      if (trimmed.startsWith("- **")) {
-        const match = trimmed.match(/^- \*\*(.+?)\*\*\s*[—–-]\s*(.+)$/);
-        if (match) {
-          return (
-            <li key={i} className="text-muted-foreground ml-4 mb-2 list-disc">
-              <strong className="text-foreground">{match[1]}</strong> — {match[2]}
-            </li>
-          );
-        }
-      }
-      if (trimmed.startsWith("- ")) {
-        const text = trimmed.replace("- ", "");
-        const parts = text.split(/(\*\*.+?\*\*)/g);
-        return (
-          <li key={i} className="text-muted-foreground ml-4 mb-2 list-disc">
-            {parts.map((part, j) =>
-              part.startsWith("**") && part.endsWith("**") ? (
-                <strong key={j} className="text-foreground">
-                  {part.slice(2, -2)}
-                </strong>
-              ) : (
-                <span key={j}>{part}</span>
-              )
-            )}
-          </li>
-        );
-      }
-
-      const formatted = trimmed
-        .replace(/\[(.+?)\]\((.+?)\)/g, (_match, text, url) => {
-          const safeUrl = /^(https?:\/\/|\/(?!\/))/.test(url) ? url : '#';
-          return `<a href="${safeUrl}" class="text-gold hover:underline">${text}</a>`;
-        })
-        .replace(/\*\*(.+?)\*\*/g, '<strong class="text-foreground">$1</strong>');
-
-      return (
-        <p
-          key={i}
-          className="text-muted-foreground leading-relaxed mb-4"
-          dangerouslySetInnerHTML={{ __html: formatted }}
-        />
-      );
-    })}
-  </div>
-);
 
 export default BlogPost;
