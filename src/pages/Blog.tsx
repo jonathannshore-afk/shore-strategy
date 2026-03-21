@@ -152,9 +152,9 @@ const Blog = () => {
 const ArticleCard = ({ post }: { post: BlogPost }) => (
   <Link
     to={`/blog/${post.slug}`}
-    className="group flex flex-col"
+    className="group flex flex-col rounded-lg border border-border bg-card shadow-sm hover:shadow-md transition-shadow overflow-hidden"
   >
-    <div className="aspect-[16/10] overflow-hidden rounded-lg bg-muted mb-4">
+    <div className="aspect-[16/10] overflow-hidden bg-muted">
       {post.heroImage ? (
         <img
           src={post.heroImage}
@@ -171,17 +171,21 @@ const ArticleCard = ({ post }: { post: BlogPost }) => (
         </div>
       )}
     </div>
-    <div className="flex items-center gap-2 text-xs font-body uppercase tracking-[0.12em] text-muted-foreground mb-2">
-      <span>{post.category}</span>
-      <span>—</span>
-      <span>{post.date}</span>
+    <div className="p-5 flex flex-col flex-1">
+      <div className="flex items-center gap-2 text-xs font-body uppercase tracking-[0.12em] text-muted-foreground mb-2">
+        <span>{post.category}</span>
+        <span>—</span>
+        <span>{post.date}</span>
+        <span>—</span>
+        <span className="inline-flex items-center gap-1"><Clock size={11} /> {post.readTime}</span>
+      </div>
+      <h3 className="font-display text-lg font-bold text-foreground mb-2 leading-snug group-hover:text-gold transition-colors">
+        {post.title}
+      </h3>
+      <p className="font-body text-sm text-muted-foreground leading-relaxed line-clamp-2">
+        {post.excerpt}
+      </p>
     </div>
-    <h3 className="font-display text-lg font-bold text-foreground mb-2 leading-snug group-hover:text-gold transition-colors">
-      {post.title}
-    </h3>
-    <p className="font-body text-sm text-muted-foreground leading-relaxed line-clamp-2">
-      {post.excerpt}
-    </p>
   </Link>
 );
 
