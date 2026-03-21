@@ -1,95 +1,127 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
-import { posts, categories, defaultAuthor } from "@/data/blogPosts";
+import { posts, categories, defaultAuthor, BlogPost } from "@/data/blogPosts";
 
 const Blog = () => {
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+
+  const filteredPosts = activeCategory
+    ? posts.filter((p) => p.category === activeCategory)
+    : posts;
+
+  const featuredPost = filteredPosts[0];
+  const remainingPosts = filteredPosts.slice(1);
+
   return (
     <Layout>
       <SEO
-        title="Blog — Insights on Partner Strategy"
+        title="Insights — Partner Strategy & Ecosystem Development"
         description="Practical frameworks, emerging trends, and lessons from decades of building partner ecosystems. Read the latest from Shore Strategy."
         path="/blog"
       />
-      {/* Hero */}
-      <section className="bg-navy section-padding">
-        <div className="container">
-          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">
-            Insights
-          </p>
-          <h1 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
-            Thought Leadership &{" "}
-            <span className="text-gold">Industry Insights</span>
-          </h1>
-          <p className="font-body text-lg text-primary-foreground/70 max-w-2xl">
-            Practical frameworks, emerging trends, and hard-won lessons from
-            decades of building partner ecosystems.
-          </p>
-        </div>
-      </section>
 
-      {/* Categories */}
-      <section className="bg-cream border-b border-border">
+      {/* Category Navigation Bar */}
+      <section className="bg-background border-b border-border">
         <div className="container py-4">
-          <div className="flex flex-wrap gap-3">
-            <span className="px-4 py-1.5 text-xs font-body font-semibold uppercase tracking-wider bg-gold text-accent-foreground rounded-full cursor-pointer">
-              All
-            </span>
+          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar">
+            <button
+              onClick={() => setActiveCategory(null)}
+              className={`px-4 py-2 text-xs font-body font-semibold uppercase tracking-[0.15em] rounded-full whitespace-nowrap transition-colors ${
+                !activeCategory
+                  ? "bg-foreground text-background"
+                  : "text-muted-foreground hover:text-foreground hover:bg-muted"
+              }`}
+            >
+              All Posts
+            </button>
             {categories.map((cat) => (
-              <span
+              <button
                 key={cat}
-                className="px-4 py-1.5 text-xs font-body font-semibold uppercase tracking-wider text-muted-foreground border border-border rounded-full cursor-pointer hover:border-gold hover:text-gold transition-colors"
+                onClick={() => setActiveCategory(cat === activeCategory ? null : cat)}
+                className={`px-4 py-2 text-xs font-body font-semibold uppercase tracking-[0.15em] rounded-full whitespace-nowrap transition-colors ${
+                  activeCategory === cat
+                    ? "bg-foreground text-background"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                }`}
               >
                 {cat}
-              </span>
+              </button>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Posts Grid */}
-      <section className="section-padding bg-background">
-        <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {posts.map((post) => (
-              <article
-                key={post.slug}
-                className="bg-card rounded-lg border border-border hover:shadow-lg hover:border-gold/30 transition-all group flex flex-col"
-              >
-                <div className="p-8 flex flex-col flex-1">
-                  <span className="text-gold font-body text-xs uppercase tracking-wider font-semibold mb-3">
-                    {post.category}
-                  </span>
-                  <h3 className="font-display text-xl font-semibold text-foreground mb-3 group-hover:text-gold transition-colors leading-snug">
-                    {post.title}
-                  </h3>
-                  <p className="font-body text-muted-foreground text-sm leading-relaxed mb-6 flex-1">
-                    {post.excerpt}
-                  </p>
-                  <div className="flex items-center gap-3 mb-4">
+      {/* Featured Hero Article */}
+      {featuredPost && (
+        <section className="bg-background section-padding">
+          <div className="container">
+            <Link
+              to={`/blog/${featuredPost.slug}`}
+              className="group grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
+            >
+              <div className="aspect-[4/3] lg:aspect-[3/2] overflow-hidden rounded-lg bg-muted">
+                {featuredPost.heroImage ? (
+                  <img
+                    src={featuredPost.heroImage}
+                    alt={featuredPost.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-muted to-border">
                     <img
-                      src={post.authorImage || defaultAuthor.image}
-                      alt={post.author}
-                      className="w-8 h-8 rounded-full object-cover"
+                      src={featuredPost.authorImage || defaultAuthor.image}
+                      alt={featuredPost.author}
+                      className="w-32 h-32 rounded-full object-cover border-4 border-background shadow-lg"
                     />
-                    <div>
-                      <span className="font-body text-xs font-semibold text-foreground block leading-tight">{post.author}</span>
-                      <span className="font-body text-xs text-muted-foreground">{post.date} · {post.readTime}</span>
-                    </div>
                   </div>
-                  <Link
-                    to={`/blog/${post.slug}`}
-                    className="inline-flex items-center gap-1 text-gold font-body font-semibold text-sm group-hover:gap-2 transition-all"
-                  >
-                    Read Article <ArrowRight size={14} />
-                  </Link>
+                )}
+              </div>
+              <div className="space-y-4">
+                <div className="flex items-center gap-3 text-xs font-body uppercase tracking-[0.15em] text-muted-foreground">
+                  <span className="font-semibold">{featuredPost.author}</span>
+                  <span>—</span>
+                  <span>{featuredPost.category}</span>
+                  <span>—</span>
+                  <span>{featuredPost.date}</span>
                 </div>
-              </article>
-            ))}
+                <h1 className="font-display text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-foreground leading-tight group-hover:text-gold transition-colors">
+                  {featuredPost.title}
+                </h1>
+                <p className="font-body text-muted-foreground text-base md:text-lg leading-relaxed">
+                  {featuredPost.excerpt}
+                </p>
+                <span className="inline-flex items-center gap-2 text-sm font-body font-semibold text-foreground uppercase tracking-wider group-hover:gap-3 transition-all">
+                  Read More <ArrowRight size={14} />
+                </span>
+              </div>
+            </Link>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
+
+      {/* Divider */}
+      <div className="container">
+        <hr className="border-border" />
+      </div>
+
+      {/* Posts Grid */}
+      {remainingPosts.length > 0 && (
+        <section className="section-padding bg-background">
+          <div className="container">
+            <h2 className="font-display text-2xl font-bold text-foreground mb-8">
+              {activeCategory ? activeCategory : "Latest Articles"}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {remainingPosts.map((post) => (
+                <ArticleCard key={post.slug} post={post} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Newsletter CTA */}
       <section className="bg-navy section-padding">
@@ -116,5 +148,41 @@ const Blog = () => {
     </Layout>
   );
 };
+
+const ArticleCard = ({ post }: { post: BlogPost }) => (
+  <Link
+    to={`/blog/${post.slug}`}
+    className="group flex flex-col"
+  >
+    <div className="aspect-[16/10] overflow-hidden rounded-lg bg-muted mb-4">
+      {post.heroImage ? (
+        <img
+          src={post.heroImage}
+          alt={post.title}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        />
+      ) : (
+        <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-muted to-border">
+          <img
+            src={post.authorImage || defaultAuthor.image}
+            alt={post.author}
+            className="w-16 h-16 rounded-full object-cover border-2 border-background"
+          />
+        </div>
+      )}
+    </div>
+    <div className="flex items-center gap-2 text-xs font-body uppercase tracking-[0.12em] text-muted-foreground mb-2">
+      <span>{post.category}</span>
+      <span>—</span>
+      <span>{post.date}</span>
+    </div>
+    <h3 className="font-display text-lg font-bold text-foreground mb-2 leading-snug group-hover:text-gold transition-colors">
+      {post.title}
+    </h3>
+    <p className="font-body text-sm text-muted-foreground leading-relaxed line-clamp-2">
+      {post.excerpt}
+    </p>
+  </Link>
+);
 
 export default Blog;
