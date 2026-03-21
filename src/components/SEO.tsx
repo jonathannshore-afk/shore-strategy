@@ -58,7 +58,16 @@ const SEO = ({
       {article?.section && (
         <meta property="article:section" content={article.section} />
       )}
+
+      {/* JSON-LD Structured Data */}
+      {jsonLd && (
+        <script type="application/ld+json">
+          {JSON.stringify(jsonLd)}
+        </script>
+      )}
     </Helmet>
+  );
+};
   );
 };
 
