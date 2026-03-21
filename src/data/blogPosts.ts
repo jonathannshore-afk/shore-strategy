@@ -316,6 +316,7 @@ Start by auditing your current enablement against these five mistakes. Prioritiz
       { value: "20%+", label: "Revenue Threshold for FTE" },
       { value: "5+", label: "Team Size Signals Full-Time" },
     ],
+    tldr: "A fractional CPO gives you senior partnership leadership at 2–4 days per month — ideal if you're exploring partnerships, have a small team, or need expertise for a specific initiative. Go full-time when partnerships hit 20%+ of revenue.",
     content: `
 ## The Partnership Leadership Gap
 
