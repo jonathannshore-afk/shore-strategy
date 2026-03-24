@@ -7,7 +7,7 @@ const data = [
   { subject: "Revenue Growth", value: 92 },
   { subject: "Program Design", value: 90 },
   { subject: "Operating Models", value: 85 },
-  { subject: "Cross-Functional Leadership", value: 88 },
+  { subject: "Cross-Functional\nLeadership", value: 88 },
   { subject: "Business Planning", value: 82 },
 ];
 
@@ -32,11 +32,11 @@ const ExpertiseRadar = ({ variant = "dark" }: ExpertiseRadarProps) => {
         Areas of Expertise
       </p>
       <ResponsiveContainer width="100%" height={300}>
-        <RadarChart cx="50%" cy="50%" outerRadius="70%" data={data}>
+        <RadarChart cx="50%" cy="50%" outerRadius="60%" data={data}>
           <PolarGrid stroke={gridStroke} />
           <PolarAngleAxis
             dataKey="subject"
-            tick={{ fill: tickFill, fontSize: 11, fontFamily: "Source Sans 3, sans-serif" }}
+            tick={{ fill: tickFill, fontSize: 10, fontFamily: "Source Sans 3, sans-serif" }}
           />
           <Radar
             dataKey="value"
