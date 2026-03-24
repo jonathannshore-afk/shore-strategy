@@ -7,7 +7,7 @@ const data = [
   { subject: "Revenue Growth", value: 92 },
   { subject: "Program Design", value: 90 },
   { subject: "Operating Models", value: 85 },
-  { subject: "Cross-Functional Leadership", value: 88 },
+  { subject: "Cross-Functional\nLeadership", value: 88 },
   { subject: "Business Planning", value: 82 },
 ];
 
