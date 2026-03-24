@@ -36,7 +36,7 @@ const ExpertiseRadar = ({ variant = "dark" }: ExpertiseRadarProps) => {
           <PolarGrid stroke={gridStroke} />
           <PolarAngleAxis
             dataKey="subject"
-            tick={{ fill: tickFill, fontSize: 11, fontFamily: "Source Sans 3, sans-serif" }}
+            tick={{ fill: tickFill, fontSize: 10, fontFamily: "Source Sans 3, sans-serif" }}
           />
           <Radar
             dataKey="value"
