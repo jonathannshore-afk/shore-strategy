@@ -174,7 +174,7 @@ const Index = () => {
           <p className="font-body text-lg text-muted-foreground leading-relaxed">
             I partner with{" "}
             <span className="text-foreground font-semibold">
-              CROs, SVP, and VP-level partnership leaders
+              CROs, SVPs, and VP-level partnership leaders
             </span>{" "}
             at B2B SaaS and enterprise technology companies — from Series D startups building their first partner motion to established enterprises transforming legacy channel programs.
           </p>
