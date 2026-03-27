@@ -77,7 +77,7 @@ const Index = () => {
                 className="font-body text-lg md:text-xl text-primary-foreground/80 max-w-xl mb-4 animate-fade-in-up"
                 style={{ animationDelay: "0.3s" }}
               >
-                I am a Partner Ecosystem Strategist with 15+ years of experience building global alliances and partner routes-to-market across enterprise technology companies.
+                I am a Partner Ecosystem Strategist with 15+ years of experience building partner ecosystems as a growth catalyst for technology companies.
               </p>
               <p
                 className="font-body text-base text-gold/80 max-w-xl mb-10 animate-fade-in-up"
