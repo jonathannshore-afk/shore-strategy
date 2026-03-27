@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
-import { CalendarCheck, Linkedin, Shield, Eye, Layers, Compass, Users, Sparkles } from "lucide-react";
+import { CalendarCheck, Linkedin, Handshake, BarChart3, Heart, Cog, Zap, Users } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -55,43 +55,42 @@ const experience = [
 
 const principles = [
   {
-    icon: Shield,
-    title: "Trust Is the Operating System",
+    icon: Handshake,
+    title: "Trust",
     description:
-      "High-performing ecosystems are built on trust — between internal teams, with partners, and across leadership. I lead by earning trust first, then extending it generously.",
+      "Trust is my number one value — without trust, nobody wins. I earn the trust of my business partners, my internal teams, and cross-functional leadership.",
   },
   {
-    icon: Eye,
-    title: "Clarity Over Complexity",
+    icon: BarChart3,
+    title: "Data-Driven Strategy",
     description:
-      "Partner ecosystems are inherently complex. My job is to cut through the noise: clear strategy, clear ownership, clear metrics. Ambiguity kills momentum.",
+      "I craft strategies based on data-driven insights to inform and build my GTM strategies and measure the health of the business.",
   },
   {
-    icon: Layers,
-    title: "Systems Over Heroics",
+    icon: Heart,
+    title: "People & Culture",
     description:
-      "A partner win that depends on one relationship isn't scalable. I build repeatable frameworks so the ecosystem compounds value over time.",
+      "Hire top-quality talent and nurture them to grow. I build teams that are trusted advisors, data-driven, and growth accelerators.",
   },
   {
-    icon: Compass,
-    title: "Strategic Patience, Operational Urgency",
+    icon: Cog,
+    title: "Operational Excellence",
     description:
-      "Ecosystem transformation doesn't happen overnight, but that's no excuse for slow execution. Move fast on what matters now; stay disciplined on what matters long-term.",
+      "Build the operational engine, rhythm of the business, and CRM hygiene to ensure a well-oiled machine.",
+  },
+  {
+    icon: Zap,
+    title: "Better, Better, Never Best",
+    description:
+      "Avoid analysis paralysis. Getting to market fast, albeit not perfect, wins over being last to market and \"perfect.\"",
   },
   {
     icon: Users,
-    title: "Alignment Is a Contact Sport",
+    title: "Partner First & Alignment",
     description:
-      "Partnerships fail when Sales, Product, Marketing, and the partner team operate in silos. I actively broker alignment across functions.",
-  },
-  {
-    icon: Sparkles,
-    title: "Lead With the 'Why' for Partners",
-    description:
-      "Partners invest where they see mutual value. I design programs that answer the partner's 'what's in it for me' clearly — a motivated ecosystem is a revenue multiplier.",
+      "Engage with commercial sales leaders, product, marketing, and the partner teams to ensure proper alignment and a partner-first mentality.",
   },
 ];
-
 const About = () => {
   return (
     <Layout>
