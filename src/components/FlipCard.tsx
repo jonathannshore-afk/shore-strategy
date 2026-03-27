@@ -19,7 +19,7 @@ const FlipCard = ({ front, back }: FlipCardProps) => {
         }`}
       >
         {/* Front */}
-        <div className="absolute inset-0 [backface-visibility:hidden] bg-card p-7 rounded-lg border border-border flex flex-col">
+        <div className="absolute inset-0 [backface-visibility:hidden] bg-card p-7 rounded-lg border border-border flex flex-col overflow-y-auto">
           {front}
           <p className="font-body text-xs text-muted-foreground mt-auto pt-3">Click to flip →</p>
         </div>
