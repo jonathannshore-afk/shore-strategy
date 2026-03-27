@@ -83,7 +83,7 @@ const Index = () => {
                 className="font-body text-base text-gold/80 max-w-xl mb-10 animate-fade-in-up"
                 style={{ animationDelay: "0.35s" }}
               >
-                Available for Partner Strategy Consulting, Fractional Leadership, and Full-Time opportunities.
+                Available for Fractional Partner Strategy Leadership, Partner Strategy Consulting, and Full-Time opportunities.
               </p>
               <div
                 className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start animate-fade-in-up"
