@@ -135,7 +135,7 @@ const WhyMe = () => {
     <Layout>
       <SEO
         title="Why Jonathan Shore"
-        description="Proven results, real testimonials, and a clear 90-day engagement framework. See why companies trust Jonathan Shore to build and scale partner ecosystems."
+        description="Proven results and a clear 90-day engagement framework. See why companies trust Jonathan Shore to build and scale partner ecosystems."
         path="/why-me"
       />
 
