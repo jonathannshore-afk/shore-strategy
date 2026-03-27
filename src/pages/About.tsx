@@ -110,7 +110,7 @@ const About = () => {
                 About <span className="text-gold">Jonathan</span>
               </h1>
               <p className="font-body text-lg text-primary-foreground/80 leading-relaxed">
-                15+ years building and transforming partner ecosystems at Salesforce, ServiceNow, and Lumen Technologies. I help B2B leaders unlock partner-led revenue through fractional executive leadership.
+                15+ years building and transforming partner ecosystems at Salesforce, ServiceNow, and Lumen Technologies. I help B2B leaders unlock partner-led revenue through fractional and full-time executive leadership.
               </p>
 
               <div className="border-t border-primary-foreground/15 mt-6 mb-6" />

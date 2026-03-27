@@ -83,7 +83,7 @@ const Index = () => {
                 className="font-body text-base text-gold/80 max-w-xl mb-10 animate-fade-in-up"
                 style={{ animationDelay: "0.35s" }}
               >
-                Available for Partner Strategy Consulting, Fractional Leadership, and Full-Time opportunities.
+                Available for Fractional Partner Strategy Leadership, Partner Strategy Consulting, and Full-Time opportunities.
               </p>
               <div
                 className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start animate-fade-in-up"
@@ -174,7 +174,7 @@ const Index = () => {
           <p className="font-body text-lg text-muted-foreground leading-relaxed">
             I partner with{" "}
             <span className="text-foreground font-semibold">
-              CROs, SVP, and VP-level partnership leaders
+              CROs, SVPs, and VP-level partnership leaders
             </span>{" "}
             at B2B SaaS and enterprise technology companies — from Series D startups building their first partner motion to established enterprises transforming legacy channel programs.
           </p>
