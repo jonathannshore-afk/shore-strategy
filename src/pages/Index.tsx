@@ -166,7 +166,7 @@ const Index = () => {
 
       {/* Who I Work With */}
       <section className="section-padding bg-background">
-        <div className="container text-center max-w-3xl">
+        <div className="container text-center max-w-5xl">
           <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Who I Work With</p>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
             Built for Leadership Teams
