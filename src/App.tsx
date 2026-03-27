@@ -11,6 +11,7 @@ import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import WhyMe from "./pages/WhyMe";
+import Leadership from "./pages/Leadership";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
