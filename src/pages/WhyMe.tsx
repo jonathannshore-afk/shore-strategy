@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
-import { CalendarCheck, CheckCircle, ChevronDown, Quote } from "lucide-react";
+import { CalendarCheck, CheckCircle, ChevronDown } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
