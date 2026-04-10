@@ -1,6 +1,6 @@
+import { lazy, Suspense } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, CalendarCheck, Briefcase, Users2, MessageCircleQuestion } from "lucide-react";
-import ExpertiseRadar from "@/components/ExpertiseRadar";
 import heroBg from "@/assets/hero-bg.jpg";
 import headshot from "@/assets/jonathan-headshot.jpeg";
 import logoSalesforce from "@/assets/logo-salesforce.png";
@@ -8,6 +8,8 @@ import logoServicenow from "@/assets/logo-servicenow.svg";
 import logoLumen from "@/assets/logo-lumen.png";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
+
+const ExpertiseRadar = lazy(() => import("@/components/ExpertiseRadar"));
 
 const stats = [
   { value: "15+", label: "Years of Experience" },
@@ -53,20 +55,20 @@ const Index = () => {
       />
 
       {/* Hero */}
-      <section className="relative min-h-[85vh] flex flex-col justify-center overflow-hidden">
+      <section className="relative min-h-[70vh] md:min-h-[85vh] flex flex-col justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroBg})` }}
         />
         <div className="absolute inset-0 bg-navy-dark/60" />
         <div className="relative z-10 container flex-1 flex items-center">
-          <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16 w-full">
+          <div className="flex flex-col md:flex-row items-center gap-6 md:gap-16 w-full">
             <div className="flex-1 text-center md:text-left">
-              <p className="text-gold font-body text-sm uppercase tracking-[0.3em] mb-6 animate-fade-in-up">
+              <p className="text-gold font-body text-sm uppercase tracking-[0.3em] mb-3 md:mb-6 animate-fade-in-up">
                 ex-Salesforce · ServiceNow · Lumen Technologies
               </p>
               <h1
-                className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-in-up"
+                className="font-display text-3xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-4 md:mb-6 animate-fade-in-up"
                 style={{ animationDelay: "0.15s" }}
               >
                 Jonathan
@@ -74,13 +76,13 @@ const Index = () => {
                 <span className="text-gold">Shore</span>
               </h1>
               <p
-                className="font-body text-lg md:text-xl text-primary-foreground/80 max-w-xl mb-4 animate-fade-in-up"
+                className="font-body text-base md:text-xl text-primary-foreground/80 max-w-xl mb-3 md:mb-4 animate-fade-in-up"
                 style={{ animationDelay: "0.3s" }}
               >
                 I am a Partner Ecosystem Strategist with 15+ years of experience building partner ecosystems as a growth catalyst for technology companies.
               </p>
               <p
-                className="font-body text-base text-gold/80 max-w-xl mb-10 animate-fade-in-up"
+                className="font-body text-sm md:text-base text-gold/80 max-w-xl mb-6 md:mb-10 animate-fade-in-up"
                 style={{ animationDelay: "0.35s" }}
               >
                 Available for Fractional Partner Strategy Leadership, Partner Strategy Consulting, and Full-Time opportunities.
@@ -140,7 +142,9 @@ const Index = () => {
               </div>
             </div>
             <div className="hidden md:block">
-              <ExpertiseRadar variant="dark" />
+              <Suspense fallback={<div className="w-[300px] h-[250px]" />}>
+                <ExpertiseRadar variant="dark" />
+              </Suspense>
             </div>
           </div>
         </div>
@@ -233,15 +237,15 @@ const Index = () => {
       </section>
 
       {/* Mid-Page Engagement CTA */}
-      <section className="section-padding bg-navy">
+      <section className="py-16 md:py-20 bg-background border-t border-border">
         <div className="container text-center max-w-2xl">
           <div className="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-6">
             <MessageCircleQuestion className="text-gold" size={28} strokeWidth={1.5} />
           </div>
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-primary-foreground mb-4">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
             Not Sure Where to Start?
           </h2>
-          <p className="font-body text-primary-foreground/70 text-lg mb-8 leading-relaxed">
+          <p className="font-body text-muted-foreground text-lg mb-8 leading-relaxed">
             Whether you're exploring a full-time hire, fractional leadership, or just want to talk through your partner strategy — let's connect.
           </p>
           <Link
