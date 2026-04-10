@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, CalendarCheck, Briefcase, Users2 } from "lucide-react";
+import { ArrowRight, CalendarCheck, Briefcase, Users2, MessageCircleQuestion } from "lucide-react";
 import ExpertiseRadar from "@/components/ExpertiseRadar";
 import heroBg from "@/assets/hero-bg.jpg";
 import headshot from "@/assets/jonathan-headshot.jpeg";
@@ -96,10 +96,10 @@ const Index = () => {
                   <CalendarCheck size={18} /> Book a Call
                 </Link>
                 <Link
-                  to="/about"
+                  to="/services"
                   className="inline-flex items-center gap-2 px-8 py-3.5 border border-primary-foreground/30 text-primary-foreground font-body font-semibold rounded hover:border-gold hover:text-gold transition-colors"
                 >
-                  My Background
+                  See How I Work <ArrowRight size={16} />
                 </Link>
               </div>
             </div>
@@ -229,6 +229,27 @@ const Index = () => {
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Mid-Page Engagement CTA */}
+      <section className="section-padding bg-navy">
+        <div className="container text-center max-w-2xl">
+          <div className="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-6">
+            <MessageCircleQuestion className="text-gold" size={28} strokeWidth={1.5} />
+          </div>
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-primary-foreground mb-4">
+            Not Sure Where to Start?
+          </h2>
+          <p className="font-body text-primary-foreground/70 text-lg mb-8 leading-relaxed">
+            Whether you're exploring a full-time hire, fractional leadership, or just want to talk through your partner strategy — let's connect.
+          </p>
+          <Link
+            to="/contact"
+            className="inline-flex items-center gap-2 px-8 py-3.5 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors"
+          >
+            <CalendarCheck size={18} /> Let's Talk
+          </Link>
         </div>
       </section>
     </Layout>
