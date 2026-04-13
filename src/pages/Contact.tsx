@@ -50,14 +50,18 @@ const Contact = () => {
 
     setIsSubmitting(true);
     try {
-      const { error } = await supabase.from("contact_submissions").insert({
-        name: result.data.name,
-        email: result.data.email,
-        company: result.data.company || null,
-        message: result.data.message,
+      const res = await supabase.functions.invoke("submit-contact", {
+        body: {
+          name: result.data.name,
+          email: result.data.email,
+          company: result.data.company || null,
+          message: result.data.message,
+        },
       });
 
-      if (error) throw error;
+      if (res.error) throw res.error;
+      const data = res.data as { error?: string };
+      if (data?.error) throw new Error(data.error);
 
       toast({ title: "Message sent!", description: "I'll be in touch within 24 hours." });
       setForm({ name: "", email: "", company: "", message: "" });
