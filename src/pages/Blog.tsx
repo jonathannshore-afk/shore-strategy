@@ -2,11 +2,15 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
-import { ArrowRight, Calendar, Clock } from "lucide-react";
-import { posts, categories, defaultAuthor, BlogPost } from "@/data/blogPosts";
+import { ArrowRight, Clock, Loader2 } from "lucide-react";
+import { defaultAuthor, BlogPost as BlogPostType } from "@/data/blogPosts";
+import { useBlogPosts } from "@/hooks/useBlogPosts";
 
 const Blog = () => {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const { data: posts = [], isLoading, error } = useBlogPosts();
+
+  const categories = [...new Set(posts.map((p) => p.category))];
 
   const filteredPosts = activeCategory
     ? posts.filter((p) => p.category === activeCategory)
@@ -24,35 +28,63 @@ const Blog = () => {
       />
 
       {/* Category Navigation Bar */}
-      <section className="bg-background border-b border-border">
-        <div className="container py-4">
-          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar">
-            <button
-              onClick={() => setActiveCategory(null)}
-              className={`px-4 py-2 text-xs font-body font-semibold uppercase tracking-[0.15em] rounded-full whitespace-nowrap transition-colors ${
-                !activeCategory
-                  ? "bg-foreground text-background"
-                  : "text-muted-foreground hover:text-foreground hover:bg-muted"
-              }`}
-            >
-              All Posts
-            </button>
-            {categories.map((cat) => (
+      {categories.length > 0 && (
+        <section className="bg-background border-b border-border">
+          <div className="container py-4">
+            <div className="flex items-center gap-2 overflow-x-auto no-scrollbar">
               <button
-                key={cat}
-                onClick={() => setActiveCategory(cat === activeCategory ? null : cat)}
+                onClick={() => setActiveCategory(null)}
                 className={`px-4 py-2 text-xs font-body font-semibold uppercase tracking-[0.15em] rounded-full whitespace-nowrap transition-colors ${
-                  activeCategory === cat
+                  !activeCategory
                     ? "bg-foreground text-background"
                     : "text-muted-foreground hover:text-foreground hover:bg-muted"
                 }`}
               >
-                {cat}
+                All Posts
               </button>
-            ))}
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setActiveCategory(cat === activeCategory ? null : cat)}
+                  className={`px-4 py-2 text-xs font-body font-semibold uppercase tracking-[0.15em] rounded-full whitespace-nowrap transition-colors ${
+                    activeCategory === cat
+                      ? "bg-foreground text-background"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
+
+      {/* Loading / Error / Empty states */}
+      {isLoading && (
+        <section className="bg-background section-padding">
+          <div className="container flex justify-center py-20">
+            <Loader2 className="animate-spin text-muted-foreground" size={32} />
+          </div>
+        </section>
+      )}
+
+      {error && (
+        <section className="bg-background section-padding">
+          <div className="container text-center py-20">
+            <p className="font-body text-muted-foreground">Unable to load articles. Please try again later.</p>
+          </div>
+        </section>
+      )}
+
+      {!isLoading && !error && posts.length === 0 && (
+        <section className="bg-background section-padding">
+          <div className="container text-center py-20">
+            <h1 className="font-display text-3xl font-bold text-foreground mb-4">Coming Soon</h1>
+            <p className="font-body text-muted-foreground">New insights are on the way. Check back soon!</p>
+          </div>
+        </section>
+      )}
 
       {/* Featured Hero Article */}
       {featuredPost && (
@@ -105,9 +137,11 @@ const Blog = () => {
       )}
 
       {/* Divider */}
-      <div className="container">
-        <hr className="border-border" />
-      </div>
+      {featuredPost && remainingPosts.length > 0 && (
+        <div className="container">
+          <hr className="border-border" />
+        </div>
+      )}
 
       {/* Posts Grid */}
       {remainingPosts.length > 0 && (
@@ -151,7 +185,7 @@ const Blog = () => {
   );
 };
 
-const ArticleCard = ({ post }: { post: BlogPost }) => (
+const ArticleCard = ({ post }: { post: BlogPostType }) => (
   <Link
     to={`/blog/${post.slug}`}
     className="group flex flex-col rounded-lg border border-border bg-card shadow-sm hover:shadow-md transition-shadow overflow-hidden"

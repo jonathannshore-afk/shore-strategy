@@ -1,19 +1,33 @@
 import { useParams, Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
-import { posts, defaultAuthor } from "@/data/blogPosts";
-import { ArrowLeft, Linkedin } from "lucide-react";
+import { defaultAuthor } from "@/data/blogPosts";
+import { ArrowLeft, Linkedin, Loader2 } from "lucide-react";
 import ArticleContent from "@/components/blog/ArticleContent";
 import ShareToolbar from "@/components/blog/ShareToolbar";
 import LinkedInDraftCard from "@/components/blog/LinkedInDraftCard";
+import { useBlogPost, useBlogPosts } from "@/hooks/useBlogPosts";
 
 const BASE_URL = "https://shore-strategy.com";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
-  const post = posts.find((p) => p.slug === slug);
+  const { data: post, isLoading, error } = useBlogPost(slug);
+  const { data: allPosts = [] } = useBlogPosts();
 
-  if (!post) {
+  if (isLoading) {
+    return (
+      <Layout>
+        <section className="section-padding bg-background">
+          <div className="container flex justify-center py-20">
+            <Loader2 className="animate-spin text-muted-foreground" size={32} />
+          </div>
+        </section>
+      </Layout>
+    );
+  }
+
+  if (error || !post) {
     return (
       <Layout>
         <section className="section-padding bg-background">
@@ -36,11 +50,10 @@ const BlogPost = () => {
     );
   }
 
-  const relatedPosts = posts
+  const relatedPosts = allPosts
     .filter((p) => p.category === post.category && p.slug !== post.slug)
     .slice(0, 3);
 
-  // JSON-LD Article structured data
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -112,7 +125,6 @@ const BlogPost = () => {
             {/* Sidebar */}
             <div className="lg:col-span-1 order-first lg:order-last">
               <div className="sticky top-24 space-y-6">
-                {/* Author Card with Follow CTA */}
                 <div className="border border-border rounded-lg p-6 space-y-4">
                   <div className="flex items-center gap-3">
                     <img
@@ -139,7 +151,6 @@ const BlogPost = () => {
                   </a>
                 </div>
 
-                {/* TL;DR + Key Takeaways merged */}
                 {(post.tldr || (post.keyStats && post.keyStats.length > 0)) && (
                   <div className="border border-border rounded-lg p-6 space-y-4">
                     <p className="font-body text-xs text-muted-foreground font-semibold uppercase tracking-[0.15em]">
@@ -168,7 +179,6 @@ const BlogPost = () => {
                   </div>
                 )}
 
-                {/* LinkedIn Post Draft */}
                 <LinkedInDraftCard post={post} />
               </div>
             </div>
@@ -191,11 +201,7 @@ const BlogPost = () => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {relatedPosts.map((rp) => (
-                <Link
-                  key={rp.slug}
-                  to={`/blog/${rp.slug}`}
-                  className="group"
-                >
+                <Link key={rp.slug} to={`/blog/${rp.slug}`} className="group">
                   <div className="flex items-center gap-2 text-xs font-body uppercase tracking-[0.12em] text-muted-foreground mb-2">
                     <span>{rp.category}</span>
                     <span>—</span>
