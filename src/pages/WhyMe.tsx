@@ -147,7 +147,7 @@ const WhyMe = () => {
             Proof in the <span className="text-gold">Results</span>
           </h1>
           <p className="font-body text-lg text-primary-foreground/70 max-w-2xl">
-            Track record and a transparent look at how I approach every engagement — whether fractional, project-based, or full-time.
+            Track record and a transparent look at how I approach every engagement — whether fractional, project-based, or advisory.
           </p>
         </div>
       </section>
