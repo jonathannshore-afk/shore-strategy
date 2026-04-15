@@ -147,7 +147,7 @@ const WhyMe = () => {
             Proof in the <span className="text-gold">Results</span>
           </h1>
           <p className="font-body text-lg text-primary-foreground/70 max-w-2xl">
-            Track record and a transparent look at how I approach every engagement — whether fractional, project-based, or full-time.
+            Track record and a transparent look at how I approach every engagement — whether fractional, project-based, or advisory.
           </p>
         </div>
       </section>
@@ -267,7 +267,7 @@ const WhyMe = () => {
               The First 90 Days
             </h2>
             <p className="font-body text-muted-foreground mt-3 max-w-2xl mx-auto">
-              Whether fractional or full-time, here's how I approach the first 90 days of any engagement.
+              A structured framework for how I approach every consulting engagement — from day one to measurable results.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
