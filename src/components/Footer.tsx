@@ -13,7 +13,7 @@ const Footer = () => {
               <span className="font-display text-2xl font-light text-primary-foreground">Shore</span>
             </Link>
             <p className="font-body text-sm text-primary-foreground/60 max-w-sm leading-relaxed">
-              Partner Ecosystem Strategy & Operations executive. Available for fractional leadership roles and full-time opportunities.
+              Partner Ecosystem Strategist helping B2B technology companies build, fix, and scale partner ecosystems that drive revenue growth.
             </p>
           </div>
 
