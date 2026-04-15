@@ -117,6 +117,12 @@ const Index = () => {
                   See How I Work <ArrowRight size={16} />
                 </Link>
               </div>
+              <p
+                className="font-body text-xs text-primary-foreground/40 mt-4 animate-fade-in-up tracking-wide"
+                style={{ animationDelay: "0.55s" }}
+              >
+                Currently accepting Q3 2026 engagements
+              </p>
             </div>
             <div
               className="hidden md:block w-64 lg:w-72 shrink-0 animate-fade-in-up"
@@ -181,6 +187,16 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Typical Results */}
+      <section className="py-10 bg-navy border-t border-primary-foreground/10">
+        <div className="container text-center max-w-3xl">
+          <p className="font-body text-base md:text-lg text-primary-foreground/70 italic leading-relaxed">
+            "Within 6 months, we went from zero partner-sourced pipeline to 30% of new business."
+          </p>
+          <p className="font-body text-sm text-primary-foreground/40 mt-3">— VP Partnerships, Series D SaaS</p>
+        </div>
+      </section>
+
       {/* Who I Work With */}
       <section className="section-padding bg-background">
         <div className="container text-center max-w-5xl">
@@ -241,16 +257,16 @@ const Index = () => {
             <MessageCircleQuestion className="text-gold" size={28} strokeWidth={1.5} />
           </div>
           <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
-            Not Sure Where to Start?
+            Let's Scope Your Engagement
           </h2>
           <p className="font-body text-muted-foreground text-lg mb-8 leading-relaxed">
-            Every partner ecosystem is different. Let's talk about where you are today and where you need to go.
+            You know what's broken in your partner ecosystem. I'll show you how I'd fix it — and what results to expect.
           </p>
           <Link
             to="/contact"
             className="inline-flex items-center gap-2 px-8 py-3.5 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors"
           >
-            <CalendarCheck size={18} /> Let's Talk
+            <CalendarCheck size={18} /> Book a Strategy Call
           </Link>
         </div>
       </section>
