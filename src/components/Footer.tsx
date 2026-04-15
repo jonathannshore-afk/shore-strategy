@@ -20,10 +20,10 @@ const Footer = () => {
           {/* Right — CTA */}
           <div className="text-left md:text-right">
             <h2 className="font-display text-2xl md:text-3xl font-bold text-primary-foreground mb-3">
-              Looking for a Partner Ecosystem Leader?
+              Ready to Accelerate Your Partner Ecosystem?
             </h2>
             <p className="font-body text-sm text-primary-foreground/60 mb-6">
-              Let's talk about how I can help accelerate your partner-led growth.
+              Let's discuss how a structured engagement can drive measurable partner-led revenue.
             </p>
             <div className="flex flex-wrap gap-4 md:justify-end">
               <Link
