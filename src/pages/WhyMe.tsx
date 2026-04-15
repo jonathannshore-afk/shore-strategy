@@ -267,7 +267,7 @@ const WhyMe = () => {
               The First 90 Days
             </h2>
             <p className="font-body text-muted-foreground mt-3 max-w-2xl mx-auto">
-              Whether fractional or full-time, here's how I approach the first 90 days of any engagement.
+              A structured framework for how I approach every consulting engagement — from day one to measurable results.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
