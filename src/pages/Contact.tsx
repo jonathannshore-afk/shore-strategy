@@ -97,7 +97,7 @@ const Contact = () => {
             Let's <span className="text-gold">Connect</span>
           </h1>
           <p className="font-body text-lg text-primary-foreground/70 max-w-2xl">
-            Whether you're looking for a fractional partner leader, exploring a full-time opportunity, or just want to exchange ideas — I'd love to hear from you.
+            Whether you're exploring fractional leadership, a strategic project, or just want to exchange ideas — I'd love to hear from you.
           </p>
         </div>
       </section>
@@ -113,7 +113,7 @@ const Contact = () => {
                 I partner with B2B SaaS and enterprise technology companies to build, scale, and operationalize partner ecosystems. With deep expertise in strategic alliances, channel programs, and ecosystem go-to-market, I help organizations turn partnerships into a measurable growth engine.
               </p>
               <p className="font-body text-muted-foreground leading-relaxed">
-                Whether you need a fractional VP of Partnerships or a full-time leader — let's talk. Pick a time that works for you, no commitment required.
+                Whether you need fractional leadership, a strategic assessment, or advisory support — let's talk. Pick a time that works for you, no commitment required.
               </p>
             </div>
 
