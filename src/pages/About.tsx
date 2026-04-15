@@ -174,6 +174,9 @@ const About = () => {
                 <p>
                   I'm now channeling that practitioner-level experience into fractional leadership engagements — helping B2B companies build the strategic frameworks and operational muscle they need to unlock partner-led growth.
                 </p>
+                <p className="text-foreground/50 italic text-sm mt-2">
+                  For the right opportunity, I'm also open to full-time leadership roles.
+                </p>
               </div>
             </div>
             <div>

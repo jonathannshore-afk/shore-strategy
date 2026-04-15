@@ -1,9 +1,8 @@
 import { lazy, Suspense } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, CalendarCheck, Briefcase, Users2, MessageCircleQuestion } from "lucide-react";
+import { ArrowRight, CalendarCheck, Users2, Lightbulb, MessageCircleQuestion, Clock } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import headshot from "@/assets/jonathan-headshot.jpeg";
-import logoSalesforce from "@/assets/logo-salesforce.png";
 import logoServicenow from "@/assets/logo-servicenow.svg";
 import logoLumen from "@/assets/logo-lumen.png";
 import Layout from "@/components/Layout";
@@ -18,13 +17,33 @@ const stats = [
   { value: "6+", label: "Routes-to-Market Launched" },
 ];
 
+const engagements = [
+  {
+    icon: Users2,
+    title: "Fractional Leadership",
+    description: "Embedded, part-time executive leadership for companies building or transforming their partner function.",
+    link: "/services",
+  },
+  {
+    icon: Clock,
+    title: "Project-Based",
+    description: "Scoped, time-bound engagements with clear deliverables — program design, GTM planning, operational buildouts.",
+    link: "/services",
+  },
+  {
+    icon: Lightbulb,
+    title: "Advisory & Coaching",
+    description: "Ongoing strategic guidance for partner leaders navigating complex ecosystem decisions.",
+    link: "/services",
+  },
+];
 
 const Index = () => {
   return (
     <Layout>
       <SEO
-        title="Partner Ecosystem Strategy Executive"
-        description="Jonathan Shore helps founders, CEOs, and CROs build, fix, and scale partner ecosystems that drive measurable revenue growth. 15+ years at Salesforce, ServiceNow, and Lumen."
+        title="Partner Ecosystem Strategist"
+        description="Jonathan Shore helps B2B technology companies build, fix, and scale partner ecosystems that drive measurable revenue growth. 15+ years at Salesforce, ServiceNow, and Lumen."
         path="/"
       />
 
@@ -40,7 +59,7 @@ const Index = () => {
             founder: {
               "@type": "Person",
               name: "Jonathan Shore",
-              jobTitle: "Partner Ecosystem Strategy Executive",
+              jobTitle: "Partner Ecosystem Strategist",
               url: "https://www.linkedin.com/in/jonathan-shore/",
             },
             url: "https://shore-strategy.com",
@@ -71,21 +90,15 @@ const Index = () => {
                 className="font-display text-3xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-4 md:mb-6 animate-fade-in-up"
                 style={{ animationDelay: "0.15s" }}
               >
-                Jonathan
+                Your Partner Ecosystem
                 <br />
-                <span className="text-gold">Shore</span>
+                <span className="text-gold">Should Be a Revenue Engine</span>
               </h1>
               <p
-                className="font-body text-base md:text-xl text-primary-foreground/80 max-w-xl mb-3 md:mb-4 animate-fade-in-up"
+                className="font-body text-base md:text-xl text-primary-foreground/80 max-w-xl mb-6 md:mb-10 animate-fade-in-up"
                 style={{ animationDelay: "0.3s" }}
               >
-                I am a Partner Ecosystem Strategist with 15+ years of experience building partner ecosystems as a growth catalyst for technology companies.
-              </p>
-              <p
-                className="font-body text-sm md:text-base text-gold/80 max-w-xl mb-6 md:mb-10 animate-fade-in-up"
-                style={{ animationDelay: "0.35s" }}
-              >
-                Available for Fractional Partner Strategy Leadership, Partner Strategy Consulting, and Full-Time opportunities.
+                I help B2B technology companies build, fix, and scale partner ecosystems that drive measurable revenue growth.
               </p>
               <div
                 className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start animate-fade-in-up"
@@ -95,7 +108,7 @@ const Index = () => {
                   to="/contact"
                   className="inline-flex items-center gap-2 px-8 py-3.5 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors"
                 >
-                  <CalendarCheck size={18} /> Book a Call
+                  <CalendarCheck size={18} /> Book a Discovery Call
                 </Link>
                 <Link
                   to="/services"
@@ -185,53 +198,38 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Audience Segmentation */}
+      {/* How I Work */}
       <section className="section-padding bg-cream">
         <div className="container">
           <div className="text-center mb-12">
-            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">How We Work Together</p>
+            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Engagement Models</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-              Find Your Path
+              How I Work
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* Hiring Manager path */}
-            <div className="bg-card p-10 rounded-lg border border-border hover:shadow-lg hover:border-gold/30 transition-all group">
-              <div className="w-12 h-12 rounded-lg bg-navy/5 flex items-center justify-center mb-6 group-hover:bg-gold/10 transition-colors">
-                <Briefcase className="text-gold" size={24} strokeWidth={1.5} />
-              </div>
-              <h3 className="font-display text-xl font-semibold text-foreground mb-3">
-                Hiring a Partner Leader
-              </h3>
-              <p className="font-body text-muted-foreground leading-relaxed mb-6 text-sm">
-                Looking for a VP or Director-level partnerships executive to build and lead your ecosystem strategy full-time? See my track record and experience.
-              </p>
-              <Link
-                to="/about"
-                className="inline-flex items-center gap-2 text-gold font-body font-semibold text-sm hover:text-gold-dark transition-colors"
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {engagements.map((eng) => (
+              <div
+                key={eng.title}
+                className="bg-card p-10 rounded-lg border border-border hover:shadow-lg hover:border-gold/30 transition-all group"
               >
-                View My Background <ArrowRight size={16} />
-              </Link>
-            </div>
-
-            {/* Fractional / Consulting path */}
-            <div className="bg-card p-10 rounded-lg border border-border hover:shadow-lg hover:border-gold/30 transition-all group">
-              <div className="w-12 h-12 rounded-lg bg-navy/5 flex items-center justify-center mb-6 group-hover:bg-gold/10 transition-colors">
-                <Users2 className="text-gold" size={24} strokeWidth={1.5} />
+                <div className="w-12 h-12 rounded-lg bg-navy/5 flex items-center justify-center mb-6 group-hover:bg-gold/10 transition-colors">
+                  <eng.icon className="text-gold" size={24} strokeWidth={1.5} />
+                </div>
+                <h3 className="font-display text-xl font-semibold text-foreground mb-3">
+                  {eng.title}
+                </h3>
+                <p className="font-body text-muted-foreground leading-relaxed mb-6 text-sm">
+                  {eng.description}
+                </p>
+                <Link
+                  to={eng.link}
+                  className="inline-flex items-center gap-2 text-gold font-body font-semibold text-sm hover:text-gold-dark transition-colors"
+                >
+                  Learn More <ArrowRight size={16} />
+                </Link>
               </div>
-              <h3 className="font-display text-xl font-semibold text-foreground mb-3">
-                Need Fractional or Advisory Help
-              </h3>
-              <p className="font-body text-muted-foreground leading-relaxed mb-6 text-sm">
-                Need a seasoned partner strategist embedded part-time, for a specific project, or as an ongoing advisor? Explore engagement models and capabilities.
-              </p>
-              <Link
-                to="/services"
-                className="inline-flex items-center gap-2 text-gold font-body font-semibold text-sm hover:text-gold-dark transition-colors"
-              >
-                Explore Services <ArrowRight size={16} />
-              </Link>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -246,7 +244,7 @@ const Index = () => {
             Not Sure Where to Start?
           </h2>
           <p className="font-body text-muted-foreground text-lg mb-8 leading-relaxed">
-            Whether you're exploring a full-time hire, fractional leadership, or just want to talk through your partner strategy — let's connect.
+            Every partner ecosystem is different. Let's talk about where you are today and where you need to go.
           </p>
           <Link
             to="/contact"

@@ -23,7 +23,7 @@ const Header = () => {
             <span className="font-display text-xl md:text-2xl font-bold text-gold">Jonathan</span>
             <span className="font-display text-xl md:text-2xl font-light text-primary-foreground">Shore</span>
           </div>
-          <span className="font-body text-[10px] md:text-xs uppercase tracking-[0.15em] text-primary-foreground/60">Partner Ecosystem Strategy Executive</span>
+          <span className="font-body text-[10px] md:text-xs uppercase tracking-[0.15em] text-primary-foreground/60">Partner Ecosystem Strategist</span>
         </Link>
 
         {/* Desktop nav */}

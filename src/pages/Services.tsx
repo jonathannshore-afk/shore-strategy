@@ -102,24 +102,6 @@ const engagementModels = [
       "Leadership development",
     ],
   },
-  {
-    title: "Full-Time Leadership",
-    desc: "For the right opportunity, I'm open to leading a partner ecosystem full-time — building the team, strategy, and infrastructure from the inside.",
-    fit: "Best for companies ready to invest in a dedicated partnerships leader.",
-    backTitle: "Full-Time Leadership",
-    timeline: "Full-Time · Permanent",
-    audience: [
-      "Enterprise companies scaling partnerships",
-      "Organizations needing ecosystem transformation",
-      "Companies ready for a dedicated leader",
-    ],
-    outcomes: [
-      "End-to-end ecosystem ownership",
-      "Team building & organizational design",
-      "Multi-year strategy & execution",
-      "Cross-functional alignment at scale",
-    ],
-  },
 ];
 
 const pillars = [
@@ -203,7 +185,7 @@ const Services = () => {
             What I <span className="text-gold">Build</span>
           </h1>
           <p className="font-body text-lg text-primary-foreground/70 max-w-2xl">
-            Whether embedded as a fractional leader, engaged on a project, or hired full-time — these are the capabilities I bring to drive partner-led growth.
+            Whether embedded as a fractional leader, engaged on a project, or advising your team — these are the capabilities I bring to drive partner-led growth.
           </p>
         </div>
       </section>
@@ -282,7 +264,7 @@ const Services = () => {
             <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Ways to Work Together</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Engagement Models</h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto auto-rows-[380px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto auto-rows-[380px]">
             {engagementModels.map((model) => (
               <FlipCard
                 key={model.title}
