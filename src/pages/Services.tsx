@@ -51,13 +51,13 @@ const engagementModels = [
   {
     title: "Fractional Leadership",
     desc: "Embedded, part-time executive leadership for companies building or transforming their partner function.",
-    fit: "Best for companies that need senior partner strategy leadership but aren't ready for a full-time hire.",
+    fit: "Best for companies that need senior partner strategy leadership without the overhead of a full-time executive.",
     backTitle: "Fractional Leadership",
     timeline: "Ongoing · Part-Time",
     audience: [
       "Mid-Market & Enterprise companies",
       "Scaling founder-led → structured partnerships",
-      "Bridging the gap before a full-time hire",
+      "Bridging the gap with experienced leadership",
     ],
     outcomes: [
       "Partner strategy & roadmap",
