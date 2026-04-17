@@ -1,43 +1,53 @@
 
+User wants Services page reorganized:
+1. Engagement Models section moves to top (right after Hero)
+2. "What I Build" capabilities grid moves underneath Engagement Models
+3. Undo Rapid Assessments featured banner — restore it as a card in the capabilities grid (revert to pre-previous-change state for that piece)
 
-# Three Page Updates
+Looking at current `src/pages/Services.tsx`:
+- Hero
+- Featured Rapid Assessments banner
+- Capabilities Grid (7 items)
+- Engagement Models (flip cards)
+- CTA
 
-## 1. Services Page (`src/pages/Services.tsx`)
+Target order:
+- Hero
+- Engagement Models
+- Capabilities Grid (8 items, with Rapid Assessments restored)
+- CTA
 
-**(a) Remove Methodology section**
-- Delete entire `{/* Methodology */}` section (lines ~212–258) including the 5 `pillars` array (lines 107–168).
-- Remove now-unused icon imports: `ClipboardCheck`, `Rocket`, `Search` (keep `Target`, `Layers` — still used elsewhere in the file via capabilities).
+# Services Page Reorder
 
-**(b) Promote "Rapid Assessments" to featured banner**
-- Remove the `Rapid Assessments` entry from the `capabilities` array (line 43–47) so it no longer appears in the grid.
-- Add a new featured section **between the Hero and the Capabilities Grid** (so it sits above the grid, drawing the eye first):
-  - Full-width band with a subtle gold-accented card on cream/navy-tinted background to stand out from the white capability grid below
-  - Layout: two-column on desktop — left side icon (`Zap`) + label ("Featured Offering"), title "Rapid Assessments", description "30-day partner program audits that identify quick wins, strategic gaps, and a prioritized roadmap for improvement"; right side a prominent gold CTA button "Book a Rapid Assessment" linking to `/contact#calendly`
-  - Visual treatment: gold left border accent, soft shadow, larger typography than grid cards, "FEATURED OFFERING" eyebrow label in gold uppercase
-- Keep the remaining 7 capabilities in the grid below (still renders cleanly as `md:grid-cols-2`).
+## Changes to `src/pages/Services.tsx`
 
-## 2. Why Me → Results
+**1. Restore Rapid Assessments capability**
+- Add `Rapid Assessments` back into the `capabilities` array (using existing `Zap` icon) with the description: *"30-day partner program audits that identify quick wins, strategic gaps, and a prioritized roadmap for improvement."*
+- This brings the grid back to 8 items (renders cleanly as `md:grid-cols-2`).
 
-Rename across:
-- **`src/components/Header.tsx`** (line 9): nav label `"Why Me"` → `"Results"`, path `/why-me` → `/results`
-- **`src/App.tsx`** (line 30): route path `/why-me` → `/results`
-- **`src/pages/WhyMe.tsx`**:
-  - SEO `title` → `"Results"`, `path` → `/results`, description updated to reflect "Results" framing
-  - Hero eyebrow "Why Work With Me" → "Results", H1 already reads *"Proof in the Results"* — keep
-  - (Filename `WhyMe.tsx` and component name `WhyMe` left as-is to avoid touching imports — only user-visible text and route change. Acceptable since it has no SEO/UX impact.)
+**2. Remove the Featured Rapid Assessments banner section**
+- Delete the entire `{/* Featured: Rapid Assessments */}` section (the cream-background standalone banner with the gold left border and CTA).
 
-## 3. Contact Page (`src/pages/Contact.tsx`)
+**3. Reorder sections**
+New page flow:
+1. Hero (navy) — unchanged
+2. **Engagement Models** (cream) — moved up, right after hero
+3. **What I Build / Capabilities Grid** (background) — moved below engagement models
+4. CTA (navy) — unchanged
 
-In the `id="calendly"` section (lines ~115–143):
-- Remove the entire left "How I Can Help" column (the `<div>` containing the H2 + two paragraphs)
-- Change the grid from `lg:grid-cols-2` to single-column, and center the Calendly column with `max-w-3xl mx-auto`
-- Keep the "Book a Conversation" heading and the Calendly embed
-- The hero ("Let's Connect") and the form/contact-info section below remain untouched (the user only asked to remove the "How I Can Help" copy, not the form section).
+**4. Adjust section backgrounds for visual rhythm**
+Current alternation is navy → cream → background → cream → navy. After reorder it would be navy → cream(engagement) → background(capabilities) → navy(cta), which still alternates cleanly — no background changes needed.
+
+**5. Add a section heading to "What I Build"**
+Since it's no longer the first content section after the hero, add a centered eyebrow + heading above the capabilities grid (matching the Engagement Models section style):
+- Eyebrow: "Capabilities"
+- H2: "What I Build"
+
+This gives the second section visual parity with Engagement Models.
+
+**6. Clean up imports**
+- `Zap` stays (now used by the Rapid Assessments capability card icon)
+- All other icon imports remain in use
 
 ## Files Modified
-- `src/pages/Services.tsx` — remove methodology section + pillars array, remove Rapid Assessments from grid, add featured banner section, clean unused imports
-- `src/components/Header.tsx` — rename nav label and path
-- `src/App.tsx` — rename route path
-- `src/pages/WhyMe.tsx` — update SEO + hero eyebrow text
-- `src/pages/Contact.tsx` — remove "How I Can Help" column, center Calendly
-
+- `src/pages/Services.tsx` — restore Rapid Assessments to capabilities array, remove featured banner, swap section order, add heading to capabilities section
