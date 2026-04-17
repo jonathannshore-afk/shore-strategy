@@ -1,31 +1,43 @@
 
-# About Page Updates
 
-## 1. Remove FTE Mention
-In `src/pages/About.tsx`:
-- Delete the italic line (lines 177–179): *"For the right opportunity, I'm also open to full-time leadership roles."*
-- Update hero intro (line 112) to remove "fractional executive leadership" framing of dual-track — keep it consulting-only: *"...unlock partner-led revenue through strategic consulting and fractional leadership engagements."* (already consulting-focused, no change needed there — only the italic line is removed).
+# Three Page Updates
 
-## 2. Fix ServiceNow Logo
-The current `logo-servicenow.png` is rendered with `brightness-0 invert` to make it white on the navy hero. PNGs with transparency + `brightness-0 invert` often render with halos or jagged edges. We have a clean `logo-servicenow.svg` available in `src/assets/`.
+## 1. Services Page (`src/pages/Services.tsx`)
 
-**Fix**: Swap the import to use the SVG version. SVGs scale crisply and respond cleanly to `brightness-0 invert`. Apply only to the hero (navy background); the experience accordion uses the original colored logo on cream — leave that alone.
+**(a) Remove Methodology section**
+- Delete entire `{/* Methodology */}` section (lines ~212–258) including the 5 `pillars` array (lines 107–168).
+- Remove now-unused icon imports: `ClipboardCheck`, `Rocket`, `Search` (keep `Target`, `Layers` — still used elsewhere in the file via capabilities).
 
-## 3. Hide Lovable Badge
-The "Edit with Lovable" badge appears on published deployments. I'll toggle it off via the publish settings (requires Pro plan — if not on Pro, this will fail and you'll need to upgrade). This is a one-click toggle, no code changes.
+**(b) Promote "Rapid Assessments" to featured banner**
+- Remove the `Rapid Assessments` entry from the `capabilities` array (line 43–47) so it no longer appears in the grid.
+- Add a new featured section **between the Hero and the Capabilities Grid** (so it sits above the grid, drawing the eye first):
+  - Full-width band with a subtle gold-accented card on cream/navy-tinted background to stand out from the white capability grid below
+  - Layout: two-column on desktop — left side icon (`Zap`) + label ("Featured Offering"), title "Rapid Assessments", description "30-day partner program audits that identify quick wins, strategic gaps, and a prioritized roadmap for improvement"; right side a prominent gold CTA button "Book a Rapid Assessment" linking to `/contact#calendly`
+  - Visual treatment: gold left border accent, soft shadow, larger typography than grid cards, "FEATURED OFFERING" eyebrow label in gold uppercase
+- Keep the remaining 7 capabilities in the grid below (still renders cleanly as `md:grid-cols-2`).
 
-## 4. Fix Expertise Radar (About Page)
-The radar is still clipping because the About page wraps it in `max-w-lg` (~512px) but the inner chart only uses `max-w-[420px]` with `outerRadius="55%"` — labels at the cardinal points still extend beyond the SVG bounds at narrow widths.
+## 2. Why Me → Results
 
-**Fixes** in `src/components/ExpertiseRadar.tsx`:
-- Reduce `outerRadius` from `55%` → **`50%`** (gives ~25% margin on each side for labels)
-- Increase inner container `max-w-[420px]` → **`max-w-[480px]`**
-- Increase height `340` → **`380`**
-- Reduce label font size from `11` → **`10`** for safer fit
+Rename across:
+- **`src/components/Header.tsx`** (line 9): nav label `"Why Me"` → `"Results"`, path `/why-me` → `/results`
+- **`src/App.tsx`** (line 30): route path `/why-me` → `/results`
+- **`src/pages/WhyMe.tsx`**:
+  - SEO `title` → `"Results"`, `path` → `/results`, description updated to reflect "Results" framing
+  - Hero eyebrow "Why Work With Me" → "Results", H1 already reads *"Proof in the Results"* — keep
+  - (Filename `WhyMe.tsx` and component name `WhyMe` left as-is to avoid touching imports — only user-visible text and route change. Acceptable since it has no SEO/UX impact.)
 
-In `src/pages/About.tsx`: change wrapper from `max-w-lg` → **`max-w-xl`** so the chart has room to breathe.
+## 3. Contact Page (`src/pages/Contact.tsx`)
+
+In the `id="calendly"` section (lines ~115–143):
+- Remove the entire left "How I Can Help" column (the `<div>` containing the H2 + two paragraphs)
+- Change the grid from `lg:grid-cols-2` to single-column, and center the Calendly column with `max-w-3xl mx-auto`
+- Keep the "Book a Conversation" heading and the Calendly embed
+- The hero ("Let's Connect") and the form/contact-info section below remain untouched (the user only asked to remove the "How I Can Help" copy, not the form section).
 
 ## Files Modified
-- `src/pages/About.tsx` — remove FTE line, swap ServiceNow logo import to SVG, widen radar wrapper
-- `src/components/ExpertiseRadar.tsx` — adjust dimensions and outerRadius for clean rendering
-- Publish settings — hide Lovable badge (no code change)
+- `src/pages/Services.tsx` — remove methodology section + pillars array, remove Rapid Assessments from grid, add featured banner section, clean unused imports
+- `src/components/Header.tsx` — rename nav label and path
+- `src/App.tsx` — rename route path
+- `src/pages/WhyMe.tsx` — update SEO + hero eyebrow text
+- `src/pages/Contact.tsx` — remove "How I Can Help" column, center Calendly
+
