@@ -10,6 +10,7 @@ import {
 import headshot from "@/assets/jonathan-headshot.jpeg";
 import logoSalesforce from "@/assets/logo-salesforce.png";
 import logoServicenow from "@/assets/logo-servicenow.png";
+import logoServicenowSvg from "@/assets/logo-servicenow.svg";
 import logoLumen from "@/assets/logo-lumen.png";
 import SEO from "@/components/SEO";
 import StatsMarquee from "@/components/StatsMarquee";
