@@ -10,6 +10,7 @@ import {
 import headshot from "@/assets/jonathan-headshot.jpeg";
 import logoSalesforce from "@/assets/logo-salesforce.png";
 import logoServicenow from "@/assets/logo-servicenow.png";
+import logoServicenowSvg from "@/assets/logo-servicenow.svg";
 import logoLumen from "@/assets/logo-lumen.png";
 import SEO from "@/components/SEO";
 import StatsMarquee from "@/components/StatsMarquee";
@@ -120,7 +121,7 @@ const About = () => {
                 </p>
                 <div className="flex items-center gap-8 flex-wrap">
                   <img src={logoSalesforce} alt="Salesforce" className="h-8 md:h-10 object-contain opacity-60 hover:opacity-100 transition-opacity brightness-0 invert" />
-                  <img src={logoServicenow} alt="ServiceNow" className="h-6 md:h-8 object-contain opacity-60 hover:opacity-100 transition-opacity brightness-0 invert" />
+                  <img src={logoServicenowSvg} alt="ServiceNow" className="h-6 md:h-8 object-contain opacity-60 hover:opacity-100 transition-opacity brightness-0 invert" />
                   <img src={logoLumen} alt="Lumen Technologies" className="h-6 md:h-8 object-contain opacity-60 hover:opacity-100 transition-opacity brightness-0 invert" />
                 </div>
               </div>
@@ -173,9 +174,6 @@ const About = () => {
                 </p>
                 <p>
                   I'm now channeling that practitioner-level experience into fractional leadership engagements — helping B2B companies build the strategic frameworks and operational muscle they need to unlock partner-led growth.
-                </p>
-                <p className="text-foreground/50 italic text-sm mt-2">
-                  For the right opportunity, I'm also open to full-time leadership roles.
                 </p>
               </div>
             </div>
@@ -247,7 +245,7 @@ const About = () => {
 
       {/* Core Competencies — Radar Only */}
       <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-background">
-        <div className="container max-w-lg">
+        <div className="container max-w-xl">
           <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-2 text-center">Expertise</p>
           <h2 className="font-display text-3xl font-bold text-foreground mb-6 text-center">Core Competencies</h2>
           <ExpertiseRadar variant="light" />
