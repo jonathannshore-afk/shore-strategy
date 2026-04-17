@@ -40,6 +40,11 @@ const capabilities = [
     title: "Strategic Planning & Alignment",
     desc: "Drive executive alignment on partner strategy, investment priorities, and cross-functional integration with sales, product, and marketing.",
   },
+  {
+    icon: Zap,
+    title: "Rapid Assessments",
+    desc: "30-day partner program audits that identify quick wins, strategic gaps, and a prioritized roadmap for improvement.",
+  },
 ];
 
 const engagementModels = [
@@ -121,56 +126,6 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Featured: Rapid Assessments */}
-      <section className="section-padding bg-cream">
-        <div className="container max-w-5xl">
-          <div className="relative bg-card rounded-lg border border-border border-l-4 border-l-gold shadow-xl p-8 md:p-12">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-              <div className="md:col-span-2">
-                <div className="flex items-center gap-3 mb-4">
-                  <Zap className="text-gold" size={22} strokeWidth={1.5} />
-                  <p className="text-gold font-body text-xs uppercase tracking-[0.2em] font-semibold">
-                    Featured Offering
-                  </p>
-                </div>
-                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  Rapid Assessments
-                </h2>
-                <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed">
-                  30-day partner program audits that identify quick wins, strategic gaps, and a prioritized roadmap for improvement.
-                </p>
-              </div>
-              <div className="md:text-right">
-                <Link
-                  to="/contact#calendly"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors"
-                >
-                  <CalendarCheck size={18} /> Book a Rapid Assessment
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Capabilities Grid */}
-      <section className="section-padding bg-background">
-        <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {capabilities.map((cap) => (
-              <div
-                key={cap.title}
-                className="bg-card p-8 rounded-lg border border-border hover:shadow-lg hover:border-gold/30 transition-all group"
-              >
-                <cap.icon className="text-gold mb-4" size={36} strokeWidth={1.5} />
-                <h3 className="font-display text-xl font-semibold text-foreground mb-3">{cap.title}</h3>
-                <p className="font-body text-muted-foreground leading-relaxed">{cap.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Engagement Models */}
       <section className="section-padding bg-cream">
         <div className="container">
@@ -214,6 +169,28 @@ const Services = () => {
                   </>
                 }
               />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Capabilities Grid */}
+      <section className="section-padding bg-background">
+        <div className="container">
+          <div className="text-center mb-16">
+            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Capabilities</p>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">What I Build</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {capabilities.map((cap) => (
+              <div
+                key={cap.title}
+                className="bg-card p-8 rounded-lg border border-border hover:shadow-lg hover:border-gold/30 transition-all group"
+              >
+                <cap.icon className="text-gold mb-4" size={36} strokeWidth={1.5} />
+                <h3 className="font-display text-xl font-semibold text-foreground mb-3">{cap.title}</h3>
+                <p className="font-body text-muted-foreground leading-relaxed">{cap.desc}</p>
+              </div>
             ))}
           </div>
         </div>
