@@ -1,57 +1,33 @@
 
 
-# Recommended Changes — Executive Buyer Perspective
+# Three Targeted Updates
 
-From the lens of a VP Partnerships or CRO evaluating whether to engage you, here are the friction points and fixes, ranked by impact.
+## 1. Remove Testimonial (Homepage)
+Delete the entire "Typical Results" section in `src/pages/Index.tsx` (lines ~190–198) containing the *"Within 6 months..."* quote and *"VP Partnerships, Series D SaaS"* attribution. This is the only testimonial on the site.
 
----
+## 2. Update Availability Badge
+In `src/pages/Index.tsx` (line 124), change:
+- **From**: *"Currently accepting Q3 2026 engagements"*
+- **To**: *"Currently accepting new engagements"*
 
-## 1. Sharpen the Mid-Page CTA (Homepage)
+## 3. Fix Expertise Radar Cutoff
+The radar labels (especially "Cross-Functional Leadership" and longer labels at the edges) get clipped because `outerRadius="60%"` leaves limited room and the container width is constrained.
 
-**Problem**: "Not Sure Where to Start?" sounds like it's talking down to the reader. A VP already knows their problem — they're evaluating whether *you* can solve it.
+**Recommended approach: Improve, don't remove** — the radar adds visual differentiation and reinforces the "8 core competencies" narrative. Fixes:
 
-**Change**: Replace with something that meets them at their level:
-- Headline: **"Let's Scope Your Engagement"**
-- Body: *"You know what's broken in your partner ecosystem. I'll show you how I'd fix it — and what results to expect."*
-- Button: **"Book a Strategy Call"**
+- **Shorten the longest labels** in `src/components/ExpertiseRadar.tsx`:
+  - `"Cross-Functional\nLeadership"` → `"Cross-Functional"` (single line)
+  - `"Operating Models"` → `"Operating Models"` (keep)
+  - `"Business Planning"` → `"Planning"` (or keep; we'll see)
+- **Reduce `outerRadius`** from `60%` → `**70%**` (paradoxically gives more room because we'll also expand the container) — actually we'll go the other way: reduce to `**55%**` so labels have more space outside the polygon.
+- **Increase container width**: `max-w-[360px]` → `**max-w-[420px]**`
+- **Increase chart height**: `300` → `**340**`
+- **Reduce font size** slightly: `fontSize: 10` → `**fontSize: 11**` with better spacing (or keep 10 — final tuning during implementation)
+- Apply same improvements to both dark (Home) and light (About) variants since the component is shared.
 
----
+This keeps the radar visually appealing while ensuring no labels are clipped at standard breakpoints.
 
-## 2. Reframe the Footer CTA
-
-**Problem**: "Looking for a Partner Ecosystem Leader?" reads like a job posting headline. It breaks the consulting-first framing.
-
-**Change**:
-- Headline: **"Ready to Accelerate Your Partner Ecosystem?"**
-- Body: *"Let's discuss how a structured engagement can drive measurable partner-led revenue."*
-
----
-
-## 3. Add an Availability Signal (Homepage or Contact)
-
-**Problem**: No urgency. A VP browsing has no idea if you're available or booked out six months. This is standard for high-end consultants and signals demand.
-
-**Change**: Add a subtle line below the hero CTAs or on the Contact page:
-- *"Currently accepting Q3 2026 engagements"* — styled as a small, muted badge or line of text.
-
----
-
-## 4. Add a "Typical Results" or Social Proof Line (Homepage)
-
-**Problem**: The stats section shows *your* career numbers, but a buyer wants to know what happens for *them*. Even without named testimonials, a results-oriented line bridges that gap.
-
-**Change**: Add a short section or a single line between the stats and "Who I Work With":
-- *"Clients typically see partner-sourced pipeline increase within the first 90 days of engagement."*
-- Or anonymous proof: *"Within 6 months, we went from zero partner-sourced pipeline to 30% of new business." — VP Partnerships, Series D SaaS*
-
----
-
-## Summary of File Changes
-
-| File | Change |
-|------|--------|
-| `src/pages/Index.tsx` | Rewrite mid-page CTA copy; optionally add availability badge below hero; optionally add results/proof line |
-| `src/components/Footer.tsx` | Rewrite headline and body copy |
-
-All changes are copy-only — no structural or layout modifications.
+## Files Modified
+- `src/pages/Index.tsx` — remove testimonial section, update availability copy
+- `src/components/ExpertiseRadar.tsx` — shorten labels, resize container/radius for clean rendering
 
