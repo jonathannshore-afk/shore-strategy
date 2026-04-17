@@ -102,34 +102,18 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Summary + Calendly side by side */}
+      {/* Calendly */}
       <section id="calendly" className="section-padding bg-cream">
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Summary */}
-            <div>
-              <h2 className="font-display text-3xl font-bold text-foreground mb-6">How I Can Help</h2>
-              <p className="font-body text-muted-foreground leading-relaxed mb-6">
-                I partner with B2B SaaS and enterprise technology companies to build, scale, and operationalize partner ecosystems. With deep expertise in strategic alliances, channel programs, and ecosystem go-to-market, I help organizations turn partnerships into a measurable growth engine.
-              </p>
-              <p className="font-body text-muted-foreground leading-relaxed">
-                Whether you need fractional leadership, a strategic assessment, or advisory support — let's talk. Pick a time that works for you, no commitment required.
-              </p>
-            </div>
-
-            {/* Calendly */}
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <Calendar className="text-gold" size={28} strokeWidth={1.5} />
-                <h2 className="font-display text-2xl font-bold text-foreground">Book a Conversation</h2>
-              </div>
-              <div
-                className="calendly-inline-widget rounded-lg overflow-hidden border border-border"
-                data-url={`${CALENDLY_URL}?hide_gdpr_banner=1`}
-                style={{ minWidth: "320px", height: "630px" }}
-              />
-            </div>
+        <div className="container max-w-3xl mx-auto">
+          <div className="flex items-center gap-3 mb-6 justify-center">
+            <Calendar className="text-gold" size={28} strokeWidth={1.5} />
+            <h2 className="font-display text-2xl font-bold text-foreground">Book a Conversation</h2>
           </div>
+          <div
+            className="calendly-inline-widget rounded-lg overflow-hidden border border-border"
+            data-url={`${CALENDLY_URL}?hide_gdpr_banner=1`}
+            style={{ minWidth: "320px", height: "630px" }}
+          />
         </div>
       </section>
 

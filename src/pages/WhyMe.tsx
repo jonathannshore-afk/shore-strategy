@@ -134,15 +134,15 @@ const WhyMe = () => {
   return (
     <Layout>
       <SEO
-        title="Why Jonathan Shore"
-        description="Proven results and a clear 90-day engagement framework. See why companies trust Jonathan Shore to build and scale partner ecosystems."
-        path="/why-me"
+        title="Results"
+        description="Proven partner ecosystem results and a clear 90-day engagement framework. See the measurable outcomes Jonathan Shore has delivered for B2B SaaS and enterprise clients."
+        path="/results"
       />
 
       {/* Hero */}
       <section className="bg-navy section-padding">
         <div className="container">
-          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Why Work With Me</p>
+          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Results</p>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
             Proof in the <span className="text-gold">Results</span>
           </h1>
