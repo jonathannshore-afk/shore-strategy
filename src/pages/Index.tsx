@@ -7,7 +7,7 @@ import logoLumen from "@/assets/logo-lumen.png";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 
-const ExpertiseRadar = lazy(() => import("@/components/ExpertiseRadar"));
+
 
 const stats = [
   { value: "15+", label: "Years of Experience" },
@@ -136,34 +136,25 @@ const Index = () => {
           </div>
         </div>
         <div className="relative z-10 container pb-8 pt-6">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-12">
-            <div>
-              <p className="font-body text-xs uppercase tracking-[0.2em] text-primary-foreground/40 text-center mb-5">
-                Experience Built At
-              </p>
-              <div className="flex items-center justify-center gap-10 md:gap-16 flex-wrap">
-                <img
-                  alt="Salesforce"
-                  className="h-10 md:h-12 object-contain opacity-60 hover:opacity-90 transition-opacity brightness-0 invert"
-                  src="/lovable-uploads/f6d67dad-429a-49a3-8c20-fff68acb27d4.png"
-                />
-                <img
-                  src={logoServicenow}
-                  alt="ServiceNow"
-                  className="h-8 md:h-10 object-contain opacity-60 hover:opacity-90 transition-opacity brightness-0 invert"
-                />
-                <img
-                  src={logoLumen}
-                  alt="Lumen Technologies"
-                  className="h-8 md:h-10 object-contain opacity-60 hover:opacity-90 transition-opacity brightness-0 invert"
-                />
-              </div>
-            </div>
-            <div className="hidden md:block">
-              <Suspense fallback={<div className="w-[300px] h-[250px]" />}>
-                <ExpertiseRadar variant="dark" />
-              </Suspense>
-            </div>
+          <p className="font-body text-xs uppercase tracking-[0.2em] text-primary-foreground/40 text-center mb-6">
+            Experience Built At
+          </p>
+          <div className="flex items-center justify-center gap-12 md:gap-20 flex-wrap">
+            <img
+              alt="Salesforce"
+              className="h-10 md:h-12 object-contain opacity-60 hover:opacity-90 transition-opacity brightness-0 invert"
+              src="/lovable-uploads/f6d67dad-429a-49a3-8c20-fff68acb27d4.png"
+            />
+            <img
+              src={logoServicenow}
+              alt="ServiceNow"
+              className="h-8 md:h-10 object-contain opacity-60 hover:opacity-90 transition-opacity brightness-0 invert"
+            />
+            <img
+              src={logoLumen}
+              alt="Lumen Technologies"
+              className="h-8 md:h-10 object-contain opacity-60 hover:opacity-90 transition-opacity brightness-0 invert"
+            />
           </div>
         </div>
       </section>
