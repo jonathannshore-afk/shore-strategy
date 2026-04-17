@@ -121,7 +121,7 @@ const Index = () => {
                 className="font-body text-xs text-primary-foreground/40 mt-4 animate-fade-in-up tracking-wide"
                 style={{ animationDelay: "0.55s" }}
               >
-                Currently accepting new engagements
+                Currently accepting Q3 2026 engagements
               </p>
             </div>
             <div
@@ -184,6 +184,16 @@ const Index = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Typical Results */}
+      <section className="py-10 bg-navy border-t border-primary-foreground/10">
+        <div className="container text-center max-w-3xl">
+          <p className="font-body text-base md:text-lg text-primary-foreground/70 italic leading-relaxed">
+            "Within 6 months, we went from zero partner-sourced pipeline to 30% of new business."
+          </p>
+          <p className="font-body text-sm text-primary-foreground/40 mt-3">— VP Partnerships, Series D SaaS</p>
         </div>
       </section>
 

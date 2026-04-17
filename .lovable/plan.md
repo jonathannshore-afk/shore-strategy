@@ -1,53 +1,57 @@
 
-User wants Services page reorganized:
-1. Engagement Models section moves to top (right after Hero)
-2. "What I Build" capabilities grid moves underneath Engagement Models
-3. Undo Rapid Assessments featured banner — restore it as a card in the capabilities grid (revert to pre-previous-change state for that piece)
 
-Looking at current `src/pages/Services.tsx`:
-- Hero
-- Featured Rapid Assessments banner
-- Capabilities Grid (7 items)
-- Engagement Models (flip cards)
-- CTA
+# Recommended Changes — Executive Buyer Perspective
 
-Target order:
-- Hero
-- Engagement Models
-- Capabilities Grid (8 items, with Rapid Assessments restored)
-- CTA
+From the lens of a VP Partnerships or CRO evaluating whether to engage you, here are the friction points and fixes, ranked by impact.
 
-# Services Page Reorder
+---
 
-## Changes to `src/pages/Services.tsx`
+## 1. Sharpen the Mid-Page CTA (Homepage)
 
-**1. Restore Rapid Assessments capability**
-- Add `Rapid Assessments` back into the `capabilities` array (using existing `Zap` icon) with the description: *"30-day partner program audits that identify quick wins, strategic gaps, and a prioritized roadmap for improvement."*
-- This brings the grid back to 8 items (renders cleanly as `md:grid-cols-2`).
+**Problem**: "Not Sure Where to Start?" sounds like it's talking down to the reader. A VP already knows their problem — they're evaluating whether *you* can solve it.
 
-**2. Remove the Featured Rapid Assessments banner section**
-- Delete the entire `{/* Featured: Rapid Assessments */}` section (the cream-background standalone banner with the gold left border and CTA).
+**Change**: Replace with something that meets them at their level:
+- Headline: **"Let's Scope Your Engagement"**
+- Body: *"You know what's broken in your partner ecosystem. I'll show you how I'd fix it — and what results to expect."*
+- Button: **"Book a Strategy Call"**
 
-**3. Reorder sections**
-New page flow:
-1. Hero (navy) — unchanged
-2. **Engagement Models** (cream) — moved up, right after hero
-3. **What I Build / Capabilities Grid** (background) — moved below engagement models
-4. CTA (navy) — unchanged
+---
 
-**4. Adjust section backgrounds for visual rhythm**
-Current alternation is navy → cream → background → cream → navy. After reorder it would be navy → cream(engagement) → background(capabilities) → navy(cta), which still alternates cleanly — no background changes needed.
+## 2. Reframe the Footer CTA
 
-**5. Add a section heading to "What I Build"**
-Since it's no longer the first content section after the hero, add a centered eyebrow + heading above the capabilities grid (matching the Engagement Models section style):
-- Eyebrow: "Capabilities"
-- H2: "What I Build"
+**Problem**: "Looking for a Partner Ecosystem Leader?" reads like a job posting headline. It breaks the consulting-first framing.
 
-This gives the second section visual parity with Engagement Models.
+**Change**:
+- Headline: **"Ready to Accelerate Your Partner Ecosystem?"**
+- Body: *"Let's discuss how a structured engagement can drive measurable partner-led revenue."*
 
-**6. Clean up imports**
-- `Zap` stays (now used by the Rapid Assessments capability card icon)
-- All other icon imports remain in use
+---
 
-## Files Modified
-- `src/pages/Services.tsx` — restore Rapid Assessments to capabilities array, remove featured banner, swap section order, add heading to capabilities section
+## 3. Add an Availability Signal (Homepage or Contact)
+
+**Problem**: No urgency. A VP browsing has no idea if you're available or booked out six months. This is standard for high-end consultants and signals demand.
+
+**Change**: Add a subtle line below the hero CTAs or on the Contact page:
+- *"Currently accepting Q3 2026 engagements"* — styled as a small, muted badge or line of text.
+
+---
+
+## 4. Add a "Typical Results" or Social Proof Line (Homepage)
+
+**Problem**: The stats section shows *your* career numbers, but a buyer wants to know what happens for *them*. Even without named testimonials, a results-oriented line bridges that gap.
+
+**Change**: Add a short section or a single line between the stats and "Who I Work With":
+- *"Clients typically see partner-sourced pipeline increase within the first 90 days of engagement."*
+- Or anonymous proof: *"Within 6 months, we went from zero partner-sourced pipeline to 30% of new business." — VP Partnerships, Series D SaaS*
+
+---
+
+## Summary of File Changes
+
+| File | Change |
+|------|--------|
+| `src/pages/Index.tsx` | Rewrite mid-page CTA copy; optionally add availability badge below hero; optionally add results/proof line |
+| `src/components/Footer.tsx` | Rewrite headline and body copy |
+
+All changes are copy-only — no structural or layout modifications.
+
