@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import FlipCard from "@/components/FlipCard";
-import { BarChart3, CalendarCheck, ClipboardCheck, Handshake, Layers, Lightbulb, Rocket, Search, Target, TrendingUp, Users, Zap } from "lucide-react";
+import { BarChart3, CalendarCheck, Handshake, Layers, Lightbulb, Target, TrendingUp, Users, Zap } from "lucide-react";
 
 const capabilities = [
   {
@@ -39,11 +39,6 @@ const capabilities = [
     icon: Lightbulb,
     title: "Strategic Planning & Alignment",
     desc: "Drive executive alignment on partner strategy, investment priorities, and cross-functional integration with sales, product, and marketing.",
-  },
-  {
-    icon: Zap,
-    title: "Rapid Assessments",
-    desc: "30-day partner program audits that identify quick wins, strategic gaps, and a prioritized roadmap for improvement.",
   },
 ];
 
@@ -104,70 +99,6 @@ const engagementModels = [
   },
 ];
 
-const pillars = [
-  {
-    step: "01",
-    icon: Search,
-    title: "Ecosystem Assessment & Architecture",
-    description:
-      "I start by mapping the full partner landscape — current partners, white space, competitive dynamics, and internal readiness.",
-    outcomes: [
-      "Partner ecosystem maturity assessment",
-      "Coverage gap analysis across routes-to-market",
-      "Internal alignment and readiness evaluation",
-    ],
-  },
-  {
-    step: "02",
-    icon: Target,
-    title: "Partner Program Design",
-    description:
-      "I design tiered partner programs with clear value exchange — certification frameworks, incentive models, and engagement rules.",
-    outcomes: [
-      "Tiered program structure with certification paths",
-      "Incentive and margin models aligned to growth goals",
-      "Partner segmentation and ideal partner profiles",
-    ],
-  },
-  {
-    step: "03",
-    icon: Layers,
-    title: "Routes-to-Market Strategy",
-    description:
-      "Whether it's ISV, SI, VAR, GSI, or co-sell motions — I define which routes-to-market will drive the most leverage.",
-    outcomes: [
-      "Route-to-market prioritization framework",
-      "Co-sell and referral motion design",
-      "Joint GTM plans with key partners",
-    ],
-  },
-  {
-    step: "04",
-    icon: ClipboardCheck,
-    title: "Operational Execution",
-    description:
-      "Strategy without execution is a slide deck. I build operating cadences, enablement frameworks, and deal registration processes.",
-    outcomes: [
-      "Partner engagement and QBR cadences",
-      "Deal registration and conflict resolution processes",
-      "Enablement and onboarding playbooks",
-    ],
-  },
-  {
-    step: "05",
-    icon: Rocket,
-    title: "Scale & Optimization",
-    description:
-      "Once the motions are running, I instrument them — performance analytics, coverage models, and continuous iteration.",
-    outcomes: [
-      "Partner performance scorecards and analytics",
-      "Coverage model optimization",
-      "Continuous program iteration framework",
-    ],
-  },
-];
-
-
 const Services = () => {
   return (
     <Layout>
@@ -190,6 +121,38 @@ const Services = () => {
         </div>
       </section>
 
+      {/* Featured: Rapid Assessments */}
+      <section className="section-padding bg-cream">
+        <div className="container max-w-5xl">
+          <div className="relative bg-card rounded-lg border border-border border-l-4 border-l-gold shadow-xl p-8 md:p-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+              <div className="md:col-span-2">
+                <div className="flex items-center gap-3 mb-4">
+                  <Zap className="text-gold" size={22} strokeWidth={1.5} />
+                  <p className="text-gold font-body text-xs uppercase tracking-[0.2em] font-semibold">
+                    Featured Offering
+                  </p>
+                </div>
+                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+                  Rapid Assessments
+                </h2>
+                <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed">
+                  30-day partner program audits that identify quick wins, strategic gaps, and a prioritized roadmap for improvement.
+                </p>
+              </div>
+              <div className="md:text-right">
+                <Link
+                  to="/contact#calendly"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors"
+                >
+                  <CalendarCheck size={18} /> Book a Rapid Assessment
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Capabilities Grid */}
       <section className="section-padding bg-background">
         <div className="container">
@@ -202,55 +165,6 @@ const Services = () => {
                 <cap.icon className="text-gold mb-4" size={36} strokeWidth={1.5} />
                 <h3 className="font-display text-xl font-semibold text-foreground mb-3">{cap.title}</h3>
                 <p className="font-body text-muted-foreground leading-relaxed">{cap.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-
-      {/* Methodology */}
-      <section className="section-padding bg-background">
-        <div className="container max-w-4xl">
-          <div className="text-center mb-12">
-            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">My Methodology</p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-              Strategic Approach
-            </h2>
-            <p className="font-body text-muted-foreground mt-3 max-w-2xl mx-auto">
-              Five pillars that guide how I build, scale, and optimize partner ecosystems.
-            </p>
-          </div>
-          <div className="space-y-6">
-            {pillars.map((p) => (
-              <div
-                key={p.step}
-                className="group bg-card rounded-lg border border-border hover:border-gold/30 hover:shadow-lg transition-all p-8 md:p-10"
-              >
-                <div className="flex items-start gap-6">
-                  <div className="shrink-0">
-                    <div className="font-display text-4xl font-bold text-gold/20">{p.step}</div>
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-3">
-                      <p.icon className="text-gold shrink-0" size={24} strokeWidth={1.5} />
-                      <h3 className="font-display text-xl md:text-2xl font-semibold text-foreground">
-                        {p.title}
-                      </h3>
-                    </div>
-                    <p className="font-body text-muted-foreground leading-relaxed mb-4">
-                      {p.description}
-                    </p>
-                    <ul className="space-y-1.5">
-                      {p.outcomes.map((o, j) => (
-                        <li key={j} className="font-body text-sm text-foreground/75 flex gap-2">
-                          <span className="text-gold mt-0.5 shrink-0">→</span>
-                          {o}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
               </div>
             ))}
           </div>
