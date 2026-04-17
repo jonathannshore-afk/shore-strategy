@@ -121,7 +121,7 @@ const Index = () => {
                 className="font-body text-xs text-primary-foreground/40 mt-4 animate-fade-in-up tracking-wide"
                 style={{ animationDelay: "0.55s" }}
               >
-                Currently accepting Q3 2026 engagements
+                Currently accepting engagements with new clients.
               </p>
             </div>
             <div

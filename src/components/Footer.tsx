@@ -49,7 +49,7 @@ const Footer = () => {
       {/* Bottom bar */}
       <div className="border-t border-navy-light">
         <div className="container py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-primary-foreground/40">
-          <span>© {new Date().getFullYear()} Jonathan Shore. All rights reserved.</span>
+          <span>© {new Date().getFullYear()} Shore Strategy Consulting, LLC. All rights reserved.</span>
           <span><a href="mailto:jonathan@shore-strategy.com?subject=Partner%20Strategy%20Inquiry" className="hover:text-gold transition-colors">jonathan@shore-strategy.com</a> · San Francisco Bay Area</span>
         </div>
       </div>
