@@ -1,4 +1,3 @@
-import { lazy, Suspense } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, CalendarCheck, Users2, Lightbulb, MessageCircleQuestion, Clock } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
