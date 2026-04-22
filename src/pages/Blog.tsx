@@ -10,6 +10,9 @@ import { useBlogPosts } from "@/hooks/useBlogPosts";
 const INSIGHTS_ENABLED = false;
 
 const Blog = () => {
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const { data: posts = [], isLoading, error } = useBlogPosts();
+
   if (!INSIGHTS_ENABLED) {
     return (
       <Layout>
@@ -41,9 +44,6 @@ const Blog = () => {
       </Layout>
     );
   }
-
-  const [activeCategory, setActiveCategory] = useState<string | null>(null);
-  const { data: posts = [], isLoading, error } = useBlogPosts();
 
   const categories = [...new Set(posts.map((p) => p.category))];
 
