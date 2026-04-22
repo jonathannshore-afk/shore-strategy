@@ -131,6 +131,16 @@ const Index = () => {
                   See How I Work <ArrowRight size={16} />
                 </Link>
               </div>
+              <p
+                className="mt-6 md:mt-8 pt-5 border-t border-primary-foreground/15 font-body text-sm text-primary-foreground/60 max-w-xl text-center md:text-left animate-fade-in-up"
+                style={{ animationDelay: "0.6s" }}
+              >
+                For{" "}
+                <span className="text-primary-foreground/80">
+                  CROs, SVPs, and VP-level partnership leaders
+                </span>{" "}
+                at B2B SaaS and enterprise technology companies.
+              </p>
             </div>
             <div
               className="hidden md:flex flex-col items-center w-52 lg:w-56 shrink-0 animate-fade-in-up"
