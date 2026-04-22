@@ -162,7 +162,7 @@ const About = () => {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
             <div>
-              <h2 className="font-display text-3xl font-bold text-foreground mb-4">My Story</h2>
+              <h2 className="font-display text-3xl font-bold text-foreground mb-3">My Story</h2>
               <div className="font-body text-foreground/80 leading-relaxed space-y-3 text-[15px]">
                 <p>
                   I've spent the last 15+ years building and leading partner programs at some of the world's most influential enterprise technology companies — Salesforce, ServiceNow, and most recently Lumen Technologies, where I led ecosystem strategy across a $1.6B ARR partner business.
