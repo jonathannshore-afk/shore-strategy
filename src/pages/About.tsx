@@ -191,10 +191,10 @@ const About = () => {
                           alt={exp.company}
                           className={`w-auto object-contain shrink-0 opacity-70 ${
                             exp.company === "Salesforce"
-                              ? "h-10"
+                              ? "h-14"
                               : exp.company === "ServiceNow"
-                              ? "h-8"
-                              : "h-5"
+                              ? "h-12"
+                              : "h-6"
                           }`}
                         />
                         <div>
