@@ -178,10 +178,10 @@ const Services = () => {
       />
 
       {/* Hero */}
-      <section className="bg-navy section-padding">
+      <section className="bg-navy px-6 pt-16 pb-10 md:px-12 md:pt-20 md:pb-14 lg:px-24">
         <div className="container">
           <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Capabilities</p>
-          <h1 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
+          <h1 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-4">
             What I <span className="text-gold">Build</span>
           </h1>
           <p className="font-body text-lg text-primary-foreground/70 max-w-2xl">
@@ -191,17 +191,17 @@ const Services = () => {
       </section>
 
       {/* Capabilities Grid */}
-      <section className="section-padding bg-background">
+      <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-background">
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {capabilities.map((cap) => (
               <div
                 key={cap.title}
-                className="bg-card p-8 rounded-lg border border-border hover:shadow-lg hover:border-gold/30 transition-all group"
+                className="bg-card p-5 rounded-lg border border-border hover:shadow-lg hover:border-gold/30 transition-all group"
               >
-                <cap.icon className="text-gold mb-4" size={36} strokeWidth={1.5} />
-                <h3 className="font-display text-xl font-semibold text-foreground mb-3">{cap.title}</h3>
-                <p className="font-body text-muted-foreground leading-relaxed">{cap.desc}</p>
+                <cap.icon className="text-gold mb-3" size={32} strokeWidth={1.5} />
+                <h3 className="font-display text-lg font-semibold text-foreground mb-2">{cap.title}</h3>
+                <p className="font-body text-sm text-muted-foreground leading-relaxed">{cap.desc}</p>
               </div>
             ))}
           </div>
@@ -210,35 +210,35 @@ const Services = () => {
 
 
       {/* Methodology */}
-      <section className="section-padding bg-background">
+      <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream">
         <div className="container max-w-4xl">
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
             <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">My Methodology</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
               Strategic Approach
             </h2>
-            <p className="font-body text-muted-foreground mt-3 max-w-2xl mx-auto">
+            <p className="font-body text-muted-foreground mt-2 max-w-2xl mx-auto">
               Five pillars that guide how I build, scale, and optimize partner ecosystems.
             </p>
           </div>
-          <div className="space-y-6">
+          <div className="space-y-4">
             {pillars.map((p) => (
               <div
                 key={p.step}
-                className="group bg-card rounded-lg border border-border hover:border-gold/30 hover:shadow-lg transition-all p-8 md:p-10"
+                className="group bg-card rounded-lg border border-border hover:border-gold/30 hover:shadow-lg transition-all p-6 md:p-7"
               >
-                <div className="flex items-start gap-6">
+                <div className="flex items-start gap-5">
                   <div className="shrink-0">
-                    <div className="font-display text-4xl font-bold text-gold/20">{p.step}</div>
+                    <div className="font-display text-3xl md:text-4xl font-bold text-gold/20">{p.step}</div>
                   </div>
                   <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-3">
-                      <p.icon className="text-gold shrink-0" size={24} strokeWidth={1.5} />
-                      <h3 className="font-display text-xl md:text-2xl font-semibold text-foreground">
+                    <div className="flex items-center gap-3 mb-2">
+                      <p.icon className="text-gold shrink-0" size={22} strokeWidth={1.5} />
+                      <h3 className="font-display text-lg md:text-xl font-semibold text-foreground">
                         {p.title}
                       </h3>
                     </div>
-                    <p className="font-body text-muted-foreground leading-relaxed mb-4">
+                    <p className="font-body text-sm text-muted-foreground leading-relaxed mb-3">
                       {p.description}
                     </p>
                     <ul className="space-y-1.5">
@@ -258,9 +258,9 @@ const Services = () => {
       </section>
 
       {/* Engagement Models */}
-      <section className="section-padding bg-cream">
+      <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-background">
         <div className="container">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Ways to Work Together</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Engagement Models</h2>
           </div>
@@ -306,12 +306,12 @@ const Services = () => {
       </section>
 
       {/* CTA */}
-      <section className="section-padding bg-navy">
+      <section className="px-6 py-14 md:px-12 lg:px-24 lg:py-16 bg-navy">
         <div className="container max-w-2xl text-center">
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-primary-foreground mb-4">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-primary-foreground mb-3">
             Ready to Build Your Partner Ecosystem?
           </h2>
-          <p className="font-body text-primary-foreground/70 leading-relaxed mb-8">
+          <p className="font-body text-primary-foreground/70 leading-relaxed mb-6">
             Every engagement starts with understanding where you are today and where you need to go.
           </p>
           <Link
