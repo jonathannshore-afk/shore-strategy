@@ -3,7 +3,7 @@ import { CalendarCheck, Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-navy text-primary-foreground/70">
+    <footer className="bg-navy text-primary-foreground/70 border-t border-gold/30">
       <div className="container pt-16 pb-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Left — Brand */}
