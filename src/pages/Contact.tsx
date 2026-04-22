@@ -148,7 +148,17 @@ const Contact = () => {
       </section>
 
       {/* Form + Contact Info */}
-      <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-background">
+      {/* Divider */}
+      <div className="bg-cream">
+        <div className="container px-6 md:px-12 lg:px-24 flex items-center gap-4 py-2">
+          <span className="block h-px flex-1 bg-gold/40" />
+          <span className="block w-2 h-2 rotate-45 bg-gold/60" />
+          <span className="block h-px flex-1 bg-gold/40" />
+        </div>
+      </div>
+
+      {/* Form + Contact Info */}
+      <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
             {/* Form */}
