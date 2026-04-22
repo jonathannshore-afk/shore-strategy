@@ -2,48 +2,38 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import FlipCard from "@/components/FlipCard";
-import { BarChart3, CalendarCheck, ClipboardCheck, Handshake, Layers, Lightbulb, Rocket, Search, Target, TrendingUp, Users, Zap } from "lucide-react";
+import { BarChart3, CalendarCheck, ClipboardCheck, Handshake, Layers, Rocket, Search, Target, TrendingUp, Zap } from "lucide-react";
 
 const capabilities = [
   {
     icon: Handshake,
     title: "Partner Program Design",
-    desc: "Architect partner programs from the ground up — tier structures, incentive models, enablement frameworks, and operational playbooks tailored to your market.",
+    desc: "Tiered programs, incentive models, and enablement frameworks tailored to your market.",
   },
   {
     icon: Target,
     title: "Joint GTM Strategy",
-    desc: "Develop co-sell and co-market strategies with clear value propositions, target account alignment, and joint pipeline creation motions.",
+    desc: "Co-sell and co-market motions with target account alignment and joint pipeline creation.",
   },
   {
     icon: TrendingUp,
     title: "Revenue Acceleration",
-    desc: "Optimize partner-sourced and partner-influenced revenue through data-driven engagement models and pipeline analytics.",
-  },
-  {
-    icon: Users,
-    title: "Ecosystem Development",
-    desc: "Build and nurture technology, services, and channel ecosystems that create compounding value for all stakeholders.",
+    desc: "Optimize partner-sourced and partner-influenced revenue through data-driven engagement.",
   },
   {
     icon: Layers,
-    title: "Partner Operations",
-    desc: "Implement scalable partner operations — PRM systems, deal registration, MDF programs, and reporting infrastructure.",
+    title: "Partner Operations (PRM, Deal Reg, MDF)",
+    desc: "Scalable PRM systems, deal registration, MDF programs, and reporting infrastructure.",
   },
   {
     icon: BarChart3,
-    title: "Performance Analytics",
-    desc: "Design KPI frameworks and dashboards that give you clear visibility into partner contribution and program ROI.",
-  },
-  {
-    icon: Lightbulb,
-    title: "Strategic Planning & Alignment",
-    desc: "Drive executive alignment on partner strategy, investment priorities, and cross-functional integration with sales, product, and marketing.",
+    title: "Performance Analytics & Dashboards",
+    desc: "KPI frameworks and dashboards that give clear visibility into partner contribution and ROI.",
   },
   {
     icon: Zap,
-    title: "Rapid Assessments",
-    desc: "30-day partner program audits that identify quick wins, strategic gaps, and a prioritized roadmap for improvement.",
+    title: "Rapid 30-Day Assessments",
+    desc: "Focused partner program audits that surface quick wins and a prioritized improvement roadmap.",
   },
 ];
 
@@ -180,12 +170,12 @@ const Services = () => {
       {/* Hero */}
       <section className="bg-navy px-6 pt-16 pb-10 md:px-12 md:pt-20 md:pb-14 lg:px-24">
         <div className="container">
-          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Capabilities</p>
+          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Services</p>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-4">
-            What I <span className="text-gold">Build</span>
+            How I <span className="text-gold">Help</span>
           </h1>
           <p className="font-body text-lg text-primary-foreground/70 max-w-2xl">
-            Whether embedded as a fractional leader, engaged on a project, or advising your team — these are the capabilities I bring to drive partner-led growth.
+            A clear menu of services, a proven delivery methodology, and flexible ways to engage — all built to drive partner-led growth.
           </p>
         </div>
       </section>
@@ -193,6 +183,13 @@ const Services = () => {
       {/* Capabilities Grid */}
       <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-background">
         <div className="container">
+          <div className="text-center mb-10">
+            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">01 · The Menu</p>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">What I Do</h2>
+            <p className="font-body text-muted-foreground mt-2 max-w-2xl mx-auto">
+              The specific services I deliver across partner ecosystem strategy and execution.
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {capabilities.map((cap) => (
               <div
@@ -213,12 +210,12 @@ const Services = () => {
       <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream">
         <div className="container max-w-4xl">
           <div className="text-center mb-10">
-            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">My Methodology</p>
+            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">02 · The Approach</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-              Strategic Approach
+              How I Deliver
             </h2>
             <p className="font-body text-muted-foreground mt-2 max-w-2xl mx-auto">
-              Five pillars that guide how I build, scale, and optimize partner ecosystems.
+              Five pillars that turn the services above into measurable outcomes.
             </p>
           </div>
           <div className="space-y-4">
@@ -261,8 +258,11 @@ const Services = () => {
       <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-background">
         <div className="container">
           <div className="text-center mb-10">
-            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Ways to Work Together</p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Engagement Models</h2>
+            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">03 · The Engagement</p>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Ways to Work Together</h2>
+            <p className="font-body text-muted-foreground mt-2 max-w-2xl mx-auto">
+              Choose the engagement model that fits where you are — fractional, project-based, or advisory.
+            </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto auto-rows-[380px]">
             {engagementModels.map((model) => (
