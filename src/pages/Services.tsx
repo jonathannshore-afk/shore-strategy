@@ -262,6 +262,15 @@ const Services = () => {
         </div>
       </section>
 
+      {/* Divider */}
+      <div className="bg-cream">
+        <div className="container px-6 md:px-12 lg:px-24 flex items-center gap-4 py-2">
+          <span className="block h-px flex-1 bg-gold/40" />
+          <span className="block w-2 h-2 rotate-45 bg-gold/60" />
+          <span className="block h-px flex-1 bg-gold/40" />
+        </div>
+      </div>
+
       {/* Start Here — Pilot Engagement */}
       <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream">
         <div className="container max-w-4xl">
