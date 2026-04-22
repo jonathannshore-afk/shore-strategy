@@ -1,91 +1,94 @@
 
 
-## Pilot Engagement offer + "Why Fractional, Why Now" section
+## Home page restructure — 4 changes
 
-Two changes to address the "new practice, no client logos" gap by reframing the offer and addressing the objection head-on.
+### 1. Larger headshot + tighter logo spacing
 
----
+**File:** `src/pages/Index.tsx` (hero section)
 
-### 1. Pilot Engagement offer — "Partner Ecosystem Diagnostic"
+- Scale headshot column from `w-52 lg:w-56` (208–224px) up to `w-72 lg:w-80` (288–320px) — closer to original executive-photo proportions.
+- Keep "Experience Built At" logos at current size.
+- Tighten the gap between the photo and the logo strip (`mt-4` → `mt-5`) so the logos read as a quiet supporting element rather than a competing block.
+- No changes to mobile layout (logos stay below hero on mobile, unchanged).
 
-A defined, fixed-scope, fixed-fee wedge offer that removes "first client" risk for buyers and gives the practice a repeatable entry point.
+### 2. Add inline credibility line in hero (experience framing)
 
-**Where it lives:** `src/pages/Services.tsx`, inserted as a new section between **02 · The Approach** (engagement models) and **03 · The Engagement** (process). New eyebrow: **"03 · Start Here"**, and the existing "03 · The Engagement" becomes **"04 · The Engagement"**.
+**File:** `src/pages/Index.tsx` (hero section)
 
-**Visual treatment:** A single highlighted card on a `bg-cream` band — distinct from the 3-up engagement model grid above it so it reads as *the* recommended starting point, not another option.
-
-**Card content:**
-
-```text
-EYEBROW:   03 · START HERE
-H2:        The Partner Ecosystem Diagnostic
-SUBHEAD:   A fixed-scope, fixed-fee engagement designed to give you
-           a board-ready view of your partner ecosystem in 30 days.
-
-[Two-column card on bg-card with gold accent border]
-
-LEFT COLUMN — "What you get"
-  • Full ecosystem audit (partners, programs, pipeline contribution)
-  • Competitive & routes-to-market benchmark
-  • Prioritized 12-month roadmap with investment model
-  • Board-ready findings deck + 60-min executive readout
-
-RIGHT COLUMN — "The details"
-  • 30 days, end to end
-  • Fixed fee — no scope creep, no surprises
-  • Direct access to me — not a junior team
-  • Natural on-ramp to fractional or project work (optional)
-
-CTA:  [Book a Scoping Call →]  (links to /contact)
-```
-
-No pricing number on the page itself — the eyebrow says "Start Here" and the CTA drives to a scoping conversation. (Pricing can be added later once validated; leaving it off now avoids anchoring before the offer is tested.)
-
----
-
-### 2. "Why Fractional, Why Now" section
-
-A short, founder-voice section that addresses the elephant in the room — *"you're new to fractional"* — by reframing it as a deliberate strategic choice backed by 15 years of operator experience.
-
-**Where it lives:** `src/pages/About.tsx`, inserted after the existing "My Story" narrative and before the Leadership Philosophy section. Uses `bg-background` to sit cleanly between the cream "My Story" band and whatever follows.
-
-**Section content:**
+Insert one quiet line directly **below** the existing audience qualifier ("For CROs, SVPs, and VP-level partnership leaders…"), separated by a thin top border. Single line, gold dot separators, small caps treatment so it reads as a credential strip — not a stats grid.
 
 ```text
-EYEBROW:   A Deliberate Choice
-H2:        Why Fractional, Why Now
-
-[Single-column, max-w-3xl, left-aligned prose — matches "My Story" rhythm]
-
-After 15 years operating inside three of the companies that defined modern
-B2B SaaS partnerships — Salesforce, ServiceNow, and Lumen — I'm bringing
-that playbook to growth-stage teams who need senior partner leadership
-without a full-time hire.
-
-Most companies under $250M ARR can't justify a $400K+ CRO of Partnerships.
-But they absolutely need the strategy, the program design, and the
-executive presence that role provides. That's the gap I exist to close.
-
-I'm not a career consultant who has read about partner ecosystems. I've
-built them, scaled them, and turned them around — with full P&L
-ownership and board-level accountability. The work I do for clients today
-is the same work I did as an operator. The only thing that's changed is
-who signs the contract.
+15+ YEARS  ·  SALESFORCE  ·  SERVICENOW  ·  LUMEN  ·  $1.6B ARR ECOSYSTEMS
 ```
 
-No new components — uses existing typography tokens (`font-display`, `font-body`, `text-foreground`, `text-muted-foreground`) and the standard section padding (`px-6 py-12 md:px-12 lg:px-24 lg:py-16`).
+- Typography: `font-body text-xs uppercase tracking-[0.2em] text-primary-foreground/60`
+- Gold middot separators (`·`) in `text-gold/70`
+- Wraps gracefully on narrow viewports
+- The dedicated stats band below the hero **stays unchanged** — it remains the outcomes moment
+
+### 3. Reframe "The Reality" section from editorial to diagnostic
+
+**File:** `src/pages/Index.tsx` (problem section)
+
+Keep the section structure (3-card grid, same icons, same body copy — they already work). Change only the eyebrow and H2 to convert it from editorial commentary into a buyer-pain mirror:
+
+| Current | New |
+|---|---|
+| Eyebrow: "The Reality" | Eyebrow: "Sound Familiar?" |
+| H2: "Most Partner Ecosystems Underperform" | H2: "The Symptoms We Solve For" |
+
+Card titles + body copy stay identical (Pipeline that never materializes / Strategy without operating muscle / Misaligned with the core business — these already read as buyer-recognizable symptoms).
+
+### 4. Add condensed "How I Work" section to home page
+
+**File:** `src/pages/Index.tsx`
+
+Insert between the reframed problem section and the existing mid-page CTA. Mirrors the Diagnose / Design / Operationalize model from `/services` but as a **teaser**, not a duplicate.
+
+```text
+EYEBROW:   How I Work
+H2:        Diagnose. Design. Operationalize.
+
+[3-card grid, bg-cream band — matches existing card pattern]
+
+DIAGNOSE
+  Ecosystem assessment: partner mix, program health, GTM
+  alignment, operating model gaps. Strategy without diagnosis
+  is guesswork.
+
+DESIGN
+  Program architecture, route-to-market plan, operating model,
+  KPI framework. Built for your team to actually run.
+
+OPERATIONALIZE
+  Stand up cadences, enablement, deal reg, analytics — handed
+  off as a working system, not a deck.
+
+[CTA link]:  See engagement models →   (links to /services)
+```
+
+- Reuses existing card pattern (icon tile + title + body)
+- Icons: `Search`, `Compass`, `Settings2` from lucide-react (already used elsewhere)
+- One link out to `/services` — does not duplicate the full page
 
 ---
+
+### Resulting home page flow
+
+```text
+1. Hero (with new inline credibility line)
+2. Career Highlights stats band  ← outcomes
+3. Why Fractional, Why Now
+4. Sound Familiar? (reframed problem section)
+5. How I Work (NEW — Diagnose/Design/Operationalize teaser)
+6. Mid-page CTA
+7. Footer
+```
+
+This flow now answers a CRO's questions in sequence: *Who? → Senior enough? → Results? → Why fractional? → Do you understand my pain? → What do you actually do? → How do I start?*
 
 ### Files modified
 
-- `src/pages/Services.tsx` — insert "Start Here" diagnostic section, renumber subsequent eyebrow from `03` to `04`.
-- `src/pages/About.tsx` — insert "Why Fractional, Why Now" section between My Story and Leadership Philosophy.
-
-No new components, no new tokens, no copy changes elsewhere. Both sections reuse the existing card / section / eyebrow patterns already established across the site.
-
-### What this resolves
-
-- **Pilot offer:** gives buyers a low-risk, well-defined first step — and gives you a repeatable path to your first 2–3 real case studies within 90 days.
-- **Why Fractional section:** converts the "new shingle" objection into a strategic-choice narrative *before* a buyer has to ask.
+- `src/pages/Index.tsx` — all four changes in one file
+- No new components, no new tokens, no changes to `/services` or any other page
 
