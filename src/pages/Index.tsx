@@ -168,9 +168,40 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="bg-navy">
+      {/* The Problem */}
+      <section className="bg-navy section-padding border-t border-primary-foreground/10">
+        <div className="container">
+          <div className="text-center mb-12 max-w-2xl mx-auto">
+            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">The Reality</p>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground">
+              Most Partner Ecosystems Underperform
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {problems.map((p) => (
+              <div
+                key={p.title}
+                className="p-8 rounded-lg border border-primary-foreground/10 bg-primary-foreground/[0.03]"
+              >
+                <div className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center mb-5">
+                  <p.icon className="text-gold" size={24} strokeWidth={1.5} />
+                </div>
+                <h3 className="font-display text-xl font-semibold text-primary-foreground mb-3">
+                  {p.title}
+                </h3>
+                <p className="font-body text-primary-foreground/60 leading-relaxed text-sm">
+                  {p.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Career Highlights */}
+      <section className="bg-navy border-t border-primary-foreground/10">
         <div className="container py-16">
+          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-8 text-center">Career Highlights</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
@@ -183,16 +214,6 @@ const Index = () => {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Typical Results */}
-      <section className="py-10 bg-navy border-t border-primary-foreground/10">
-        <div className="container text-center max-w-3xl">
-          <p className="font-body text-base md:text-lg text-primary-foreground/70 italic leading-relaxed">
-            "Within 6 months, we went from zero partner-sourced pipeline to 30% of new business."
-          </p>
-          <p className="font-body text-sm text-primary-foreground/40 mt-3">— VP Partnerships, Series D SaaS</p>
         </div>
       </section>
 
