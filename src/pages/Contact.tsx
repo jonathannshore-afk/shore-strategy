@@ -105,7 +105,7 @@ const Contact = () => {
       {/* Summary + Calendly side by side */}
       <section id="calendly" className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
             {/* Summary */}
             <div>
               <h2 className="font-display text-3xl font-bold text-foreground mb-4">How I Can Help</h2>
