@@ -1,91 +1,101 @@
 
 
-## Services page — restructure around the three-act narrative
+## Why Me & Contact — align with site-wide formatting
 
-Reframe the page so it tells one clean story end-to-end: **What I do → How I deliver it → How to engage me**. This resolves the duplication you flagged by giving each section a distinct job instead of two sections covering the same ground.
+Goal: bring both pages in line with the tighter rhythm now used on Home, About, and Services. No new components, no token changes, no copy rewrites (except eyebrows/H2 framing on Why Me to match the numbered narrative pattern from Services).
 
-### Narrative flow (target)
+---
 
-```text
-1. Hero               — navy     — Set positioning
-2. What I Do          — bg       — Menu of services (the "what")
-3. My Approach        — cream    — Methodology / how I deliver (the "how")
-4. Ways to Engage     — bg       — Engagement models (the "how to buy")
-5. CTA                — navy     — Book a call
+### Shared problems
+
+Both pages still use the legacy `section-padding` utility (`px-6 py-20 md:px-12 lg:px-24 lg:py-28`), which is significantly looser than the new standard:
+
+```
+px-6 py-12 md:px-12 lg:px-24 lg:py-16
 ```
 
-Same alternating rhythm as About and Home. No new sections added — the existing three content blocks get re-cast into clear roles.
+Hero blocks also use looser internal margins (`mb-6` after H1 instead of `mb-3`/`mb-4`) and CTA blocks use `mb-4` / `mb-8` instead of the tightened `mb-3` / `mb-6` rhythm.
 
 ---
 
-### Section 1 — Hero (minor copy tweak only)
+## Why Me — changes
 
-Keep current navy hero structure and spacing. Adjust the subhead so it previews the three-act flow:
+### Background rhythm (current vs. target)
 
-> *A clear menu of services, a proven delivery methodology, and flexible ways to engage — all built to drive partner-led growth.*
+Current: **Navy → Background → Background → Navy** (Case Studies and First 90 Days are both `bg-background` — they blur into one block).
 
-Eyebrow stays "Capabilities" → change to **"Services"** (matches the new framing).
-H1 stays: *What I Build* → change to **"How I Help"** (umbrella for what + how + engage).
+Target: **Navy → Background → Cream → Navy** — match the alternating pattern from About/Services.
 
-### Section 2 — "What I Do" (the menu)
+### 1. Hero
+- `bg-navy section-padding` → `bg-navy px-6 pt-16 pb-10 md:px-12 md:pt-20 md:pb-14 lg:px-24`
+- H1 `mb-6` → `mb-4`
 
-This replaces the current Capabilities Grid but reframes its purpose: it is now explicitly the **menu of services**, not a duplicate of methodology.
+### 2. Case Studies section
+- `section-padding bg-background` → `px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-background`
+- Header block `mb-12` → `mb-10`
+- Subhead `mt-3` → `mt-2`
+- Accordion `space-y-6` → `space-y-5` (keeps cards distinct, slightly tighter)
+- Add numbered eyebrow style consistent with Services: eyebrow stays "Proof of Work" (no number — Why Me isn't a 3-act narrative, it's a credibility page)
 
-- Eyebrow: **"01 · The Menu"**
-- Heading: **"What I Do"**
-- Subhead: *The specific services I deliver across partner ecosystem strategy and execution.*
-- Resolve the duplication by **trimming the 8 cards down to 6** that are clearly *deliverables*, not *process steps*:
-  1. Partner Program Design
-  2. Joint GTM Strategy
-  3. Revenue Acceleration
-  4. Partner Operations (PRM, deal reg, MDF)
-  5. Performance Analytics & Dashboards
-  6. Rapid 30-Day Assessments
+### 3. First 90 Days section
+- `section-padding bg-background` → `px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream` *(background swap creates rhythm separation from Case Studies)*
+- Header block `mb-12` → `mb-10`
+- Subhead `mt-3` → `mt-2`
+- Grid `gap-8` → `gap-6`
+- Phase card padding `p-8` → `p-6`
+- Phase title `mb-4` → `mb-3`
+- List `space-y-3` → `space-y-2`
 
-  Removed (because they are now owned by the Methodology section): *Ecosystem Development*, *Strategic Planning & Alignment*. Their concepts live inside the 5 methodology pillars.
-
-- Layout: keep current 2-col grid, `p-5` cards, gold icon, title, one-line description. Tighten descriptions to a single sentence each so this reads as a scannable menu, not prose.
-- Background: `bg-background`
-
-### Section 3 — "My Approach" (methodology)
-
-Reframe the existing Methodology section as the **delivery engine** behind the menu above.
-
-- Eyebrow: **"02 · The Approach"**
-- Heading: **"How I Deliver"** (replaces "Strategic Approach")
-- Subhead: *Five pillars that turn the services above into measurable outcomes.*
-- Keep the 5 numbered pillar cards exactly as they are (01–05, icon, title, description, outcomes list).
-- Background: `bg-cream` (unchanged)
-
-This now reads as the *process* that powers the menu, not a parallel list.
-
-### Section 4 — "Ways to Engage"
-
-Reframe as the **commercial wrapper** around the menu + approach.
-
-- Eyebrow: **"03 · The Engagement"**
-- Heading: **"Ways to Work Together"** (unchanged)
-- Subhead: *Choose the engagement model that fits where you are — fractional, project-based, or advisory.*
-- Keep all 3 FlipCards exactly as built (Fractional, Project-Based, Advisory). No structural change.
-- Background: `bg-background`
-
-### Section 5 — CTA (unchanged)
-
-Navy CTA, "Ready to Build Your Partner Ecosystem?", Book a Call button. No changes.
+### 4. CTA
+- `section-padding bg-navy` → `px-6 py-14 md:px-12 lg:px-24 lg:py-16 bg-navy` (matches Services CTA exactly)
+- H2 `mb-4` → `mb-3`
+- Paragraph `mb-8` → `mb-6`
 
 ---
 
-### Why this resolves the duplication
+## Contact — changes
 
-- **Before:** Capabilities and Methodology both answered "what does Jonathan do?" in different formats → reader sees the same concepts twice.
-- **After:** "What I Do" answers *what you get*. "My Approach" answers *how I deliver it*. "Ways to Engage" answers *how you buy it*. Each section has one job.
-- The numbered eyebrows (01 · 02 · 03) make the narrative arc explicit so the visitor reads the page as one connected story.
+### Background rhythm (current vs. target)
+
+Current: **Navy → Cream → Background**. Target: keep the same flow — it already alternates correctly. Just tighten.
+
+### 1. Hero
+- `bg-navy section-padding` → `bg-navy px-6 pt-16 pb-10 md:px-12 md:pt-20 md:pb-14 lg:px-24`
+- H1 `mb-6` → `mb-4`
+
+### 2. Summary + Calendly section
+- `section-padding bg-cream` → `px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream`
+- Grid `gap-12` → `gap-10`
+- "How I Can Help" H2 `mb-6` → `mb-4`
+- Body paragraph `mb-6` → `mb-4`
+- "Book a Conversation" header `mb-6` → `mb-4`
+
+### 3. Form + Contact Info section
+- `section-padding bg-background` → `px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-background`
+- Outer grid `gap-16` → `gap-12`
+- "Or Send a Message" H2 `mb-2` + paragraph `mb-8` → `mb-2` + `mb-6`
+- Form `space-y-6` → `space-y-5`
+- Inner row `gap-6` → `gap-5`
+- Field labels `mb-2` → keep
+- Input padding `py-3` → keep (touch target)
+- "Direct Contact" H2 `mb-8` → `mb-6`
+- Contact info `space-y-8` → `space-y-6`
+
+### 4. No CTA section needed
+Contact already *is* the conversion page. No changes.
+
+---
+
+### Resulting effect
+
+- Why Me: hero ~30% shorter; Case Studies and First 90 Days now visually distinct via cream/background swap; CTA matches Services CTA dimensions exactly.
+- Contact: hero ~30% shorter; both content sections align with the standard `py-12 lg:py-16` rhythm; form feels tighter without losing touch targets.
+- All five primary pages (Home, About, Services, Why Me, Contact) now share: identical hero padding (`pt-16 pb-10 md:pt-20 md:pb-14`), identical content padding (`py-12 lg:py-16`), identical horizontal gutters (`px-6 md:px-12 lg:px-24`), and the same alternating navy/cream/background rhythm.
 
 ### Files modified
 
-- `src/pages/Services.tsx` — only file touched.
-  - Trim `capabilities` array from 8 → 6 entries; tighten descriptions to one sentence.
-  - Update hero eyebrow + H1 + subhead copy.
-  - Add eyebrows "01 · The Menu", "02 · The Approach", "03 · The Engagement" and update each section's H2 / subhead.
-  - No layout, padding, color-token, or component changes. No new files.
+- `src/pages/WhyMe.tsx`
+- `src/pages/Contact.tsx`
+
+No new components, no token changes, no copy rewrites.
 
