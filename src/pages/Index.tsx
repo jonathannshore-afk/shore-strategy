@@ -235,7 +235,8 @@ const Index = () => {
 
       {/* Why Fractional, Why Now */}
       <section className="bg-cream py-14 md:py-20">
-        <div className="container max-w-3xl">
+        <div className="container">
+          <div className="max-w-3xl">
           <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-2">A Deliberate Choice</p>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-5">
             Why Fractional, Why Now
@@ -247,6 +248,7 @@ const Index = () => {
             <p>
               I'm not a career consultant who has read about partner ecosystems. I've built them, scaled them, and turned them around — with full P&L ownership and board-level accountability. The work I do for clients today is the same work I did as an operator. The only thing that's changed is who signs the contract.
             </p>
+          </div>
           </div>
         </div>
       </section>
