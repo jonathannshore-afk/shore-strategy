@@ -100,21 +100,21 @@ const About = () => {
       />
 
       {/* Hero — Photo right, intro left + logos */}
-      <section className="bg-navy section-padding pb-12">
+      <section className="bg-navy px-6 pt-16 pb-10 md:px-12 md:pt-20 md:pb-14 lg:px-24">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
             <div className="pt-2">
-              <h1 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
+              <h1 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mb-3">
                 About <span className="text-gold">Jonathan</span>
               </h1>
               <p className="font-body text-lg text-primary-foreground/80 leading-relaxed">
                 15+ years building and transforming partner ecosystems at Salesforce, ServiceNow, and Lumen Technologies. I help B2B leaders unlock partner-led revenue through strategic consulting and fractional executive leadership.
               </p>
 
-              <div className="border-t border-primary-foreground/15 mt-6 mb-6" />
+              <div className="border-t border-primary-foreground/15 mt-5 mb-5" />
 
               <div>
-                <p className="font-body text-xs uppercase tracking-[0.2em] text-primary-foreground/50 mb-4">
+                <p className="font-body text-xs uppercase tracking-[0.2em] text-primary-foreground/50 mb-3">
                   Experience Built At
                 </p>
                 <div className="flex items-center gap-8 flex-wrap">
@@ -124,7 +124,7 @@ const About = () => {
                 </div>
               </div>
 
-              <div className="border-t border-primary-foreground/15 mt-6 mb-6" />
+              <div className="border-t border-primary-foreground/15 mt-5 mb-5" />
 
               <div className="flex flex-wrap gap-4">
                 <Link
