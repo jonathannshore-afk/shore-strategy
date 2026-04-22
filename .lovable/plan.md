@@ -1,69 +1,91 @@
 
 
-## About page — tighten spacing & unify formatting
+## Services page — restructure around the three-act narrative
 
-Goal: reduce vertical bloat and bring the About page in line with the Home page's tighter rhythm. All work confined to `src/pages/About.tsx`. No new components, no token changes, no copy rewrites.
+Reframe the page so it tells one clean story end-to-end: **What I do → How I deliver it → How to engage me**. This resolves the duplication you flagged by giving each section a distinct job instead of two sections covering the same ground.
 
-### Current problems
+### Narrative flow (target)
 
-1. **Hero is too tall**: uses `section-padding pb-12` which expands to `px-6 py-20 md:px-12 lg:px-24 lg:py-28 pb-12` — that's ~7rem of top padding plus generous internal margins (`mb-4`, `mb-6` × 2, `mt-6` × 2) creating excessive whitespace before the headshot/text settle.
-2. **Inconsistent section padding**: hero uses `section-padding` (huge), but "My Story" and "Leadership Philosophy" use `px-6 py-12 md:px-12 lg:px-24 lg:py-16` (much tighter). The hero feels like a different page than the rest.
-3. **Two consecutive cream sections** ("My Story" + "Leadership Philosophy") with identical `bg-cream` and identical padding — they blur into one long beige block with no visual rhythm.
-4. **Internal margins inside hero are loose**: `mb-4` after H1, `mb-6` between every divider/block.
-
-### Changes
-
-#### 1. Tighten the hero (navy section)
-
-`<section className="bg-navy section-padding pb-12">` →
-`<section className="bg-navy px-6 pt-16 pb-10 md:px-12 md:pt-20 md:pb-14 lg:px-24">`
-
-This matches the rhythm of the rest of the page (compact) and aligns with the Home page hero we just shipped.
-
-Inside the hero, tighten internal spacing:
-- H1: `mb-4` → `mb-3`
-- Intro paragraph block: keep as-is
-- Divider + "Experience Built At" block: `mt-6 mb-6` → `mt-5 mb-5` (both dividers)
-- Logos block: `mb-4` (under eyebrow) → `mb-3`
-
-#### 2. Unify section padding across the page
-
-Both content sections currently use `px-6 py-12 md:px-12 lg:px-24 lg:py-16`. Keep this as the standard but apply the same to the hero (above) so all three sections share the same horizontal rhythm.
-
-#### 3. Add visual rhythm — alternate backgrounds
-
-Change "Leadership Philosophy" section background:
-- `bg-cream` → `bg-background`
-
-Resulting flow:
 ```text
-1. Hero                  navy
-2. Stats Marquee         (its own band)
-3. My Story + Experience cream
-4. Leadership Philosophy background (light, not cream)
+1. Hero               — navy     — Set positioning
+2. What I Do          — bg       — Menu of services (the "what")
+3. My Approach        — cream    — Methodology / how I deliver (the "how")
+4. Ways to Engage     — bg       — Engagement models (the "how to buy")
+5. CTA                — navy     — Book a call
 ```
 
-Now each section has a distinct surface — navy → marquee → cream → background — matching the Home page's alternating pattern.
+Same alternating rhythm as About and Home. No new sections added — the existing three content blocks get re-cast into clear roles.
 
-#### 4. Tighten "My Story" + "Leadership Philosophy" internals
+---
 
-- "My Story" H2 `mb-4` → `mb-3`
-- Story paragraph stack `space-y-3` → keep (already tight)
-- "Experience" eyebrow `mb-3` → keep
-- Accordion items `space-y-2` → keep
-- Leadership eyebrow `mb-2` → keep
-- Leadership H2 `mb-8` → `mb-6`
-- Principles grid `gap-6` → `gap-5`
-- Each principle card padding `p-6` → `p-5`
+### Section 1 — Hero (minor copy tweak only)
 
-### Resulting effect
+Keep current navy hero structure and spacing. Adjust the subhead so it previews the three-act flow:
 
-- Hero shortens by ~30% (no more `lg:py-28`).
-- All three sections share matching horizontal padding for a consistent column feel.
-- Two formerly-identical cream sections get visual separation via background change.
-- Page overall ~15–20% shorter without removing any content.
+> *A clear menu of services, a proven delivery methodology, and flexible ways to engage — all built to drive partner-led growth.*
+
+Eyebrow stays "Capabilities" → change to **"Services"** (matches the new framing).
+H1 stays: *What I Build* → change to **"How I Help"** (umbrella for what + how + engage).
+
+### Section 2 — "What I Do" (the menu)
+
+This replaces the current Capabilities Grid but reframes its purpose: it is now explicitly the **menu of services**, not a duplicate of methodology.
+
+- Eyebrow: **"01 · The Menu"**
+- Heading: **"What I Do"**
+- Subhead: *The specific services I deliver across partner ecosystem strategy and execution.*
+- Resolve the duplication by **trimming the 8 cards down to 6** that are clearly *deliverables*, not *process steps*:
+  1. Partner Program Design
+  2. Joint GTM Strategy
+  3. Revenue Acceleration
+  4. Partner Operations (PRM, deal reg, MDF)
+  5. Performance Analytics & Dashboards
+  6. Rapid 30-Day Assessments
+
+  Removed (because they are now owned by the Methodology section): *Ecosystem Development*, *Strategic Planning & Alignment*. Their concepts live inside the 5 methodology pillars.
+
+- Layout: keep current 2-col grid, `p-5` cards, gold icon, title, one-line description. Tighten descriptions to a single sentence each so this reads as a scannable menu, not prose.
+- Background: `bg-background`
+
+### Section 3 — "My Approach" (methodology)
+
+Reframe the existing Methodology section as the **delivery engine** behind the menu above.
+
+- Eyebrow: **"02 · The Approach"**
+- Heading: **"How I Deliver"** (replaces "Strategic Approach")
+- Subhead: *Five pillars that turn the services above into measurable outcomes.*
+- Keep the 5 numbered pillar cards exactly as they are (01–05, icon, title, description, outcomes list).
+- Background: `bg-cream` (unchanged)
+
+This now reads as the *process* that powers the menu, not a parallel list.
+
+### Section 4 — "Ways to Engage"
+
+Reframe as the **commercial wrapper** around the menu + approach.
+
+- Eyebrow: **"03 · The Engagement"**
+- Heading: **"Ways to Work Together"** (unchanged)
+- Subhead: *Choose the engagement model that fits where you are — fractional, project-based, or advisory.*
+- Keep all 3 FlipCards exactly as built (Fractional, Project-Based, Advisory). No structural change.
+- Background: `bg-background`
+
+### Section 5 — CTA (unchanged)
+
+Navy CTA, "Ready to Build Your Partner Ecosystem?", Book a Call button. No changes.
+
+---
+
+### Why this resolves the duplication
+
+- **Before:** Capabilities and Methodology both answered "what does Jonathan do?" in different formats → reader sees the same concepts twice.
+- **After:** "What I Do" answers *what you get*. "My Approach" answers *how I deliver it*. "Ways to Engage" answers *how you buy it*. Each section has one job.
+- The numbered eyebrows (01 · 02 · 03) make the narrative arc explicit so the visitor reads the page as one connected story.
 
 ### Files modified
 
-- `src/pages/About.tsx` — only file touched. No new components, no new tokens, no copy changes.
+- `src/pages/Services.tsx` — only file touched.
+  - Trim `capabilities` array from 8 → 6 entries; tighten descriptions to one sentence.
+  - Update hero eyebrow + H1 + subhead copy.
+  - Add eyebrows "01 · The Menu", "02 · The Approach", "03 · The Engagement" and update each section's H2 / subhead.
+  - No layout, padding, color-token, or component changes. No new files.
 
