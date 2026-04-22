@@ -154,7 +154,17 @@ const Contact = () => {
             {/* Form */}
             <div className="lg:col-span-3">
               <h2 className="font-display text-2xl font-bold text-foreground mb-2">Or Send a Message</h2>
-              <p className="font-body text-muted-foreground mb-6 text-sm">All fields marked with * are required.</p>
+              <p className="font-body text-muted-foreground mb-3 text-sm">All fields marked with * are required.</p>
+              <p className="font-body text-sm text-muted-foreground mb-6">
+                Prefer to schedule directly?{" "}
+                <a
+                  href="#calendly"
+                  className="inline-flex items-center gap-1 text-gold font-semibold hover:text-gold-dark transition-colors underline-offset-4 hover:underline"
+                >
+                  <Calendar size={14} strokeWidth={2} />
+                  Book a Conversation
+                </a>
+              </p>
               <form onSubmit={handleSubmit} className="space-y-5" noValidate>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div>
