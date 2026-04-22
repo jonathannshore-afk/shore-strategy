@@ -133,7 +133,7 @@ const Index = () => {
               </div>
             </div>
             <div
-              className="hidden md:block w-64 lg:w-72 shrink-0 animate-fade-in-up"
+              className="hidden md:flex flex-col items-center w-52 lg:w-56 shrink-0 animate-fade-in-up"
               style={{ animationDelay: "0.3s" }}
             >
               <img
@@ -141,28 +141,50 @@ const Index = () => {
                 alt="Jonathan Shore"
                 className="w-full rounded-lg shadow-2xl border-2 border-gold/20"
               />
+              <div className="w-full mt-5">
+                <p className="text-gold font-body text-[10px] uppercase tracking-[0.2em] text-center mb-3">
+                  Experience Built At
+                </p>
+                <div className="flex items-center justify-between gap-4">
+                  <img
+                    alt="Salesforce"
+                    className="h-6 object-contain opacity-70 brightness-0 invert"
+                    src="/lovable-uploads/f6d67dad-429a-49a3-8c20-fff68acb27d4.png"
+                  />
+                  <img
+                    src={logoServicenow}
+                    alt="ServiceNow"
+                    className="h-5 object-contain opacity-70 brightness-0 invert"
+                  />
+                  <img
+                    src={logoLumen}
+                    alt="Lumen Technologies"
+                    className="h-5 object-contain opacity-70 brightness-0 invert"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div className="relative z-10 container pb-8 pt-6">
-          <p className="font-body text-xs uppercase tracking-[0.2em] text-primary-foreground/40 text-center mb-6">
+        <div className="relative z-10 container pb-8 pt-6 md:hidden">
+          <p className="font-body text-[10px] uppercase tracking-[0.2em] text-primary-foreground/50 text-center mb-4">
             Experience Built At
           </p>
-          <div className="flex items-center justify-center gap-12 md:gap-20 flex-wrap">
+          <div className="flex items-center justify-center gap-8 flex-wrap">
             <img
               alt="Salesforce"
-              className="h-10 md:h-12 object-contain opacity-60 hover:opacity-90 transition-opacity brightness-0 invert"
+              className="h-6 object-contain opacity-70 brightness-0 invert"
               src="/lovable-uploads/f6d67dad-429a-49a3-8c20-fff68acb27d4.png"
             />
             <img
               src={logoServicenow}
               alt="ServiceNow"
-              className="h-8 md:h-10 object-contain opacity-60 hover:opacity-90 transition-opacity brightness-0 invert"
+              className="h-5 object-contain opacity-70 brightness-0 invert"
             />
             <img
               src={logoLumen}
               alt="Lumen Technologies"
-              className="h-8 md:h-10 object-contain opacity-60 hover:opacity-90 transition-opacity brightness-0 invert"
+              className="h-5 object-contain opacity-70 brightness-0 invert"
             />
           </div>
         </div>
