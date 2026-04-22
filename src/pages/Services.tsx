@@ -254,11 +254,70 @@ const Services = () => {
         </div>
       </section>
 
+      {/* Start Here — Pilot Engagement */}
+      <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream">
+        <div className="container max-w-4xl">
+          <div className="text-center mb-10">
+            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">03 · Start Here</p>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
+              The Partner Ecosystem Diagnostic
+            </h2>
+            <p className="font-body text-muted-foreground mt-2 max-w-2xl mx-auto">
+              A fixed-scope, fixed-fee engagement designed to give you a board-ready view of your partner ecosystem in 30 days.
+            </p>
+          </div>
+          <div className="bg-card rounded-lg border-2 border-gold/40 shadow-lg p-6 md:p-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <p className="font-body text-xs text-gold font-semibold uppercase tracking-wider mb-3">What You Get</p>
+                <ul className="space-y-2.5">
+                  {[
+                    "Full ecosystem audit (partners, programs, pipeline contribution)",
+                    "Competitive & routes-to-market benchmark",
+                    "Prioritized 12-month roadmap with investment model",
+                    "Board-ready findings deck + 60-min executive readout",
+                  ].map((item) => (
+                    <li key={item} className="font-body text-sm text-foreground/80 leading-relaxed flex gap-2">
+                      <span className="text-gold mt-1 shrink-0">→</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <p className="font-body text-xs text-gold font-semibold uppercase tracking-wider mb-3">The Details</p>
+                <ul className="space-y-2.5">
+                  {[
+                    "30 days, end to end",
+                    "Fixed fee — no scope creep, no surprises",
+                    "Direct access to me — not a junior team",
+                    "Natural on-ramp to fractional or project work (optional)",
+                  ].map((item) => (
+                    <li key={item} className="font-body text-sm text-foreground/80 leading-relaxed flex gap-2">
+                      <span className="text-gold mt-1 shrink-0">→</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <div className="mt-8 pt-6 border-t border-border flex justify-center">
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors"
+              >
+                <CalendarCheck size={16} /> Book a Scoping Call
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Engagement Models */}
       <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-background">
         <div className="container">
           <div className="text-center mb-10">
-            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">03 · The Engagement</p>
+            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">04 · The Engagement</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Ways to Work Together</h2>
             <p className="font-body text-muted-foreground mt-2 max-w-2xl mx-auto">
               Choose the engagement model that fits where you are — fractional, project-based, or advisory.
