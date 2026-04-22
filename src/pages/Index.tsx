@@ -141,9 +141,23 @@ const Index = () => {
                 </span>{" "}
                 at B2B SaaS and enterprise technology companies.
               </p>
+              <div
+                className="mt-4 pt-4 border-t border-primary-foreground/15 font-body text-xs uppercase tracking-[0.2em] text-primary-foreground/60 max-w-xl flex flex-wrap items-center justify-center md:justify-start gap-x-3 gap-y-2 animate-fade-in-up"
+                style={{ animationDelay: "0.75s" }}
+              >
+                <span>15+ Years</span>
+                <span className="text-gold/70">·</span>
+                <span>Salesforce</span>
+                <span className="text-gold/70">·</span>
+                <span>ServiceNow</span>
+                <span className="text-gold/70">·</span>
+                <span>Lumen</span>
+                <span className="text-gold/70">·</span>
+                <span>$1.6B ARR Ecosystems</span>
+              </div>
             </div>
             <div
-              className="hidden md:flex flex-col items-center w-52 lg:w-56 shrink-0 animate-fade-in-up"
+              className="hidden md:flex flex-col items-center w-72 lg:w-80 shrink-0 animate-fade-in-up"
               style={{ animationDelay: "0.3s" }}
             >
               <img
@@ -151,7 +165,7 @@ const Index = () => {
                 alt="Jonathan Shore"
                 className="w-full rounded-lg shadow-2xl border-2 border-gold/20"
               />
-              <div className="w-full mt-4">
+              <div className="w-full mt-5 max-w-[224px]">
                 <p className="text-gold font-body text-[10px] uppercase tracking-[0.2em] text-center mb-3">
                   Experience Built At
                 </p>
@@ -241,9 +255,9 @@ const Index = () => {
       <section className="bg-background py-14 md:py-20 border-t border-border">
         <div className="container">
           <div className="text-center mb-10 max-w-2xl mx-auto">
-            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">The Reality</p>
+            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Sound Familiar?</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-              Most Partner Ecosystems Underperform
+              The Symptoms We Solve For
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
