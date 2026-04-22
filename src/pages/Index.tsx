@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, CalendarCheck, Users2, Lightbulb, MessageCircleQuestion, Clock } from "lucide-react";
+import { ArrowRight, CalendarCheck, MessageCircleQuestion, TrendingDown, Wrench, Unplug, Search, Compass, Settings2 } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import headshot from "@/assets/jonathan-headshot.jpeg";
 import logoServicenow from "@/assets/logo-servicenow.svg";
@@ -10,30 +10,45 @@ import SEO from "@/components/SEO";
 
 
 const stats = [
-  { value: "15+", label: "Years of Experience" },
-  { value: "3", label: "Fortune 500 Ecosystems Transformed" },
-  { value: "20%+", label: "Avg YoY Channel Revenue Growth" },
-  { value: "6+", label: "Routes-to-Market Launched" },
+  { value: "$1.6B", label: "ARR Ecosystem Managed" },
+  { value: "$800M+", label: "Annual Bookings Influenced" },
+  { value: "19%", label: "YoY Channel Revenue Growth" },
+  { value: "2K+", label: "Partners Across Fortune 500 Ecosystems" },
 ];
 
-const engagements = [
+const problems = [
   {
-    icon: Users2,
-    title: "Fractional Leadership",
-    description: "Embedded, part-time executive leadership for companies building or transforming their partner function.",
-    link: "/services",
+    icon: TrendingDown,
+    title: "Pipeline that never materializes",
+    description: "Programs launched, partners signed, but partner-sourced revenue stays stuck under 10%.",
   },
   {
-    icon: Clock,
-    title: "Project-Based",
-    description: "Scoped, time-bound engagements with clear deliverables — program design, GTM planning, operational buildouts.",
-    link: "/services",
+    icon: Wrench,
+    title: "Strategy without operating muscle",
+    description: "A deck exists; the cadence, deal reg, and enablement to execute it don't.",
   },
   {
-    icon: Lightbulb,
-    title: "Advisory & Coaching",
-    description: "Ongoing strategic guidance for partner leaders navigating complex ecosystem decisions.",
-    link: "/services",
+    icon: Unplug,
+    title: "Misaligned with the core business",
+    description: "The partner team runs parallel to sales, product, and marketing — not integrated with them.",
+  },
+];
+
+const approach = [
+  {
+    icon: Search,
+    title: "Diagnose",
+    description: "Ecosystem assessment: partner mix, program health, GTM alignment, operating model gaps. Strategy without diagnosis is guesswork.",
+  },
+  {
+    icon: Compass,
+    title: "Design",
+    description: "Program architecture, route-to-market plan, operating model, KPI framework. Built for your team to actually run.",
+  },
+  {
+    icon: Settings2,
+    title: "Operationalize",
+    description: "Stand up cadences, enablement, deal reg, analytics — handed off as a working system, not a deck.",
   },
 ];
 
@@ -116,12 +131,6 @@ const Index = () => {
                   See How I Work <ArrowRight size={16} />
                 </Link>
               </div>
-              <p
-                className="font-body text-xs text-primary-foreground/40 mt-4 animate-fade-in-up tracking-wide"
-                style={{ animationDelay: "0.55s" }}
-              >
-                Currently accepting engagements with new clients.
-              </p>
             </div>
             <div
               className="hidden md:block w-64 lg:w-72 shrink-0 animate-fade-in-up"
@@ -159,9 +168,40 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="bg-navy">
+      {/* The Problem */}
+      <section className="bg-navy section-padding border-t border-primary-foreground/10">
+        <div className="container">
+          <div className="text-center mb-12 max-w-2xl mx-auto">
+            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">The Reality</p>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground">
+              Most Partner Ecosystems Underperform
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {problems.map((p) => (
+              <div
+                key={p.title}
+                className="p-8 rounded-lg border border-primary-foreground/10 bg-primary-foreground/[0.03]"
+              >
+                <div className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center mb-5">
+                  <p.icon className="text-gold" size={24} strokeWidth={1.5} />
+                </div>
+                <h3 className="font-display text-xl font-semibold text-primary-foreground mb-3">
+                  {p.title}
+                </h3>
+                <p className="font-body text-primary-foreground/60 leading-relaxed text-sm">
+                  {p.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Career Highlights */}
+      <section className="bg-navy border-t border-primary-foreground/10">
         <div className="container py-16">
+          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-8 text-center">Career Highlights</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
@@ -174,16 +214,6 @@ const Index = () => {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Typical Results */}
-      <section className="py-10 bg-navy border-t border-primary-foreground/10">
-        <div className="container text-center max-w-3xl">
-          <p className="font-body text-base md:text-lg text-primary-foreground/70 italic leading-relaxed">
-            "Within 6 months, we went from zero partner-sourced pipeline to 30% of new business."
-          </p>
-          <p className="font-body text-sm text-primary-foreground/40 mt-3">— VP Partnerships, Series D SaaS</p>
         </div>
       </section>
 
@@ -204,17 +234,17 @@ const Index = () => {
         </div>
       </section>
 
-      {/* How I Work */}
+      {/* How I'd Approach It */}
       <section className="section-padding bg-cream">
         <div className="container">
           <div className="text-center mb-12">
-            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Engagement Models</p>
+            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Engagement Approach</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-              How I Work
+              Diagnose. Design. Operationalize.
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {engagements.map((eng) => (
+            {approach.map((eng) => (
               <div
                 key={eng.title}
                 className="bg-card p-10 rounded-lg border border-border hover:shadow-lg hover:border-gold/30 transition-all group"
@@ -225,17 +255,19 @@ const Index = () => {
                 <h3 className="font-display text-xl font-semibold text-foreground mb-3">
                   {eng.title}
                 </h3>
-                <p className="font-body text-muted-foreground leading-relaxed mb-6 text-sm">
+                <p className="font-body text-muted-foreground leading-relaxed text-sm">
                   {eng.description}
                 </p>
-                <Link
-                  to={eng.link}
-                  className="inline-flex items-center gap-2 text-gold font-body font-semibold text-sm hover:text-gold-dark transition-colors"
-                >
-                  Learn More <ArrowRight size={16} />
-                </Link>
               </div>
             ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link
+              to="/services"
+              className="inline-flex items-center gap-2 text-gold font-body font-semibold text-sm hover:text-gold-dark transition-colors"
+            >
+              See engagement models <ArrowRight size={16} />
+            </Link>
           </div>
         </div>
       </section>
