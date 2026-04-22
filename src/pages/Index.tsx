@@ -234,17 +234,17 @@ const Index = () => {
         </div>
       </section>
 
-      {/* How I Work */}
+      {/* How I'd Approach It */}
       <section className="section-padding bg-cream">
         <div className="container">
           <div className="text-center mb-12">
-            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Engagement Models</p>
+            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Engagement Approach</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-              How I Work
+              Diagnose. Design. Operationalize.
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {engagements.map((eng) => (
+            {approach.map((eng) => (
               <div
                 key={eng.title}
                 className="bg-card p-10 rounded-lg border border-border hover:shadow-lg hover:border-gold/30 transition-all group"
@@ -255,17 +255,19 @@ const Index = () => {
                 <h3 className="font-display text-xl font-semibold text-foreground mb-3">
                   {eng.title}
                 </h3>
-                <p className="font-body text-muted-foreground leading-relaxed mb-6 text-sm">
+                <p className="font-body text-muted-foreground leading-relaxed text-sm">
                   {eng.description}
                 </p>
-                <Link
-                  to={eng.link}
-                  className="inline-flex items-center gap-2 text-gold font-body font-semibold text-sm hover:text-gold-dark transition-colors"
-                >
-                  Learn More <ArrowRight size={16} />
-                </Link>
               </div>
             ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link
+              to="/services"
+              className="inline-flex items-center gap-2 text-gold font-body font-semibold text-sm hover:text-gold-dark transition-colors"
+            >
+              See engagement models <ArrowRight size={16} />
+            </Link>
           </div>
         </div>
       </section>
