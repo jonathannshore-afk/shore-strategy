@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import FlipCard from "@/components/FlipCard";
-import { BarChart3, CalendarCheck, ClipboardCheck, Handshake, Layers, Rocket, Search, Target, TrendingUp, Zap } from "lucide-react";
+import { ArrowRight, BarChart3, CalendarCheck, Handshake, Layers, Target, TrendingUp, Zap } from "lucide-react";
 
 const capabilities = [
   {
@@ -94,69 +94,6 @@ const engagementModels = [
   },
 ];
 
-const pillars = [
-  {
-    step: "01",
-    icon: Search,
-    title: "Ecosystem Assessment & Architecture",
-    description:
-      "I start by mapping the full partner landscape — current partners, white space, competitive dynamics, and internal readiness.",
-    outcomes: [
-      "Partner ecosystem maturity assessment",
-      "Coverage gap analysis across routes-to-market",
-      "Internal alignment and readiness evaluation",
-    ],
-  },
-  {
-    step: "02",
-    icon: Target,
-    title: "Partner Program Design",
-    description:
-      "I design tiered partner programs with clear value exchange — certification frameworks, incentive models, and engagement rules.",
-    outcomes: [
-      "Tiered program structure with certification paths",
-      "Incentive and margin models aligned to growth goals",
-      "Partner segmentation and ideal partner profiles",
-    ],
-  },
-  {
-    step: "03",
-    icon: Layers,
-    title: "Routes-to-Market Strategy",
-    description:
-      "Whether it's ISV, SI, VAR, GSI, or co-sell motions — I define which routes-to-market will drive the most leverage.",
-    outcomes: [
-      "Route-to-market prioritization framework",
-      "Co-sell and referral motion design",
-      "Joint GTM plans with key partners",
-    ],
-  },
-  {
-    step: "04",
-    icon: ClipboardCheck,
-    title: "Operational Execution",
-    description:
-      "Strategy without execution is a slide deck. I build operating cadences, enablement frameworks, and deal registration processes.",
-    outcomes: [
-      "Partner engagement and QBR cadences",
-      "Deal registration and conflict resolution processes",
-      "Enablement and onboarding playbooks",
-    ],
-  },
-  {
-    step: "05",
-    icon: Rocket,
-    title: "Scale & Optimization",
-    description:
-      "Once the motions are running, I instrument them — performance analytics, coverage models, and continuous iteration.",
-    outcomes: [
-      "Partner performance scorecards and analytics",
-      "Coverage model optimization",
-      "Continuous program iteration framework",
-    ],
-  },
-];
-
 
 const Services = () => {
   return (
@@ -175,7 +112,7 @@ const Services = () => {
             How I <span className="text-gold">Help</span>
           </h1>
           <p className="font-body text-lg text-primary-foreground/70 max-w-2xl">
-            A clear menu of services, a proven delivery methodology, and flexible ways to engage — all built to drive partner-led growth.
+            A clear menu of services and flexible ways to engage.
           </p>
         </div>
       </section>
@@ -184,7 +121,7 @@ const Services = () => {
       <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream">
         <div className="container">
           <div className="text-center mb-10">
-            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">01 · The Menu</p>
+            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">The Menu</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">What I Do</h2>
             <p className="font-body text-muted-foreground mt-2 max-w-2xl mx-auto">
               The specific services I deliver across partner ecosystem strategy and execution.
@@ -214,137 +151,11 @@ const Services = () => {
         </div>
       </div>
 
-      {/* Methodology */}
-      <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream">
-        <div className="container max-w-4xl">
-          <div className="text-center mb-10">
-            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">02 · The Approach</p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-              How I Deliver
-            </h2>
-            <p className="font-body text-muted-foreground mt-2 max-w-2xl mx-auto">
-              Five pillars that turn the services above into measurable outcomes.
-            </p>
-          </div>
-          <div className="space-y-4">
-            {pillars.map((p) => (
-              <div
-                key={p.step}
-                className="group bg-card rounded-lg border border-border hover:border-gold/30 hover:shadow-lg transition-all p-6 md:p-7"
-              >
-                <div className="flex items-start gap-5">
-                  <div className="shrink-0">
-                    <div className="font-display text-3xl md:text-4xl font-bold text-gold/20">{p.step}</div>
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-2">
-                      <p.icon className="text-gold shrink-0" size={22} strokeWidth={1.5} />
-                      <h3 className="font-display text-lg md:text-xl font-semibold text-foreground">
-                        {p.title}
-                      </h3>
-                    </div>
-                    <p className="font-body text-sm text-muted-foreground leading-relaxed mb-3">
-                      {p.description}
-                    </p>
-                    <ul className="space-y-1.5">
-                      {p.outcomes.map((o, j) => (
-                        <li key={j} className="font-body text-sm text-foreground/75 flex gap-2">
-                          <span className="text-gold mt-0.5 shrink-0">→</span>
-                          {o}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="bg-cream">
-        <div className="container px-6 md:px-12 lg:px-24 flex items-center gap-4 py-2">
-          <span className="block h-px flex-1 bg-gold/40" />
-          <span className="block w-2 h-2 rotate-45 bg-gold/60" />
-          <span className="block h-px flex-1 bg-gold/40" />
-        </div>
-      </div>
-
-      {/* Start Here — Pilot Engagement */}
-      <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream">
-        <div className="container max-w-4xl">
-          <div className="text-center mb-10">
-            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">03 · Start Here</p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-              The Partner Ecosystem Diagnostic
-            </h2>
-            <p className="font-body text-muted-foreground mt-2 max-w-2xl mx-auto">
-              A fixed-scope, fixed-fee engagement designed to give you a board-ready view of your partner ecosystem in 30 days.
-            </p>
-          </div>
-          <div className="bg-card rounded-lg border-2 border-gold/40 shadow-lg p-6 md:p-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <p className="font-body text-xs text-gold font-semibold uppercase tracking-wider mb-3">What You Get</p>
-                <ul className="space-y-2.5">
-                  {[
-                    "Full ecosystem audit (partners, programs, pipeline contribution)",
-                    "Competitive & routes-to-market benchmark",
-                    "Prioritized 12-month roadmap with investment model",
-                    "Board-ready findings deck + 60-min executive readout",
-                  ].map((item) => (
-                    <li key={item} className="font-body text-sm text-foreground/80 leading-relaxed flex gap-2">
-                      <span className="text-gold mt-1 shrink-0">→</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <p className="font-body text-xs text-gold font-semibold uppercase tracking-wider mb-3">The Details</p>
-                <ul className="space-y-2.5">
-                  {[
-                    "30 days, end to end",
-                    "Fixed fee — no scope creep, no surprises",
-                    "Direct access to me — not a junior team",
-                    "Natural on-ramp to fractional or project work (optional)",
-                  ].map((item) => (
-                    <li key={item} className="font-body text-sm text-foreground/80 leading-relaxed flex gap-2">
-                      <span className="text-gold mt-1 shrink-0">→</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            <div className="mt-8 pt-6 border-t border-border flex justify-center">
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors"
-              >
-                <CalendarCheck size={16} /> Book a Scoping Call
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Engagement Models */}
-      {/* Divider */}
-      <div className="bg-cream">
-        <div className="container px-6 md:px-12 lg:px-24 flex items-center gap-4 py-2">
-          <span className="block h-px flex-1 bg-gold/40" />
-          <span className="block w-2 h-2 rotate-45 bg-gold/60" />
-          <span className="block h-px flex-1 bg-gold/40" />
-        </div>
-      </div>
-
       {/* Engagement Models */}
       <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream">
         <div className="container">
           <div className="text-center mb-10">
-            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">04 · The Engagement</p>
+            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">The Engagement</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Ways to Work Together</h2>
             <p className="font-body text-muted-foreground mt-2 max-w-2xl mx-auto">
               Choose the engagement model that fits where you are — fractional, project-based, or advisory.
@@ -387,6 +198,15 @@ const Services = () => {
                 }
               />
             ))}
+          </div>
+          <div className="mt-10 text-center">
+            <Link
+              to="/how-i-work"
+              className="inline-flex items-center gap-2 font-body text-sm text-gold hover:text-gold-dark transition-colors"
+            >
+              Curious how engagements actually run? See How I Work
+              <ArrowRight size={16} />
+            </Link>
           </div>
         </div>
       </section>
