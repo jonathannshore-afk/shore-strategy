@@ -259,30 +259,30 @@ const WhyMe = () => {
 
 
       {/* First 90 Days */}
-      <section className="section-padding bg-background">
+      <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream">
         <div className="container max-w-4xl">
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
             <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">What to Expect</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
               The First 90 Days
             </h2>
-            <p className="font-body text-muted-foreground mt-3 max-w-2xl mx-auto">
+            <p className="font-body text-muted-foreground mt-2 max-w-2xl mx-auto">
               A structured framework for how I approach every consulting engagement — from day one to measurable results.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {first90Days.map((phase) => (
               <div
                 key={phase.phase}
-                className="bg-card p-8 rounded-lg border border-border hover:shadow-lg hover:border-gold/30 transition-all"
+                className="bg-card p-6 rounded-lg border border-border hover:shadow-lg hover:border-gold/30 transition-all"
               >
                 <p className="font-body text-xs text-gold font-semibold uppercase tracking-[0.15em] mb-1">
                   {phase.phase}
                 </p>
-                <h3 className="font-display text-xl font-semibold text-foreground mb-4">
+                <h3 className="font-display text-xl font-semibold text-foreground mb-3">
                   {phase.title}
                 </h3>
-                <ul className="space-y-3">
+                <ul className="space-y-2">
                   {phase.items.map((item, i) => (
                     <li key={i} className="font-body text-sm text-muted-foreground leading-relaxed flex gap-2">
                       <CheckCircle className="text-gold shrink-0 mt-0.5" size={14} strokeWidth={2} />
@@ -297,12 +297,12 @@ const WhyMe = () => {
       </section>
 
       {/* CTA */}
-      <section className="section-padding bg-navy">
+      <section className="px-6 py-14 md:px-12 lg:px-24 lg:py-16 bg-navy">
         <div className="container max-w-2xl text-center">
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-primary-foreground mb-4">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-primary-foreground mb-3">
             Ready to Get Started?
           </h2>
-          <p className="font-body text-primary-foreground/70 leading-relaxed mb-8">
+          <p className="font-body text-primary-foreground/70 leading-relaxed mb-6">
             Let's talk about where you are today and how I can help you get where you need to go.
           </p>
           <Link
