@@ -6,7 +6,42 @@ import { ArrowRight, Clock, Loader2 } from "lucide-react";
 import { defaultAuthor, BlogPost as BlogPostType } from "@/data/blogPosts";
 import { useBlogPosts } from "@/hooks/useBlogPosts";
 
+// Toggle this to `true` when Insights is ready to relaunch.
+const INSIGHTS_ENABLED = false;
+
 const Blog = () => {
+  if (!INSIGHTS_ENABLED) {
+    return (
+      <Layout>
+        <SEO
+          title="Insights — Coming Soon"
+          description="New insights on partner ecosystem strategy are being prepared. Check back soon."
+          path="/blog"
+        />
+        <section className="bg-background">
+          <div className="container py-32 md:py-40 text-center max-w-2xl">
+            <span className="font-body text-xs uppercase tracking-[0.2em] text-gold">
+              Insights
+            </span>
+            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mt-4 mb-6">
+              Coming Soon
+            </h1>
+            <p className="font-body text-lg text-muted-foreground leading-relaxed mb-8">
+              New articles on partner ecosystem strategy, GTM design, and
+              fractional leadership are in the works. Check back shortly.
+            </p>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors"
+            >
+              Get in touch <ArrowRight size={16} />
+            </Link>
+          </div>
+        </section>
+      </Layout>
+    );
+  }
+
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const { data: posts = [], isLoading, error } = useBlogPosts();
 
