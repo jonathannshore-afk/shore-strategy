@@ -170,12 +170,12 @@ const Services = () => {
       {/* Hero */}
       <section className="bg-navy px-6 pt-16 pb-10 md:px-12 md:pt-20 md:pb-14 lg:px-24">
         <div className="container">
-          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Capabilities</p>
+          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Services</p>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-4">
-            What I <span className="text-gold">Build</span>
+            How I <span className="text-gold">Help</span>
           </h1>
           <p className="font-body text-lg text-primary-foreground/70 max-w-2xl">
-            Whether embedded as a fractional leader, engaged on a project, or advising your team — these are the capabilities I bring to drive partner-led growth.
+            A clear menu of services, a proven delivery methodology, and flexible ways to engage — all built to drive partner-led growth.
           </p>
         </div>
       </section>
@@ -183,6 +183,13 @@ const Services = () => {
       {/* Capabilities Grid */}
       <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-background">
         <div className="container">
+          <div className="text-center mb-10">
+            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">01 · The Menu</p>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">What I Do</h2>
+            <p className="font-body text-muted-foreground mt-2 max-w-2xl mx-auto">
+              The specific services I deliver across partner ecosystem strategy and execution.
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {capabilities.map((cap) => (
               <div
