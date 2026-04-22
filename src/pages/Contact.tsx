@@ -134,15 +134,15 @@ const Contact = () => {
       </section>
 
       {/* Form + Contact Info */}
-      <section className="section-padding bg-background">
+      <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-background">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
             {/* Form */}
             <div className="lg:col-span-3">
               <h2 className="font-display text-2xl font-bold text-foreground mb-2">Or Send a Message</h2>
-              <p className="font-body text-muted-foreground mb-8 text-sm">All fields marked with * are required.</p>
-              <form onSubmit={handleSubmit} className="space-y-6" noValidate>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <p className="font-body text-muted-foreground mb-6 text-sm">All fields marked with * are required.</p>
+              <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div>
                     <label className="font-body text-sm font-medium text-foreground mb-2 block">Name *</label>
                     <input
@@ -208,8 +208,8 @@ const Contact = () => {
 
             {/* Contact Info */}
             <div className="lg:col-span-2">
-              <h2 className="font-display text-2xl font-bold text-foreground mb-8">Direct Contact</h2>
-              <div className="space-y-8">
+              <h2 className="font-display text-2xl font-bold text-foreground mb-6">Direct Contact</h2>
+              <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <Mail className="text-gold mt-1" size={22} />
                   <div>
