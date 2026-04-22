@@ -257,9 +257,9 @@ const Index = () => {
       </section>
 
       {/* How I'd Approach It */}
-      <section className="section-padding bg-cream">
+      <section className="py-14 md:py-20 bg-cream">
         <div className="container">
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
             <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Engagement Approach</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
               Diagnose. Design. Operationalize.
@@ -269,9 +269,9 @@ const Index = () => {
             {approach.map((eng) => (
               <div
                 key={eng.title}
-                className="bg-card p-10 rounded-lg border border-border hover:shadow-lg hover:border-gold/30 transition-all group"
+                className="bg-card p-6 md:p-7 rounded-lg border border-border hover:shadow-lg hover:border-gold/30 transition-all group"
               >
-                <div className="w-12 h-12 rounded-lg bg-navy/5 flex items-center justify-center mb-6 group-hover:bg-gold/10 transition-colors">
+                <div className="w-12 h-12 rounded-lg bg-navy/5 flex items-center justify-center mb-5 group-hover:bg-gold/10 transition-colors">
                   <eng.icon className="text-gold" size={24} strokeWidth={1.5} />
                 </div>
                 <h3 className="font-display text-xl font-semibold text-foreground mb-3">
@@ -283,7 +283,7 @@ const Index = () => {
               </div>
             ))}
           </div>
-          <div className="text-center mt-10">
+          <div className="text-center mt-8">
             <Link
               to="/services"
               className="inline-flex items-center gap-2 text-gold font-body font-semibold text-sm hover:text-gold-dark transition-colors"
@@ -295,15 +295,15 @@ const Index = () => {
       </section>
 
       {/* Mid-Page Engagement CTA */}
-      <section className="py-16 md:py-20 bg-background border-t border-border">
+      <section className="py-14 md:py-20 bg-background border-t border-border">
         <div className="container text-center max-w-2xl">
           <div className="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-6">
             <MessageCircleQuestion className="text-gold" size={28} strokeWidth={1.5} />
           </div>
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">
             Let's Scope Your Engagement
           </h2>
-          <p className="font-body text-muted-foreground text-lg mb-8 leading-relaxed">
+          <p className="font-body text-muted-foreground text-lg mb-7 leading-relaxed">
             You know what's broken in your partner ecosystem. I'll show you how I'd fix it — and what results to expect.
           </p>
           <Link
