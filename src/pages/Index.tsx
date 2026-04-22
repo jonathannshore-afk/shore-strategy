@@ -88,7 +88,7 @@ const Index = () => {
       />
 
       {/* Hero */}
-      <section className="relative min-h-[70vh] md:min-h-[85vh] flex flex-col justify-center overflow-hidden">
+      <section className="relative min-h-[60vh] md:min-h-[75vh] flex flex-col justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroBg})` }}
@@ -101,7 +101,7 @@ const Index = () => {
                 ex-Salesforce · ServiceNow · Lumen Technologies
               </p>
               <h1
-                className="font-display text-3xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-4 md:mb-6 animate-fade-in-up"
+                className="font-display text-3xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-3 md:mb-5 animate-fade-in-up"
                 style={{ animationDelay: "0.15s" }}
               >
                 Your Partner Ecosystem
@@ -109,7 +109,7 @@ const Index = () => {
                 <span className="text-gold">Should Be a Revenue Engine</span>
               </h1>
               <p
-                className="font-body text-base md:text-xl text-primary-foreground/80 max-w-xl mb-6 md:mb-10 animate-fade-in-up"
+                className="font-body text-base md:text-xl text-primary-foreground/80 max-w-xl mb-5 md:mb-8 animate-fade-in-up"
                 style={{ animationDelay: "0.3s" }}
               >
                 I help B2B technology companies build, fix, and scale partner ecosystems that drive measurable revenue growth.
@@ -141,7 +141,7 @@ const Index = () => {
                 alt="Jonathan Shore"
                 className="w-full rounded-lg shadow-2xl border-2 border-gold/20"
               />
-              <div className="w-full mt-5">
+              <div className="w-full mt-4">
                 <p className="text-gold font-body text-[10px] uppercase tracking-[0.2em] text-center mb-3">
                   Experience Built At
                 </p>
@@ -191,7 +191,7 @@ const Index = () => {
       </section>
 
       {/* Who I Work With */}
-      <section className="section-padding bg-background">
+      <section className="py-14 md:py-20 bg-background border-t border-border">
         <div className="container text-center max-w-5xl">
           <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Who I Work With</p>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
@@ -209,8 +209,8 @@ const Index = () => {
 
       {/* Career Highlights */}
       <section className="bg-navy border-t border-primary-foreground/10">
-        <div className="container py-16">
-          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-8 text-center">Career Highlights</p>
+        <div className="container py-12 md:py-16">
+          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-6 text-center">Career Highlights</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
@@ -227,11 +227,11 @@ const Index = () => {
       </section>
 
       {/* The Problem */}
-      <section className="bg-navy section-padding border-t border-primary-foreground/10">
+      <section className="bg-background py-14 md:py-20 border-t border-border">
         <div className="container">
-          <div className="text-center mb-12 max-w-2xl mx-auto">
+          <div className="text-center mb-10 max-w-2xl mx-auto">
             <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">The Reality</p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
               Most Partner Ecosystems Underperform
             </h2>
           </div>
@@ -239,15 +239,15 @@ const Index = () => {
             {problems.map((p) => (
               <div
                 key={p.title}
-                className="p-8 rounded-lg border border-primary-foreground/10 bg-primary-foreground/[0.03]"
+                className="p-6 md:p-7 rounded-lg border border-border bg-card"
               >
                 <div className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center mb-5">
                   <p.icon className="text-gold" size={24} strokeWidth={1.5} />
                 </div>
-                <h3 className="font-display text-xl font-semibold text-primary-foreground mb-3">
+                <h3 className="font-display text-xl font-semibold text-foreground mb-3">
                   {p.title}
                 </h3>
-                <p className="font-body text-primary-foreground/60 leading-relaxed text-sm">
+                <p className="font-body text-muted-foreground leading-relaxed text-sm">
                   {p.description}
                 </p>
               </div>
@@ -257,9 +257,9 @@ const Index = () => {
       </section>
 
       {/* How I'd Approach It */}
-      <section className="section-padding bg-cream">
+      <section className="py-14 md:py-20 bg-cream">
         <div className="container">
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
             <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Engagement Approach</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
               Diagnose. Design. Operationalize.
@@ -269,9 +269,9 @@ const Index = () => {
             {approach.map((eng) => (
               <div
                 key={eng.title}
-                className="bg-card p-10 rounded-lg border border-border hover:shadow-lg hover:border-gold/30 transition-all group"
+                className="bg-card p-6 md:p-7 rounded-lg border border-border hover:shadow-lg hover:border-gold/30 transition-all group"
               >
-                <div className="w-12 h-12 rounded-lg bg-navy/5 flex items-center justify-center mb-6 group-hover:bg-gold/10 transition-colors">
+                <div className="w-12 h-12 rounded-lg bg-navy/5 flex items-center justify-center mb-5 group-hover:bg-gold/10 transition-colors">
                   <eng.icon className="text-gold" size={24} strokeWidth={1.5} />
                 </div>
                 <h3 className="font-display text-xl font-semibold text-foreground mb-3">
@@ -283,7 +283,7 @@ const Index = () => {
               </div>
             ))}
           </div>
-          <div className="text-center mt-10">
+          <div className="text-center mt-8">
             <Link
               to="/services"
               className="inline-flex items-center gap-2 text-gold font-body font-semibold text-sm hover:text-gold-dark transition-colors"
@@ -295,15 +295,15 @@ const Index = () => {
       </section>
 
       {/* Mid-Page Engagement CTA */}
-      <section className="py-16 md:py-20 bg-background border-t border-border">
+      <section className="py-14 md:py-20 bg-background border-t border-border">
         <div className="container text-center max-w-2xl">
           <div className="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-6">
             <MessageCircleQuestion className="text-gold" size={28} strokeWidth={1.5} />
           </div>
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">
             Let's Scope Your Engagement
           </h2>
-          <p className="font-body text-muted-foreground text-lg mb-8 leading-relaxed">
+          <p className="font-body text-muted-foreground text-lg mb-7 leading-relaxed">
             You know what's broken in your partner ecosystem. I'll show you how I'd fix it — and what results to expect.
           </p>
           <Link
