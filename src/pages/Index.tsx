@@ -227,11 +227,11 @@ const Index = () => {
       </section>
 
       {/* The Problem */}
-      <section className="bg-navy section-padding border-t border-primary-foreground/10">
+      <section className="bg-background py-14 md:py-20 border-t border-border">
         <div className="container">
-          <div className="text-center mb-12 max-w-2xl mx-auto">
+          <div className="text-center mb-10 max-w-2xl mx-auto">
             <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">The Reality</p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
               Most Partner Ecosystems Underperform
             </h2>
           </div>
@@ -239,15 +239,15 @@ const Index = () => {
             {problems.map((p) => (
               <div
                 key={p.title}
-                className="p-8 rounded-lg border border-primary-foreground/10 bg-primary-foreground/[0.03]"
+                className="p-6 md:p-7 rounded-lg border border-border bg-card"
               >
                 <div className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center mb-5">
                   <p.icon className="text-gold" size={24} strokeWidth={1.5} />
                 </div>
-                <h3 className="font-display text-xl font-semibold text-primary-foreground mb-3">
+                <h3 className="font-display text-xl font-semibold text-foreground mb-3">
                   {p.title}
                 </h3>
-                <p className="font-body text-primary-foreground/60 leading-relaxed text-sm">
+                <p className="font-body text-muted-foreground leading-relaxed text-sm">
                   {p.description}
                 </p>
               </div>
