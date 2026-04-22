@@ -186,7 +186,17 @@ const About = () => {
                   <AccordionItem key={exp.company} value={exp.company} className="bg-card rounded-lg border border-border px-5">
                     <AccordionTrigger className="py-3 hover:no-underline">
                       <div className="flex items-center gap-4 text-left">
-                        <img src={exp.logo} alt={exp.company} className="h-6 w-auto object-contain shrink-0 opacity-70" />
+                        <img
+                          src={exp.logo}
+                          alt={exp.company}
+                          className={`w-auto object-contain shrink-0 opacity-70 ${
+                            exp.company === "Salesforce"
+                              ? "h-10"
+                              : exp.company === "ServiceNow"
+                              ? "h-8"
+                              : "h-5"
+                          }`}
+                        />
                         <div>
                           <div className="flex items-center gap-3">
                             <h3 className="font-display text-base font-semibold text-foreground">{exp.company}</h3>
