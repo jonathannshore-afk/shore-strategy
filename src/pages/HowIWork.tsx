@@ -142,10 +142,10 @@ const HowIWork = () => {
       {/* Section 1: How I Deliver — 5 Pillars */}
       <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream">
         <div className="container max-w-4xl">
-          <div className="text-center mb-10">
+          <div className="mb-10">
             <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">The Method</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">How I Deliver</h2>
-            <p className="font-body text-muted-foreground mt-2 max-w-2xl mx-auto">
+            <p className="font-body text-muted-foreground mt-2 max-w-2xl">
               Five pillars that guide every engagement — informed by 15+ years of building partner ecosystems at enterprise scale.
             </p>
           </div>
@@ -190,12 +190,12 @@ const HowIWork = () => {
       {/* Section 2: First 90 Days */}
       <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream">
         <div className="container max-w-4xl">
-          <div className="text-center mb-10">
+          <div className="mb-10">
             <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">The Cadence</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
               The First 90 Days
             </h2>
-            <p className="font-body text-muted-foreground mt-2 max-w-2xl mx-auto">
+            <p className="font-body text-muted-foreground mt-2 max-w-2xl">
               A structured framework for how every engagement unfolds — from day one to measurable results.
             </p>
           </div>
@@ -230,12 +230,12 @@ const HowIWork = () => {
       {/* Section 3: Diagnostic */}
       <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream">
         <div className="container max-w-4xl">
-          <div className="text-center mb-10">
+          <div className="mb-10">
             <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Start Here</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
               The Partner Ecosystem Diagnostic
             </h2>
-            <p className="font-body text-muted-foreground mt-2 max-w-2xl mx-auto">
+            <p className="font-body text-muted-foreground mt-2 max-w-2xl">
               A fixed-scope, fixed-fee engagement designed to give you a board-ready view of your partner ecosystem in 30 days.
             </p>
           </div>

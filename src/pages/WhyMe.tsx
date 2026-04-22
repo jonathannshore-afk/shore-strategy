@@ -122,12 +122,12 @@ const WhyMe = () => {
       {/* Case Studies */}
       <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream">
         <div className="container max-w-5xl">
-          <div className="text-center mb-10">
+          <div className="mb-10">
             <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Proof of Work</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
               Case Studies
             </h2>
-            <p className="font-body text-muted-foreground mt-2 max-w-2xl mx-auto">
+            <p className="font-body text-muted-foreground mt-2 max-w-2xl">
               Each card shows the headline metrics at a glance. Expand any study to see the full challenge, approach, and results.
             </p>
           </div>

@@ -120,10 +120,10 @@ const Services = () => {
       {/* Capabilities Grid */}
       <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream">
         <div className="container">
-          <div className="text-center mb-10">
+          <div className="mb-10">
             <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">The Menu</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">What I Do</h2>
-            <p className="font-body text-muted-foreground mt-2 max-w-2xl mx-auto">
+            <p className="font-body text-muted-foreground mt-2 max-w-2xl">
               The specific services I deliver across partner ecosystem strategy and execution.
             </p>
           </div>
@@ -154,10 +154,10 @@ const Services = () => {
       {/* Engagement Models */}
       <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream">
         <div className="container">
-          <div className="text-center mb-10">
+          <div className="mb-10">
             <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">The Engagement</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Ways to Work Together</h2>
-            <p className="font-body text-muted-foreground mt-2 max-w-2xl mx-auto">
+            <p className="font-body text-muted-foreground mt-2 max-w-2xl">
               Choose the engagement model that fits where you are — fractional, project-based, or advisory.
             </p>
           </div>
