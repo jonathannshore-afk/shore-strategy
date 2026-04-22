@@ -1,64 +1,78 @@
 
 
-## Apply About-page editorial rhythm to Services, Why Me, and Contact
+## Tighten Services + Why Me, consolidate process content into "How I Work"
 
-Same pattern used on About: keep navy hero + navy CTA as bookends, unify all body sections to `bg-cream`, and place a gold hairline + diamond divider between adjacent body sections.
+### The strategy
 
-### Divider component (reused inline, exact match to About)
+Each page gets one job:
 
-```tsx
-<div className="bg-cream">
-  <div className="container px-6 md:px-12 lg:px-24 flex items-center gap-4 py-2">
-    <span className="block h-px flex-1 bg-gold/40" />
-    <span className="block w-2 h-2 rotate-45 bg-gold/60" />
-    <span className="block h-px flex-1 bg-gold/40" />
-  </div>
-</div>
+- **Why Me** → pure proof (case studies only)
+- **Services** → the menu (what I do + how to engage)
+- **How I Work** → the process (delivery method + diagnostic + first 90 days) — lives at the existing `/methodology` route, renamed
+
+### 1. `src/pages/WhyMe.tsx` — strip to case studies
+
+Remove:
+- The entire "First 90 Days" section (`first90Days` array + its `<section>`)
+- The divider between Case Studies and First 90 Days
+- The "What to Expect" eyebrow content
+
+Keep: hero, case studies accordion, navy CTA.
+
+Hero subhead tightens to focus on proof: *"Three companies. Three transformations. The track record behind the strategy."*
+
+### 2. `src/pages/Services.tsx` — strip to menu + engagement
+
+Remove:
+- "How I Deliver" section (the 5 pillars block — lines ~217-263)
+- "The Partner Ecosystem Diagnostic" section (lines ~274-331)
+- Two of the three dividers (keep only the one between "What I Do" and "Ways to Work Together")
+- Section numbering (`01 · The Menu`, `04 · The Engagement`) — only two sections now, numbering feels overwrought
+
+Final flow: navy hero → cream "What I Do" → ◆ → cream "Ways to Work Together" → navy CTA.
+
+Hero subhead tightens to: *"A clear menu of services and flexible ways to engage."*
+
+Add a soft cross-link at the bottom of "Ways to Work Together": *"Curious how engagements actually run? See How I Work →"*
+
+### 3. Repurpose `/methodology` → `/how-i-work`
+
+Rewrite `src/pages/Methodology.tsx` to become the new "How I Work" page with three stacked sections:
+
+```text
+Hero (navy)
+   ↓
+Section 1: How I Deliver  ← the 5 pillars (moved from Services)
+   ↓ ◆
+Section 2: The First 90 Days  ← moved from Why Me
+   ↓ ◆
+Section 3: The Partner Ecosystem Diagnostic  ← moved from Services
+   ↓
+CTA (navy) — "Book a Scoping Call"
 ```
 
----
+This page answers: *"If we work together, what does it actually look like?"* — the Diagnostic at the bottom becomes the natural CTA (it's the on-ramp).
 
-### 1. `src/pages/Services.tsx`
+Apply the same cream-bg + gold-diamond editorial rhythm used on About/Services/Why Me.
 
-Current body flips: `bg-background` (Capabilities) → `bg-cream` (Methodology) → `bg-cream` (Diagnostic) → `bg-background` (Engagement Models) → `bg-navy` (CTA).
+### 4. Routing + navigation
 
-Changes:
-- Capabilities section: `bg-background` → `bg-cream`
-- Engagement Models section: `bg-background` → `bg-cream`
-- Insert gold-diamond divider between each of the 4 body sections (3 dividers total): after Capabilities, after Methodology, after Diagnostic.
-- Keep navy hero and navy CTA as-is.
+- Add `/how-i-work` route in `src/App.tsx` pointing to the rewritten Methodology component
+- Keep `/methodology` as a redirect (or alias) so any external links don't 404
+- Add **"How I Work"** to the header nav in `src/components/Header.tsx`, placed between "Services" and "Why Me":
+  ```
+  Home · About · Services · How I Work · Why Me · Contact
+  ```
 
-Resulting flow: navy hero → cream (Capabilities) → ◆ → cream (Methodology) → ◆ → cream (Diagnostic) → ◆ → cream (Engagement Models) → navy CTA.
-
-### 2. `src/pages/WhyMe.tsx`
-
-Current body flips: `bg-background` (Case Studies) → `bg-cream` (First 90 Days) → `bg-navy` (CTA).
-
-Changes:
-- Case Studies section: `bg-background` → `bg-cream`
-- Insert gold-diamond divider between Case Studies and First 90 Days.
-- Keep navy hero and navy CTA as-is.
-
-Note: case study cards use `bg-card` (white) with inner stat tiles using `bg-background` (gray). On cream, the gray inner tiles will still read fine — they sit inside white cards, not directly on cream — so no further change needed there.
-
-### 3. `src/pages/Contact.tsx`
-
-Current body flips: `bg-cream` (Summary + Calendly) → `bg-background` (Form + Direct Contact).
-
-Changes:
-- Form + Direct Contact section: `bg-background` → `bg-cream`
-- Insert gold-diamond divider between Calendly section and Form section.
-- Keep navy hero as-is. (Footer is the bookend; no page-level CTA section here.)
-
-Note: form inputs use `bg-card` (white) — they'll continue to pop cleanly against cream, same as the white case-study/philosophy cards on About.
-
----
+The narrative the nav now tells: *Who I am → What I do → How I do it → Proof I can do it → Talk to me.* That's the CRO journey.
 
 ### Files modified
 
-- `src/pages/Services.tsx`
-- `src/pages/WhyMe.tsx`
-- `src/pages/Contact.tsx`
+- `src/pages/WhyMe.tsx` — remove First 90 Days
+- `src/pages/Services.tsx` — remove How I Deliver + Diagnostic
+- `src/pages/Methodology.tsx` — rewrite as "How I Work" with 3 sections (pillars + 90 days + diagnostic)
+- `src/App.tsx` — add `/how-i-work` route, keep `/methodology` as alias
+- `src/components/Header.tsx` — insert "How I Work" nav link
 
-No new components, no token changes, no changes to About/Index/Blog/Leadership.
+No new components. No token changes. Pure content reshuffle + one nav addition.
 
