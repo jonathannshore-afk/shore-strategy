@@ -13,7 +13,6 @@ import logoServicenow from "@/assets/logo-servicenow.png";
 import logoLumen from "@/assets/logo-lumen.png";
 import SEO from "@/components/SEO";
 import StatsMarquee from "@/components/StatsMarquee";
-import ExpertiseRadar from "@/components/ExpertiseRadar";
 
 const experience = [
   {
@@ -252,15 +251,6 @@ const About = () => {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Core Competencies — Radar Only */}
-      <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-background">
-        <div className="container max-w-lg">
-          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-2 text-center">Expertise</p>
-          <h2 className="font-display text-3xl font-bold text-foreground mb-6 text-center">Core Competencies</h2>
-          <ExpertiseRadar variant="light" />
         </div>
       </section>
 
