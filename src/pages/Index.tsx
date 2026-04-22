@@ -131,6 +131,16 @@ const Index = () => {
                   See How I Work <ArrowRight size={16} />
                 </Link>
               </div>
+              <p
+                className="mt-6 md:mt-8 pt-5 border-t border-primary-foreground/15 font-body text-sm text-primary-foreground/60 max-w-xl text-center md:text-left animate-fade-in-up"
+                style={{ animationDelay: "0.6s" }}
+              >
+                For{" "}
+                <span className="text-primary-foreground/80">
+                  CROs, SVPs, and VP-level partnership leaders
+                </span>{" "}
+                at B2B SaaS and enterprise technology companies.
+              </p>
             </div>
             <div
               className="hidden md:flex flex-col items-center w-52 lg:w-56 shrink-0 animate-fade-in-up"
@@ -187,23 +197,6 @@ const Index = () => {
               className="h-5 object-contain opacity-70 brightness-0 invert"
             />
           </div>
-        </div>
-      </section>
-
-      {/* Who I Work With */}
-      <section className="py-14 md:py-20 bg-background border-t border-border">
-        <div className="container text-center max-w-5xl">
-          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Who I Work With</p>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-            Built for Leadership Teams
-          </h2>
-          <p className="font-body text-lg text-muted-foreground leading-relaxed">
-            I partner with{" "}
-            <span className="text-foreground font-semibold">
-              CROs, SVPs, and VP-level partnership leaders
-            </span>{" "}
-            at B2B SaaS and enterprise technology companies — from Series D startups building their first partner motion to established enterprises transforming legacy channel programs.
-          </p>
         </div>
       </section>
 
