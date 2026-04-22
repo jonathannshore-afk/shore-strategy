@@ -88,7 +88,7 @@ const Index = () => {
       />
 
       {/* Hero */}
-      <section className="relative min-h-[70vh] md:min-h-[85vh] flex flex-col justify-center overflow-hidden">
+      <section className="relative min-h-[60vh] md:min-h-[75vh] flex flex-col justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroBg})` }}
@@ -101,7 +101,7 @@ const Index = () => {
                 ex-Salesforce · ServiceNow · Lumen Technologies
               </p>
               <h1
-                className="font-display text-3xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-4 md:mb-6 animate-fade-in-up"
+                className="font-display text-3xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-3 md:mb-5 animate-fade-in-up"
                 style={{ animationDelay: "0.15s" }}
               >
                 Your Partner Ecosystem
@@ -109,7 +109,7 @@ const Index = () => {
                 <span className="text-gold">Should Be a Revenue Engine</span>
               </h1>
               <p
-                className="font-body text-base md:text-xl text-primary-foreground/80 max-w-xl mb-6 md:mb-10 animate-fade-in-up"
+                className="font-body text-base md:text-xl text-primary-foreground/80 max-w-xl mb-5 md:mb-8 animate-fade-in-up"
                 style={{ animationDelay: "0.3s" }}
               >
                 I help B2B technology companies build, fix, and scale partner ecosystems that drive measurable revenue growth.
@@ -141,7 +141,7 @@ const Index = () => {
                 alt="Jonathan Shore"
                 className="w-full rounded-lg shadow-2xl border-2 border-gold/20"
               />
-              <div className="w-full mt-5">
+              <div className="w-full mt-4">
                 <p className="text-gold font-body text-[10px] uppercase tracking-[0.2em] text-center mb-3">
                   Experience Built At
                 </p>
