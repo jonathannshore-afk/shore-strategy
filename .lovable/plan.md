@@ -1,51 +1,81 @@
 
 
-## Home page reorder + hero logo relocation
+## Home page — tighten spacing & unify section color rhythm
 
-Restructure `src/pages/Index.tsx` to reorder sections and move the "Experience Built At" logo bar from the bottom of the hero into the right column, directly under the headshot. All changes confined to one file.
+Goal: make the page feel more condensed and give it a consistent, repeating background rhythm instead of three navy sections in a row. All work confined to `src/pages/Index.tsx` (and minor reuse of existing tokens — no new colors).
 
-### New section order
+### Current problems
 
-```text
-1. Hero (with logos relocated under headshot)
-2. Who I Work With           [moved up from #4]
-3. Career Highlights         [moved up from #3]
-4. The Reality (Problem)     [moved down from #2]
-5. Engagement Approach       [unchanged position]
-6. Closing CTA               [unchanged]
-```
+1. **Three navy sections back-to-back** (Hero → Career Highlights → The Reality) — visually heavy and monotonous. The eye gets no rest between them.
+2. **Inconsistent vertical spacing** — mix of `section-padding` (large), `py-16`, `py-16 md:py-20`, plus extra internal margins (`mb-12`, `mb-8`) that compound. Sections feel inflated.
+3. **Hero min-height is too tall** (`min-h-[70vh] md:min-h-[85vh]`) for the content it holds now.
+4. **Card padding is generous** (`p-8`, `p-10`) which adds to the overall length.
 
-### Hero changes
-
-- Remove the "Experience Built At" block currently sitting in the hero footer (the full-width logo bar with Salesforce / ServiceNow / Lumen).
-- In the right column, under the headshot:
-  - Keep the headshot but reduce its width from `w-64 lg:w-72` to roughly `w-52 lg:w-56` so the stack (photo + logos) fits the hero comfortably without forcing extra height.
-  - Add a compact vertical block beneath the photo:
-    - Small gold eyebrow: "Experience Built At" (smaller than the current version — `text-[10px]` uppercase tracking-wide).
-    - A single horizontal row with the three logos (Salesforce, ServiceNow, Lumen) sized down to ~`h-6` with the existing `brightness-0 invert` and opacity treatment, evenly spaced via `flex items-center justify-between gap-4`.
-- Make the right column visible on mobile too (currently `hidden md:block`) only if it fits cleanly — otherwise keep mobile behavior as-is and only relocate on desktop. Recommend: keep `hidden md:block` to preserve mobile layout; mobile users still see the logos because we will keep a simplified mobile-only logo row inside the hero text column on small screens (reusing the same three images at `h-6`, centered, shown via `md:hidden`).
-- Remove the entire bottom hero footer container that previously held the logos.
-
-### Section reordering (no copy changes)
-
-Move JSX blocks within `Index.tsx` into the new sequence above. No copy, styling, or background-color changes to the sections themselves — only their order in the file. The existing background rhythm will become:
+### Target color rhythm (alternating, 6 sections)
 
 ```text
-Hero (navy image)
-→ Who I Work With (background)
-→ Career Highlights (navy)
-→ The Reality (navy)
-→ Engagement Approach (cream)
-→ Closing CTA (background)
+1. Hero                 navy image
+2. Who I Work With      background  (light)
+3. Career Highlights    navy
+4. The Reality          background  (light) ← FLIP from navy
+5. Engagement Approach  cream
+6. Closing CTA          background  (light)
 ```
 
-Note: Career Highlights and The Reality both sit on navy and will now be adjacent. To preserve visual separation, keep the existing `border-t border-primary-foreground/10` divider between them (already present on both sections).
+This gives a clean **navy → light → navy → light → cream → light** alternation, matching how other pages on the site already alternate light/dark bands.
 
-### Files modified
+### Spacing system (apply uniformly)
 
-- `src/pages/Index.tsx` — only file touched. No new components, no new assets, no new imports.
+Replace the current mix with a tighter, consistent scale:
+
+- **Standard section vertical padding:** `py-14 md:py-20` (was `section-padding` ≈ `py-20 md:py-28`, plus some `py-16 md:py-20`).
+- **Section header → grid spacing:** `mb-10` (was `mb-12`).
+- **Card internal padding:** `p-6 md:p-7` (was `p-8` / `p-10`).
+- **Hero min-height:** `min-h-[60vh] md:min-h-[75vh]` (was `70vh / 85vh`).
+- **Hero internal CTA spacing:** reduce headline `mb-4 md:mb-6` → `mb-3 md:mb-5`; subhead `mb-6 md:mb-10` → `mb-5 md:mb-8`.
+- **Career Highlights band:** `py-12 md:py-16` (was `py-16` flat). Eyebrow `mb-8` → `mb-6`.
+
+### Section-by-section changes
+
+**1. Hero**
+- Reduce `min-h` as above.
+- Tighten headline / subhead bottom margins as above.
+- Logo block under headshot: reduce `mt-5` → `mt-4`.
+
+**2. Who I Work With** (light background — unchanged background, tightened spacing)
+- Outer: `section-padding` → `py-14 md:py-20`.
+- Add a top border (`border-t border-border`) so the transition off navy is crisp.
+
+**3. Career Highlights** (navy — unchanged background, tightened spacing)
+- Container: `py-16` → `py-12 md:py-16`.
+- Eyebrow `mb-8` → `mb-6`.
+
+**4. The Reality** (FLIP from navy → light background)
+- Background: `bg-navy` → `bg-background`.
+- Border: `border-primary-foreground/10` → `border-border`.
+- Heading colors: `text-primary-foreground` → `text-foreground`; body `text-primary-foreground/60` → `text-muted-foreground`.
+- Cards: `border-primary-foreground/10 bg-primary-foreground/[0.03]` → `border-border bg-card`. Icon tile `bg-gold/10` stays (works on both).
+- Outer padding: `section-padding` → `py-14 md:py-20`.
+- Card padding: `p-8` → `p-6 md:p-7`.
+- Header bottom margin: `mb-12` → `mb-10`.
+
+**5. Engagement Approach (cream)**
+- Outer: `section-padding` → `py-14 md:py-20`.
+- Header `mb-12` → `mb-10`.
+- Cards: `p-10` → `p-6 md:p-7`. Icon tile margin `mb-6` → `mb-5`.
+- Bottom CTA link `mt-10` → `mt-8`.
+
+**6. Closing CTA**
+- Outer: `py-16 md:py-20` → `py-14 md:py-20` (consistent with the rest).
+- Inner spacing: heading `mb-4` → `mb-3`; subhead `mb-8` → `mb-7`.
 
 ### Result
 
-Hero becomes a tighter two-column unit (headline left, photo + pedigree logos right). The narrative arc shifts to: who he is → who he serves → proof he can deliver → the problem he solves → how he'd approach it → CTA.
+- Page height drops materially (estimated ~15–20% shorter) without removing any content.
+- Background rhythm becomes a clean alternation, matching the editorial pattern used on the rest of the site.
+- All cards, eyebrows, headings, and body sizes stay the same — only padding/margins and one section background change.
+
+### Files modified
+
+- `src/pages/Index.tsx` — only file touched. No new components, no new tokens, no design-system changes.
 
