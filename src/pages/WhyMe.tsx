@@ -97,39 +97,6 @@ const caseStudies = [
   },
 ];
 
-const first90Days = [
-  {
-    phase: "Days 1–30",
-    title: "Listen & Assess",
-    items: [
-      "Stakeholder interviews across Sales, Product, Marketing, and existing partners",
-      "Full ecosystem audit — partner landscape, program maturity, pipeline contribution",
-      "Identify quick wins and structural gaps",
-      "Deliver initial assessment report with prioritized recommendations",
-    ],
-  },
-  {
-    phase: "Days 31–60",
-    title: "Design & Align",
-    items: [
-      "Draft partner strategy and routes-to-market framework",
-      "Design program structure — tiers, incentives, enablement",
-      "Align executive stakeholders on investment priorities and success metrics",
-      "Begin key partner engagement and relationship building",
-    ],
-  },
-  {
-    phase: "Days 61–90",
-    title: "Launch & Operationalize",
-    items: [
-      "Launch initial partner motions — co-sell plays, deal registration, onboarding",
-      "Stand up operational cadences — QBRs, pipeline reviews, partner scorecards",
-      "Deliver 90-day progress report with go-forward roadmap",
-      "Transition from assessment mode to execution mode",
-    ],
-  },
-];
-
 const WhyMe = () => {
   return (
     <Layout>
@@ -147,7 +114,7 @@ const WhyMe = () => {
             Proof in the <span className="text-gold">Results</span>
           </h1>
           <p className="font-body text-lg text-primary-foreground/70 max-w-2xl">
-            Track record and a transparent look at how I approach every engagement — whether fractional, project-based, or advisory.
+            Three companies. Three transformations. The track record behind the strategy.
           </p>
         </div>
       </section>
@@ -253,53 +220,6 @@ const WhyMe = () => {
               </AccordionItem>
             ))}
           </Accordion>
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="bg-cream">
-        <div className="container px-6 md:px-12 lg:px-24 flex items-center gap-4 py-2">
-          <span className="block h-px flex-1 bg-gold/40" />
-          <span className="block w-2 h-2 rotate-45 bg-gold/60" />
-          <span className="block h-px flex-1 bg-gold/40" />
-        </div>
-      </div>
-
-      {/* First 90 Days */}
-      <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream">
-        <div className="container max-w-4xl">
-          <div className="text-center mb-10">
-            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">What to Expect</p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-              The First 90 Days
-            </h2>
-            <p className="font-body text-muted-foreground mt-2 max-w-2xl mx-auto">
-              A structured framework for how I approach every consulting engagement — from day one to measurable results.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {first90Days.map((phase) => (
-              <div
-                key={phase.phase}
-                className="bg-card p-6 rounded-lg border border-border hover:shadow-lg hover:border-gold/30 transition-all"
-              >
-                <p className="font-body text-xs text-gold font-semibold uppercase tracking-[0.15em] mb-1">
-                  {phase.phase}
-                </p>
-                <h3 className="font-display text-xl font-semibold text-foreground mb-3">
-                  {phase.title}
-                </h3>
-                <ul className="space-y-2">
-                  {phase.items.map((item, i) => (
-                    <li key={i} className="font-body text-sm text-muted-foreground leading-relaxed flex gap-2">
-                      <CheckCircle className="text-gold shrink-0 mt-0.5" size={14} strokeWidth={2} />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
