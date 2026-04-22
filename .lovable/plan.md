@@ -1,94 +1,64 @@
 
 
-## Home page restructure — 4 changes
+## Apply About-page editorial rhythm to Services, Why Me, and Contact
 
-### 1. Larger headshot + tighter logo spacing
+Same pattern used on About: keep navy hero + navy CTA as bookends, unify all body sections to `bg-cream`, and place a gold hairline + diamond divider between adjacent body sections.
 
-**File:** `src/pages/Index.tsx` (hero section)
+### Divider component (reused inline, exact match to About)
 
-- Scale headshot column from `w-52 lg:w-56` (208–224px) up to `w-72 lg:w-80` (288–320px) — closer to original executive-photo proportions.
-- Keep "Experience Built At" logos at current size.
-- Tighten the gap between the photo and the logo strip (`mt-4` → `mt-5`) so the logos read as a quiet supporting element rather than a competing block.
-- No changes to mobile layout (logos stay below hero on mobile, unchanged).
-
-### 2. Add inline credibility line in hero (experience framing)
-
-**File:** `src/pages/Index.tsx` (hero section)
-
-Insert one quiet line directly **below** the existing audience qualifier ("For CROs, SVPs, and VP-level partnership leaders…"), separated by a thin top border. Single line, gold dot separators, small caps treatment so it reads as a credential strip — not a stats grid.
-
-```text
-15+ YEARS  ·  SALESFORCE  ·  SERVICENOW  ·  LUMEN  ·  $1.6B ARR ECOSYSTEMS
+```tsx
+<div className="bg-cream">
+  <div className="container px-6 md:px-12 lg:px-24 flex items-center gap-4 py-2">
+    <span className="block h-px flex-1 bg-gold/40" />
+    <span className="block w-2 h-2 rotate-45 bg-gold/60" />
+    <span className="block h-px flex-1 bg-gold/40" />
+  </div>
+</div>
 ```
-
-- Typography: `font-body text-xs uppercase tracking-[0.2em] text-primary-foreground/60`
-- Gold middot separators (`·`) in `text-gold/70`
-- Wraps gracefully on narrow viewports
-- The dedicated stats band below the hero **stays unchanged** — it remains the outcomes moment
-
-### 3. Reframe "The Reality" section from editorial to diagnostic
-
-**File:** `src/pages/Index.tsx` (problem section)
-
-Keep the section structure (3-card grid, same icons, same body copy — they already work). Change only the eyebrow and H2 to convert it from editorial commentary into a buyer-pain mirror:
-
-| Current | New |
-|---|---|
-| Eyebrow: "The Reality" | Eyebrow: "Sound Familiar?" |
-| H2: "Most Partner Ecosystems Underperform" | H2: "The Symptoms We Solve For" |
-
-Card titles + body copy stay identical (Pipeline that never materializes / Strategy without operating muscle / Misaligned with the core business — these already read as buyer-recognizable symptoms).
-
-### 4. Add condensed "How I Work" section to home page
-
-**File:** `src/pages/Index.tsx`
-
-Insert between the reframed problem section and the existing mid-page CTA. Mirrors the Diagnose / Design / Operationalize model from `/services` but as a **teaser**, not a duplicate.
-
-```text
-EYEBROW:   How I Work
-H2:        Diagnose. Design. Operationalize.
-
-[3-card grid, bg-cream band — matches existing card pattern]
-
-DIAGNOSE
-  Ecosystem assessment: partner mix, program health, GTM
-  alignment, operating model gaps. Strategy without diagnosis
-  is guesswork.
-
-DESIGN
-  Program architecture, route-to-market plan, operating model,
-  KPI framework. Built for your team to actually run.
-
-OPERATIONALIZE
-  Stand up cadences, enablement, deal reg, analytics — handed
-  off as a working system, not a deck.
-
-[CTA link]:  See engagement models →   (links to /services)
-```
-
-- Reuses existing card pattern (icon tile + title + body)
-- Icons: `Search`, `Compass`, `Settings2` from lucide-react (already used elsewhere)
-- One link out to `/services` — does not duplicate the full page
 
 ---
 
-### Resulting home page flow
+### 1. `src/pages/Services.tsx`
 
-```text
-1. Hero (with new inline credibility line)
-2. Career Highlights stats band  ← outcomes
-3. Why Fractional, Why Now
-4. Sound Familiar? (reframed problem section)
-5. How I Work (NEW — Diagnose/Design/Operationalize teaser)
-6. Mid-page CTA
-7. Footer
-```
+Current body flips: `bg-background` (Capabilities) → `bg-cream` (Methodology) → `bg-cream` (Diagnostic) → `bg-background` (Engagement Models) → `bg-navy` (CTA).
 
-This flow now answers a CRO's questions in sequence: *Who? → Senior enough? → Results? → Why fractional? → Do you understand my pain? → What do you actually do? → How do I start?*
+Changes:
+- Capabilities section: `bg-background` → `bg-cream`
+- Engagement Models section: `bg-background` → `bg-cream`
+- Insert gold-diamond divider between each of the 4 body sections (3 dividers total): after Capabilities, after Methodology, after Diagnostic.
+- Keep navy hero and navy CTA as-is.
+
+Resulting flow: navy hero → cream (Capabilities) → ◆ → cream (Methodology) → ◆ → cream (Diagnostic) → ◆ → cream (Engagement Models) → navy CTA.
+
+### 2. `src/pages/WhyMe.tsx`
+
+Current body flips: `bg-background` (Case Studies) → `bg-cream` (First 90 Days) → `bg-navy` (CTA).
+
+Changes:
+- Case Studies section: `bg-background` → `bg-cream`
+- Insert gold-diamond divider between Case Studies and First 90 Days.
+- Keep navy hero and navy CTA as-is.
+
+Note: case study cards use `bg-card` (white) with inner stat tiles using `bg-background` (gray). On cream, the gray inner tiles will still read fine — they sit inside white cards, not directly on cream — so no further change needed there.
+
+### 3. `src/pages/Contact.tsx`
+
+Current body flips: `bg-cream` (Summary + Calendly) → `bg-background` (Form + Direct Contact).
+
+Changes:
+- Form + Direct Contact section: `bg-background` → `bg-cream`
+- Insert gold-diamond divider between Calendly section and Form section.
+- Keep navy hero as-is. (Footer is the bookend; no page-level CTA section here.)
+
+Note: form inputs use `bg-card` (white) — they'll continue to pop cleanly against cream, same as the white case-study/philosophy cards on About.
+
+---
 
 ### Files modified
 
-- `src/pages/Index.tsx` — all four changes in one file
-- No new components, no new tokens, no changes to `/services` or any other page
+- `src/pages/Services.tsx`
+- `src/pages/WhyMe.tsx`
+- `src/pages/Contact.tsx`
+
+No new components, no token changes, no changes to About/Index/Blog/Leadership.
 
