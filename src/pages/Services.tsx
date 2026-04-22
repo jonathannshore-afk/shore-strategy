@@ -210,12 +210,12 @@ const Services = () => {
       <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream">
         <div className="container max-w-4xl">
           <div className="text-center mb-10">
-            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">My Methodology</p>
+            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">02 · The Approach</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-              Strategic Approach
+              How I Deliver
             </h2>
             <p className="font-body text-muted-foreground mt-2 max-w-2xl mx-auto">
-              Five pillars that guide how I build, scale, and optimize partner ecosystems.
+              Five pillars that turn the services above into measurable outcomes.
             </p>
           </div>
           <div className="space-y-4">
@@ -258,8 +258,11 @@ const Services = () => {
       <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-background">
         <div className="container">
           <div className="text-center mb-10">
-            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Ways to Work Together</p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Engagement Models</h2>
+            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">03 · The Engagement</p>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Ways to Work Together</h2>
+            <p className="font-body text-muted-foreground mt-2 max-w-2xl mx-auto">
+              Choose the engagement model that fits where you are — fractional, project-based, or advisory.
+            </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto auto-rows-[380px]">
             {engagementModels.map((model) => (
