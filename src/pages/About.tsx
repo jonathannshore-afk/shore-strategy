@@ -158,7 +158,7 @@ const About = () => {
       <StatsMarquee />
 
       {/* My Story + Experience */}
-      <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream">
+      <section className="px-6 pt-24 pb-24 md:px-12 lg:px-24 md:pt-32 md:pb-32 bg-cream">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
             <div>
@@ -223,9 +223,17 @@ const About = () => {
         </div>
       </section>
 
+      {/* Editorial divider */}
+      <div className="bg-cream">
+        <div className="container flex items-center justify-center gap-4 py-2">
+          <span className="block h-px w-24 bg-gold/40" />
+          <span className="block w-1.5 h-1.5 rotate-45 bg-gold/50" />
+          <span className="block h-px w-24 bg-gold/40" />
+        </div>
+      </div>
 
       {/* Leadership Philosophy */}
-      <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-background">
+      <section className="px-6 pt-24 pb-24 md:px-12 lg:px-24 md:pt-32 md:pb-32 bg-cream">
         <div className="container">
           <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-2">How I Lead</p>
           <h2 className="font-display text-3xl font-bold text-foreground mb-6">Leadership Philosophy</h2>
