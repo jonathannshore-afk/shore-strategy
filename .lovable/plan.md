@@ -1,101 +1,91 @@
 
 
-## Why Me & Contact — align with site-wide formatting
+## Pilot Engagement offer + "Why Fractional, Why Now" section
 
-Goal: bring both pages in line with the tighter rhythm now used on Home, About, and Services. No new components, no token changes, no copy rewrites (except eyebrows/H2 framing on Why Me to match the numbered narrative pattern from Services).
+Two changes to address the "new practice, no client logos" gap by reframing the offer and addressing the objection head-on.
 
 ---
 
-### Shared problems
+### 1. Pilot Engagement offer — "Partner Ecosystem Diagnostic"
 
-Both pages still use the legacy `section-padding` utility (`px-6 py-20 md:px-12 lg:px-24 lg:py-28`), which is significantly looser than the new standard:
+A defined, fixed-scope, fixed-fee wedge offer that removes "first client" risk for buyers and gives the practice a repeatable entry point.
 
+**Where it lives:** `src/pages/Services.tsx`, inserted as a new section between **02 · The Approach** (engagement models) and **03 · The Engagement** (process). New eyebrow: **"03 · Start Here"**, and the existing "03 · The Engagement" becomes **"04 · The Engagement"**.
+
+**Visual treatment:** A single highlighted card on a `bg-cream` band — distinct from the 3-up engagement model grid above it so it reads as *the* recommended starting point, not another option.
+
+**Card content:**
+
+```text
+EYEBROW:   03 · START HERE
+H2:        The Partner Ecosystem Diagnostic
+SUBHEAD:   A fixed-scope, fixed-fee engagement designed to give you
+           a board-ready view of your partner ecosystem in 30 days.
+
+[Two-column card on bg-card with gold accent border]
+
+LEFT COLUMN — "What you get"
+  • Full ecosystem audit (partners, programs, pipeline contribution)
+  • Competitive & routes-to-market benchmark
+  • Prioritized 12-month roadmap with investment model
+  • Board-ready findings deck + 60-min executive readout
+
+RIGHT COLUMN — "The details"
+  • 30 days, end to end
+  • Fixed fee — no scope creep, no surprises
+  • Direct access to me — not a junior team
+  • Natural on-ramp to fractional or project work (optional)
+
+CTA:  [Book a Scoping Call →]  (links to /contact)
 ```
-px-6 py-12 md:px-12 lg:px-24 lg:py-16
+
+No pricing number on the page itself — the eyebrow says "Start Here" and the CTA drives to a scoping conversation. (Pricing can be added later once validated; leaving it off now avoids anchoring before the offer is tested.)
+
+---
+
+### 2. "Why Fractional, Why Now" section
+
+A short, founder-voice section that addresses the elephant in the room — *"you're new to fractional"* — by reframing it as a deliberate strategic choice backed by 15 years of operator experience.
+
+**Where it lives:** `src/pages/About.tsx`, inserted after the existing "My Story" narrative and before the Leadership Philosophy section. Uses `bg-background` to sit cleanly between the cream "My Story" band and whatever follows.
+
+**Section content:**
+
+```text
+EYEBROW:   A Deliberate Choice
+H2:        Why Fractional, Why Now
+
+[Single-column, max-w-3xl, left-aligned prose — matches "My Story" rhythm]
+
+After 15 years operating inside three of the companies that defined modern
+B2B SaaS partnerships — Salesforce, ServiceNow, and Lumen — I'm bringing
+that playbook to growth-stage teams who need senior partner leadership
+without a full-time hire.
+
+Most companies under $250M ARR can't justify a $400K+ CRO of Partnerships.
+But they absolutely need the strategy, the program design, and the
+executive presence that role provides. That's the gap I exist to close.
+
+I'm not a career consultant who has read about partner ecosystems. I've
+built them, scaled them, and turned them around — with full P&L
+ownership and board-level accountability. The work I do for clients today
+is the same work I did as an operator. The only thing that's changed is
+who signs the contract.
 ```
 
-Hero blocks also use looser internal margins (`mb-6` after H1 instead of `mb-3`/`mb-4`) and CTA blocks use `mb-4` / `mb-8` instead of the tightened `mb-3` / `mb-6` rhythm.
+No new components — uses existing typography tokens (`font-display`, `font-body`, `text-foreground`, `text-muted-foreground`) and the standard section padding (`px-6 py-12 md:px-12 lg:px-24 lg:py-16`).
 
 ---
-
-## Why Me — changes
-
-### Background rhythm (current vs. target)
-
-Current: **Navy → Background → Background → Navy** (Case Studies and First 90 Days are both `bg-background` — they blur into one block).
-
-Target: **Navy → Background → Cream → Navy** — match the alternating pattern from About/Services.
-
-### 1. Hero
-- `bg-navy section-padding` → `bg-navy px-6 pt-16 pb-10 md:px-12 md:pt-20 md:pb-14 lg:px-24`
-- H1 `mb-6` → `mb-4`
-
-### 2. Case Studies section
-- `section-padding bg-background` → `px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-background`
-- Header block `mb-12` → `mb-10`
-- Subhead `mt-3` → `mt-2`
-- Accordion `space-y-6` → `space-y-5` (keeps cards distinct, slightly tighter)
-- Add numbered eyebrow style consistent with Services: eyebrow stays "Proof of Work" (no number — Why Me isn't a 3-act narrative, it's a credibility page)
-
-### 3. First 90 Days section
-- `section-padding bg-background` → `px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream` *(background swap creates rhythm separation from Case Studies)*
-- Header block `mb-12` → `mb-10`
-- Subhead `mt-3` → `mt-2`
-- Grid `gap-8` → `gap-6`
-- Phase card padding `p-8` → `p-6`
-- Phase title `mb-4` → `mb-3`
-- List `space-y-3` → `space-y-2`
-
-### 4. CTA
-- `section-padding bg-navy` → `px-6 py-14 md:px-12 lg:px-24 lg:py-16 bg-navy` (matches Services CTA exactly)
-- H2 `mb-4` → `mb-3`
-- Paragraph `mb-8` → `mb-6`
-
----
-
-## Contact — changes
-
-### Background rhythm (current vs. target)
-
-Current: **Navy → Cream → Background**. Target: keep the same flow — it already alternates correctly. Just tighten.
-
-### 1. Hero
-- `bg-navy section-padding` → `bg-navy px-6 pt-16 pb-10 md:px-12 md:pt-20 md:pb-14 lg:px-24`
-- H1 `mb-6` → `mb-4`
-
-### 2. Summary + Calendly section
-- `section-padding bg-cream` → `px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream`
-- Grid `gap-12` → `gap-10`
-- "How I Can Help" H2 `mb-6` → `mb-4`
-- Body paragraph `mb-6` → `mb-4`
-- "Book a Conversation" header `mb-6` → `mb-4`
-
-### 3. Form + Contact Info section
-- `section-padding bg-background` → `px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-background`
-- Outer grid `gap-16` → `gap-12`
-- "Or Send a Message" H2 `mb-2` + paragraph `mb-8` → `mb-2` + `mb-6`
-- Form `space-y-6` → `space-y-5`
-- Inner row `gap-6` → `gap-5`
-- Field labels `mb-2` → keep
-- Input padding `py-3` → keep (touch target)
-- "Direct Contact" H2 `mb-8` → `mb-6`
-- Contact info `space-y-8` → `space-y-6`
-
-### 4. No CTA section needed
-Contact already *is* the conversion page. No changes.
-
----
-
-### Resulting effect
-
-- Why Me: hero ~30% shorter; Case Studies and First 90 Days now visually distinct via cream/background swap; CTA matches Services CTA dimensions exactly.
-- Contact: hero ~30% shorter; both content sections align with the standard `py-12 lg:py-16` rhythm; form feels tighter without losing touch targets.
-- All five primary pages (Home, About, Services, Why Me, Contact) now share: identical hero padding (`pt-16 pb-10 md:pt-20 md:pb-14`), identical content padding (`py-12 lg:py-16`), identical horizontal gutters (`px-6 md:px-12 lg:px-24`), and the same alternating navy/cream/background rhythm.
 
 ### Files modified
 
-- `src/pages/WhyMe.tsx`
-- `src/pages/Contact.tsx`
+- `src/pages/Services.tsx` — insert "Start Here" diagnostic section, renumber subsequent eyebrow from `03` to `04`.
+- `src/pages/About.tsx` — insert "Why Fractional, Why Now" section between My Story and Leadership Philosophy.
 
-No new components, no token changes, no copy rewrites.
+No new components, no new tokens, no copy changes elsewhere. Both sections reuse the existing card / section / eyebrow patterns already established across the site.
+
+### What this resolves
+
+- **Pilot offer:** gives buyers a low-risk, well-defined first step — and gives you a repeatable path to your first 2–3 real case studies within 90 days.
+- **Why Fractional section:** converts the "new shingle" objection into a strategic-choice narrative *before* a buyer has to ask.
 
