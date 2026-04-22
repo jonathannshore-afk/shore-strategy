@@ -19,7 +19,7 @@ const experience = [
   {
     company: "Lumen Technologies",
     logo: logoLumen,
-    role: "Senior Director, Partner Ecosystem Strategy",
+    role: "Senior Director, Partner Commercial Strategy",
     period: "2024 – 2026",
     highlights: [
       "Led partner ecosystem transformation across $1.6B ARR and 2K+ partners",
