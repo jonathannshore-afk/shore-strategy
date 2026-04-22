@@ -252,9 +252,9 @@ const Index = () => {
       </section>
 
       {/* The Problem */}
-      <section className="bg-background py-14 md:py-20 border-t border-border">
+      <section className="bg-cream py-14 md:py-20">
         <div className="container">
-          <div className="text-center mb-10 max-w-2xl mx-auto">
+          <div className="mb-10 max-w-2xl">
             <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Sound Familiar?</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
               The Symptoms We Solve For
@@ -281,10 +281,19 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Divider */}
+      <div className="bg-cream">
+        <div className="container px-6 md:px-12 lg:px-24 flex items-center gap-4 py-2">
+          <span className="block h-px flex-1 bg-gold/40" />
+          <span className="block w-2 h-2 rotate-45 bg-gold/60" />
+          <span className="block h-px flex-1 bg-gold/40" />
+        </div>
+      </div>
+
       {/* How I'd Approach It */}
       <section className="py-14 md:py-20 bg-cream">
         <div className="container">
-          <div className="text-center mb-10">
+          <div className="mb-10 max-w-2xl">
             <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Engagement Approach</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
               Diagnose. Design. Operationalize.
@@ -308,7 +317,7 @@ const Index = () => {
               </div>
             ))}
           </div>
-          <div className="text-center mt-8">
+          <div className="mt-8">
             <Link
               to="/services"
               className="inline-flex items-center gap-2 text-gold font-body font-semibold text-sm hover:text-gold-dark transition-colors"
@@ -320,15 +329,15 @@ const Index = () => {
       </section>
 
       {/* Mid-Page Engagement CTA */}
-      <section className="py-14 md:py-20 bg-background border-t border-border">
+      <section className="py-14 md:py-20 bg-navy">
         <div className="container text-center max-w-2xl">
           <div className="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-6">
             <MessageCircleQuestion className="text-gold" size={28} strokeWidth={1.5} />
           </div>
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-primary-foreground mb-3">
             Let's Scope Your Engagement
           </h2>
-          <p className="font-body text-muted-foreground text-lg mb-7 leading-relaxed">
+          <p className="font-body text-primary-foreground/70 text-lg mb-7 leading-relaxed">
             You know what's broken in your partner ecosystem. I'll show you how I'd fix it — and what results to expect.
           </p>
           <Link
