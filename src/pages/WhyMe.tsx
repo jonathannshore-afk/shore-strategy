@@ -140,10 +140,10 @@ const WhyMe = () => {
       />
 
       {/* Hero */}
-      <section className="bg-navy section-padding">
+      <section className="bg-navy px-6 pt-16 pb-10 md:px-12 md:pt-20 md:pb-14 lg:px-24">
         <div className="container">
           <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Why Work With Me</p>
-          <h1 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
+          <h1 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-4">
             Proof in the <span className="text-gold">Results</span>
           </h1>
           <p className="font-body text-lg text-primary-foreground/70 max-w-2xl">
@@ -153,19 +153,19 @@ const WhyMe = () => {
       </section>
 
       {/* Case Studies */}
-      <section className="section-padding bg-background">
+      <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-background">
         <div className="container max-w-5xl">
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
             <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Proof of Work</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
               Case Studies
             </h2>
-            <p className="font-body text-muted-foreground mt-3 max-w-2xl mx-auto">
+            <p className="font-body text-muted-foreground mt-2 max-w-2xl mx-auto">
               Each card shows the headline metrics at a glance. Expand any study to see the full challenge, approach, and results.
             </p>
           </div>
 
-          <Accordion type="single" collapsible className="space-y-6">
+          <Accordion type="single" collapsible className="space-y-5">
             {caseStudies.map((cs) => (
               <AccordionItem
                 key={cs.company}
