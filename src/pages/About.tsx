@@ -225,15 +225,15 @@ const About = () => {
 
 
       {/* Leadership Philosophy */}
-      <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream">
+      <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-background">
         <div className="container">
           <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-2">How I Lead</p>
-          <h2 className="font-display text-3xl font-bold text-foreground mb-8">Leadership Philosophy</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <h2 className="font-display text-3xl font-bold text-foreground mb-6">Leadership Philosophy</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {principles.map((p) => (
               <div
                 key={p.title}
-                className="group bg-card p-6 rounded-lg border border-border hover:border-gold/30 hover:shadow-lg transition-all"
+                className="group bg-card p-5 rounded-lg border border-border hover:border-gold/30 hover:shadow-lg transition-all"
               >
                 <div className="flex items-start gap-4">
                   <div className="shrink-0 w-10 h-10 rounded-lg bg-navy/5 flex items-center justify-center group-hover:bg-gold/10 transition-colors">
