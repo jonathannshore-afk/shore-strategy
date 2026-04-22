@@ -200,23 +200,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Who I Work With */}
-      <section className="py-14 md:py-20 bg-background border-t border-border">
-        <div className="container text-center max-w-5xl">
-          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Who I Work With</p>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-            Built for Leadership Teams
-          </h2>
-          <p className="font-body text-lg text-muted-foreground leading-relaxed">
-            I partner with{" "}
-            <span className="text-foreground font-semibold">
-              CROs, SVPs, and VP-level partnership leaders
-            </span>{" "}
-            at B2B SaaS and enterprise technology companies — from Series D startups building their first partner motion to established enterprises transforming legacy channel programs.
-          </p>
-        </div>
-      </section>
-
       {/* Career Highlights */}
       <section className="bg-navy border-t border-primary-foreground/10">
         <div className="container py-12 md:py-16">
