@@ -158,11 +158,12 @@ const About = () => {
       <StatsMarquee />
 
       {/* My Story + Experience */}
-      <section className="px-6 pt-24 pb-24 md:px-12 lg:px-24 md:pt-32 md:pb-32 bg-cream">
+      <section className="px-6 pt-16 pb-16 md:px-12 lg:px-24 md:pt-20 md:pb-20 bg-cream">
         <div className="container">
+          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-2">My Background</p>
+          <h2 className="font-display text-3xl font-bold text-foreground mb-8">My Story</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
             <div>
-              <h2 className="font-display text-3xl font-bold text-foreground mb-3">My Story</h2>
               <div className="font-body text-foreground/80 leading-relaxed space-y-3 text-[15px]">
                 <p>
                   I've spent the last 15+ years building and leading partner programs at some of the world's most influential enterprise technology companies — Salesforce, ServiceNow, and most recently Lumen Technologies, where I led ecosystem strategy across a $1.6B ARR partner business.
@@ -225,15 +226,15 @@ const About = () => {
 
       {/* Editorial divider */}
       <div className="bg-cream">
-        <div className="container flex items-center justify-center gap-4 py-2">
-          <span className="block h-px w-24 bg-gold/40" />
-          <span className="block w-1.5 h-1.5 rotate-45 bg-gold/50" />
-          <span className="block h-px w-24 bg-gold/40" />
+        <div className="container px-6 md:px-12 lg:px-24 flex items-center gap-4 py-2">
+          <span className="block h-px flex-1 bg-gold/40" />
+          <span className="block w-2 h-2 rotate-45 bg-gold/60" />
+          <span className="block h-px flex-1 bg-gold/40" />
         </div>
       </div>
 
       {/* Leadership Philosophy */}
-      <section className="px-6 pt-24 pb-24 md:px-12 lg:px-24 md:pt-32 md:pb-32 bg-cream">
+      <section className="px-6 pt-16 pb-16 md:px-12 lg:px-24 md:pt-20 md:pb-20 bg-cream">
         <div className="container">
           <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-2">How I Lead</p>
           <h2 className="font-display text-3xl font-bold text-foreground mb-6">Leadership Philosophy</h2>
