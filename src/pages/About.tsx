@@ -42,7 +42,7 @@ const experience = [
   {
     company: "Salesforce",
     logo: logoSalesforce,
-    role: "Senior Manager → Analyst, Strategy & Operations",
+    role: "Analyst → Sr. Manager, Strategy & Operations",
     period: "2012 – 2023",
     highlights: [
       "Led strategy for a 300+ person consulting org generating $100M revenue, influencing $800M+ bookings",
