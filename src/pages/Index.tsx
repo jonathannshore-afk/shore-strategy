@@ -217,7 +217,7 @@ const Index = () => {
       {/* Career Highlights */}
       <section className="bg-navy border-t border-primary-foreground/10">
         <div className="container py-12 md:py-16">
-          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-6 text-center">Career Highlights</p>
+          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-6">Career Highlights</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
