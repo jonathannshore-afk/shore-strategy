@@ -255,9 +255,9 @@ const Index = () => {
       <section className="bg-background py-14 md:py-20 border-t border-border">
         <div className="container">
           <div className="text-center mb-10 max-w-2xl mx-auto">
-            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">The Reality</p>
+            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Sound Familiar?</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-              Most Partner Ecosystems Underperform
+              The Symptoms We Solve For
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
