@@ -219,6 +219,24 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Why Fractional, Why Now */}
+      <section className="bg-cream py-14 md:py-20">
+        <div className="container max-w-3xl">
+          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-2">A Deliberate Choice</p>
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-5">
+            Why Fractional, Why Now
+          </h2>
+          <div className="font-body text-foreground/80 leading-relaxed space-y-4 text-[15px] md:text-base">
+            <p>
+              Most companies under $250M ARR can't justify a $400K+ CRO of Partnerships — but they absolutely need the strategy, program design, and executive presence that role provides. That's the gap I exist to close.
+            </p>
+            <p>
+              I'm not a career consultant who has read about partner ecosystems. I've built them, scaled them, and turned them around — with full P&L ownership and board-level accountability. The work I do for clients today is the same work I did as an operator. The only thing that's changed is who signs the contract.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* The Problem */}
       <section className="bg-background py-14 md:py-20 border-t border-border">
         <div className="container">

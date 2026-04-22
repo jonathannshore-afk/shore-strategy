@@ -224,27 +224,8 @@ const About = () => {
       </section>
 
 
-      {/* Why Fractional, Why Now */}
-      <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-background">
-        <div className="container max-w-3xl">
-          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-2">A Deliberate Choice</p>
-          <h2 className="font-display text-3xl font-bold text-foreground mb-5">Why Fractional, Why Now</h2>
-          <div className="font-body text-foreground/80 leading-relaxed space-y-4 text-[15px]">
-            <p>
-              After 15 years operating inside three of the companies that defined modern B2B SaaS partnerships — Salesforce, ServiceNow, and Lumen — I'm bringing that playbook to growth-stage teams who need senior partner leadership without a full-time hire.
-            </p>
-            <p>
-              Most companies under $250M ARR can't justify a $400K+ CRO of Partnerships. But they absolutely need the strategy, the program design, and the executive presence that role provides. That's the gap I exist to close.
-            </p>
-            <p>
-              I'm not a career consultant who has read about partner ecosystems. I've built them, scaled them, and turned them around — with full P&L ownership and board-level accountability. The work I do for clients today is the same work I did as an operator. The only thing that's changed is who signs the contract.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Leadership Philosophy */}
-      <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream">
+      <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-background">
         <div className="container">
           <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-2">How I Lead</p>
           <h2 className="font-display text-3xl font-bold text-foreground mb-6">Leadership Philosophy</h2>
