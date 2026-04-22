@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, CalendarCheck, Users2, Lightbulb, MessageCircleQuestion, Clock } from "lucide-react";
+import { ArrowRight, CalendarCheck, MessageCircleQuestion, TrendingDown, Wrench, Unplug, Search, Compass, Settings2 } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import headshot from "@/assets/jonathan-headshot.jpeg";
 import logoServicenow from "@/assets/logo-servicenow.svg";
@@ -10,30 +10,45 @@ import SEO from "@/components/SEO";
 
 
 const stats = [
-  { value: "15+", label: "Years of Experience" },
-  { value: "3", label: "Fortune 500 Ecosystems Transformed" },
-  { value: "20%+", label: "Avg YoY Channel Revenue Growth" },
-  { value: "6+", label: "Routes-to-Market Launched" },
+  { value: "$1.6B", label: "ARR Ecosystem Managed" },
+  { value: "$800M+", label: "Annual Bookings Influenced" },
+  { value: "19%", label: "YoY Channel Revenue Growth" },
+  { value: "2K+", label: "Partners Across Fortune 500 Ecosystems" },
 ];
 
-const engagements = [
+const problems = [
   {
-    icon: Users2,
-    title: "Fractional Leadership",
-    description: "Embedded, part-time executive leadership for companies building or transforming their partner function.",
-    link: "/services",
+    icon: TrendingDown,
+    title: "Pipeline that never materializes",
+    description: "Programs launched, partners signed, but partner-sourced revenue stays stuck under 10%.",
   },
   {
-    icon: Clock,
-    title: "Project-Based",
-    description: "Scoped, time-bound engagements with clear deliverables — program design, GTM planning, operational buildouts.",
-    link: "/services",
+    icon: Wrench,
+    title: "Strategy without operating muscle",
+    description: "A deck exists; the cadence, deal reg, and enablement to execute it don't.",
   },
   {
-    icon: Lightbulb,
-    title: "Advisory & Coaching",
-    description: "Ongoing strategic guidance for partner leaders navigating complex ecosystem decisions.",
-    link: "/services",
+    icon: Unplug,
+    title: "Misaligned with the core business",
+    description: "The partner team runs parallel to sales, product, and marketing — not integrated with them.",
+  },
+];
+
+const approach = [
+  {
+    icon: Search,
+    title: "Diagnose",
+    description: "Ecosystem assessment: partner mix, program health, GTM alignment, operating model gaps. Strategy without diagnosis is guesswork.",
+  },
+  {
+    icon: Compass,
+    title: "Design",
+    description: "Program architecture, route-to-market plan, operating model, KPI framework. Built for your team to actually run.",
+  },
+  {
+    icon: Settings2,
+    title: "Operationalize",
+    description: "Stand up cadences, enablement, deal reg, analytics — handed off as a working system, not a deck.",
   },
 ];
 
