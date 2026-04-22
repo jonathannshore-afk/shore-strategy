@@ -90,10 +90,10 @@ const Contact = () => {
       />
 
       {/* Hero */}
-      <section className="bg-navy section-padding">
+      <section className="bg-navy px-6 pt-16 pb-10 md:px-12 md:pt-20 md:pb-14 lg:px-24">
         <div className="container">
           <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Get in Touch</p>
-          <h1 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
+          <h1 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-4">
             Let's <span className="text-gold">Connect</span>
           </h1>
           <p className="font-body text-lg text-primary-foreground/70 max-w-2xl">
@@ -103,13 +103,13 @@ const Contact = () => {
       </section>
 
       {/* Summary + Calendly side by side */}
-      <section id="calendly" className="section-padding bg-cream">
+      <section id="calendly" className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             {/* Summary */}
             <div>
-              <h2 className="font-display text-3xl font-bold text-foreground mb-6">How I Can Help</h2>
-              <p className="font-body text-muted-foreground leading-relaxed mb-6">
+              <h2 className="font-display text-3xl font-bold text-foreground mb-4">How I Can Help</h2>
+              <p className="font-body text-muted-foreground leading-relaxed mb-4">
                 I partner with B2B SaaS and enterprise technology companies to build, scale, and operationalize partner ecosystems. With deep expertise in strategic alliances, channel programs, and ecosystem go-to-market, I help organizations turn partnerships into a measurable growth engine.
               </p>
               <p className="font-body text-muted-foreground leading-relaxed">
@@ -119,7 +119,7 @@ const Contact = () => {
 
             {/* Calendly */}
             <div>
-              <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center gap-3 mb-4">
                 <Calendar className="text-gold" size={28} strokeWidth={1.5} />
                 <h2 className="font-display text-2xl font-bold text-foreground">Book a Conversation</h2>
               </div>
@@ -134,15 +134,15 @@ const Contact = () => {
       </section>
 
       {/* Form + Contact Info */}
-      <section className="section-padding bg-background">
+      <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-background">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
             {/* Form */}
             <div className="lg:col-span-3">
               <h2 className="font-display text-2xl font-bold text-foreground mb-2">Or Send a Message</h2>
-              <p className="font-body text-muted-foreground mb-8 text-sm">All fields marked with * are required.</p>
-              <form onSubmit={handleSubmit} className="space-y-6" noValidate>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <p className="font-body text-muted-foreground mb-6 text-sm">All fields marked with * are required.</p>
+              <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div>
                     <label className="font-body text-sm font-medium text-foreground mb-2 block">Name *</label>
                     <input
@@ -208,8 +208,8 @@ const Contact = () => {
 
             {/* Contact Info */}
             <div className="lg:col-span-2">
-              <h2 className="font-display text-2xl font-bold text-foreground mb-8">Direct Contact</h2>
-              <div className="space-y-8">
+              <h2 className="font-display text-2xl font-bold text-foreground mb-6">Direct Contact</h2>
+              <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <Mail className="text-gold mt-1" size={22} />
                   <div>
