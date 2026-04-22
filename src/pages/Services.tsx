@@ -2,48 +2,38 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import FlipCard from "@/components/FlipCard";
-import { BarChart3, CalendarCheck, ClipboardCheck, Handshake, Layers, Lightbulb, Rocket, Search, Target, TrendingUp, Users, Zap } from "lucide-react";
+import { BarChart3, CalendarCheck, ClipboardCheck, Handshake, Layers, Rocket, Search, Target, TrendingUp, Zap } from "lucide-react";
 
 const capabilities = [
   {
     icon: Handshake,
     title: "Partner Program Design",
-    desc: "Architect partner programs from the ground up — tier structures, incentive models, enablement frameworks, and operational playbooks tailored to your market.",
+    desc: "Tiered programs, incentive models, and enablement frameworks tailored to your market.",
   },
   {
     icon: Target,
     title: "Joint GTM Strategy",
-    desc: "Develop co-sell and co-market strategies with clear value propositions, target account alignment, and joint pipeline creation motions.",
+    desc: "Co-sell and co-market motions with target account alignment and joint pipeline creation.",
   },
   {
     icon: TrendingUp,
     title: "Revenue Acceleration",
-    desc: "Optimize partner-sourced and partner-influenced revenue through data-driven engagement models and pipeline analytics.",
-  },
-  {
-    icon: Users,
-    title: "Ecosystem Development",
-    desc: "Build and nurture technology, services, and channel ecosystems that create compounding value for all stakeholders.",
+    desc: "Optimize partner-sourced and partner-influenced revenue through data-driven engagement.",
   },
   {
     icon: Layers,
-    title: "Partner Operations",
-    desc: "Implement scalable partner operations — PRM systems, deal registration, MDF programs, and reporting infrastructure.",
+    title: "Partner Operations (PRM, Deal Reg, MDF)",
+    desc: "Scalable PRM systems, deal registration, MDF programs, and reporting infrastructure.",
   },
   {
     icon: BarChart3,
-    title: "Performance Analytics",
-    desc: "Design KPI frameworks and dashboards that give you clear visibility into partner contribution and program ROI.",
-  },
-  {
-    icon: Lightbulb,
-    title: "Strategic Planning & Alignment",
-    desc: "Drive executive alignment on partner strategy, investment priorities, and cross-functional integration with sales, product, and marketing.",
+    title: "Performance Analytics & Dashboards",
+    desc: "KPI frameworks and dashboards that give clear visibility into partner contribution and ROI.",
   },
   {
     icon: Zap,
-    title: "Rapid Assessments",
-    desc: "30-day partner program audits that identify quick wins, strategic gaps, and a prioritized roadmap for improvement.",
+    title: "Rapid 30-Day Assessments",
+    desc: "Focused partner program audits that surface quick wins and a prioritized improvement roadmap.",
   },
 ];
 
