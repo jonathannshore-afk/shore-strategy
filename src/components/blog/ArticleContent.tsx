@@ -1,4 +1,12 @@
 /** Renders markdown-like content safely */
+const escapeHtml = (str: string) =>
+  str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+
 const ArticleContent = ({ content }: { content: string }) => (
   <div className="prose prose-lg max-w-none font-body text-foreground prose-headings:font-display prose-headings:text-foreground prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3 prose-p:text-muted-foreground prose-p:leading-relaxed prose-li:text-muted-foreground prose-strong:text-foreground">
     {content.split("\n").map((line, i) => {
@@ -47,9 +55,13 @@ const ArticleContent = ({ content }: { content: string }) => (
         );
       }
 
-      const formatted = trimmed
+      // Escape the entire line first, then re-introduce the small set of
+      // allowed inline tags. This guarantees any raw HTML in the source
+      // (link text, bold text, etc.) is rendered as text, not markup.
+      const escaped = escapeHtml(trimmed);
+      const formatted = escaped
         .replace(/\[(.+?)\]\((.+?)\)/g, (_match, text, url) => {
-          const safeUrl = /^(https?:\/\/|\/(?!\/))/.test(url) ? url : '#';
+          const safeUrl = /^(https?:\/\/|\/(?!\/))/.test(url) ? url : "#";
           return `<a href="${safeUrl}" class="text-gold hover:underline">${text}</a>`;
         })
         .replace(/\*\*(.+?)\*\*/g, '<strong class="text-foreground">$1</strong>');
