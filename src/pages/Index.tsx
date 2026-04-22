@@ -190,6 +190,42 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Who I Work With */}
+      <section className="section-padding bg-background">
+        <div className="container text-center max-w-5xl">
+          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Who I Work With</p>
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
+            Built for Leadership Teams
+          </h2>
+          <p className="font-body text-lg text-muted-foreground leading-relaxed">
+            I partner with{" "}
+            <span className="text-foreground font-semibold">
+              CROs, SVPs, and VP-level partnership leaders
+            </span>{" "}
+            at B2B SaaS and enterprise technology companies — from Series D startups building their first partner motion to established enterprises transforming legacy channel programs.
+          </p>
+        </div>
+      </section>
+
+      {/* Career Highlights */}
+      <section className="bg-navy border-t border-primary-foreground/10">
+        <div className="container py-16">
+          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-8 text-center">Career Highlights</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat) => (
+              <div key={stat.label} className="text-center">
+                <div className="font-display text-4xl md:text-5xl font-bold text-gold mb-2">
+                  {stat.value}
+                </div>
+                <div className="font-body text-sm text-primary-foreground/60 uppercase tracking-wider">
+                  {stat.label}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* The Problem */}
       <section className="bg-navy section-padding border-t border-primary-foreground/10">
         <div className="container">
@@ -217,42 +253,6 @@ const Index = () => {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Career Highlights */}
-      <section className="bg-navy border-t border-primary-foreground/10">
-        <div className="container py-16">
-          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-8 text-center">Career Highlights</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="font-display text-4xl md:text-5xl font-bold text-gold mb-2">
-                  {stat.value}
-                </div>
-                <div className="font-body text-sm text-primary-foreground/60 uppercase tracking-wider">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Who I Work With */}
-      <section className="section-padding bg-background">
-        <div className="container text-center max-w-5xl">
-          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Who I Work With</p>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-            Built for Leadership Teams
-          </h2>
-          <p className="font-body text-lg text-muted-foreground leading-relaxed">
-            I partner with{" "}
-            <span className="text-foreground font-semibold">
-              CROs, SVPs, and VP-level partnership leaders
-            </span>{" "}
-            at B2B SaaS and enterprise technology companies — from Series D startups building their first partner motion to established enterprises transforming legacy channel programs.
-          </p>
         </div>
       </section>
 
