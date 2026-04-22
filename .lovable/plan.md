@@ -1,43 +1,73 @@
 
 
-## Rework "Core Competencies" — avoid duplicating Experience
+## Home page reframe — Option 2 (no length increase)
 
-You're correct: the previous draft repeated the same metrics already in the Experience accordion. Here are two non-duplicative directions. Pick one.
+Restructure `src/pages/Index.tsx` to follow the executive narrative arc (pain → proof → fit → approach → action) while keeping the same 6-section count and roughly the same scroll length. All changes confined to one file.
 
-### Option A — Remove the section entirely (recommended)
+### Final section order
 
-The About page already tells a complete story:
-1. Hero (who + logos)
-2. Stats marquee (numbers)
-3. My Story + Experience accordion (narrative + proof)
-4. Leadership Philosophy (how I lead)
+```text
+1. Hero                      [keep, minor tighten]
+2. The Problem               [REPLACES pull-quote]
+3. Career Highlights         [REPLACES generic stats]
+4. Who I Work With           [keep]
+5. Diagnose / Design / Operationalize  [REPLACES "How I Work" engagement models]
+6. Closing CTA               [keep]
+```
 
-A competencies block at the end — whether radar or grid — adds a fourth "here's what I'm good at" beat after the page has already established it three different ways. Cutting it lets Leadership Philosophy be the closing note, which is stronger: it ends on character, not a checklist.
+### Section-by-section changes
 
-**Change:** Delete the "Core Competencies" section from `About.tsx`. Remove the `ExpertiseRadar` import. Leadership Philosophy becomes the final section before the global footer CTA.
+**1. Hero (tighten)**
+- Keep layout, headshot, logos, headline, subhead, both CTAs.
+- Remove the "Currently accepting engagements with new clients" micro-line.
 
-### Option B — Replace with "How I Work" (forward-looking, not retrospective)
+**2. The Problem (new — replaces the anonymous pull-quote)**
+- Background: navy (continues from hero/stats band visually, but this replaces the pull-quote slot directly after stats… see ordering note below).
+- Eyebrow: "The Reality" · Heading: "Most Partner Ecosystems Underperform"
+- Three cards (icon + title + 1 line), gold icons on subtle navy/transparent cards:
+  - **Pipeline that never materializes** — Programs launched, partners signed, but partner-sourced revenue stays stuck under 10%.
+  - **Strategy without operating muscle** — A deck exists; the cadence, deal reg, and enablement to execute it don't.
+  - **Misaligned with the core business** — The partner team runs parallel to sales, product, and marketing — not integrated with them.
+- Icons (lucide): `TrendingDown`, `Wrench`, `Unplug` (or similar).
 
-Keep a closing section, but make it about *what an engagement looks like* rather than *what I've done*. This complements rather than repeats the Experience accordion.
+**3. Career Highlights (replaces current 4 generic stats)**
+- Same 4-up grid layout, same navy band, gold numerals — just swap the numbers for the heavier ones from `StatsMarquee`:
+  - **$1.6B** ARR Ecosystem Managed
+  - **$800M+** Annual Bookings Influenced
+  - **19%** YoY Channel Revenue Growth
+  - **2K+** Partners Across Fortune 500 Ecosystems
+- Drop the existing 15+ / 3 / 20%+ / 6+ stats.
 
-**Layout:** 3-column grid, cream background, matches Leadership Philosophy card style.
+**Ordering note:** Sections 2 and 3 are sequenced Problem → Proof (pain first, then "and here's why I can fix it"). The existing stats band sits immediately after the hero today; in the new flow, Problem comes first (right after hero), then Career Highlights, so the reader sees the pain reflected before the credentials land.
 
-**Three cards:**
+**4. Who I Work With (keep as-is)**
+- No copy or layout changes.
 
-| Title | Body |
-|---|---|
-| Diagnose first | I start every engagement with an ecosystem assessment — partner mix, program health, GTM alignment, operating model gaps. Strategy without diagnosis is guesswork. |
-| Build for operators | Frameworks only matter if your team can run them. I design programs, playbooks, and operating cadences your org can actually execute and sustain. |
-| Measure what moves revenue | Partner-influenced pipeline, sourced ARR, attach rate, time-to-first-deal. I instrument the metrics that prove the ecosystem is working — or surface what to fix. |
+**5. How I'd Approach It (replaces the 3 engagement-model cards)**
+- Background: cream (matches current "How I Work" section).
+- Eyebrow: "Engagement Approach" · Heading: "Diagnose. Design. Operationalize."
+- Three cards, same visual style as current engagement cards (icon tile + title + body + link):
+  - **Diagnose** — Ecosystem assessment: partner mix, program health, GTM alignment, operating model gaps. Strategy without diagnosis is guesswork.
+  - **Design** — Program architecture, route-to-market plan, operating model, KPI framework. Built for your team to actually run.
+  - **Operationalize** — Stand up cadences, enablement, deal reg, analytics — handed off as a working system, not a deck.
+- Icons (lucide): `Search`, `LayoutGrid` (or `Compass`), `Settings2`.
+- Single link below the grid: "See engagement models →" pointing to `/services` (so Fractional / Project / Advisory live exclusively there).
 
-This positions the page's closing beat as "here's how I'd work with you," which sets up the footer CTA naturally.
+**6. Closing CTA (keep as-is)**
+- "Let's Scope Your Engagement" section unchanged.
 
-### Files modified (either option)
+### Removals
 
-- `src/pages/About.tsx` — remove the Core Competencies / radar section; if Option B, add the "How I Work" section in its place
-- `src/components/ExpertiseRadar.tsx` — file stays in repo (unused), in case you want it back later
+- Anonymous pull-quote section ("Within 6 months, we went from zero partner-sourced pipeline to 30%…") — deleted entirely.
+- Current `stats` array (15+ / 3 / 20%+ / 6+) — replaced.
+- Current `engagements` array (Fractional / Project-Based / Advisory) — replaced with the three-phase approach. Imports for `Users2`, `Clock`, `Lightbulb` removed; `Search`, `Settings2`, plus a third icon added.
+- "Currently accepting engagements" hero micro-line — deleted.
 
-### Recommendation
+### Files modified
 
-**Option A.** The page is tighter without it, and Leadership Philosophy is a stronger closer than another grid of capabilities. If you later want a forward-looking section, Option B can be added in a follow-up.
+- `src/pages/Index.tsx` — only file touched. No new components, no new assets, no routing changes. Reuses existing card/grid/section patterns already in the file.
+
+### Result
+
+Same page length. Same visual rhythm (navy → navy → background → cream → background). New narrative: pedigree → pain → proof → fit → approach → action. Engagement models live exclusively on `/services` where they have richer treatment.
 
