@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import FlipCard from "@/components/FlipCard";
-import { ArrowRight, BarChart3, CalendarCheck, Gauge, Handshake, Layers, Target, TrendingUp, Zap } from "lucide-react";
+import { ArrowRight, BarChart3, CalendarCheck, Handshake, Layers, Target, TrendingUp, Zap } from "lucide-react";
 
 const capabilities = [
   {
@@ -226,12 +226,6 @@ const Services = () => {
               className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors"
             >
               <CalendarCheck size={18} /> Book a Call
-            </Link>
-            <Link
-              to="/assessment"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-primary-foreground/30 text-primary-foreground font-body font-semibold rounded hover:border-gold hover:text-gold transition-colors"
-            >
-              <Gauge size={18} /> Take the 2-Min Assessment
             </Link>
           </div>
         </div>
