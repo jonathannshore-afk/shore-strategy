@@ -2,38 +2,38 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import FlipCard from "@/components/FlipCard";
-import { ArrowRight, BarChart3, CalendarCheck, Handshake, Layers, Target, TrendingUp, Zap } from "lucide-react";
+import { ArrowRight, CalendarCheck, Compass, Handshake, Network, Settings2, Target, Users } from "lucide-react";
 
 const capabilities = [
   {
-    icon: Handshake,
-    title: "Partner Program Design",
-    desc: "Tiered programs, incentive models, and enablement frameworks tailored to your market.",
+    icon: Compass,
+    title: "Partner Strategy",
+    desc: "Defining your ecosystem vision, selling motions, and the execution plan to bring it to life.",
   },
   {
     icon: Target,
-    title: "Joint GTM Strategy",
-    desc: "Co-sell and co-market motions with target account alignment and joint pipeline creation.",
+    title: "Route-to-Market Build",
+    desc: "Identifying and activating the right partner archetypes to drive pipeline and revenue.",
   },
   {
-    icon: TrendingUp,
-    title: "Revenue Acceleration",
-    desc: "Optimize partner-sourced and partner-influenced revenue through data-driven engagement.",
+    icon: Handshake,
+    title: "Partner Program Design",
+    desc: "Building the program architecture, incentives, and commercial frameworks that attract and retain the right partners.",
   },
   {
-    icon: Layers,
-    title: "Partner Operations (PRM, Deal Reg, MDF)",
-    desc: "Scalable PRM systems, deal registration, MDF programs, and reporting infrastructure.",
+    icon: Users,
+    title: "Partner Org Transformation",
+    desc: "Redesigning your partner organization, roles, and operating model for scale.",
   },
   {
-    icon: BarChart3,
-    title: "Performance Analytics & Dashboards",
-    desc: "KPI frameworks and dashboards that give clear visibility into partner contribution and ROI.",
+    icon: Settings2,
+    title: "Rhythm of the Business",
+    desc: "Implementing the operating cadences, QBRs, and forecasting discipline that keep the business running.",
   },
   {
-    icon: Zap,
-    title: "Rapid 30-Day Assessments",
-    desc: "Focused partner program audits that surface quick wins and a prioritized improvement roadmap.",
+    icon: Network,
+    title: "Annual Planning",
+    desc: "Aligning compensation, territory, quota, and partner strategy to your annual growth goals.",
   },
 ];
 
