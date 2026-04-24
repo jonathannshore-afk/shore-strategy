@@ -150,47 +150,71 @@ const HowIWork = () => {
         </div>
       </section>
 
-      {/* Section 1: How I Deliver — 5 Pillars */}
+      {/* Section 1: How I Deliver — 6 Stage Flip Cards */}
       <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream">
-        <div className="container max-w-4xl">
-          <div className="mb-10">
+        <div className="container">
+          <div className="mb-8">
             <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">The Method</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">How I Deliver</h2>
             <p className="font-body text-muted-foreground mt-2 max-w-2xl">
-              Five pillars that guide every engagement — informed by 15+ years of building partner ecosystems at enterprise scale.
+              Six sequential stages that guide every engagement — informed by 15+ years of building partner ecosystems at enterprise scale.
             </p>
           </div>
-          <div className="space-y-4">
+
+          {/* Sequential progression indicator */}
+          <div className="hidden md:flex flex-col gap-2 max-w-5xl mx-auto mb-6">
+            {[["01", "02", "03"], ["04", "05", "06"]].map((row, rIdx) => (
+              <div key={rIdx} className="flex items-center justify-center gap-3 font-body text-xs uppercase tracking-[0.2em] text-gold/70">
+                {row.map((num, i) => (
+                  <span key={num} className="flex items-center gap-3">
+                    <span className="font-display font-semibold text-gold">{num}</span>
+                    {i < row.length - 1 && <span className="text-gold/50">→</span>}
+                  </span>
+                ))}
+              </div>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto auto-rows-[380px]">
             {pillars.map((p) => (
-              <div
+              <FlipCard
                 key={p.step}
-                className="group bg-card rounded-lg border border-border hover:border-gold/30 hover:shadow-lg transition-all p-6 md:p-7"
-              >
-                <div className="flex items-start gap-5">
-                  <div className="shrink-0">
-                    <div className="font-display text-3xl md:text-4xl font-bold text-gold/20">{p.step}</div>
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-2">
-                      <p.icon className="text-gold shrink-0" size={22} strokeWidth={1.5} />
-                      <h3 className="font-display text-lg md:text-xl font-semibold text-foreground">
-                        {p.title}
-                      </h3>
-                    </div>
-                    <p className="font-body text-sm text-muted-foreground leading-relaxed mb-3">
+                front={
+                  <>
+                    <p className="font-body text-xs text-gold font-semibold uppercase tracking-[0.2em] mb-2">
+                      Stage {p.step}
+                    </p>
+                    <h3 className="font-display text-lg font-semibold text-foreground mb-3">
+                      {p.title}
+                    </h3>
+                    <p className="font-body text-muted-foreground text-sm leading-relaxed mb-4">
                       {p.description}
                     </p>
+                    <p className="font-body text-xs text-gold font-medium uppercase tracking-wider">
+                      {p.outcome}
+                    </p>
+                  </>
+                }
+                back={
+                  <>
+                    <p className="font-body text-xs text-primary-foreground/50 mb-1">Stage {p.step}</p>
+                    <h3 className="font-display text-base font-semibold text-primary-foreground mb-3">
+                      {p.title}
+                    </h3>
+                    <p className="font-body text-xs text-gold font-medium uppercase tracking-wider mb-2">
+                      What You Get
+                    </p>
                     <ul className="space-y-1.5">
-                      {p.outcomes.map((o, j) => (
-                        <li key={j} className="font-body text-sm text-foreground/75 flex gap-2">
-                          <span className="text-gold mt-0.5 shrink-0">→</span>
-                          {o}
+                      {p.deliverables.map((item, i) => (
+                        <li key={i} className="font-body text-xs text-primary-foreground/80 flex gap-2 leading-relaxed">
+                          <span className="text-gold shrink-0">→</span>
+                          {item}
                         </li>
                       ))}
                     </ul>
-                  </div>
-                </div>
-              </div>
+                  </>
+                }
+              />
             ))}
           </div>
         </div>
@@ -230,37 +254,8 @@ const HowIWork = () => {
                     </li>
                   ))}
                 </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <Divider />
-
-      {/* Section: Engagement Approach */}
-      <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream">
-        <div className="container max-w-4xl">
-          <div className="mb-10">
-            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Engagement Approach</p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-              Diagnose. Design. Operationalize.
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {approach.map((eng) => (
-              <div
-                key={eng.title}
-                className="bg-card p-6 md:p-7 rounded-lg border border-border hover:shadow-lg hover:border-gold/30 transition-all group"
-              >
-                <div className="w-12 h-12 rounded-lg bg-navy/5 flex items-center justify-center mb-5 group-hover:bg-gold/10 transition-colors">
-                  <eng.icon className="text-gold" size={24} strokeWidth={1.5} />
-                </div>
-                <h3 className="font-display text-xl font-semibold text-foreground mb-3">
-                  {eng.title}
-                </h3>
-                <p className="font-body text-muted-foreground leading-relaxed text-sm">
-                  {eng.description}
+                <p className="mt-4 pt-4 border-t border-border font-body text-sm italic text-gold leading-relaxed">
+                  Deliverable: {phase.deliverable}
                 </p>
               </div>
             ))}
