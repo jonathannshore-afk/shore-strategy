@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, CalendarCheck, MessageCircleQuestion, TrendingDown, Wrench, Unplug } from "lucide-react";
+import { ArrowRight, CalendarCheck, TrendingDown, Wrench, Unplug } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import headshot from "@/assets/jonathan-headshot.jpeg";
 import logoServicenow from "@/assets/logo-servicenow.svg";
@@ -302,26 +302,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Mid-Page Engagement CTA */}
-      <section className="py-14 md:py-20 bg-navy">
-        <div className="container text-center max-w-2xl">
-          <div className="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-6">
-            <MessageCircleQuestion className="text-gold" size={28} strokeWidth={1.5} />
-          </div>
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-primary-foreground mb-3">
-            Let's Scope Your Engagement
-          </h2>
-          <p className="font-body text-primary-foreground/70 text-lg mb-7 leading-relaxed">
-            You know what's broken in your partner ecosystem. I'll show you how I'd fix it — and what results to expect.
-          </p>
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors"
-          >
-            <CalendarCheck size={18} /> Book a Strategy Call
-          </Link>
-        </div>
-      </section>
     </Layout>
   );
 };
