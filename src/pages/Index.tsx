@@ -163,6 +163,10 @@ const Index = () => {
               <img
                 src={headshot}
                 alt="Jonathan Shore"
+                width={320}
+                height={400}
+                fetchPriority="high"
+                decoding="async"
                 className="w-full rounded-lg shadow-2xl border-2 border-gold/20"
               />
               <div className="w-full mt-5 max-w-[224px]">
@@ -174,16 +178,28 @@ const Index = () => {
                     alt="Salesforce"
                     className="h-6 object-contain opacity-70 brightness-0 invert"
                     src="/lovable-uploads/f6d67dad-429a-49a3-8c20-fff68acb27d4.png"
+                    width={80}
+                    height={24}
+                    loading="lazy"
+                    decoding="async"
                   />
                   <img
                     src={logoServicenow}
                     alt="ServiceNow"
                     className="h-5 object-contain opacity-70 brightness-0 invert"
+                    width={80}
+                    height={20}
+                    loading="lazy"
+                    decoding="async"
                   />
                   <img
                     src={logoLumen}
                     alt="Lumen Technologies"
                     className="h-5 object-contain opacity-70 brightness-0 invert"
+                    width={80}
+                    height={20}
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
               </div>
@@ -199,16 +215,28 @@ const Index = () => {
               alt="Salesforce"
               className="h-6 object-contain opacity-70 brightness-0 invert"
               src="/lovable-uploads/f6d67dad-429a-49a3-8c20-fff68acb27d4.png"
+              width={80}
+              height={24}
+              loading="lazy"
+              decoding="async"
             />
             <img
               src={logoServicenow}
               alt="ServiceNow"
               className="h-5 object-contain opacity-70 brightness-0 invert"
+              width={80}
+              height={20}
+              loading="lazy"
+              decoding="async"
             />
             <img
               src={logoLumen}
               alt="Lumen Technologies"
               className="h-5 object-contain opacity-70 brightness-0 invert"
+              width={80}
+              height={20}
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>
