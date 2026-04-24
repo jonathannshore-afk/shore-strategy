@@ -1,77 +1,85 @@
 import { Link } from "react-router-dom";
-import {
-  CalendarCheck,
-  CheckCircle,
-  ClipboardCheck,
-  Compass,
-  Layers,
-  Rocket,
-  Search,
-  Settings2,
-  Target,
-} from "lucide-react";
+import { CalendarCheck, CheckCircle } from "lucide-react";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
+import FlipCard from "@/components/FlipCard";
 
 const pillars = [
   {
     step: "01",
-    icon: Search,
     title: "Ecosystem Assessment & Architecture",
     description:
-      "I start by mapping the full partner landscape — current partners, white space, competitive dynamics, and internal readiness. This diagnostic uncovers where the real value is hiding and what's blocking it.",
-    outcomes: [
-      "Partner ecosystem maturity assessment",
+      "I start by mapping your full partner landscape — uncovering where the real opportunity is hiding and what's blocking growth.",
+    outcome:
+      "You get a clear picture of where your ecosystem stands today before we touch anything.",
+    deliverables: [
+      "Partner ecosystem maturity assessment and competitive benchmarking",
       "Coverage gap analysis across routes-to-market",
-      "Internal alignment and readiness evaluation",
+      "ROE, attribution, and KPI development",
     ],
   },
   {
     step: "02",
-    icon: Target,
     title: "Partner Program Design",
     description:
-      "I design tiered partner programs with clear value exchange — certification frameworks, incentive models, joint value propositions, and engagement rules that attract and retain the right partners.",
-    outcomes: [
-      "Tiered program structure with certification paths",
-      "Incentive and margin models aligned to growth goals",
-      "Partner segmentation and ideal partner profiles",
+      "I design programs built for how your business actually sells — tiered, incentivized, and structured to attract and retain the right partners.",
+    outcome:
+      "You get a program architecture that partners want to join and that sales teams actually trust.",
+    deliverables: [
+      "Tiered program architecture with incentive alignment and MDF strategy",
+      "Commercial contracts and legal frameworks",
+      "Points vs. performance scoring models",
     ],
   },
   {
     step: "03",
-    icon: Layers,
     title: "Routes-to-Market Strategy",
     description:
-      "Whether it's ISV, SI, VAR, GSI, or co-sell motions — I define which routes-to-market will drive the most leverage for your business and build the operational playbooks to launch them.",
-    outcomes: [
-      "Route-to-market prioritization framework",
-      "Co-sell and referral motion design",
-      "Joint GTM plans with key partners",
+      "I define which partner motions — ISV, SI, VAR, GSI, co-sell — will drive the most leverage for your business and build the playbooks to launch them.",
+    outcome:
+      "You get clarity on where to focus and the operational playbooks to execute.",
+    deliverables: [
+      "Archetypes evaluation, gap assessment, and prioritization",
+      "Selling motion design and implementation",
+      "Investment modeling and business case",
     ],
   },
   {
     step: "04",
-    icon: ClipboardCheck,
-    title: "Operational Execution",
+    title: "Organizational Design & Enablement",
     description:
-      "Strategy without execution is a slide deck. I build the operating cadences, enablement frameworks, deal registration processes, and partner engagement rhythms that turn strategy into pipeline.",
-    outcomes: [
-      "Partner engagement and QBR cadences",
-      "Deal registration and conflict resolution processes",
-      "Enablement and onboarding playbooks",
+      "I align your people, structure, and incentives to make the partner motion work — because the best program fails without the right org behind it.",
+    outcome:
+      "You get the organizational infrastructure to run and scale a partner business.",
+    deliverables: [
+      "Partner org modernization, role design, and hiring plan",
+      "Compensation plan strategy, territory carving, and quota development",
+      "Operating model, governance design, and AI & automation integration",
     ],
   },
   {
     step: "05",
-    icon: Rocket,
+    title: "Operational Execution",
+    description:
+      "Strategy without execution is a slide deck. I build the operating cadences, enablement frameworks, and deal registration processes that turn strategy into pipeline.",
+    outcome: "You get a partner program that actually runs.",
+    deliverables: [
+      "RoB implementation, QBR development, and forecasting cadence",
+      "Annual strategic joint business plans and executive engagement",
+      "Enablement, onboarding playbooks, and deal registration",
+    ],
+  },
+  {
+    step: "06",
     title: "Scale & Optimization",
     description:
-      "Once the motions are running, I instrument them — performance analytics, coverage models, partner health scoring, and continuous program iteration to compound results quarter over quarter.",
-    outcomes: [
+      "Once the motions are running I instrument them — performance analytics, coverage models, and continuous iteration that compounds results quarter over quarter.",
+    outcome:
+      "You get full visibility into what's working and a system that keeps improving.",
+    deliverables: [
       "Partner performance scorecards and analytics",
-      "Coverage model optimization",
-      "Continuous program iteration framework",
+      "Annual planning evaluation and best practices",
+      "Coverage model optimization and continuous iteration framework",
     ],
   },
 ];
@@ -84,8 +92,8 @@ const first90Days = [
       "Stakeholder interviews across Sales, Product, Marketing, and existing partners",
       "Full ecosystem audit — partner landscape, program maturity, pipeline contribution",
       "Identify quick wins and structural gaps",
-      "Deliver initial assessment report with prioritized recommendations",
     ],
+    deliverable: "Initial assessment report with prioritized recommendations.",
   },
   {
     phase: "Days 31–60",
@@ -96,6 +104,7 @@ const first90Days = [
       "Align executive stakeholders on investment priorities and success metrics",
       "Begin key partner engagement and relationship building",
     ],
+    deliverable: "Partner strategy, program design, and aligned stakeholder roadmap.",
   },
   {
     phase: "Days 61–90",
@@ -103,30 +112,9 @@ const first90Days = [
     items: [
       "Launch initial partner motions — co-sell plays, deal registration, onboarding",
       "Stand up operational cadences — QBRs, pipeline reviews, partner scorecards",
-      "Deliver 90-day progress report with go-forward roadmap",
       "Transition from assessment mode to execution mode",
     ],
-  },
-];
-
-const approach = [
-  {
-    icon: Search,
-    title: "Diagnose",
-    description:
-      "Ecosystem assessment: partner mix, program health, GTM alignment, operating model gaps. Strategy without diagnosis is guesswork.",
-  },
-  {
-    icon: Compass,
-    title: "Design",
-    description:
-      "Program architecture, route-to-market plan, operating model, KPI framework. Built for your team to actually run.",
-  },
-  {
-    icon: Settings2,
-    title: "Operationalize",
-    description:
-      "Stand up cadences, enablement, deal reg, analytics — handed off as a working system, not a deck.",
+    deliverable: "Working partner motion with 90-day progress report and go-forward plan.",
   },
 ];
 
