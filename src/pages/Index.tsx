@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, CalendarCheck, MessageCircleQuestion, TrendingDown, Wrench, Unplug, Search, Compass, Settings2 } from "lucide-react";
+import { ArrowRight, CalendarCheck, MessageCircleQuestion, TrendingDown, Wrench, Unplug, Search, Compass, Settings2, Gauge } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import headshot from "@/assets/jonathan-headshot.jpeg";
 import logoServicenow from "@/assets/logo-servicenow.svg";
@@ -363,6 +363,36 @@ const Index = () => {
             >
               See engagement models <ArrowRight size={16} />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Maturity Assessment Promo */}
+      <section className="py-14 md:py-20 bg-cream border-t border-border">
+        <div className="container max-w-4xl">
+          <div className="bg-card border border-gold/30 rounded-lg p-8 md:p-12 shadow-sm">
+            <div className="flex items-start gap-5 mb-5">
+              <div className="hidden sm:flex w-14 h-14 rounded-lg bg-gold/10 items-center justify-center flex-shrink-0">
+                <Gauge className="text-gold" size={28} strokeWidth={1.5} />
+              </div>
+              <div>
+                <p className="text-gold font-body text-xs uppercase tracking-[0.2em] mb-2">New · 2-Minute Diagnostic</p>
+                <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground leading-snug">
+                  Where does your partner ecosystem sit on the maturity curve?
+                </h2>
+              </div>
+            </div>
+            <p className="font-body text-muted-foreground leading-relaxed mb-6 md:pl-[76px]">
+              Seven questions. A personalized read on your stage — Nascent through Best-in-Class — the gaps holding you back, and the moves that unlock the next level.
+            </p>
+            <div className="md:pl-[76px]">
+              <Link
+                to="/assessment"
+                className="inline-flex items-center gap-2 px-7 py-3 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors"
+              >
+                Take the Assessment <ArrowRight size={18} />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
