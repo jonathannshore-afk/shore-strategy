@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, CalendarCheck, MessageCircleQuestion, TrendingDown, Wrench, Unplug, Search, Compass, Settings2 } from "lucide-react";
+import { ArrowRight, CalendarCheck, MessageCircleQuestion, TrendingDown, Wrench, Unplug } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import headshot from "@/assets/jonathan-headshot.jpeg";
 import logoServicenow from "@/assets/logo-servicenow.svg";
@@ -31,24 +31,6 @@ const problems = [
     icon: Unplug,
     title: "Misaligned with the core business",
     description: "The partner team runs parallel to sales, product, and marketing — not integrated with them.",
-  },
-];
-
-const approach = [
-  {
-    icon: Search,
-    title: "Diagnose",
-    description: "Ecosystem assessment: partner mix, program health, GTM alignment, operating model gaps. Strategy without diagnosis is guesswork.",
-  },
-  {
-    icon: Compass,
-    title: "Design",
-    description: "Program architecture, route-to-market plan, operating model, KPI framework. Built for your team to actually run.",
-  },
-  {
-    icon: Settings2,
-    title: "Operationalize",
-    description: "Stand up cadences, enablement, deal reg, analytics — handed off as a working system, not a deck.",
   },
 ];
 
