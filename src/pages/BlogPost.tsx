@@ -56,9 +56,14 @@ const BlogPost = () => {
 
   const articleJsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: post.title,
     description: post.excerpt,
+    image: post.heroImage
+      ? post.heroImage.startsWith("http")
+        ? post.heroImage
+        : `${BASE_URL}${post.heroImage}`
+      : `${BASE_URL}/og-image.jpg`,
     author: {
       "@type": "Person",
       name: post.author,
@@ -68,10 +73,16 @@ const BlogPost = () => {
       "@type": "Organization",
       name: "Shore Strategy",
       url: BASE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: `${BASE_URL}/og-image.jpg`,
+      },
     },
     datePublished: post.date,
+    dateModified: post.date,
     mainEntityOfPage: `${BASE_URL}/blog/${post.slug}`,
     articleSection: post.category,
+    keywords: post.category,
   };
 
   return (
@@ -81,6 +92,7 @@ const BlogPost = () => {
         description={post.excerpt}
         path={`/blog/${post.slug}`}
         type="article"
+        image={post.heroImage}
         article={{
           publishedTime: post.date,
           author: post.author,
