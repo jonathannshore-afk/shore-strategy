@@ -128,6 +128,45 @@ export type Database = {
         }
         Relationships: []
       }
+      maturity_assessments: {
+        Row: {
+          ai_summary: Json | null
+          answers: Json
+          company: string | null
+          created_at: string
+          email: string | null
+          id: string
+          name: string | null
+          role: string | null
+          score: number | null
+          stage: string | null
+        }
+        Insert: {
+          ai_summary?: Json | null
+          answers: Json
+          company?: string | null
+          created_at?: string
+          email?: string | null
+          id?: string
+          name?: string | null
+          role?: string | null
+          score?: number | null
+          stage?: string | null
+        }
+        Update: {
+          ai_summary?: Json | null
+          answers?: Json
+          company?: string | null
+          created_at?: string
+          email?: string | null
+          id?: string
+          name?: string | null
+          role?: string | null
+          score?: number | null
+          stage?: string | null
+        }
+        Relationships: []
+      }
       rate_limits: {
         Row: {
           created_at: string
