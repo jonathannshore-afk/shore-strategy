@@ -137,14 +137,33 @@ Deno.serve(async (req) => {
           text: { type: "mrkdwn", text: `*Message:*\n${message.trim().slice(0, 2900)}` },
         },
       ];
-      fetch(`${supaUrl}/functions/v1/notify-slack`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${serviceKey}`,
-        },
-        body: JSON.stringify({ text, blocks }),
-      }).catch((e) => console.error("Slack notify (contact) failed:", e));
+      const slackTask = (async () => {
+        try {
+          const resp = await fetch(`${supaUrl}/functions/v1/notify-slack`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${serviceKey}`,
+            },
+            body: JSON.stringify({ text, blocks }),
+          });
+          if (!resp.ok) {
+            const errBody = await resp.text();
+            console.error("Slack notify (contact) non-OK:", resp.status, errBody);
+          } else {
+            console.log("Slack notify (contact) sent OK");
+          }
+        } catch (e) {
+          console.error("Slack notify (contact) failed:", e);
+        }
+      })();
+      // @ts-ignore -- EdgeRuntime is provided by Supabase Edge Runtime
+      if (typeof EdgeRuntime !== "undefined" && EdgeRuntime.waitUntil) {
+        // @ts-ignore
+        EdgeRuntime.waitUntil(slackTask);
+      } else {
+        await slackTask;
+      }
     } catch (e) {
       console.error("Slack notify dispatch error:", e);
     }
