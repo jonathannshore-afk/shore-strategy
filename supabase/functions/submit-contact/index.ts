@@ -121,29 +121,23 @@ Deno.serve(async (req) => {
 
     // Fire-and-forget auto-reply email to the lead
     try {
-      const supaUrl = Deno.env.get("SUPABASE_URL")!;
-      const serviceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
       const emailTask = (async () => {
         try {
-          const resp = await fetch(`${supaUrl}/functions/v1/send-transactional-email`, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${serviceKey}`,
-              apikey: serviceKey,
-            },
-            body: JSON.stringify({
-              templateName: "contact-confirmation",
-              recipientEmail: email.trim(),
-              idempotencyKey: `contact-confirm-${submissionId}`,
-              templateData: { name: name.trim() },
-            }),
-          });
-          if (!resp.ok) {
-            const errBody = await resp.text();
-            console.error("Auto-reply email non-OK:", resp.status, errBody);
+          const { data, error: invokeError } = await supabase.functions.invoke(
+            "send-transactional-email",
+            {
+              body: {
+                templateName: "contact-confirmation",
+                recipientEmail: email.trim(),
+                idempotencyKey: `contact-confirm-${submissionId}`,
+                templateData: { name: name.trim() },
+              },
+            }
+          );
+          if (invokeError) {
+            console.error("Auto-reply email invoke error:", invokeError);
           } else {
-            console.log("Auto-reply email enqueued OK");
+            console.log("Auto-reply email enqueued OK", data);
           }
         } catch (e) {
           console.error("Auto-reply email failed:", e);
