@@ -157,7 +157,7 @@ const Index = () => {
               </div>
             </div>
             <div
-              className="hidden md:flex flex-col items-center w-72 lg:w-80 shrink-0 animate-fade-in-up"
+              className="flex flex-col items-center w-56 sm:w-64 md:w-72 lg:w-80 shrink-0 animate-fade-in-up order-first md:order-none"
               style={{ animationDelay: "0.3s" }}
             >
               <img
@@ -169,7 +169,7 @@ const Index = () => {
                 decoding="async"
                 className="w-full rounded-lg shadow-2xl border-2 border-gold/20"
               />
-              <div className="w-full mt-5 max-w-[224px]">
+              <div className="hidden md:block w-full mt-5 max-w-[224px]">
                 <p className="text-gold font-body text-[10px] uppercase tracking-[0.2em] text-center mb-3">
                   Experience Built At
                 </p>
