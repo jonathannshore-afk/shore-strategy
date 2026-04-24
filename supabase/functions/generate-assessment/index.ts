@@ -257,6 +257,50 @@ Generate a personalized assessment using the provided tool. Be specific to their
       console.error("Persist error (non-fatal):", e);
     }
 
+    // Fire-and-forget Slack notification (non-blocking)
+    try {
+      const supaUrl = Deno.env.get("SUPABASE_URL") ?? "";
+      const serviceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "";
+      if (supaUrl && serviceKey) {
+        const name = clampString(contact?.name, 200) ?? "Anonymous";
+        const email = clampString(contact?.email, 255) ?? "—";
+        const company = clampString(contact?.company, 200) ?? "—";
+        const role = clampString(contact?.role, 100) ?? "—";
+        const text = `:bar_chart: *Assessment completed* — ${name} (${stage}, ${overallScore}/4)`;
+        const blocks = [
+          { type: "header", text: { type: "plain_text", text: "Maturity assessment completed" } },
+          {
+            type: "section",
+            fields: [
+              { type: "mrkdwn", text: `*Name:*\n${name}` },
+              { type: "mrkdwn", text: `*Email:*\n${email}` },
+              { type: "mrkdwn", text: `*Company:*\n${company}` },
+              { type: "mrkdwn", text: `*Role:*\n${role}` },
+              { type: "mrkdwn", text: `*Stage:*\n${stage}` },
+              { type: "mrkdwn", text: `*Overall score:*\n${overallScore}/4` },
+            ],
+          },
+          {
+            type: "section",
+            text: {
+              type: "mrkdwn",
+              text: `*Headline:*\n${(parsed?.headline ?? "—").toString().slice(0, 600)}`,
+            },
+          },
+        ];
+        fetch(`${supaUrl}/functions/v1/notify-slack`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${serviceKey}`,
+          },
+          body: JSON.stringify({ text, blocks }),
+        }).catch((e) => console.error("Slack notify (assessment) failed:", e));
+      }
+    } catch (e) {
+      console.error("Slack notify dispatch error:", e);
+    }
+
     return new Response(JSON.stringify({ summary }), {
       status: 200,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
