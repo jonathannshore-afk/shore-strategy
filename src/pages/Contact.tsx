@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { Calendar, Mail, MapPin, Linkedin, Loader2 } from "lucide-react";
@@ -7,6 +7,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { z } from "zod";
 
 const CALENDLY_URL = "https://calendly.com/jonathan-n-shore/30min";
+const CALENDLY_SCRIPT_SRC = "https://assets.calendly.com/assets/external/widget.js";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100, "Name must be under 100 characters"),
@@ -22,14 +23,46 @@ const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", company: "", message: "" });
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [calendlyLoaded, setCalendlyLoaded] = useState(false);
+  const calendlyRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://assets.calendly.com/assets/external/widget.js";
-    script.async = true;
-    document.body.appendChild(script);
+    // Detect when Calendly injects its iframe so we can hide the skeleton.
+    const onIframeReady = () => {
+      if (calendlyRef.current?.querySelector("iframe")) {
+        setCalendlyLoaded(true);
+        return true;
+      }
+      return false;
+    };
+
+    // If the script (and iframe) are already present from a previous visit,
+    // don't re-inject — just mark loaded.
+    const existing = document.querySelector<HTMLScriptElement>(
+      `script[src="${CALENDLY_SCRIPT_SRC}"]`
+    );
+
+    let observer: MutationObserver | undefined;
+    if (calendlyRef.current) {
+      observer = new MutationObserver(() => {
+        if (onIframeReady()) observer?.disconnect();
+      });
+      observer.observe(calendlyRef.current, { childList: true, subtree: true });
+    }
+
+    if (!existing) {
+      const script = document.createElement("script");
+      script.src = CALENDLY_SCRIPT_SRC;
+      script.async = true;
+      document.body.appendChild(script);
+    } else {
+      // Script already loaded — Calendly may need a nudge to render into the new widget div.
+      onIframeReady();
+    }
+
     return () => {
-      document.body.removeChild(script);
+      observer?.disconnect();
+      // Intentionally keep the script in the DOM so revisits are instant.
     };
   }, []);
 
@@ -137,11 +170,24 @@ const Contact = () => {
                 <Calendar className="text-gold" size={28} strokeWidth={1.5} />
                 <h2 className="font-display text-2xl font-bold text-foreground">Book a Conversation</h2>
               </div>
-              <div
-                className="calendly-inline-widget rounded-lg overflow-hidden border border-border flex-1 h-[560px] sm:h-[600px] lg:h-auto lg:min-h-[640px]"
-                data-url={`${CALENDLY_URL}?hide_gdpr_banner=1`}
-                style={{ minWidth: "320px" }}
-              />
+              <div className="relative flex-1 h-[560px] sm:h-[600px] lg:h-auto lg:min-h-[640px]">
+                {/* Skeleton placeholder shown until the Calendly iframe is ready */}
+                {!calendlyLoaded && (
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-0 rounded-lg border border-border bg-card animate-pulse flex flex-col items-center justify-center gap-3"
+                  >
+                    <Loader2 className="text-gold animate-spin" size={28} strokeWidth={1.5} />
+                    <p className="font-body text-sm text-muted-foreground">Loading scheduler…</p>
+                  </div>
+                )}
+                <div
+                  ref={calendlyRef}
+                  className="calendly-inline-widget rounded-lg overflow-hidden border border-border w-full h-full"
+                  data-url={`${CALENDLY_URL}?hide_gdpr_banner=1`}
+                  style={{ minWidth: "320px" }}
+                />
+              </div>
             </div>
           </div>
         </div>
