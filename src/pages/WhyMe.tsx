@@ -145,6 +145,8 @@ const WhyMe = () => {
                       <img
                         src={cs.logo}
                         alt={cs.company}
+                        loading="lazy"
+                        decoding="async"
                         className="h-7 w-auto object-contain shrink-0 opacity-70"
                       />
                       <div className="text-left">

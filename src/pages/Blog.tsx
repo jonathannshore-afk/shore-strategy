@@ -134,6 +134,9 @@ const Blog = () => {
                   <img
                     src={featuredPost.heroImage}
                     alt={featuredPost.title}
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 ) : (
@@ -141,6 +144,8 @@ const Blog = () => {
                     <img
                       src={featuredPost.authorImage || defaultAuthor.image}
                       alt={featuredPost.author}
+                      loading="eager"
+                      decoding="async"
                       className="w-32 h-32 rounded-full object-cover border-4 border-background shadow-lg"
                     />
                   </div>
@@ -230,6 +235,8 @@ const ArticleCard = ({ post }: { post: BlogPostType }) => (
         <img
           src={post.heroImage}
           alt={post.title}
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
       ) : (
@@ -237,6 +244,8 @@ const ArticleCard = ({ post }: { post: BlogPostType }) => (
           <img
             src={post.authorImage || defaultAuthor.image}
             alt={post.author}
+            loading="lazy"
+            decoding="async"
             className="w-16 h-16 rounded-full object-cover border-2 border-background"
           />
         </div>
