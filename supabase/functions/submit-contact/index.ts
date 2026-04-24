@@ -168,6 +168,57 @@ Deno.serve(async (req) => {
       console.error("Slack notify dispatch error:", e);
     }
 
+    // Fire-and-forget Google Sheets append (never blocks the response)
+    try {
+      const lovableKey = Deno.env.get("LOVABLE_API_KEY");
+      const sheetsKey = Deno.env.get("GOOGLE_SHEETS_API_KEY");
+      const SPREADSHEET_ID = "1pz33p9zY7nTlJsoJH5ssQaZ56uCFsgyLrUWJeaXE2Ds";
+      const RANGE = "Sheet1!A:E";
+      const sheetsTask = (async () => {
+        if (!lovableKey || !sheetsKey) {
+          console.warn("Google Sheets append skipped: missing credentials");
+          return;
+        }
+        try {
+          const url = `https://connector-gateway.lovable.dev/google_sheets/v4/spreadsheets/${SPREADSHEET_ID}/values/${RANGE}:append?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS`;
+          const resp = await fetch(url, {
+            method: "POST",
+            headers: {
+              Authorization: `Bearer ${lovableKey}`,
+              "X-Connection-Api-Key": sheetsKey,
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              values: [[
+                new Date().toISOString(),
+                name.trim(),
+                email.trim(),
+                company?.trim() || "",
+                message.trim(),
+              ]],
+            }),
+          });
+          if (!resp.ok) {
+            const errBody = await resp.text();
+            console.error("Google Sheets append non-OK:", resp.status, errBody);
+          } else {
+            console.log("Google Sheets append OK");
+          }
+        } catch (e) {
+          console.error("Google Sheets append failed:", e);
+        }
+      })();
+      // @ts-ignore -- EdgeRuntime is provided by Supabase Edge Runtime
+      if (typeof EdgeRuntime !== "undefined" && EdgeRuntime.waitUntil) {
+        // @ts-ignore
+        EdgeRuntime.waitUntil(sheetsTask);
+      } else {
+        await sheetsTask;
+      }
+    } catch (e) {
+      console.error("Google Sheets dispatch error:", e);
+    }
+
     return new Response(JSON.stringify({ success: true }), {
       status: 200,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
