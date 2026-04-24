@@ -20,41 +20,29 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <!-- Blog URLs commented out until Insights section is ready
   <url>
     <loc>https://shore-strategy.com/blog</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://shore-strategy.com/blog/building-partner-program-from-scratch</loc>
+    <loc>https://shore-strategy.com/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://shore-strategy.com/blog/co-sell-motions-that-work</loc>
+    <loc>https://shore-strategy.com/why-me</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://shore-strategy.com/blog/measuring-partner-influenced-revenue</loc>
+    <loc>https://shore-strategy.com/how-i-work</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://shore-strategy.com/blog/ecosystem-led-growth-playbook</loc>
+    <loc>https://shore-strategy.com/leadership</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
-  <url>
-    <loc>https://shore-strategy.com/blog/partner-enablement-mistakes</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://shore-strategy.com/blog/fractional-cpo-when-to-hire</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  -->
 </urlset>

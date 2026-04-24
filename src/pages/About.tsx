@@ -91,12 +91,44 @@ const principles = [
   },
 ];
 const About = () => {
+  const personJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Jonathan Shore",
+    url: "https://shore-strategy.com/about",
+    image: "https://shore-strategy.com/og-image.jpg",
+    jobTitle: "Partner Ecosystem Strategist",
+    description:
+      "15+ years leading partner ecosystems at Salesforce, ServiceNow, and Lumen Technologies. Helps B2B technology companies build, fix, and scale partner ecosystems.",
+    sameAs: ["https://www.linkedin.com/in/jonathan-shore/"],
+    worksFor: {
+      "@type": "Organization",
+      name: "Shore Strategy",
+      url: "https://shore-strategy.com",
+    },
+    alumniOf: [
+      { "@type": "Organization", name: "Salesforce" },
+      { "@type": "Organization", name: "ServiceNow" },
+      { "@type": "Organization", name: "Lumen Technologies" },
+    ],
+    knowsAbout: [
+      "Partner Ecosystem Strategy",
+      "Channel Sales",
+      "Partner Program Design",
+      "Co-sell Motions",
+      "Routes-to-Market Strategy",
+      "Fractional Executive Leadership",
+    ],
+  };
+
   return (
     <Layout>
       <SEO
         title="About Jonathan Shore"
         description="15+ years leading partner ecosystems at Salesforce, ServiceNow, and Lumen Technologies. Learn about Jonathan Shore's background, experience, and approach."
         path="/about"
+        type="profile"
+        jsonLd={personJsonLd}
       />
 
       {/* Hero — Photo right, intro left + logos */}
