@@ -150,9 +150,9 @@ const About = () => {
                   Experience Built At
                 </p>
                 <div className="flex items-center gap-8 flex-wrap">
-                  <img src={logoSalesforce} alt="Salesforce" className="h-12 md:h-14 object-contain opacity-60 hover:opacity-100 transition-opacity brightness-0 invert" />
-                  <img src={logoServicenow} alt="ServiceNow" className="h-10 md:h-12 object-contain opacity-60 hover:opacity-100 transition-opacity brightness-0 invert" />
-                  <img src={logoLumen} alt="Lumen Technologies" className="h-6 md:h-8 object-contain opacity-60 hover:opacity-100 transition-opacity brightness-0 invert" />
+                  <img src={logoSalesforce} alt="Salesforce" width={160} height={56} loading="lazy" decoding="async" className="h-12 md:h-14 object-contain opacity-60 hover:opacity-100 transition-opacity brightness-0 invert" />
+                  <img src={logoServicenow} alt="ServiceNow" width={160} height={48} loading="lazy" decoding="async" className="h-10 md:h-12 object-contain opacity-60 hover:opacity-100 transition-opacity brightness-0 invert" />
+                  <img src={logoLumen} alt="Lumen Technologies" width={120} height={32} loading="lazy" decoding="async" className="h-6 md:h-8 object-contain opacity-60 hover:opacity-100 transition-opacity brightness-0 invert" />
                 </div>
               </div>
 
@@ -179,6 +179,10 @@ const About = () => {
               <img
                 src={headshot}
                 alt="Jonathan Shore"
+                width={420}
+                height={525}
+                fetchPriority="high"
+                decoding="async"
                 className="w-full max-w-[360px] md:max-w-[420px] rounded-lg shadow-lg border border-border"
               />
             </div>
@@ -221,6 +225,8 @@ const About = () => {
                         <img
                           src={exp.logo}
                           alt={exp.company}
+                          loading="lazy"
+                          decoding="async"
                           className={`w-auto object-contain shrink-0 opacity-70 ${
                             exp.company === "Salesforce"
                               ? "h-14"
