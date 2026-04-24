@@ -40,7 +40,7 @@ const capabilities = [
 const engagementModels = [
   {
     title: "Fractional Leadership",
-    desc: "Embedded, part-time executive leadership for companies building or transforming their partner function.",
+    desc: "Need senior partner strategy leadership without a $400K executive hire? I embed part-time as your head of partnerships — owning the strategy, the execution, and the results.",
     fit: "Best for companies that need senior partner strategy leadership without the overhead of a full-time executive.",
     backTitle: "Fractional Leadership",
     timeline: "Ongoing · Part-Time",
@@ -58,7 +58,7 @@ const engagementModels = [
   },
   {
     title: "Project-Based Engagement",
-    desc: "Scoped, time-bound projects with clear deliverables — program design, GTM planning, operational buildouts.",
+    desc: "Have a specific initiative but no one to own it end-to-end? I scope, lead, and deliver defined partnership projects with clear outcomes and no scope creep.",
     fit: "Best for companies with a specific initiative or transformation in mind.",
     backTitle: "Project-Based",
     timeline: "Fixed Scope · Weeks to Months",
@@ -76,7 +76,7 @@ const engagementModels = [
   },
   {
     title: "Advisory & Coaching",
-    desc: "Ongoing strategic guidance for partner leaders navigating complex ecosystem decisions.",
+    desc: "Already leading partnerships but want a seasoned thinking partner? I work directly with you on strategy, stakeholder alignment, and the decisions that matter most.",
     fit: "Best for existing partnership leaders who want a seasoned sounding board.",
     backTitle: "Advisory & Coaching",
     timeline: "Scheduled Sessions · As Needed",
