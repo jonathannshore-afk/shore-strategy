@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, CalendarCheck, MessageCircleQuestion, TrendingDown, Wrench, Unplug, Search, Compass, Settings2 } from "lucide-react";
+import { ArrowRight, CalendarCheck, MessageCircleQuestion, TrendingDown, Wrench, Unplug } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import headshot from "@/assets/jonathan-headshot.jpeg";
 import logoServicenow from "@/assets/logo-servicenow.svg";
@@ -31,24 +31,6 @@ const problems = [
     icon: Unplug,
     title: "Misaligned with the core business",
     description: "The partner team runs parallel to sales, product, and marketing — not integrated with them.",
-  },
-];
-
-const approach = [
-  {
-    icon: Search,
-    title: "Diagnose",
-    description: "Ecosystem assessment: partner mix, program health, GTM alignment, operating model gaps. Strategy without diagnosis is guesswork.",
-  },
-  {
-    icon: Compass,
-    title: "Design",
-    description: "Program architecture, route-to-market plan, operating model, KPI framework. Built for your team to actually run.",
-  },
-  {
-    icon: Settings2,
-    title: "Operationalize",
-    description: "Stand up cadences, enablement, deal reg, analytics — handed off as a working system, not a deck.",
   },
 ];
 
@@ -316,53 +298,6 @@ const Index = () => {
                 </p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="bg-cream">
-        <div className="container px-6 md:px-12 lg:px-24 flex items-center gap-4 py-2">
-          <span className="block h-px flex-1 bg-gold/40" />
-          <span className="block w-2 h-2 rotate-45 bg-gold/60" />
-          <span className="block h-px flex-1 bg-gold/40" />
-        </div>
-      </div>
-
-      {/* How I'd Approach It */}
-      <section className="py-14 md:py-20 bg-cream">
-        <div className="container">
-          <div className="mb-10 max-w-2xl">
-            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Engagement Approach</p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-              Diagnose. Design. Operationalize.
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {approach.map((eng) => (
-              <div
-                key={eng.title}
-                className="bg-card p-6 md:p-7 rounded-lg border border-border hover:shadow-lg hover:border-gold/30 transition-all group"
-              >
-                <div className="w-12 h-12 rounded-lg bg-navy/5 flex items-center justify-center mb-5 group-hover:bg-gold/10 transition-colors">
-                  <eng.icon className="text-gold" size={24} strokeWidth={1.5} />
-                </div>
-                <h3 className="font-display text-xl font-semibold text-foreground mb-3">
-                  {eng.title}
-                </h3>
-                <p className="font-body text-muted-foreground leading-relaxed text-sm">
-                  {eng.description}
-                </p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-8">
-            <Link
-              to="/services"
-              className="inline-flex items-center gap-2 text-gold font-body font-semibold text-sm hover:text-gold-dark transition-colors"
-            >
-              See engagement models <ArrowRight size={16} />
-            </Link>
           </div>
         </div>
       </section>
