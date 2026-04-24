@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, CalendarCheck, TrendingDown, Wrench, Unplug } from "lucide-react";
+import { ArrowRight, CalendarCheck, TrendingDown, Wrench, Unplug, Layers, Zap, BarChart3 } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import headshot from "@/assets/jonathan-headshot.jpeg";
 import logoServicenow from "@/assets/logo-servicenow.svg";
@@ -19,18 +19,39 @@ const stats = [
 const problems = [
   {
     icon: TrendingDown,
-    title: "Pipeline that never materializes",
-    description: "Programs launched, partners signed, but partner-sourced revenue stays stuck under 10%.",
+    title: "Partner-sourced pipeline stuck under 10%",
+    description: "Programs launched, partners signed — but revenue attribution never materializes.",
   },
   {
     icon: Wrench,
-    title: "Strategy without operating muscle",
-    description: "A deck exists; the cadence, deal reg, and enablement to execute it don't.",
+    title: "A strategy deck with no one to execute it",
+    description: "The plan exists. The cadence, deal reg, and enablement infrastructure to run it don't.",
   },
   {
     icon: Unplug,
-    title: "Misaligned with the core business",
-    description: "The partner team runs parallel to sales, product, and marketing — not integrated with them.",
+    title: "Partnerships running parallel to the business",
+    description: "Sales doesn't trust it. Product ignores it. Marketing works around it.",
+  },
+];
+
+const whatIDo = [
+  {
+    icon: Layers,
+    title: "Build the Right Program",
+    description:
+      "Partner tiers, incentive models, and routes-to-market designed for your stage, motion, and market. No generic frameworks — built for how your business actually sells.",
+  },
+  {
+    icon: Zap,
+    title: "Activate the Revenue Motion",
+    description:
+      "Co-sell playbooks, enablement frameworks, and deal registration that partners actually use. The operational infrastructure that turns signed partners into pipeline.",
+  },
+  {
+    icon: BarChart3,
+    title: "Instrument and Scale",
+    description:
+      "KPI frameworks, performance analytics, and operating cadences that give you board-ready visibility and compound results quarter over quarter.",
   },
 ];
 
@@ -276,9 +297,8 @@ const Index = () => {
       <section className="bg-cream py-14 md:py-20">
         <div className="container">
           <div className="mb-10 max-w-2xl">
-            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Sound Familiar?</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-              The Symptoms We Solve For
+              The Problems I'm Called In To Solve
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -298,6 +318,45 @@ const Index = () => {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* What I Do */}
+      <section className="bg-cream py-14 md:py-20">
+        <div className="container">
+          <div className="mb-10 max-w-2xl">
+            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">What I Do</p>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
+              From Broken Ecosystem to Revenue Engine
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {whatIDo.map((item) => (
+              <div
+                key={item.title}
+                className="p-6 md:p-7 rounded-lg border border-border bg-card"
+              >
+                <div className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center mb-5">
+                  <item.icon className="text-gold" size={24} strokeWidth={1.5} />
+                </div>
+                <h3 className="font-display text-xl font-semibold text-foreground mb-3">
+                  {item.title}
+                </h3>
+                <p className="font-body text-muted-foreground leading-relaxed text-sm">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 text-center">
+            <Link
+              to="/how-i-work"
+              className="inline-flex items-center gap-2 font-body text-sm text-gold hover:text-gold-dark transition-colors"
+            >
+              See exactly how I work
+              <ArrowRight size={16} />
+            </Link>
           </div>
         </div>
       </section>
