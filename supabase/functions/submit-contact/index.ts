@@ -108,7 +108,9 @@ Deno.serve(async (req) => {
     }
 
     // Insert contact submission using service role (bypasses RLS)
+    const submissionId = crypto.randomUUID();
     const { error } = await supabase.from("contact_submissions").insert({
+      id: submissionId,
       name: name.trim(),
       email: email.trim(),
       company: company?.trim() || null,
@@ -116,6 +118,41 @@ Deno.serve(async (req) => {
     });
 
     if (error) throw error;
+
+    // Fire-and-forget auto-reply email to the lead
+    try {
+      const emailTask = (async () => {
+        try {
+          const { data, error: invokeError } = await supabase.functions.invoke(
+            "send-transactional-email",
+            {
+              body: {
+                templateName: "contact-confirmation",
+                recipientEmail: email.trim(),
+                idempotencyKey: `contact-confirm-${submissionId}`,
+                templateData: { name: name.trim() },
+              },
+            }
+          );
+          if (invokeError) {
+            console.error("Auto-reply email invoke error:", invokeError);
+          } else {
+            console.log("Auto-reply email enqueued OK", data);
+          }
+        } catch (e) {
+          console.error("Auto-reply email failed:", e);
+        }
+      })();
+      // @ts-ignore -- EdgeRuntime is provided by Supabase Edge Runtime
+      if (typeof EdgeRuntime !== "undefined" && EdgeRuntime.waitUntil) {
+        // @ts-ignore
+        EdgeRuntime.waitUntil(emailTask);
+      } else {
+        await emailTask;
+      }
+    } catch (e) {
+      console.error("Auto-reply dispatch error:", e);
+    }
 
     // Fire-and-forget Slack notification (never blocks the response)
     try {
