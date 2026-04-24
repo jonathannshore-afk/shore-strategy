@@ -10,7 +10,7 @@ import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
-import WhyMe from "./pages/WhyMe";
+import Results from "./pages/Results";
 import Leadership from "./pages/Leadership";
 import HowIWork from "./pages/HowIWork";
 import Assessment from "./pages/Assessment";
@@ -29,7 +29,8 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/why-me" element={<WhyMe />} />
+          <Route path="/results" element={<Results />} />
+          <Route path="/why-me" element={<Navigate to="/results" replace />} />
           <Route path="/how-i-work" element={<HowIWork />} />
           <Route path="/methodology" element={<Navigate to="/how-i-work" replace />} />
           <Route path="/assessment" element={<Assessment />} />

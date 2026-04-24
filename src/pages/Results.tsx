@@ -97,19 +97,19 @@ const caseStudies = [
   },
 ];
 
-const WhyMe = () => {
+const Results = () => {
   return (
     <Layout>
       <SEO
-        title="Why Jonathan Shore"
-        description="Proven results and a clear 90-day engagement framework. See why companies trust Jonathan Shore to build and scale partner ecosystems."
-        path="/why-me"
+        title="Results | Jonathan Shore"
+        description="Three companies. Three transformations. The track record behind the strategy. See why companies trust Jonathan Shore to build and scale partner ecosystems."
+        path="/results"
       />
 
       {/* Hero */}
       <section className="bg-navy px-6 pt-16 pb-10 md:px-12 md:pt-20 md:pb-14 lg:px-24">
         <div className="container">
-          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Why Work With Me</p>
+          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Proof of Work</p>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-4">
             Proof in the <span className="text-gold">Results</span>
           </h1>
@@ -246,4 +246,4 @@ const WhyMe = () => {
   );
 };
 
-export default WhyMe;
+export default Results;
