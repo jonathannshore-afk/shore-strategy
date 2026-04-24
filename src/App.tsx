@@ -13,7 +13,6 @@ import BlogPost from "./pages/BlogPost";
 import Results from "./pages/Results";
 import Leadership from "./pages/Leadership";
 import HowIWork from "./pages/HowIWork";
-import Assessment from "./pages/Assessment";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -33,7 +32,6 @@ const App = () => (
           <Route path="/why-me" element={<Navigate to="/results" replace />} />
           <Route path="/how-i-work" element={<HowIWork />} />
           <Route path="/methodology" element={<Navigate to="/how-i-work" replace />} />
-          <Route path="/assessment" element={<Assessment />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/leadership" element={<Leadership />} />
