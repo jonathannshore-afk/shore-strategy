@@ -324,23 +324,6 @@ const HowIWork = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="px-6 py-14 md:px-12 lg:px-24 lg:py-16 bg-navy">
-        <div className="container max-w-2xl text-center">
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-primary-foreground mb-3">
-            Ready to See What This Looks Like for You?
-          </h2>
-          <p className="font-body text-primary-foreground/70 leading-relaxed mb-6">
-            Every engagement starts with understanding where you are today and where you need to go.
-          </p>
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors"
-          >
-            <CalendarCheck size={18} /> Book a Scoping Call
-          </Link>
-        </div>
-      </section>
     </Layout>
   );
 };
