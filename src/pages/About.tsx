@@ -136,7 +136,7 @@ const About = () => {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
             <div className="pt-2">
-              <h1 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mb-3">
+              <h1 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-4">
                 About <span className="text-gold">Jonathan</span>
               </h1>
               <p className="font-body text-lg text-primary-foreground/80 leading-relaxed">
@@ -272,7 +272,7 @@ const About = () => {
       <section className="px-6 pt-16 pb-16 md:px-12 lg:px-24 md:pt-20 md:pb-20 bg-cream">
         <div className="container">
           <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-2">How I Lead</p>
-          <h2 className="font-display text-3xl font-bold text-foreground mb-6">Leadership Philosophy</h2>
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">Leadership Philosophy</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {principles.map((p) => (
               <div
