@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, CalendarCheck, TrendingDown, Wrench, Unplug, Layers, Zap, BarChart3 } from "lucide-react";
+import { ArrowRight, CalendarCheck, TrendingDown, Wrench, Unplug, Layers, Rocket, LineChart } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import headshot from "@/assets/jonathan-headshot.jpeg";
 import logoServicenow from "@/assets/logo-servicenow.svg";
@@ -42,13 +42,13 @@ const whatIDo = [
       "Partner tiers, incentive models, and routes-to-market designed for your stage, motion, and market. No generic frameworks — built for how your business actually sells.",
   },
   {
-    icon: Zap,
+    icon: Rocket,
     title: "Activate the Revenue Motion",
     description:
       "Co-sell playbooks, enablement frameworks, and deal registration that partners actually use. The operational infrastructure that turns signed partners into pipeline.",
   },
   {
-    icon: BarChart3,
+    icon: LineChart,
     title: "Instrument and Scale",
     description:
       "KPI frameworks, performance analytics, and operating cadences that give you board-ready visibility and compound results quarter over quarter.",
