@@ -117,6 +117,38 @@ Deno.serve(async (req) => {
 
     if (error) throw error;
 
+    // Fire-and-forget Slack notification (never blocks the response)
+    try {
+      const supaUrl = Deno.env.get("SUPABASE_URL")!;
+      const serviceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
+      const text = `:envelope_with_arrow: *New contact form submission*`;
+      const blocks = [
+        { type: "header", text: { type: "plain_text", text: "New contact submission" } },
+        {
+          type: "section",
+          fields: [
+            { type: "mrkdwn", text: `*Name:*\n${name.trim()}` },
+            { type: "mrkdwn", text: `*Email:*\n${email.trim()}` },
+            { type: "mrkdwn", text: `*Company:*\n${company?.trim() || "—"}` },
+          ],
+        },
+        {
+          type: "section",
+          text: { type: "mrkdwn", text: `*Message:*\n${message.trim().slice(0, 2900)}` },
+        },
+      ];
+      fetch(`${supaUrl}/functions/v1/notify-slack`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${serviceKey}`,
+        },
+        body: JSON.stringify({ text, blocks }),
+      }).catch((e) => console.error("Slack notify (contact) failed:", e));
+    } catch (e) {
+      console.error("Slack notify dispatch error:", e);
+    }
+
     return new Response(JSON.stringify({ success: true }), {
       status: 200,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
