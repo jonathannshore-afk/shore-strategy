@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, CalendarCheck, MessageCircleQuestion, TrendingDown, Wrench, Unplug } from "lucide-react";
+import { ArrowRight, CalendarCheck, TrendingDown, Wrench, Unplug } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import headshot from "@/assets/jonathan-headshot.jpeg";
 import logoServicenow from "@/assets/logo-servicenow.svg";
