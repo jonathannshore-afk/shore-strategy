@@ -97,7 +97,7 @@ const caseStudies = [
   },
 ];
 
-const WhyMe = () => {
+const Results = () => {
   return (
     <Layout>
       <SEO
@@ -246,4 +246,4 @@ const WhyMe = () => {
   );
 };
 
-export default WhyMe;
+export default Results;
