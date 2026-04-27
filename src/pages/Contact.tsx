@@ -170,7 +170,7 @@ const Contact = () => {
                 <Calendar className="text-gold" size={28} strokeWidth={1.5} />
                 <h2 className="font-display text-2xl font-bold text-foreground">Book a Conversation</h2>
               </div>
-              <div className="relative flex-1 h-[560px] sm:h-[600px] lg:h-auto lg:min-h-[640px]">
+              <div className="relative flex-1 h-[560px] sm:h-[600px] lg:h-auto lg:min-h-[640px] w-full max-w-full overflow-hidden">
                 {/* Skeleton placeholder shown until the Calendly iframe is ready */}
                 {!calendlyLoaded && (
                   <div
@@ -183,9 +183,9 @@ const Contact = () => {
                 )}
                 <div
                   ref={calendlyRef}
-                  className="calendly-inline-widget rounded-lg overflow-hidden border border-border w-full h-full"
+                  className="calendly-inline-widget rounded-lg overflow-hidden border border-border w-full h-full max-w-full"
                   data-url={`${CALENDLY_URL}?hide_gdpr_banner=1`}
-                  style={{ minWidth: "320px" }}
+                  style={{ minWidth: 0 }}
                 />
               </div>
             </div>
