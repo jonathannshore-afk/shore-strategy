@@ -1,78 +1,67 @@
+## Goal
+Make the positioning feel inclusive and confident — without disqualifying prospects by company size or talking down to senior buyers about their own titles.
 
+---
 
-## Tighten Services + Why Me, consolidate process content into "How I Work"
+## Your two asks
 
-### The strategy
+### 1. Drop the sales-volume / ARR gating
+**Where it appears:**
+- `src/pages/Index.tsx` line 277 — *"Most companies under $250M ARR can't justify a $400K+ CRO of Partnerships…"*
+- `src/pages/Index.tsx` line 159 — hero meta strip ends with *"$1.6B ARR Ecosystems"* (this one is about *your* experience, not gating clients — recommend keeping)
 
-Each page gets one job:
+**Change:** Rewrite the "Why Fractional, Why Now" paragraph to frame the gap by *need and stage*, not revenue band.
 
-- **Why Me** → pure proof (case studies only)
-- **Services** → the menu (what I do + how to engage)
-- **How I Work** → the process (delivery method + diagnostic + first 90 days) — lives at the existing `/methodology` route, renamed
+Proposed replacement:
+> "Many growing technology companies need the strategy, program design, and executive presence of a senior partnerships leader — but not always as a full-time hire. That's the gap I exist to close. I bring the same operator experience I built inside Salesforce, ServiceNow, and Lumen, sized to where your business is today."
 
-### 1. `src/pages/WhyMe.tsx` — strip to case studies
+### 2. Drop the role titles in the audience line
+**Where:** `src/pages/Index.tsx` lines 141–146 — *"For CROs, SVPs, and VP-level partnership leaders at B2B SaaS and enterprise technology companies."*
 
-Remove:
-- The entire "First 90 Days" section (`first90Days` array + its `<section>`)
-- The divider between Case Studies and First 90 Days
-- The "What to Expect" eyebrow content
+You're right — anyone senior enough to hire you already knows this is for them. Listing titles can feel like you're explaining their own seat back to them.
 
-Keep: hero, case studies accordion, navy CTA.
+Proposed replacement:
+> "For revenue and partnership leaders at B2B technology companies building partner-led growth."
 
-Hero subhead tightens to focus on proof: *"Three companies. Three transformations. The track record behind the strategy."*
+Cleaner, still qualifies the buyer, no title-laddering.
 
-### 2. `src/pages/Services.tsx` — strip to menu + engagement
+---
 
-Remove:
-- "How I Deliver" section (the 5 pillars block — lines ~217-263)
-- "The Partner Ecosystem Diagnostic" section (lines ~274-331)
-- Two of the three dividers (keep only the one between "What I Do" and "Ways to Work Together")
-- Section numbering (`01 · The Menu`, `04 · The Engagement`) — only two sections now, numbering feels overwrought
+## Other things I'd recommend tightening
 
-Final flow: navy hero → cream "What I Do" → ◆ → cream "Ways to Work Together" → navy CTA.
+### 3. Soften the "Best for" lines on Services
+`src/pages/Services.tsx` lines 44, 62, 80 — three "Best for…" blurbs on the engagement model cards.
 
-Hero subhead tightens to: *"A clear menu of services and flexible ways to engage."*
+The phrase "Best for X" implicitly says "not for you if you're Y." On engagement-model cards that's fine in principle, but the current copy is redundant with the description right above it.
 
-Add a soft cross-link at the bottom of "Ways to Work Together": *"Curious how engagements actually run? See How I Work →"*
+**Recommendation:** Replace `fit:` lines with a tighter, neutral framing — e.g.:
+- Fractional: *"When you need the seat filled, but not the full-time hire."*
+- Project-Based: *"When the initiative is clear and needs an owner."*
+- Advisory: *"When the leader is in place and wants a thinking partner."*
 
-### 3. Repurpose `/methodology` → `/how-i-work`
+Same intent, less gating language.
 
-Rewrite `src/pages/Methodology.tsx` to become the new "How I Work" page with three stacked sections:
+### 4. Remove the $400K number from Services too
+`src/pages/Services.tsx` line 43 — Fractional description opens with *"…without a $400K executive hire."*
 
-```text
-Hero (navy)
-   ↓
-Section 1: How I Deliver  ← the 5 pillars (moved from Services)
-   ↓ ◆
-Section 2: The First 90 Days  ← moved from Why Me
-   ↓ ◆
-Section 3: The Partner Ecosystem Diagnostic  ← moved from Services
-   ↓
-CTA (navy) — "Book a Scoping Call"
-```
+Same logic as #1: anchoring on a specific salary number can feel transactional and may make smaller buyers self-select out, or make larger buyers question your level. Recommend:
+> "Need senior partner strategy leadership without committing to a full-time executive hire? I embed part-time as your head of partnerships — owning the strategy, the execution, and the results."
 
-This page answers: *"If we work together, what does it actually look like?"* — the Diagnostic at the bottom becomes the natural CTA (it's the on-ramp).
+### 5. Hero subhead is solid — leave it
+*"I help B2B technology companies build, fix, and scale partner ecosystems that drive measurable revenue growth."* — this is the right level of specificity. No change needed.
 
-Apply the same cream-bg + gold-diamond editorial rhythm used on About/Services/Why Me.
+### 6. Keep all the *credibility* numbers
+`$1.6B ARR managed`, `$800M+ influenced`, `19% YoY`, `2K+ partners`, `15+ years`, the Salesforce/ServiceNow/Lumen logos — these describe **you**, not gate **them**. Keep all of it.
 
-### 4. Routing + navigation
+---
 
-- Add `/how-i-work` route in `src/App.tsx` pointing to the rewritten Methodology component
-- Keep `/methodology` as a redirect (or alias) so any external links don't 404
-- Add **"How I Work"** to the header nav in `src/components/Header.tsx`, placed between "Services" and "Why Me":
-  ```
-  Home · About · Services · How I Work · Why Me · Contact
-  ```
+## Files that will change
+- `src/pages/Index.tsx` — hero audience line + "Why Fractional, Why Now" paragraph
+- `src/pages/Services.tsx` — three `fit:` strings + Fractional `desc:` opener
 
-The narrative the nav now tells: *Who I am → What I do → How I do it → Proof I can do it → Talk to me.* That's the CRO journey.
+No structural changes, no new components, no design changes. Pure copy edits.
 
-### Files modified
+---
 
-- `src/pages/WhyMe.tsx` — remove First 90 Days
-- `src/pages/Services.tsx` — remove How I Deliver + Diagnostic
-- `src/pages/Methodology.tsx` — rewrite as "How I Work" with 3 sections (pillars + 90 days + diagnostic)
-- `src/App.tsx` — add `/how-i-work` route, keep `/methodology` as alias
-- `src/components/Header.tsx` — insert "How I Work" nav link
-
-No new components. No token changes. Pure content reshuffle + one nav addition.
-
+## Open question for you
+On #3, do you want me to use the shorter neutral lines I proposed, or remove the `fit:` field entirely from the cards? Removing it would clean up the cards visually since the descriptions already cover positioning.
