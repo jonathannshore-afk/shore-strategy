@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import FlipCard from "@/components/FlipCard";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ArrowRight, CalendarCheck, Compass, Handshake, Network, Settings2, Target, Users } from "lucide-react";
 
 const capabilities = [
@@ -94,6 +95,33 @@ const engagementModels = [
   },
 ];
 
+
+const faqs = [
+  {
+    q: "How do I know if fractional or project-based is right for us?",
+    a: "Fractional is the right fit when you need an ongoing senior partnerships leader in the seat — owning strategy, execution, and team leadership over time — but the role doesn't yet justify a full-time hire. Project-based is the right fit when the work is well-defined and time-bound: a program launch, a partner segmentation, a GTM playbook, or a post-M&A integration. If you're not sure, that's usually a sign the first conversation should be about scoping, not engagement model.",
+  },
+  {
+    q: "What does a fractional engagement actually look like week-to-week?",
+    a: "I embed as your head of partnerships on a part-time basis — typically a set number of days per week or month. That includes owning the partner strategy, running the operating cadence (pipeline reviews, QBRs, forecasting), engaging directly with priority partners, and developing the team. You get an executive in the seat, not an advisor on the sidelines.",
+  },
+  {
+    q: "How long do engagements typically run?",
+    a: "Fractional engagements are ongoing and usually start with a 3–6 month initial term, then continue as long as it's creating value. Project-based engagements are fixed scope, typically running anywhere from a few weeks to a few months depending on the initiative. Advisory and coaching is usually scheduled sessions — monthly or as needed — with no fixed end date.",
+  },
+  {
+    q: "What do you mean by \"fit\" on the engagement cards?",
+    a: "\"Fit\" is shorthand for the situation each model is built for — not a gate. Fractional fits when you need leadership in the seat. Project-based fits when there's a clear initiative that needs an owner. Advisory fits when a leader is already in place and wants a thinking partner. Most clients land cleanly in one of those, but the right answer sometimes blends two — and that's worth a conversation.",
+  },
+  {
+    q: "Can engagements evolve over time?",
+    a: "Yes — and they often do. A project-based engagement can extend into fractional leadership if the work expands. A fractional engagement can shift to advisory once a full-time leader is hired and ramped. The model is designed to match where the business is, not lock you into a structure that no longer fits.",
+  },
+  {
+    q: "Do you work with companies outside B2B technology?",
+    a: "My deepest experience is in B2B technology — SaaS, cloud, infrastructure, and enterprise software — where partner ecosystems are core to the growth motion. The frameworks travel to adjacent industries with strong channel or alliance components, but B2B tech is where I add the most leverage fastest.",
+  },
+];
 
 const Services = () => {
   return (
@@ -205,6 +233,40 @@ const Services = () => {
               className="inline-flex items-center gap-2 font-body text-sm text-gold hover:text-gold-dark transition-colors"
             >
               Curious how engagements actually run? See How I Work
+              <ArrowRight size={16} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream border-t border-gold/20">
+        <div className="container max-w-3xl">
+          <div className="mb-8">
+            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">FAQ</p>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Common Questions</h2>
+            <p className="font-body text-muted-foreground mt-2">
+              Quick answers on engagement models, timelines, and how to think about fit.
+            </p>
+          </div>
+          <Accordion type="single" collapsible className="w-full">
+            {faqs.map((item, i) => (
+              <AccordionItem key={i} value={`faq-${i}`} className="border-border">
+                <AccordionTrigger className="text-left font-display text-base md:text-lg font-semibold text-foreground hover:no-underline">
+                  {item.q}
+                </AccordionTrigger>
+                <AccordionContent className="font-body text-muted-foreground text-base leading-relaxed">
+                  {item.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+          <div className="mt-10 text-center">
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 font-body text-sm text-gold hover:text-gold-dark transition-colors"
+            >
+              Have a different question? Get in touch
               <ArrowRight size={16} />
             </Link>
           </div>
