@@ -41,10 +41,15 @@ const capabilities = [
 const engagementModels = [
   {
     title: "Fractional Leadership",
-    desc: "Need senior partner strategy leadership without committing to a full-time executive hire? I embed part-time as your head of partnerships — owning the strategy, the execution, and the results.",
-    fit: "When you need the seat filled, but not the full-time hire.",
-    backTitle: "Fractional Leadership",
     timeline: "Ongoing · Part-Time",
+    desc: "Need senior partner strategy leadership without committing to a full-time executive hire? I embed part-time as your head of partnerships — owning the strategy, the execution, and the results.",
+    bestFor: "BEST FOR COMPANIES THAT NEED SENIOR PARTNER STRATEGY LEADERSHIP WITHOUT THE OVERHEAD OF A FULL-TIME EXECUTIVE.",
+    commercial: [
+      "1-2 days per week, embedded engagement",
+      "Monthly retainer structure",
+      "6-month minimum commitment",
+    ],
+    backTitle: "Fractional Leadership",
     audience: [
       "Mid-Market & Enterprise companies",
       "Scaling founder-led → structured partnerships",
@@ -56,13 +61,23 @@ const engagementModels = [
       "Team hiring & enablement",
       "Executive-level partner engagement",
     ],
+    feeStructure: [
+      "Monthly retainer, scoped by days per week",
+      "6-month minimum commitment",
+      "Renewed quarterly thereafter",
+    ],
   },
   {
     title: "Project-Based Engagement",
-    desc: "Have a specific initiative but no one to own it end-to-end? I scope, lead, and deliver defined partnership projects with clear outcomes and no scope creep.",
-    fit: "When the initiative is clear and needs an owner.",
-    backTitle: "Project-Based",
     timeline: "Fixed Scope · Weeks to Months",
+    desc: "Have a specific initiative but no one to own it end-to-end? I scope, lead, and deliver defined partnership projects with clear outcomes and no scope creep.",
+    bestFor: "BEST FOR COMPANIES WITH A SPECIFIC INITIATIVE OR TRANSFORMATION IN MIND.",
+    commercial: [
+      "Fixed-fee, scoped upfront",
+      "Typically 4-12 weeks depending on scope",
+      "1-month minimum commitment",
+    ],
+    backTitle: "Project-Based",
     audience: [
       "Companies with a defined initiative",
       "Pre/post-M&A partner integration",
@@ -74,13 +89,23 @@ const engagementModels = [
       "Operational infrastructure buildout",
       "Partner segmentation & tiering",
     ],
+    feeStructure: [
+      "Fixed fee, defined deliverables, no surprises",
+      "Scoped and priced before work begins",
+      "1-month minimum commitment",
+    ],
   },
   {
     title: "Advisory & Coaching",
-    desc: "Already leading partnerships but want a seasoned thinking partner? I work directly with you on strategy, stakeholder alignment, and the decisions that matter most.",
-    fit: "When the leader is in place and wants a thinking partner.",
-    backTitle: "Advisory & Coaching",
     timeline: "Scheduled Sessions · As Needed",
+    desc: "Already leading partnerships but want a seasoned thinking partner? I work directly with you on strategy, stakeholder alignment, and the decisions that matter most.",
+    bestFor: "BEST FOR EXISTING PARTNERSHIP LEADERS WHO WANT A SEASONED SOUNDING BOARD.",
+    commercial: [
+      "Scheduled sessions, flexible cadence",
+      "Minimum 5 hours per month",
+      "3-month minimum commitment",
+    ],
+    backTitle: "Advisory & Coaching",
     audience: [
       "VP/Director-level partner leaders",
       "Founders building partner motions",
@@ -91,6 +116,11 @@ const engagementModels = [
       "Board & exec presentation prep",
       "Partner negotiation guidance",
       "Leadership development",
+    ],
+    feeStructure: [
+      "Hourly or monthly retainer",
+      "Minimum 5 hours per month",
+      "3-month minimum commitment",
     ],
   },
 ];
@@ -188,16 +218,27 @@ const Services = () => {
             <p className="font-body text-muted-foreground mt-2 max-w-2xl">
               Choose the engagement model that fits where you are — fractional, project-based, or advisory.
             </p>
+            <p className="font-body text-muted-foreground mt-2 max-w-2xl">
+              Engagements are structured as monthly retainers, fixed-fee projects, or hourly advisory sessions — scoped to fit where you are.
+            </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto auto-rows-[380px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto auto-rows-[560px]">
             {engagementModels.map((model) => (
               <FlipCard
                 key={model.title}
                 front={
                   <>
-                    <h3 className="font-display text-lg font-semibold text-foreground mb-3">{model.title}</h3>
+                    <h3 className="font-display text-lg font-semibold text-foreground mb-1">{model.title}</h3>
+                    <p className="font-body text-xs text-muted-foreground/70 mb-3">{model.timeline}</p>
                     <p className="font-body text-muted-foreground text-sm leading-relaxed mb-4">{model.desc}</p>
-                    <p className="font-body text-xs text-gold font-medium uppercase tracking-wider">{model.fit}</p>
+                    <p className="font-body text-xs text-gold font-medium uppercase tracking-wider mb-3 leading-relaxed">{model.bestFor}</p>
+                    <ul className="space-y-1">
+                      {model.commercial.map((item, i) => (
+                        <li key={i} className="font-body text-xs text-muted-foreground flex gap-2">
+                          <span className="text-gold shrink-0">•</span>{item}
+                        </li>
+                      ))}
+                    </ul>
                   </>
                 }
                 back={
@@ -215,10 +256,18 @@ const Services = () => {
                       ))}
                     </ul>
                     <p className="font-body text-xs text-gold font-medium uppercase tracking-wider mb-1">Key Outcomes</p>
-                    <ul className="space-y-1">
+                    <ul className="space-y-1 mb-3">
                       {model.outcomes.map((item, i) => (
                         <li key={i} className="font-body text-xs text-primary-foreground/70 flex gap-2">
                           <span className="text-gold shrink-0">→</span>{item}
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="font-body text-xs text-gold font-medium uppercase tracking-wider mb-1">Fee Structure</p>
+                    <ul className="space-y-1">
+                      {model.feeStructure.map((item, i) => (
+                        <li key={i} className="font-body text-xs text-primary-foreground/70 flex gap-2">
+                          <span className="text-gold shrink-0">•</span>{item}
                         </li>
                       ))}
                     </ul>
