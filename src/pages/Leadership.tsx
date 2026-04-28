@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { CalendarCheck, Handshake, BarChart3, Heart, Cog, Zap, Users } from "lucide-react";
 import Layout from "@/components/Layout";
-import SEO from "@/components/SEO";
+import SEOHead from "@/components/SEOHead";
 
 const principles = [
   {
@@ -45,10 +45,10 @@ const principles = [
 const Leadership = () => {
   return (
     <Layout>
-      <SEO
+      <SEOHead
         title="Leadership Style | Jonathan Shore"
         description="How Jonathan Shore leads — principles forged across 15+ years building and transforming partner ecosystems at Salesforce, ServiceNow, and Lumen Technologies."
-        path="/leadership"
+        canonical="/leadership"
       />
 
       {/* Hero */}

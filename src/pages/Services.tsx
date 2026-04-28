@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
-import SEO from "@/components/SEO";
+import SEOHead from "@/components/SEOHead";
 import FlipCard from "@/components/FlipCard";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ArrowRight, CalendarCheck, Compass, Handshake, Network, Settings2, Target, Users } from "lucide-react";
@@ -126,10 +126,10 @@ const faqs = [
 const Services = () => {
   return (
     <Layout>
-      <SEO
+      <SEOHead
         title="Services"
         description="Partner ecosystem strategy, program design, GTM planning, and revenue acceleration. Explore how Jonathan Shore drives partner-led growth."
-        path="/services"
+        canonical="/services"
       />
 
       {/* Hero */}

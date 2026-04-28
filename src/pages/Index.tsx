@@ -5,7 +5,7 @@ import headshot from "@/assets/jonathan-headshot.jpeg";
 import logoServicenow from "@/assets/logo-servicenow.svg";
 import logoLumen from "@/assets/logo-lumen.png";
 import Layout from "@/components/Layout";
-import SEO from "@/components/SEO";
+import SEOHead from "@/components/SEOHead";
 
 
 
@@ -58,10 +58,10 @@ const whatIDo = [
 const Index = () => {
   return (
     <Layout>
-      <SEO
+      <SEOHead
         title="Partner Ecosystem Strategist"
         description="Jonathan Shore helps B2B technology companies build, fix, and scale partner ecosystems that drive measurable revenue growth. 15+ years at Salesforce, ServiceNow, and Lumen."
-        path="/"
+        canonical="/"
       />
 
       <script

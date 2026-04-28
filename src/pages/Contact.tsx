@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import Layout from "@/components/Layout";
-import SEO from "@/components/SEO";
+import SEOHead from "@/components/SEOHead";
 import { Calendar, Mail, MapPin, Linkedin, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
@@ -116,10 +116,10 @@ const Contact = () => {
 
   return (
     <Layout>
-      <SEO
+      <SEOHead
         title="Contact"
         description="Book a call or send a message to discuss your partner ecosystem strategy. Jonathan Shore is available for fractional leadership and consulting engagements."
-        path="/contact"
+        canonical="/contact"
       />
 
       {/* Hero */}

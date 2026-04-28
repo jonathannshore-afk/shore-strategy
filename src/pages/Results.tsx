@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
-import SEO from "@/components/SEO";
+import SEOHead from "@/components/SEOHead";
 import { CalendarCheck, CheckCircle, ChevronDown } from "lucide-react";
 import {
   Accordion,
@@ -100,10 +100,10 @@ const caseStudies = [
 const Results = () => {
   return (
     <Layout>
-      <SEO
+      <SEOHead
         title="Results | Jonathan Shore"
         description="Three companies. Three transformations. The track record behind the strategy. See why companies trust Jonathan Shore to build and scale partner ecosystems."
-        path="/results"
+        canonical="/results"
       />
 
       {/* Hero */}

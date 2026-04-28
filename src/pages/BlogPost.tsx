@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import Layout from "@/components/Layout";
-import SEO from "@/components/SEO";
+import SEOHead from "@/components/SEOHead";
 import { defaultAuthor } from "@/data/blogPosts";
 import { ArrowLeft, Linkedin, Loader2 } from "lucide-react";
 import ArticleContent from "@/components/blog/ArticleContent";
@@ -87,18 +87,18 @@ const BlogPost = () => {
 
   return (
     <Layout>
-      <SEO
+      <SEOHead
         title={post.title}
         description={post.excerpt}
-        path={`/blog/${post.slug}`}
+        canonical={`/blog/${post.slug}`}
         type="article"
-        image={post.heroImage}
+        ogImage={post.heroImage}
         article={{
           publishedTime: post.date,
           author: post.author,
           section: post.category,
         }}
-        jsonLd={articleJsonLd}
+        schemaJson={articleJsonLd}
       />
 
       {/* Top Nav Bar */}
