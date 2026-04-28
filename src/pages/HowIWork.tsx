@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { CalendarCheck, CheckCircle } from "lucide-react";
 import Layout from "@/components/Layout";
-import SEO from "@/components/SEO";
+import SEOHead from "@/components/SEOHead";
 import FlipCard from "@/components/FlipCard";
 
 const pillars = [
@@ -131,10 +131,10 @@ const Divider = () => (
 const HowIWork = () => {
   return (
     <Layout>
-      <SEO
+      <SEOHead
         title="How I Work | Jonathan Shore"
         description="The delivery method, the first 90 days, and the diagnostic on-ramp. A transparent look at how Jonathan Shore runs partner ecosystem engagements."
-        path="/how-i-work"
+        canonical="/how-i-work"
       />
 
       {/* Hero */}

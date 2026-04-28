@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
-import SEO from "@/components/SEO";
+import SEOHead from "@/components/SEOHead";
 import { ArrowRight, Clock, Loader2 } from "lucide-react";
 import { defaultAuthor, BlogPost as BlogPostType } from "@/data/blogPosts";
 import { useBlogPosts } from "@/hooks/useBlogPosts";
@@ -16,10 +16,10 @@ const Blog = () => {
   if (!INSIGHTS_ENABLED) {
     return (
       <Layout>
-        <SEO
+        <SEOHead
           title="Insights — Coming Soon"
           description="New insights on partner ecosystem strategy are being prepared. Check back soon."
-          path="/blog"
+          canonical="/blog"
         />
         <section className="bg-background">
           <div className="container py-32 md:py-40 text-center max-w-2xl">
@@ -56,10 +56,10 @@ const Blog = () => {
 
   return (
     <Layout>
-      <SEO
+      <SEOHead
         title="Insights — Partner Strategy & Ecosystem Development"
         description="Practical frameworks, emerging trends, and lessons from decades of building partner ecosystems. Read the latest from Shore Strategy."
-        path="/blog"
+        canonical="/blog"
       />
 
       {/* Category Navigation Bar */}

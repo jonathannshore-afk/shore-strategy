@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Layout from "@/components/Layout";
-import SEO from "@/components/SEO";
+import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import { Loader2, CheckCircle2, AlertCircle } from "lucide-react";
@@ -67,7 +67,12 @@ const Unsubscribe = () => {
 
   return (
     <Layout>
-      <SEO title="Unsubscribe | Shore Strategy" description="Manage your email subscription preferences." />
+      <SEOHead
+        title="Unsubscribe"
+        description="Manage your email subscription preferences."
+        canonical="/unsubscribe"
+        noIndex
+      />
       <div className="min-h-[60vh] flex items-center justify-center px-6 py-20">
         <div className="max-w-md w-full bg-card border border-border rounded-lg shadow-sm p-8 text-center">
           {status === "loading" && (

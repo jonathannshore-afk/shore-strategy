@@ -5,7 +5,7 @@ import headshot from "@/assets/jonathan-headshot.jpeg";
 import logoServicenow from "@/assets/logo-servicenow.svg";
 import logoLumen from "@/assets/logo-lumen.png";
 import Layout from "@/components/Layout";
-import SEO from "@/components/SEO";
+import SEOHead from "@/components/SEOHead";
 
 
 
@@ -58,35 +58,29 @@ const whatIDo = [
 const Index = () => {
   return (
     <Layout>
-      <SEO
+      <SEOHead
         title="Partner Ecosystem Strategist"
         description="Jonathan Shore helps B2B technology companies build, fix, and scale partner ecosystems that drive measurable revenue growth. 15+ years at Salesforce, ServiceNow, and Lumen."
-        path="/"
-      />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ProfessionalService",
-            name: "Shore Strategy",
-            description:
-              "Partner ecosystem strategy and operations consulting for B2B technology companies.",
-            founder: {
-              "@type": "Person",
-              name: "Jonathan Shore",
-              jobTitle: "Partner Ecosystem Strategist",
-              url: "https://www.linkedin.com/in/jonathan-shore/",
-            },
-            url: "https://shore-strategy.com",
-            serviceType: [
-              "Partner Strategy Consulting",
-              "GTM Planning",
-              "Revenue Acceleration",
-              "Ecosystem Development",
-            ],
-          }),
+        canonical="/"
+        schemaJson={{
+          "@context": "https://schema.org",
+          "@type": "ProfessionalService",
+          name: "Shore Strategy",
+          description:
+            "Partner ecosystem strategy and operations consulting for B2B technology companies.",
+          founder: {
+            "@type": "Person",
+            name: "Jonathan Shore",
+            jobTitle: "Partner Ecosystem Strategist",
+            url: "https://www.linkedin.com/in/jonathan-shore/",
+          },
+          url: "https://shore-strategy.com",
+          serviceType: [
+            "Partner Strategy Consulting",
+            "GTM Planning",
+            "Revenue Acceleration",
+            "Ecosystem Development",
+          ],
         }}
       />
 

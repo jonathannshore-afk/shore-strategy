@@ -11,7 +11,7 @@ import headshot from "@/assets/jonathan-headshot.jpeg";
 import logoSalesforce from "@/assets/logo-salesforce.png";
 import logoServicenow from "@/assets/logo-servicenow.png";
 import logoLumen from "@/assets/logo-lumen.png";
-import SEO from "@/components/SEO";
+import SEOHead from "@/components/SEOHead";
 import StatsMarquee from "@/components/StatsMarquee";
 
 const experience = [
@@ -123,12 +123,12 @@ const About = () => {
 
   return (
     <Layout>
-      <SEO
+      <SEOHead
         title="About Jonathan Shore"
         description="15+ years leading partner ecosystems at Salesforce, ServiceNow, and Lumen Technologies. Learn about Jonathan Shore's background, experience, and approach."
-        path="/about"
+        canonical="/about"
         type="profile"
-        jsonLd={personJsonLd}
+        schemaJson={personJsonLd}
       />
 
       {/* Hero — Photo right, intro left + logos */}
