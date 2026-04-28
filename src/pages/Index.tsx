@@ -268,7 +268,7 @@ const Index = () => {
           </h2>
           <div className="font-body text-foreground/80 leading-relaxed space-y-4 text-[15px] md:text-base">
             <p>
-              Many growing technology companies need the strategy, program design, and executive presence of a senior partnerships leader — but not always as a full-time hire. That's the gap I exist to close.
+              Most B2B technology companies need the strategy, program design, and executive presence of a senior partnerships leader — but a $400K+ full-time hire isn't always the right answer. That's the gap I exist to close. I embed 1-2 days a week, bring the same operator experience, and cost a fraction of the full-time alternative.
             </p>
             <p>
               I'm not a career consultant who has read about partner ecosystems. I've built them, scaled them, and turned them around — with full P&L ownership and board-level accountability. The work I do for clients today is the same work I did as an operator. The only thing that's changed is who signs the contract.
