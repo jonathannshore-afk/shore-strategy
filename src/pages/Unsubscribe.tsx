@@ -67,7 +67,12 @@ const Unsubscribe = () => {
 
   return (
     <Layout>
-      <SEOHead title="Unsubscribe | Shore Strategy" description="Manage your email subscription preferences." />
+      <SEOHead
+        title="Unsubscribe"
+        description="Manage your email subscription preferences."
+        canonical="/unsubscribe"
+        noIndex
+      />
       <div className="min-h-[60vh] flex items-center justify-center px-6 py-20">
         <div className="max-w-md w-full bg-card border border-border rounded-lg shadow-sm p-8 text-center">
           {status === "loading" && (
