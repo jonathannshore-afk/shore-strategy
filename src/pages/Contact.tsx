@@ -130,7 +130,7 @@ const Contact = () => {
             Let's <span className="text-gold">Connect</span>
           </h1>
           <p className="font-body text-lg text-primary-foreground/70 max-w-2xl">
-            Whether you're exploring fractional leadership, a strategic project, or just want to exchange ideas — I'd love to hear from you.
+            I work with B2B technology companies to build, fix, and scale partner ecosystems — as a fractional leader, project partner, or strategic advisor.
           </p>
         </div>
       </section>
@@ -141,14 +141,7 @@ const Contact = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-stretch">
             {/* Summary */}
             <div className="flex flex-col justify-center">
-              <h2 className="font-display text-3xl font-bold text-foreground mb-4">How I Can Help</h2>
-              <p className="font-body text-muted-foreground leading-relaxed mb-4">
-                I partner with B2B SaaS and enterprise technology companies to build, scale, and operationalize partner ecosystems. With deep expertise in strategic alliances, channel programs, and ecosystem go-to-market, I help organizations turn partnerships into a measurable growth engine.
-              </p>
-              <p className="font-body text-muted-foreground leading-relaxed mb-6">
-                Whether you need fractional leadership, a strategic assessment, or advisory support — let's talk. Pick a time that works for you, no commitment required.
-              </p>
-              <ul className="space-y-3 border-t border-border/60 pt-6">
+              <ul className="space-y-3">
                 <li className="flex items-start gap-3 font-body text-sm text-foreground/80">
                   <span className="text-gold font-display text-base leading-none mt-0.5">✓</span>
                   <span>25-minute discovery call — no prep required</span>
