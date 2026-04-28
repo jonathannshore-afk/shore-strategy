@@ -14,7 +14,7 @@ const FlipCard = ({ front, back }: FlipCardProps) => {
       onClick={() => setFlipped(!flipped)}
     >
       <div
-        className={`relative h-full transition-transform duration-500 [transform-style:preserve-3d] ${
+        className={`relative h-full transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] [transform-style:preserve-3d] will-change-transform ${
           flipped ? "[transform:rotateY(180deg)]" : ""
         }`}
       >
