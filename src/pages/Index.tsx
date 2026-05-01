@@ -6,6 +6,7 @@ import logoServicenow from "@/assets/logo-servicenow.svg";
 import logoLumen from "@/assets/logo-lumen.png";
 import Layout from "@/components/Layout";
 import SEOHead from "@/components/SEOHead";
+import DiscoveryCallReassurance from "@/components/DiscoveryCallReassurance";
 
 
 

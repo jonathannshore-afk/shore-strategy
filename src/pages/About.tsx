@@ -174,6 +174,9 @@ const About = () => {
                   <Linkedin size={16} /> LinkedIn
                 </a>
               </div>
+              <div className="mt-4">
+                <DiscoveryCallReassurance variant="dark" />
+              </div>
             </div>
             <div className="flex justify-center md:justify-end">
               <img

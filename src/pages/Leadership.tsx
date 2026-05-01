@@ -114,6 +114,9 @@ const Leadership = () => {
           >
             <CalendarCheck size={18} /> Let's Talk
           </Link>
+          <div className="mt-5">
+            <DiscoveryCallReassurance variant="light" align="center" />
+          </div>
         </div>
       </section>
     </Layout>
