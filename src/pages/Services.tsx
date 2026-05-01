@@ -190,7 +190,7 @@ const Services = () => {
               Choose the model that fits where you are — fractional, project-based, or advisory.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto auto-rows-[460px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto auto-rows-[380px]">
             {engagementModels.map((model) => (
               <FlipCard
                 key={model.title}
