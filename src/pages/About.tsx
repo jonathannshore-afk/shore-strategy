@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { CalendarCheck, Linkedin, Handshake, BarChart3, Heart, Cog, Zap, Users } from "lucide-react";
+import DiscoveryCallReassurance from "@/components/DiscoveryCallReassurance";
 import {
   Accordion,
   AccordionContent,
