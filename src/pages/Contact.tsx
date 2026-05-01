@@ -4,6 +4,7 @@ import SEOHead from "@/components/SEOHead";
 import { Calendar, Mail, MapPin, Linkedin, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import DiscoveryCallReassurance from "@/components/DiscoveryCallReassurance";
 import { z } from "zod";
 
 const CALENDLY_URL = "https://calendly.com/jonathan-n-shore/30min";
@@ -132,6 +133,9 @@ const Contact = () => {
           <p className="font-body text-lg text-primary-foreground/70 max-w-2xl">
             I work with B2B technology companies to build, fix, and scale partner ecosystems — as a fractional leader, project partner, or strategic advisor.
           </p>
+          <div className="mt-5">
+            <DiscoveryCallReassurance variant="dark" />
+          </div>
         </div>
       </section>
 

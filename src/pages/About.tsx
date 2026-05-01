@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { CalendarCheck, Linkedin, Handshake, BarChart3, Heart, Cog, Zap, Users } from "lucide-react";
+import DiscoveryCallReassurance from "@/components/DiscoveryCallReassurance";
 import {
   Accordion,
   AccordionContent,
@@ -173,6 +174,9 @@ const About = () => {
                 >
                   <Linkedin size={16} /> LinkedIn
                 </a>
+              </div>
+              <div className="mt-4">
+                <DiscoveryCallReassurance variant="dark" />
               </div>
             </div>
             <div className="flex justify-center md:justify-end">

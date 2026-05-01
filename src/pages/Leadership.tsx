@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { CalendarCheck, Handshake, BarChart3, Heart, Cog, Zap, Users } from "lucide-react";
 import Layout from "@/components/Layout";
 import SEOHead from "@/components/SEOHead";
+import DiscoveryCallReassurance from "@/components/DiscoveryCallReassurance";
 
 const principles = [
   {
@@ -114,6 +115,9 @@ const Leadership = () => {
           >
             <CalendarCheck size={18} /> Let's Talk
           </Link>
+          <div className="mt-5">
+            <DiscoveryCallReassurance variant="light" align="center" />
+          </div>
         </div>
       </section>
     </Layout>

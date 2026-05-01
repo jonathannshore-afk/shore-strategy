@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { CalendarCheck, Linkedin } from "lucide-react";
+import DiscoveryCallReassurance from "@/components/DiscoveryCallReassurance";
 
 const Footer = () => {
   return (
@@ -23,7 +24,7 @@ const Footer = () => {
               Ready to Accelerate Your Partner Ecosystem?
             </h2>
             <p className="font-body text-sm text-primary-foreground/60 mb-6">
-              Let's discuss how a structured engagement can drive measurable partner-led revenue.
+              Start with a free 25-minute discovery call. No prep, no obligation — just a clear point of view on your ecosystem.
             </p>
             <div className="flex flex-wrap gap-4 md:justify-end">
               <Link
@@ -41,6 +42,9 @@ const Footer = () => {
               >
                 <Linkedin size={16} /> Follow on LinkedIn
               </a>
+            </div>
+            <div className="mt-4 md:flex md:justify-end">
+              <DiscoveryCallReassurance variant="dark" />
             </div>
           </div>
         </div>

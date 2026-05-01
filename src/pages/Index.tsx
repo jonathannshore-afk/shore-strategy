@@ -6,6 +6,7 @@ import logoServicenow from "@/assets/logo-servicenow.svg";
 import logoLumen from "@/assets/logo-lumen.png";
 import Layout from "@/components/Layout";
 import SEOHead from "@/components/SEOHead";
+import DiscoveryCallReassurance from "@/components/DiscoveryCallReassurance";
 
 
 
@@ -127,6 +128,12 @@ const Index = () => {
                 >
                   See How I Work <ArrowRight size={16} />
                 </Link>
+              </div>
+              <div
+                className="mt-4 animate-fade-in-up"
+                style={{ animationDelay: "0.5s" }}
+              >
+                <DiscoveryCallReassurance variant="dark" align="left" className="justify-center md:justify-start" />
               </div>
               <p
                 className="mt-6 md:mt-8 pt-5 border-t border-primary-foreground/15 font-body text-sm text-primary-foreground/60 max-w-xl text-center md:text-left animate-fade-in-up"

@@ -2,10 +2,11 @@ import { useParams, Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import SEOHead from "@/components/SEOHead";
 import { defaultAuthor } from "@/data/blogPosts";
-import { ArrowLeft, Linkedin, Loader2 } from "lucide-react";
+import { ArrowLeft, CalendarCheck, Linkedin, Loader2 } from "lucide-react";
 import ArticleContent from "@/components/blog/ArticleContent";
 import ShareToolbar from "@/components/blog/ShareToolbar";
 import LinkedInDraftCard from "@/components/blog/LinkedInDraftCard";
+import DiscoveryCallReassurance from "@/components/DiscoveryCallReassurance";
 import { useBlogPost, useBlogPosts } from "@/hooks/useBlogPosts";
 
 const BASE_URL = "https://shore-strategy.com";
@@ -243,10 +244,13 @@ const BlogPost = () => {
           </p>
           <Link
             to="/contact"
-            className="inline-block px-8 py-3 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors"
+            className="inline-flex items-center gap-2 px-8 py-3 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors"
           >
-            Get in Touch
+            <CalendarCheck size={18} /> Book a Discovery Call
           </Link>
+          <div className="mt-5">
+            <DiscoveryCallReassurance variant="dark" align="center" />
+          </div>
         </div>
       </section>
     </Layout>
