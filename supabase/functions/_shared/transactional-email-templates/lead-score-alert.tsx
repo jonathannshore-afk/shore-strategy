@@ -169,7 +169,6 @@ export const template = {
     return `[${tier}${scorePart}] New lead — ${name}${company}`
   },
   displayName: 'Lead score alert',
-  to: 'self',
   previewData: {
     leadName: 'Sarah Chen',
     leadEmail: 'sarah@acme.com',
