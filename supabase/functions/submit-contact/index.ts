@@ -256,6 +256,42 @@ Deno.serve(async (req) => {
       console.error("Google Sheets dispatch error:", e);
     }
 
+    // Fire-and-forget AI lead scoring (never blocks the response)
+    try {
+      const scoreTask = (async () => {
+        try {
+          const { data, error: invokeError } = await supabase.functions.invoke(
+            "score-lead",
+            {
+              body: {
+                submissionId,
+                name: name.trim(),
+                email: email.trim(),
+                company: company?.trim() || null,
+                message: message.trim(),
+              },
+            }
+          );
+          if (invokeError) {
+            console.error("score-lead invoke error:", invokeError);
+          } else {
+            console.log("score-lead OK", data);
+          }
+        } catch (e) {
+          console.error("score-lead failed:", e);
+        }
+      })();
+      // @ts-ignore -- EdgeRuntime is provided by Supabase Edge Runtime
+      if (typeof EdgeRuntime !== "undefined" && EdgeRuntime.waitUntil) {
+        // @ts-ignore
+        EdgeRuntime.waitUntil(scoreTask);
+      } else {
+        await scoreTask;
+      }
+    } catch (e) {
+      console.error("score-lead dispatch error:", e);
+    }
+
     return new Response(JSON.stringify({ success: true }), {
       status: 200,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
