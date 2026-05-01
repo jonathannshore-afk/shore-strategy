@@ -17,3 +17,6 @@ verify_jwt = false
 
 [functions.generate-assessment]
 verify_jwt = false
+
+[functions.score-lead]
+verify_jwt = false
