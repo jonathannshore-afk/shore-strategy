@@ -150,14 +150,11 @@ const Services = () => {
       </section>
 
       {/* Capabilities Grid */}
-      <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream">
+      <section className="px-6 py-10 md:px-12 lg:px-24 lg:py-14 bg-cream">
         <div className="container">
-          <div className="mb-10">
+          <div className="mb-8">
             <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">The Menu</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">What I Do</h2>
-            <p className="font-body text-muted-foreground mt-2 max-w-2xl">
-              The specific services I deliver across partner ecosystem strategy and execution.
-            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {capabilities.map((cap) => (
@@ -184,19 +181,16 @@ const Services = () => {
       </div>
 
       {/* Engagement Models */}
-      <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream">
+      <section className="px-6 py-10 md:px-12 lg:px-24 lg:py-14 bg-cream">
         <div className="container">
-          <div className="mb-10">
+          <div className="mb-8">
             <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">The Engagement</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Ways to Work Together</h2>
             <p className="font-body text-muted-foreground mt-2 max-w-2xl">
-              Choose the engagement model that fits where you are — fractional, project-based, or advisory.
-            </p>
-            <p className="font-body text-muted-foreground mt-2 max-w-2xl">
-              Engagements are structured as monthly retainers, fixed-fee projects, or hourly advisory sessions — scoped to fit where you are.
+              Choose the model that fits where you are — fractional, project-based, or advisory.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto auto-rows-[560px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto auto-rows-[460px]">
             {engagementModels.map((model) => (
               <FlipCard
                 key={model.title}
@@ -205,7 +199,6 @@ const Services = () => {
                     <h3 className="font-display text-lg font-semibold text-foreground mb-1">{model.title}</h3>
                     <p className="font-body text-xs text-muted-foreground/70 mb-3">{model.timeline}</p>
                     <p className="font-body text-muted-foreground text-sm leading-relaxed mb-4">{model.desc}</p>
-                    <p className="font-body text-xs text-gold font-medium uppercase tracking-wider mb-3 leading-relaxed">{model.bestFor}</p>
                     <ul className="space-y-1">
                       {model.commercial.map((item, i) => (
                         <li key={i} className="font-body text-xs text-muted-foreground flex gap-2">
@@ -229,19 +222,11 @@ const Services = () => {
                         </li>
                       ))}
                     </ul>
-                    <p className="font-body text-xs text-gold font-medium uppercase tracking-wider mb-1">Key Outcomes</p>
-                    <ul className="space-y-1 mb-3">
+                    <p className="font-body text-xs text-gold font-medium uppercase tracking-wider mb-1">What You Get</p>
+                    <ul className="space-y-1">
                       {model.outcomes.map((item, i) => (
                         <li key={i} className="font-body text-xs text-primary-foreground/70 flex gap-2">
                           <span className="text-gold shrink-0">→</span>{item}
-                        </li>
-                      ))}
-                    </ul>
-                    <p className="font-body text-xs text-gold font-medium uppercase tracking-wider mb-1">Fee Structure</p>
-                    <ul className="space-y-1">
-                      {model.feeStructure.map((item, i) => (
-                        <li key={i} className="font-body text-xs text-primary-foreground/70 flex gap-2">
-                          <span className="text-gold shrink-0">•</span>{item}
                         </li>
                       ))}
                     </ul>
