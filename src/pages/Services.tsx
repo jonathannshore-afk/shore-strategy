@@ -144,47 +144,16 @@ const Services = () => {
             How I <span className="text-gold">Help</span>
           </h1>
           <p className="font-body text-lg text-primary-foreground/70 max-w-2xl">
-            A clear menu of services and flexible ways to engage.
+            Flexible ways to engage, with clear outcomes inside the work.
           </p>
         </div>
       </section>
-
-      {/* Capabilities Grid */}
-      <section className="px-6 py-10 md:px-12 lg:px-24 lg:py-14 bg-cream">
-        <div className="container">
-          <div className="mb-8">
-            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">The Menu</p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">What I Do</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {capabilities.map((cap) => (
-              <div
-                key={cap.title}
-                className="bg-card p-5 rounded-lg border border-border hover:shadow-lg hover:border-gold/30 transition-all group"
-              >
-                <cap.icon className="text-gold mb-3" size={32} strokeWidth={1.5} />
-                <h3 className="font-display text-lg font-semibold text-foreground mb-2">{cap.title}</h3>
-                <p className="font-body text-sm text-muted-foreground leading-relaxed">{cap.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="bg-cream">
-        <div className="container px-6 md:px-12 lg:px-24 flex items-center gap-4 py-2">
-          <span className="block h-px flex-1 bg-gold/40" />
-          <span className="block w-2 h-2 rotate-45 bg-gold/60" />
-          <span className="block h-px flex-1 bg-gold/40" />
-        </div>
-      </div>
 
       {/* Engagement Models */}
       <section className="px-6 py-10 md:px-12 lg:px-24 lg:py-14 bg-cream">
         <div className="container">
           <div className="mb-8">
-            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">The Engagement</p>
+            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Start Here</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Ways to Work Together</h2>
             <p className="font-body text-muted-foreground mt-2 max-w-2xl">
               Choose the model that fits where you are — fractional, project-based, or advisory.
@@ -246,6 +215,41 @@ const Services = () => {
           </div>
         </div>
       </section>
+
+      {/* Divider */}
+      <div className="bg-cream">
+        <div className="container px-6 md:px-12 lg:px-24 flex items-center gap-4 py-2">
+          <span className="block h-px flex-1 bg-gold/40" />
+          <span className="block w-2 h-2 rotate-45 bg-gold/60" />
+          <span className="block h-px flex-1 bg-gold/40" />
+        </div>
+      </div>
+
+      {/* Capabilities Grid */}
+      <section className="px-6 py-10 md:px-12 lg:px-24 lg:py-14 bg-cream">
+        <div className="container">
+          <div className="mb-8">
+            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">What's Included</p>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Inside the Work</h2>
+            <p className="font-body text-muted-foreground mt-2 max-w-2xl">
+              The capabilities I bring to every engagement.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {capabilities.map((cap) => (
+              <div
+                key={cap.title}
+                className="bg-card p-5 rounded-lg border border-border hover:shadow-lg hover:border-gold/30 transition-all group"
+              >
+                <cap.icon className="text-gold mb-3" size={32} strokeWidth={1.5} />
+                <h3 className="font-display text-lg font-semibold text-foreground mb-2">{cap.title}</h3>
+                <p className="font-body text-sm text-muted-foreground leading-relaxed">{cap.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
 
       {/* FAQ */}
       <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream border-t border-gold/20">
