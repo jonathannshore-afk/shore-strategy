@@ -1,49 +1,63 @@
-## Highlight "Free, no-obligation discovery call" across the site
+# Simplify the Services Page
 
-Right now the only place "no commitment" / "no prep" appears is the Contact page checklist. Everywhere else, the CTA just says "Book a Call" or "Let's Talk" with no reassurance. Add a consistent **"Free 25-minute discovery call · No obligation"** microcopy line directly under the primary CTA on every page that pushes to `/contact`, and tighten a few CTA blurbs to lead with the same message.
+The page currently reads dense: 6 capability cards with 2-line descriptions, 3 flip cards each carrying ~14 bullets across front + back, and a 6-question FAQ. Visitors meeting you at a networking event will skim, not read. The goal is to cut word count by roughly half while preserving the structure and information architecture.
 
-### Reusable pattern
+## What changes
 
-Wherever there's a primary "Book a Call" / "Book a Discovery Call" / "Let's Talk" button that links to `/contact`, render a small reassurance line **immediately below the button**:
+### 1. Hero — leave as-is
+Already tight (one line). No change.
 
-```
-Free 25-minute discovery call · No prep required · No obligation
-```
+### 2. "What I Do" capabilities grid — trim descriptions
+Keep all 6 capabilities (the grid is scannable), but shorten each description to a single, punchy line. Examples:
 
-Styling: `font-body text-xs uppercase tracking-[0.15em] text-primary-foreground/50` on dark sections, `text-muted-foreground` on cream sections. Gold separator dots already match brand.
+- **Partner Strategy** — "Ecosystem vision and the plan to execute it."
+- **Route-to-Market Build** — "The right partner archetypes, activated for pipeline."
+- **Partner Program Design** — "Program architecture, incentives, and commercial frameworks."
+- **Partner Org Transformation** — "Roles, structure, and operating model built for scale."
+- **Rhythm of the Business** — "Operating cadences, QBRs, and forecasting discipline."
+- **Annual Planning** — "Comp, territory, quota, and partner strategy aligned to growth goals."
 
-### Page-by-page changes
+Also remove the section subhead paragraph ("The specific services I deliver…") — the H2 plus one-liners speak for themselves.
 
-1. **Home — `src/pages/Index.tsx` (hero, ~line 122)**
-   - Keep button: "Book a Discovery Call".
-   - Add reassurance line below the two CTA buttons (above the existing "For revenue and partnership leaders…" tagline).
+### 3. Engagement Models flip cards — major simplification
+This is the heaviest section. Two moves:
 
-2. **Footer — `src/components/Footer.tsx` (right-side CTA block)**
-   - Replace the current line "Let's discuss how a structured engagement can drive measurable partner-led revenue." with: **"Start with a free 25-minute discovery call. No prep, no obligation — just a clear point of view on your ecosystem."**
-   - Keep the "Book a Call" button as-is.
+**a. Cut the duplicated intro.** Today there are two paragraphs under the H2 saying nearly the same thing. Keep only:
+> "Choose the model that fits where you are — fractional, project-based, or advisory."
 
-3. **Contact page hero — `src/pages/Contact.tsx` (~line 130)**
-   - Add a small gold pill / line under the hero subheading: **"Free 25-minute discovery call · No obligation"** so the reassurance is visible above the fold before users scroll to the checklist.
+**b. Slim each flip card.** Front side currently has: title, timeline, 2-sentence description, "best for" line in caps, and 3 commercial bullets. Back side then repeats the title and adds 3 more bulleted lists (audience, outcomes, fee structure) — 10–12 bullets total. That's where the wall-of-text feeling comes from.
 
-4. **About — `src/pages/About.tsx` (~line 166)**
-   - Add the reassurance line under the "Book a Call" / LinkedIn button row (dark navy section, so use the light-on-dark variant).
+Proposed front (compact):
+- Title + timeline
+- One-sentence description (cut to ~20 words)
+- 3 short bullets: "Best for", "Commitment", "Structure"
 
-5. **Leadership — `src/pages/Leadership.tsx` (~line 115, "The Bottom Line" CTA)**
-   - Add the reassurance line below the "Let's Talk" button (cream section, muted-foreground variant).
+Proposed back (focused):
+- "Who it's for" — 3 bullets
+- "What you get" — 3–4 bullets (merging the old "outcomes" list, dropping "fee structure" since it's already on the front)
 
-6. **BlogPost — `src/pages/BlogPost.tsx` (~line 248, "Need Help With Your Partner Strategy?" CTA)**
-   - Change button label from "Get in Touch" → **"Book a Discovery Call"** (with `CalendarCheck` icon, matching the rest of the site).
-   - Add the reassurance line below the button.
+Net effect: roughly 40% fewer words per card, same information shape, much easier to flip through.
 
-7. **Blog index — `src/pages/Blog.tsx` (~line 40)**
-   - Leave as-is (it's a small inline "Get in touch" link, not a primary CTA — adding microcopy here would feel noisy).
+Also reduce the card row height from `auto-rows-[560px]` to around `auto-rows-[460px]` to match the lighter content.
 
-### Optional small refactor
+### 4. FAQ — cut from 6 questions to 4
+Drop the two that overlap most with content already on the page:
+- "What does a fractional engagement actually look like week-to-week?" (covered by the flip card back)
+- "What do you mean by 'fit' on the engagement cards?" (covered once cards are simplified)
 
-If you'd like, extract the reassurance line into a tiny `<DiscoveryCallReassurance variant="dark" | "light" />` component in `src/components/` so the wording stays in sync if you tweak it later. Recommended but not required — six call sites is the threshold where a shared component starts to pay off.
+Keep: how to choose, typical length, can engagements evolve, industries served. Tighten each answer to 2–3 sentences max.
 
-### What stays the same
+### 5. Section spacing
+With less text, tighten vertical padding on the capabilities and engagement sections from `py-12 lg:py-16` to `py-10 lg:py-14` so the page doesn't feel sparse.
 
-- All button labels except BlogPost (which currently says "Get in Touch" — odd outlier).
-- Calendly URL, scheduler embed, form, layout, colors, fonts.
-- Header "Let's Talk" nav button (it's a nav element, not a hero CTA — adding microcopy would clutter the header).
+## Out of scope
+- No changes to colors, fonts, icons, layout grid, or routing.
+- No changes to the global footer CTA or DiscoveryCallReassurance component.
+- Capability count stays at 6 and engagement models stay at 3 — only copy and card density change.
+
+## Technical notes
+- All edits are confined to `src/pages/Services.tsx`: the `capabilities`, `engagementModels`, and `faqs` arrays plus the JSX paragraphs and the `auto-rows-[560px]` utility.
+- `FlipCard` component itself doesn't need changes — it already handles arbitrary children.
+
+## Expected outcome
+Word count on the page drops roughly 45–50%. The structure (Menu → Engagement → FAQ) stays identical, so SEO and internal links are unaffected. Skim-readers get the gist in one scroll; anyone wanting depth still has the flip-card backs and FAQ.
