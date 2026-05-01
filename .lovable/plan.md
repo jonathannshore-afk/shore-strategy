@@ -1,67 +1,143 @@
-## Goal
-Make the positioning feel inclusive and confident — without disqualifying prospects by company size or talking down to senior buyers about their own titles.
 
----
+# Lead Scoring for Contact Form Submissions
 
-## Your two asks
+## What this does
 
-### 1. Drop the sales-volume / ARR gating
-**Where it appears:**
-- `src/pages/Index.tsx` line 277 — *"Most companies under $250M ARR can't justify a $400K+ CRO of Partnerships…"*
-- `src/pages/Index.tsx` line 159 — hero meta strip ends with *"$1.6B ARR Ecosystems"* (this one is about *your* experience, not gating clients — recommend keeping)
+Every contact form submission gets scored by AI on two axes — **Fit** (does this look like your ICP?) and **Intent** (is this a serious, specific ask?) — within seconds of submit. The score, tier, and reasoning are:
 
-**Change:** Rewrite the "Why Fractional, Why Now" paragraph to frame the gap by *need and stage*, not revenue band.
+1. Emailed to you so you see it in your inbox alongside the raw lead
+2. Pushed to a `scored_leads` table in the BD Command Center so it sits next to your pipeline
 
-Proposed replacement:
-> "Many growing technology companies need the strategy, program design, and executive presence of a senior partnerships leader — but not always as a full-time hire. That's the gap I exist to close. I bring the same operator experience I built inside Salesforce, ServiceNow, and Lumen, sized to where your business is today."
+The user submitting the form sees no change. Scoring runs in the background and never blocks or delays their submission. If scoring fails, the lead still saves and the form still works.
 
-### 2. Drop the role titles in the audience line
-**Where:** `src/pages/Index.tsx` lines 141–146 — *"For CROs, SVPs, and VP-level partnership leaders at B2B SaaS and enterprise technology companies."*
+## What you'll see
 
-You're right — anyone senior enough to hire you already knows this is for them. Listing titles can feel like you're explaining their own seat back to them.
+A new email like this lands in your inbox a few seconds after the existing contact notification:
 
-Proposed replacement:
-> "For revenue and partnership leaders at B2B technology companies building partner-led growth."
+```text
+Subject: [HOT 87] New lead — Sarah Chen, VP Partnerships at Acme
 
-Cleaner, still qualifies the buyer, no title-laddering.
+Score: 87 / 100  (Hot)
+Fit: 45/50    Intent: 42/50
 
----
+Why hot:
+- VP Partnerships at a Series C SaaS — exact ICP match
+- Specific ask: "rebuild our channel program after losing our head of partnerships"
+- Named timeline (Q1) and named budget range
+- Came in via /services page
 
-## Other things I'd recommend tightening
+Suggested next step:
+Reply within 24h. Lead with your ServiceNow channel rebuild case study.
+Offer 30-min intro call, not the assessment.
 
-### 3. Soften the "Best for" lines on Services
-`src/pages/Services.tsx` lines 44, 62, 80 — three "Best for…" blurbs on the engagement model cards.
+— Lead also pushed to BD Command Center › scored_leads
+```
 
-The phrase "Best for X" implicitly says "not for you if you're Y." On engagement-model cards that's fine in principle, but the current copy is redundant with the description right above it.
+Tiers: **Hot** (80+), **Warm** (50–79), **Cold** (<50).
 
-**Recommendation:** Replace `fit:` lines with a tighter, neutral framing — e.g.:
-- Fractional: *"When you need the seat filled, but not the full-time hire."*
-- Project-Based: *"When the initiative is clear and needs an owner."*
-- Advisory: *"When the leader is in place and wants a thinking partner."*
+## Pieces to build
 
-Same intent, less gating language.
+### 1. New `scored_leads` table in the BD Command Center
 
-### 4. Remove the $400K number from Services too
-`src/pages/Services.tsx` line 43 — Fractional description opens with *"…without a $400K executive hire."*
+You'll run this SQL once in the BD Command Center project (I'll give you the exact statement when we get there). Schema:
 
-Same logic as #1: anchoring on a specific salary number can feel transactional and may make smaller buyers self-select out, or make larger buyers question your level. Recommend:
-> "Need senior partner strategy leadership without committing to a full-time executive hire? I embed part-time as your head of partnerships — owning the strategy, the execution, and the results."
+```text
+scored_leads
+  id              uuid pk
+  source          text         -- 'shore_strategy_contact'
+  source_id       uuid         -- contact_submissions.id from Shore Strategy
+  name            text
+  email           text
+  company         text
+  raw_message     text
+  score           int          -- 0-100
+  tier            text         -- 'hot' | 'warm' | 'cold'
+  fit_score       int          -- 0-50
+  intent_score    int          -- 0-50
+  rationale       text         -- short paragraph
+  signals         jsonb        -- bulleted reasons that fired
+  suggested_next_step text
+  status          text default 'new'  -- new | contacted | qualified | dropped
+  scored_at       timestamptz default now()
+  created_at      timestamptz default now()
+```
 
-### 5. Hero subhead is solid — leave it
-*"I help B2B technology companies build, fix, and scale partner ecosystems that drive measurable revenue growth."* — this is the right level of specificity. No change needed.
+RLS: anon role gets INSERT only (so the Shore Strategy edge function can write). No public SELECT — you read from the BD Command Center admin (where you're already authenticated).
 
-### 6. Keep all the *credibility* numbers
-`$1.6B ARR managed`, `$800M+ influenced`, `19% YoY`, `2K+ partners`, `15+ years`, the Salesforce/ServiceNow/Lumen logos — these describe **you**, not gate **them**. Keep all of it.
+### 2. New edge function: `score-lead`
 
----
+Takes `{ submissionId, name, email, company, message }`. Calls Lovable AI (Gemini Flash) with a structured-output tool call so we get clean JSON back: fit_score, intent_score, rationale, signals[], suggested_next_step. Combines into a 0–100 score and tier. Then:
 
-## Files that will change
-- `src/pages/Index.tsx` — hero audience line + "Why Fractional, Why Now" paragraph
-- `src/pages/Services.tsx` — three `fit:` strings + Fractional `desc:` opener
+- Sends a transactional email to your inbox with the breakdown
+- POSTs the row to the BD Command Center `scored_leads` table using its anon key (already in `bdClient.ts`)
 
-No structural changes, no new components, no design changes. Pure copy edits.
+System prompt encodes the v1 ICP guess:
 
----
+```text
+ICP (high fit):
+- Title: VP/SVP/Chief of Partnerships, Alliances, Channel, BD,
+  Ecosystem, or CRO at SaaS / tech companies
+- Stage: Series B+ or PE-backed, 100-2000 employees
+- Founders/CEOs at sub-200 person SaaS = medium fit
 
-## Open question for you
-On #3, do you want me to use the shorter neutral lines I proposed, or remove the `fit:` field entirely from the cards? Removing it would clean up the cards visually since the descriptions already cover positioning.
+Low fit signals:
+- Agencies pitching services
+- Recruiters
+- Students / job seekers
+- Vendors selling tools to Jonathan
+- Generic "let's connect" with no business context
+
+High intent signals:
+- Names a specific problem
+- Mentions timeline, budget, or trigger event
+- References a Shore Strategy page or piece of content
+- Asks about engagement model (FTE vs fractional)
+
+Low intent signals:
+- Vague "interested in your services"
+- No company context
+- Wall of text with no clear ask
+```
+
+### 3. New transactional email template: `lead-score-alert`
+
+React Email template under `supabase/functions/_shared/transactional-email-templates/lead-score-alert.tsx`. Registered in the existing `registry.ts`. Subject auto-built from tier + score + name. Body shows the breakdown, signals, and suggested next step, with a mailto reply link pre-populated.
+
+Sent to your inbox via the existing `send-transactional-email` queue (same pipeline as the contact-confirmation email).
+
+### 4. Wire it into `submit-contact`
+
+Add a fourth fire-and-forget task block (next to Slack and Google Sheets) that invokes `score-lead` with the submission. Uses the same `EdgeRuntime.waitUntil` pattern already in the file. Failure logs but never breaks the response.
+
+### 5. Tiny addition: `recipient_email` config
+
+Hardcode your inbox address (the same one used for the existing notifications) in the `score-lead` function. We can move it to a secret later if you want.
+
+## What stays the same
+
+- Contact form UX — no change
+- `contact_submissions` schema — no change (we don't store the score on Shore Strategy's DB; it lives in BD)
+- Existing Slack notification, Sheets append, auto-reply email — all untouched
+- Rate limiting — unchanged
+- BD Command Center `blog_posts` and anything else there — untouched
+
+## Ordering and risk
+
+1. Get the BD Command Center SQL into your hands → you run it → confirm table exists
+2. Build `score-lead` function + email template + wire it in (one go)
+3. Submit a test contact form → verify email lands and BD row appears
+4. Tune the prompt against the first 5–10 real leads
+
+If step 1 isn't done yet when we deploy, the BD push will quietly fail-log but the email alert still works — so you're never blocked from seeing scores.
+
+## Open question for after v1
+
+Whether to also retroactively score the existing rows in `contact_submissions`. Easy follow-up: a one-shot script that loops through historical rows and scores them. Not in this plan.
+
+## Technical notes
+
+- Model: `google/gemini-3-flash-preview` (fast, cheap, plenty smart for this). Falls back to `google/gemini-2.5-flash` if the preview model is rate-limited.
+- Structured output via tool calling (not "return JSON" prompting) — more reliable parsing.
+- The score-lead function is `verify_jwt = false` since `submit-contact` calls it without a user token. It validates the `submissionId` exists in `contact_submissions` to prevent abuse.
+- BD push uses `bdSupabase` anon client style — I'll create a small Deno-side equivalent in the function (the existing `bdClient.ts` is browser-side).
+- All AI errors (429 rate limit, 402 credits) are caught and logged; the email alert still fires with score=null and a "scoring unavailable" note, so you never lose visibility on a lead.
