@@ -9,32 +9,32 @@ const capabilities = [
   {
     icon: Compass,
     title: "Partner Strategy",
-    desc: "Defining your ecosystem vision, selling motions, and the execution plan to bring it to life.",
+    desc: "Ecosystem vision and the plan to execute it.",
   },
   {
     icon: Target,
     title: "Route-to-Market Build",
-    desc: "Identifying and activating the right partner archetypes to drive pipeline and revenue.",
+    desc: "The right partner archetypes, activated for pipeline.",
   },
   {
     icon: Handshake,
     title: "Partner Program Design",
-    desc: "Building the program architecture, incentives, and commercial frameworks that attract and retain the right partners.",
+    desc: "Program architecture, incentives, and commercial frameworks.",
   },
   {
     icon: Users,
     title: "Partner Org Transformation",
-    desc: "Redesigning your partner organization, roles, and operating model for scale.",
+    desc: "Roles, structure, and operating model built for scale.",
   },
   {
     icon: Settings2,
     title: "Rhythm of the Business",
-    desc: "Implementing the operating cadences, QBRs, and forecasting discipline that keep the business running.",
+    desc: "Operating cadences, QBRs, and forecasting discipline.",
   },
   {
     icon: Network,
     title: "Annual Planning",
-    desc: "Aligning compensation, territory, quota, and partner strategy to your annual growth goals.",
+    desc: "Comp, territory, quota, and partner strategy aligned to growth goals.",
   },
 ];
 
@@ -42,40 +42,33 @@ const engagementModels = [
   {
     title: "Fractional Leadership",
     timeline: "Ongoing · Part-Time",
-    desc: "Need senior partner strategy leadership without committing to a full-time executive hire? I embed part-time as your head of partnerships — owning the strategy, the execution, and the results.",
-    bestFor: "BEST FOR COMPANIES THAT NEED SENIOR PARTNER STRATEGY LEADERSHIP WITHOUT THE OVERHEAD OF A FULL-TIME EXECUTIVE.",
+    desc: "I embed part-time as your head of partnerships — owning strategy, execution, and results.",
     commercial: [
-      "1-2 days per week, embedded engagement",
-      "Monthly retainer structure",
-      "6-month minimum commitment",
+      "Best for: senior leadership without a full-time hire",
+      "Commitment: 1–2 days/week, 6-month minimum",
+      "Structure: monthly retainer",
     ],
     backTitle: "Fractional Leadership",
     audience: [
       "Mid-Market & Enterprise companies",
-      "Scaling founder-led → structured partnerships",
-      "Bridging the gap with experienced leadership",
+      "Scaling founder-led to structured partnerships",
+      "Bridging the gap with senior leadership",
     ],
     outcomes: [
-      "Partner strategy & roadmap",
-      "Program launch & operationalization",
-      "Team hiring & enablement",
+      "Partner strategy and roadmap",
+      "Program launch and operationalization",
+      "Team hiring and enablement",
       "Executive-level partner engagement",
-    ],
-    feeStructure: [
-      "Monthly retainer, scoped by days per week",
-      "6-month minimum commitment",
-      "Renewed quarterly thereafter",
     ],
   },
   {
     title: "Project-Based Engagement",
     timeline: "Fixed Scope · Weeks to Months",
-    desc: "Have a specific initiative but no one to own it end-to-end? I scope, lead, and deliver defined partnership projects with clear outcomes and no scope creep.",
-    bestFor: "BEST FOR COMPANIES WITH A SPECIFIC INITIATIVE OR TRANSFORMATION IN MIND.",
+    desc: "I scope, lead, and deliver defined partnership initiatives end-to-end — no scope creep.",
     commercial: [
-      "Fixed-fee, scoped upfront",
-      "Typically 4-12 weeks depending on scope",
-      "1-month minimum commitment",
+      "Best for: a defined initiative that needs an owner",
+      "Commitment: typically 4–12 weeks",
+      "Structure: fixed fee, scoped upfront",
     ],
     backTitle: "Project-Based",
     audience: [
@@ -84,26 +77,20 @@ const engagementModels = [
       "New market or segment launches",
     ],
     outcomes: [
-      "Partner program design & launch",
-      "GTM strategy & playbooks",
+      "Partner program design and launch",
+      "GTM strategy and playbooks",
       "Operational infrastructure buildout",
-      "Partner segmentation & tiering",
-    ],
-    feeStructure: [
-      "Fixed fee, defined deliverables, no surprises",
-      "Scoped and priced before work begins",
-      "1-month minimum commitment",
+      "Partner segmentation and tiering",
     ],
   },
   {
     title: "Advisory & Coaching",
     timeline: "Scheduled Sessions · As Needed",
-    desc: "Already leading partnerships but want a seasoned thinking partner? I work directly with you on strategy, stakeholder alignment, and the decisions that matter most.",
-    bestFor: "BEST FOR EXISTING PARTNERSHIP LEADERS WHO WANT A SEASONED SOUNDING BOARD.",
+    desc: "A seasoned thinking partner for the strategy, alignment, and decisions that matter most.",
     commercial: [
-      "Scheduled sessions, flexible cadence",
-      "Minimum 5 hours per month",
-      "3-month minimum commitment",
+      "Best for: leaders who want a sounding board",
+      "Commitment: 5 hrs/month minimum, 3-month term",
+      "Structure: hourly or monthly retainer",
     ],
     backTitle: "Advisory & Coaching",
     audience: [
@@ -113,14 +100,9 @@ const engagementModels = [
     ],
     outcomes: [
       "Strategic sounding board",
-      "Board & exec presentation prep",
+      "Board and exec presentation prep",
       "Partner negotiation guidance",
       "Leadership development",
-    ],
-    feeStructure: [
-      "Hourly or monthly retainer",
-      "Minimum 5 hours per month",
-      "3-month minimum commitment",
     ],
   },
 ];
@@ -129,27 +111,19 @@ const engagementModels = [
 const faqs = [
   {
     q: "How do I know if fractional or project-based is right for us?",
-    a: "Fractional is the right fit when you need an ongoing senior partnerships leader in the seat — owning strategy, execution, and team leadership over time — but the role doesn't yet justify a full-time hire. Project-based is the right fit when the work is well-defined and time-bound: a program launch, a partner segmentation, a GTM playbook, or a post-M&A integration. If you're not sure, that's usually a sign the first conversation should be about scoping, not engagement model.",
-  },
-  {
-    q: "What does a fractional engagement actually look like week-to-week?",
-    a: "I embed as your head of partnerships on a part-time basis — typically a set number of days per week or month. That includes owning the partner strategy, running the operating cadence (pipeline reviews, QBRs, forecasting), engaging directly with priority partners, and developing the team. You get an executive in the seat, not an advisor on the sidelines.",
+    a: "Fractional fits when you need an ongoing leader in the seat but the role doesn't yet justify a full-time hire. Project-based fits when the work is well-defined and time-bound — a launch, a segmentation, a post-M&A integration. If you're unsure, the first conversation should be about scoping.",
   },
   {
     q: "How long do engagements typically run?",
-    a: "Fractional engagements are ongoing and usually start with a 3–6 month initial term, then continue as long as it's creating value. Project-based engagements are fixed scope, typically running anywhere from a few weeks to a few months depending on the initiative. Advisory and coaching is usually scheduled sessions — monthly or as needed — with no fixed end date.",
-  },
-  {
-    q: "What do you mean by \"fit\" on the engagement cards?",
-    a: "\"Fit\" is shorthand for the situation each model is built for — not a gate. Fractional fits when you need leadership in the seat. Project-based fits when there's a clear initiative that needs an owner. Advisory fits when a leader is already in place and wants a thinking partner. Most clients land cleanly in one of those, but the right answer sometimes blends two — and that's worth a conversation.",
+    a: "Fractional engagements start with a 3–6 month term and continue as long as they're creating value. Project-based runs a few weeks to a few months. Advisory is scheduled monthly or as needed, with no fixed end date.",
   },
   {
     q: "Can engagements evolve over time?",
-    a: "Yes — and they often do. A project-based engagement can extend into fractional leadership if the work expands. A fractional engagement can shift to advisory once a full-time leader is hired and ramped. The model is designed to match where the business is, not lock you into a structure that no longer fits.",
+    a: "Yes — often. A project can extend into fractional leadership; a fractional engagement can shift to advisory once a full-time leader is ramped. The model matches where the business is.",
   },
   {
     q: "Do you work with companies outside B2B technology?",
-    a: "My deepest experience is in B2B technology — SaaS, cloud, infrastructure, and enterprise software — where partner ecosystems are core to the growth motion. The frameworks travel to adjacent industries with strong channel or alliance components, but B2B tech is where I add the most leverage fastest.",
+    a: "My deepest experience is B2B technology — SaaS, cloud, infrastructure, enterprise software. The frameworks travel to adjacent industries with strong channel or alliance components, but B2B tech is where I add leverage fastest.",
   },
 ];
 
