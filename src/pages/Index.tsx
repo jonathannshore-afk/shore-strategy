@@ -123,7 +123,7 @@ const Index = () => {
                   <CalendarCheck size={18} /> Book a Discovery Call
                 </Link>
                 <Link
-                  to="/services"
+                  to="/how-i-work"
                   className="inline-flex items-center gap-2 px-8 py-3.5 border border-primary-foreground/30 text-primary-foreground font-body font-semibold rounded hover:border-gold hover:text-gold transition-colors"
                 >
                   See How I Work <ArrowRight size={16} />
