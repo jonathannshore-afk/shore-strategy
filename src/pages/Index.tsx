@@ -402,6 +402,107 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Divider */}
+      <div className="bg-cream">
+        <div className="container px-6 md:px-12 lg:px-24 flex items-center gap-4 py-2">
+          <span className="block h-px flex-1 bg-gold/40" />
+          <span className="block w-2 h-2 rotate-45 bg-gold/60" />
+          <span className="block h-px flex-1 bg-gold/40" />
+        </div>
+      </div>
+
+      {/* See It In Practice */}
+      <section className="bg-cream py-14 md:py-20">
+        <div className="container">
+          <div className="mb-10 max-w-2xl">
+            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Go Deeper</p>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
+              See It In Practice
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {exploreCards.map((card) => (
+              <Link
+                key={card.to}
+                to={card.to}
+                className="group p-6 md:p-7 rounded-lg border border-border bg-card hover:border-gold/60 hover:shadow-md transition-all flex flex-col"
+              >
+                <div className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center mb-5">
+                  <card.icon className="text-gold" size={24} strokeWidth={1.5} />
+                </div>
+                <h3 className="font-display text-xl font-semibold text-foreground mb-3">
+                  {card.title}
+                </h3>
+                <p className="font-body text-muted-foreground leading-relaxed text-sm flex-1">
+                  {card.description}
+                </p>
+                <span className="mt-5 inline-flex items-center gap-1.5 font-body text-sm font-semibold text-gold group-hover:gap-2.5 transition-all">
+                  {card.cta}
+                  <ArrowRight size={14} />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Latest from the Blog */}
+      {latestPosts.length > 0 && (
+        <>
+          <div className="bg-cream">
+            <div className="container px-6 md:px-12 lg:px-24 flex items-center gap-4 py-2">
+              <span className="block h-px flex-1 bg-gold/40" />
+              <span className="block w-2 h-2 rotate-45 bg-gold/60" />
+              <span className="block h-px flex-1 bg-gold/40" />
+            </div>
+          </div>
+          <section className="bg-cream pb-16 md:pb-24">
+            <div className="container">
+              <div className="mb-8 flex items-end justify-between gap-4 flex-wrap max-w-5xl mx-auto">
+                <div>
+                  <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Latest Writing</p>
+                  <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
+                    From the Blog
+                  </h2>
+                </div>
+                <Link
+                  to="/blog"
+                  className="inline-flex items-center gap-1.5 font-body text-sm font-semibold text-gold hover:text-gold-dark transition-colors"
+                >
+                  View all posts
+                  <ArrowRight size={14} />
+                </Link>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                {latestPosts.map((post) => (
+                  <Link
+                    key={post.slug}
+                    to={`/blog/${post.slug}`}
+                    className="group p-6 md:p-7 rounded-lg border border-border bg-card hover:border-gold/60 hover:shadow-md transition-all flex flex-col"
+                  >
+                    <div className="flex items-center gap-3 mb-3 font-body text-xs uppercase tracking-[0.15em] text-muted-foreground">
+                      <span className="text-gold">{post.category}</span>
+                      <span className="text-gold/50">·</span>
+                      <span>{post.readTime}</span>
+                    </div>
+                    <h3 className="font-display text-xl md:text-2xl font-semibold text-foreground mb-3 group-hover:text-gold transition-colors">
+                      {post.title}
+                    </h3>
+                    <p className="font-body text-muted-foreground leading-relaxed text-sm flex-1">
+                      {post.excerpt}
+                    </p>
+                    <span className="mt-5 inline-flex items-center gap-1.5 font-body text-sm font-semibold text-gold group-hover:gap-2.5 transition-all">
+                      Read article
+                      <ArrowRight size={14} />
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        </>
+      )}
+
     </Layout>
   );
 };
