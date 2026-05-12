@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, CalendarCheck, TrendingDown, Wrench, Unplug, Layers, Rocket, LineChart } from "lucide-react";
+import { Helmet } from "react-helmet-async";
+import { ArrowRight, CalendarCheck, TrendingDown, Wrench, Unplug, Layers, Rocket, LineChart, Award, Compass, BookOpen } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import headshot from "@/assets/jonathan-headshot.jpeg";
 import logoServicenow from "@/assets/logo-servicenow.svg";
@@ -7,6 +8,7 @@ import logoLumen from "@/assets/logo-lumen.png";
 import Layout from "@/components/Layout";
 import SEOHead from "@/components/SEOHead";
 import DiscoveryCallReassurance from "@/components/DiscoveryCallReassurance";
+import { useBlogPosts } from "@/hooks/useBlogPosts";
 
 
 
@@ -56,9 +58,38 @@ const whatIDo = [
   },
 ];
 
+const exploreCards = [
+  {
+    icon: Award,
+    title: "Case Studies",
+    description: "Real outcomes from partner programs I've built and turned around.",
+    to: "/results",
+    cta: "See the results",
+  },
+  {
+    icon: Compass,
+    title: "Leadership Philosophy",
+    description: "How I lead teams, run cadences, and operate with partners.",
+    to: "/leadership",
+    cta: "Read the philosophy",
+  },
+  {
+    icon: BookOpen,
+    title: "Field Notes",
+    description: "Writing on partner ecosystems, GTM, and operator lessons.",
+    to: "/blog",
+    cta: "Browse the blog",
+  },
+];
+
 const Index = () => {
+  const { data: blogPosts } = useBlogPosts();
+  const latestPosts = (blogPosts ?? []).slice(0, 2);
   return (
     <Layout>
+      <Helmet>
+        <link rel="preload" as="image" href={heroBg} fetchpriority="high" />
+      </Helmet>
       <SEOHead
         title="Partner Ecosystem Strategist"
         description="Jonathan Shore helps B2B technology companies build, fix, and scale partner ecosystems that drive measurable revenue growth. 15+ years at Salesforce, ServiceNow, and Lumen."
