@@ -88,7 +88,7 @@ const Index = () => {
   return (
     <Layout>
       <Helmet>
-        <link rel="preload" as="image" href={heroBg} fetchpriority="high" />
+        <link rel="preload" as="image" href={heroBg} />
       </Helmet>
       <SEOHead
         title="Partner Ecosystem Strategist"
