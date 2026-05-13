@@ -1,0 +1,14 @@
+# Shore Strategy
+
+> Jonathan Shore — Partner Ecosystem Strategist helping B2B technology companies build, fix, and scale partner ecosystems that drive measurable revenue growth.
+
+## Pages
+
+- [Home](/): Overview of Shore Strategy and Jonathan Shore's partner ecosystem advisory work.
+- [About](/about): Background, career, and approach.
+- [Services](/services): Fractional, project-based, and advisory engagement models.
+- [How I Work](/how-i-work): The 5-pillar strategic engagement methodology.
+- [Results](/results): Case studies and outcomes from past partner programs.
+- [Leadership](/leadership): Leadership philosophy and operating principles.
+- [Blog](/blog): Field notes on partner ecosystems, GTM, and operator lessons.
+- [Contact](/contact): Book a discovery call.

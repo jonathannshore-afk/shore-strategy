@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://shore-strategy.com/sitemap.xml
+Sitemap: https://shore-strategy.lovable.app/sitemap.xml
