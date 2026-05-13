@@ -57,7 +57,7 @@ const Blog = () => {
   return (
     <Layout>
       <SEOHead
-        title="Insights — Partner Strategy & Ecosystem Development"
+        title="Insights: Partner Strategy & Ecosystems"
         description="Practical frameworks, emerging trends, and lessons from decades of building partner ecosystems. Read the latest from Shore Strategy."
         canonical="/blog"
       />
