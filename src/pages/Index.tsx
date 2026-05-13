@@ -88,11 +88,11 @@ const Index = () => {
   return (
     <Layout>
       <Helmet>
-        <link rel="preload" as="image" href={heroBg} />
+        <link rel="preload" as="image" href={heroBg} fetchpriority="high" />
       </Helmet>
       <SEOHead
         title="Partner Ecosystem Strategist"
-        description="Jonathan Shore helps B2B technology companies build, fix, and scale partner ecosystems that drive measurable revenue growth. 15+ years at Salesforce, ServiceNow, and Lumen."
+        description="Jonathan Shore helps B2B tech companies build, fix, and scale partner ecosystems that drive measurable revenue. 15+ years at Salesforce & ServiceNow."
         canonical="/"
         schemaJson={{
           "@context": "https://schema.org",
