@@ -149,7 +149,8 @@ const Index = () => {
                 style={{ animationDelay: "0.45s" }}
               >
                 <Link
-                  to="/contact"
+                  to="/contact#calendly"
+                  onClick={() => trackCalendlyClick("cta_click", "/contact#calendly", { location: "hero" })}
                   className="inline-flex items-center gap-2 px-8 py-3.5 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors"
                 >
                   <CalendarCheck size={18} /> Book a Discovery Call
