@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { CalendarCheck, CheckCircle } from "lucide-react";
 import Layout from "@/components/Layout";
 import SEOHead from "@/components/SEOHead";
+import { trackCalendlyClick } from "@/lib/calendlyTracking";
 import FlipCard from "@/components/FlipCard";
 
 const pillars = [
@@ -314,7 +315,8 @@ const HowIWork = () => {
             </div>
             <div className="mt-8 pt-6 border-t border-border flex justify-center">
               <Link
-                to="/contact"
+                to="/contact#calendly"
+                onClick={() => trackCalendlyClick("cta_click", "/contact#calendly", { location: "how_i_work_page" })}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors"
               >
                 <CalendarCheck size={16} /> Book a Scoping Call

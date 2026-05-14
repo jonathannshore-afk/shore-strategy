@@ -4,6 +4,7 @@ import SEOHead from "@/components/SEOHead";
 import { Calendar, Mail, MapPin, Linkedin, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { trackCalendlyClick } from "@/lib/calendlyTracking";
 import DiscoveryCallReassurance from "@/components/DiscoveryCallReassurance";
 import { z } from "zod";
 
@@ -32,6 +33,7 @@ const Contact = () => {
     const onIframeReady = () => {
       if (calendlyRef.current?.querySelector("iframe")) {
         setCalendlyLoaded(true);
+        trackCalendlyClick("widget_loaded", "/contact", { source: "calendly_inline" });
         return true;
       }
       return false;

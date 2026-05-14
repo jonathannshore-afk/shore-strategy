@@ -4,6 +4,7 @@ import SEOHead from "@/components/SEOHead";
 import FlipCard from "@/components/FlipCard";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ArrowRight, CalendarCheck, Compass, Handshake, Network, Settings2, Target, Users } from "lucide-react";
+import { trackCalendlyClick } from "@/lib/calendlyTracking";
 
 const capabilities = [
   {
@@ -284,7 +285,8 @@ const Services = () => {
           </Accordion>
           <div className="mt-10 text-center">
             <Link
-              to="/contact"
+              to="/contact#calendly"
+              onClick={() => trackCalendlyClick("cta_click", "/contact#calendly", { location: "services_page_faq" })}
               className="inline-flex items-center gap-2 font-body text-sm text-gold hover:text-gold-dark transition-colors"
             >
               Have a different question? Get in touch
