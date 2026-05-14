@@ -14,6 +14,30 @@ export type Database = {
   }
   public: {
     Tables: {
+      calendly_clicks: {
+        Row: {
+          action: string
+          created_at: string
+          id: string
+          metadata: Json | null
+          page_path: string
+        }
+        Insert: {
+          action: string
+          created_at?: string
+          id?: string
+          metadata?: Json | null
+          page_path: string
+        }
+        Update: {
+          action?: string
+          created_at?: string
+          id?: string
+          metadata?: Json | null
+          page_path?: string
+        }
+        Relationships: []
+      }
       contact_submissions: {
         Row: {
           company: string | null
@@ -247,6 +271,10 @@ export type Database = {
           msg_id: number
           read_ct: number
         }[]
+      }
+      track_calendly_click: {
+        Args: { _action: string; _metadata?: Json; _page_path: string }
+        Returns: undefined
       }
     }
     Enums: {

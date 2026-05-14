@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { CalendarCheck, Handshake, BarChart3, Heart, Cog, Zap, Users } from "lucide-react";
 import Layout from "@/components/Layout";
 import SEOHead from "@/components/SEOHead";
+import { trackCalendlyClick } from "@/lib/calendlyTracking";
 import DiscoveryCallReassurance from "@/components/DiscoveryCallReassurance";
 
 const principles = [
@@ -110,7 +111,8 @@ const Leadership = () => {
             makes partners choose to invest alongside you. That's the standard I hold myself to.
           </p>
           <Link
-            to="/contact"
+            to="/contact#calendly"
+            onClick={() => trackCalendlyClick("cta_click", "/contact#calendly", { location: "leadership_page" })}
             className="inline-flex items-center gap-2 px-8 py-3.5 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors"
           >
             <CalendarCheck size={18} /> Let's Talk
