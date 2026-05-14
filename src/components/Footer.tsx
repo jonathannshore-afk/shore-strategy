@@ -24,7 +24,7 @@ const Footer = () => {
               Ready to Accelerate Your Partner Ecosystem?
             </h2>
             <p className="font-body text-sm text-primary-foreground/60 mb-6">
-              Start with a free 25-minute discovery call. No prep, no obligation — just a clear point of view on your ecosystem.
+              Start with a free 15-minute discovery call. No prep, no obligation — just a clear point of view on your ecosystem.
             </p>
             <div className="flex flex-wrap gap-4 md:justify-end">
               <Link

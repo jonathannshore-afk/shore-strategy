@@ -155,7 +155,7 @@ const Contact = () => {
               <ul className="space-y-3 border-t border-border/60 pt-6">
                 <li className="flex items-start gap-3 font-body text-sm text-foreground/80">
                   <span className="text-gold font-display text-base leading-none mt-0.5">✓</span>
-                  <span>25-minute discovery call — no prep required</span>
+                  <span>15-minute discovery call — no prep required</span>
                 </li>
                 <li className="flex items-start gap-3 font-body text-sm text-foreground/80">
                   <span className="text-gold font-display text-base leading-none mt-0.5">✓</span>
