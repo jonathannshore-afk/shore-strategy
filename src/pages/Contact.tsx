@@ -126,9 +126,63 @@ const Contact = () => {
   return (
     <Layout>
       <SEOHead
-        title="Contact"
-        description="Book a call or send a message to discuss your partner ecosystem strategy. Jonathan Shore is available for fractional leadership and consulting engagements."
+        title="Contact — Book a Discovery Call"
+        description="Book a 15-minute discovery call with Jonathan Shore to discuss your partner ecosystem strategy. Fractional partnerships leadership and consulting for B2B tech."
         canonical="/contact"
+        schemaJson={[
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "What happens during the 15-minute discovery call?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "We start with a quick picture of your current partner ecosystem — what's working, where revenue is getting stuck, and what outcomes you're driving toward. Jonathan shares a point of view on the highest-leverage moves. If there's a fit, you outline what a focused engagement could look like. If not, you still leave with clarity.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Who should join the call?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Revenue leaders, partnership executives, or founders building partner-led growth. If you own or influence ecosystem strategy — co-sell, channel, ISV, or alliance programs — this call is built for you.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Do I need to prepare anything?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "No prep required. Jonathan keeps these calls conversational and lightweight. Just show up ready to talk about your ecosystem — or what's missing from it.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Is there any obligation to engage?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Zero. Jonathan takes calls even when there's no immediate engagement — because ecosystems are complex and leaders often just need a clear point of view. You'll get honest input, not a sales pitch.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What are the next steps after the call?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "If the conversation clicks, Jonathan sends a short engagement proposal tailored to your stage and goals. From there, you align on scope, timeline, and the first deliverable. Most engagements kick off within one to two weeks.",
+                },
+              },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            url: "https://shore-strategy.com/contact",
+            name: "Contact Jonathan Shore — Shore Strategy",
+          },
+        ]}
       />
 
       {/* Hero */}
