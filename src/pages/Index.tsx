@@ -8,6 +8,7 @@ import logoLumen from "@/assets/logo-lumen.png";
 import Layout from "@/components/Layout";
 import SEOHead from "@/components/SEOHead";
 import DiscoveryCallReassurance from "@/components/DiscoveryCallReassurance";
+import { trackCalendlyClick } from "@/lib/calendlyTracking";
 import { useBlogPosts } from "@/hooks/useBlogPosts";
 
 
