@@ -26,7 +26,7 @@ const ExpertiseRadar = ({ variant = "dark" }: ExpertiseRadarProps) => {
     <div className="w-full max-w-[360px] mx-auto">
       <p
         className={`font-body text-xs uppercase tracking-[0.2em] text-center mb-2 ${
-          isLight ? "text-muted-foreground" : "text-primary-foreground/50"
+          isLight ? "text-muted-foreground" : "text-primary-foreground/70"
         }`}
       >
         Areas of Expertise

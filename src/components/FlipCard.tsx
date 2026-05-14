@@ -26,7 +26,7 @@ const FlipCard = ({ front, back }: FlipCardProps) => {
         {/* Back */}
         <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-navy p-5 rounded-lg border border-gold/30 flex flex-col overflow-y-auto">
           {back}
-          <p className="font-body text-xs text-primary-foreground/40 mt-auto pt-2">Click to flip back →</p>
+          <p className="font-body text-xs text-primary-foreground/70 mt-auto pt-2">Click to flip back →</p>
         </div>
       </div>
     </div>

@@ -213,7 +213,7 @@ const Blog = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded bg-navy-light border border-navy-light text-primary-foreground font-body placeholder:text-primary-foreground/40 focus:outline-none focus:border-gold transition-colors"
+              className="flex-1 px-4 py-3 rounded bg-navy-light border border-navy-light text-primary-foreground font-body placeholder:text-primary-foreground/70 focus:outline-none focus:border-gold transition-colors"
             />
             <button className="px-6 py-3 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors whitespace-nowrap">
               Subscribe

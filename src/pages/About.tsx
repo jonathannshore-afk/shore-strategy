@@ -147,7 +147,7 @@ const About = () => {
               <div className="border-t border-primary-foreground/15 mt-5 mb-5" />
 
               <div>
-                <p className="font-body text-xs uppercase tracking-[0.2em] text-primary-foreground/50 mb-3">
+                <p className="font-body text-xs uppercase tracking-[0.2em] text-primary-foreground/70 mb-3">
                   Experience Built At
                 </p>
                 <div className="flex items-center gap-8 flex-wrap">
