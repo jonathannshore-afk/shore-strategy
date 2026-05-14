@@ -30,14 +30,40 @@ function generateToken(): string {
     .join('')
 }
 
-// Auth note: this function uses verify_jwt = true in config.toml, so Supabase's
-// gateway validates the caller's JWT (anon or service_role) before the request
-// reaches this code. No in-function auth check is needed.
+// Auth note: this function uses verify_jwt = true in config.toml, but the gateway
+// only validates that the JWT is well-formed — it accepts anon JWTs too. Since the
+// anon key is public, we MUST also enforce a service_role check inside the handler
+// to prevent arbitrary internet users from triggering branded email sends.
+function isServiceRoleRequest(req: Request): boolean {
+  const auth = req.headers.get('Authorization') ?? ''
+  const token = auth.startsWith('Bearer ') ? auth.slice(7) : ''
+  if (!token) return false
+  const serviceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
+  if (token === serviceKey) return true
+  // Also accept JWTs whose payload role is service_role
+  try {
+    const payload = JSON.parse(atob(token.split('.')[1]))
+    return payload?.role === 'service_role'
+  } catch {
+    return false
+  }
+}
 
 Deno.serve(async (req) => {
   // Handle CORS preflight
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders })
+  }
+
+  // Enforce service_role — this function must never be callable by anon users.
+  if (!isServiceRoleRequest(req)) {
+    return new Response(
+      JSON.stringify({ error: 'Forbidden' }),
+      {
+        status: 403,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      }
+    )
   }
 
   const supabaseUrl = Deno.env.get('SUPABASE_URL')
@@ -95,9 +121,7 @@ Deno.serve(async (req) => {
   if (!template) {
     console.error('Template not found in registry', { templateName })
     return new Response(
-      JSON.stringify({
-        error: `Template '${templateName}' not found. Available: ${Object.keys(TEMPLATES).join(', ')}`,
-      }),
+      JSON.stringify({ error: 'Template not found' }),
       {
         status: 404,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
