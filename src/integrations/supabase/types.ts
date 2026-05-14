@@ -272,6 +272,10 @@ export type Database = {
           read_ct: number
         }[]
       }
+      track_calendly_click: {
+        Args: { _action: string; _metadata?: Json; _page_path: string }
+        Returns: undefined
+      }
     }
     Enums: {
       [_ in never]: never
