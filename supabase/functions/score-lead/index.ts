@@ -121,6 +121,22 @@ function tierFor(score: number): "hot" | "warm" | "cold" {
   return "cold";
 }
 
+// Enforce service_role — this function must never be callable by anon users.
+// verify_jwt only checks JWT validity; the public anon key passes that gate.
+function isServiceRoleRequest(req: Request): boolean {
+  const auth = req.headers.get("Authorization") ?? "";
+  const token = auth.startsWith("Bearer ") ? auth.slice(7) : "";
+  if (!token) return false;
+  const serviceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "";
+  if (token === serviceKey) return true;
+  try {
+    const payload = JSON.parse(atob(token.split(".")[1]));
+    return payload?.role === "service_role";
+  } catch {
+    return false;
+  }
+}
+
 async function callAI(userPayload: string) {
   const apiKey = Deno.env.get("LOVABLE_API_KEY");
   if (!apiKey) throw new Error("LOVABLE_API_KEY not configured");
@@ -161,6 +177,12 @@ async function callAI(userPayload: string) {
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response("ok", { headers: corsHeaders });
+  }
+  if (!isServiceRoleRequest(req)) {
+    return new Response(JSON.stringify({ error: "Forbidden" }), {
+      status: 403,
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
   }
   if (req.method !== "POST") {
     return new Response(JSON.stringify({ error: "Method not allowed" }), {
