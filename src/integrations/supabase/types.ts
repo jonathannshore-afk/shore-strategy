@@ -14,6 +14,30 @@ export type Database = {
   }
   public: {
     Tables: {
+      calendly_clicks: {
+        Row: {
+          action: string
+          created_at: string
+          id: string
+          metadata: Json | null
+          page_path: string
+        }
+        Insert: {
+          action: string
+          created_at?: string
+          id?: string
+          metadata?: Json | null
+          page_path: string
+        }
+        Update: {
+          action?: string
+          created_at?: string
+          id?: string
+          metadata?: Json | null
+          page_path?: string
+        }
+        Relationships: []
+      }
       contact_submissions: {
         Row: {
           company: string | null
