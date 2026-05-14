@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { CalendarCheck, Linkedin, Handshake, BarChart3, Heart, Cog, Zap, Users } from "lucide-react";
+import { trackCalendlyClick } from "@/lib/calendlyTracking";
 import DiscoveryCallReassurance from "@/components/DiscoveryCallReassurance";
 import {
   Accordion,
@@ -161,7 +162,8 @@ const About = () => {
 
               <div className="flex flex-wrap gap-4">
                 <Link
-                  to="/contact"
+                  to="/contact#calendly"
+                  onClick={() => trackCalendlyClick("cta_click", "/contact#calendly", { location: "about_page" })}
                   className="inline-flex items-center gap-2 px-6 py-3 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors"
                 >
                   <CalendarCheck size={16} /> Book a Call

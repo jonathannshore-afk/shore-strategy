@@ -3,7 +3,7 @@ import { supabase } from "@/integrations/supabase/client";
 export async function trackCalendlyClick(
   action: string,
   pagePath: string = window.location.pathname,
-  metadata?: Record<string, unknown>
+  metadata?: Record<string, string | number | boolean | null>
 ) {
   try {
     await supabase.rpc("track_calendly_click", {

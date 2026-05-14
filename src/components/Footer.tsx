@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { CalendarCheck, Linkedin } from "lucide-react";
+import { trackCalendlyClick } from "@/lib/calendlyTracking";
 import DiscoveryCallReassurance from "@/components/DiscoveryCallReassurance";
 
 const Footer = () => {
