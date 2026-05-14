@@ -197,7 +197,7 @@ const HowIWork = () => {
                 }
                 back={
                   <>
-                    <p className="font-body text-xs text-primary-foreground/50 mb-1">Stage {p.step}</p>
+                    <p className="font-body text-xs text-primary-foreground/70 mb-1">Stage {p.step}</p>
                     <h3 className="font-display text-base font-semibold text-primary-foreground mb-3">
                       {p.title}
                     </h3>

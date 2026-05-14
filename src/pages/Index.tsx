@@ -242,7 +242,7 @@ const Index = () => {
           </div>
         </div>
         <div className="relative z-10 container pb-8 pt-6 md:hidden">
-          <p className="font-body text-[10px] uppercase tracking-[0.2em] text-primary-foreground/50 text-center mb-4">
+          <p className="font-body text-[10px] uppercase tracking-[0.2em] text-primary-foreground/70 text-center mb-4">
             Experience Built At
           </p>
           <div className="flex items-center justify-center gap-8 flex-wrap">
