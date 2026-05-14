@@ -448,6 +448,61 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Divider */}
+      <div className="bg-cream">
+        <div className="container px-6 md:px-12 lg:px-24 flex items-center gap-4 py-2">
+          <span className="block h-px flex-1 bg-gold/40" />
+          <span className="block w-2 h-2 rotate-45 bg-gold/60" />
+          <span className="block h-px flex-1 bg-gold/40" />
+        </div>
+      </div>
+
+      {/* SEO-focused content block: Partner Ecosystem Strategy Consulting */}
+      <section className="bg-cream py-14 md:py-20">
+        <div className="container max-w-4xl">
+          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">
+            Partner Ecosystem Strategy Consulting for B2B Tech
+          </p>
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-5">
+            Fractional Partnerships Leadership That Actually Ships Revenue
+          </h2>
+          <div className="font-body text-foreground/80 leading-relaxed space-y-4 text-[15px] md:text-base">
+            <p>
+              Most B2B SaaS and enterprise technology companies don't need another <strong>partner ecosystem strategy</strong> deck — they need an operator who has built one. Jonathan Shore is a <strong>fractional partnerships leader</strong> and <strong>partner ecosystem consultant</strong> who has carried full P&amp;L ownership of $1.6B ARR ecosystems at Salesforce, ServiceNow, and Lumen Technologies.
+            </p>
+            <p>
+              The work spans <strong>channel partner strategy</strong>, ISV and co-sell motion design, alliance program architecture, partner-led <strong>go-to-market</strong> planning, deal registration, enablement, and the operating cadences that turn signed partners into measurable pipeline. No abstract frameworks — only the program design and execution infrastructure required to move partner-sourced revenue past 10% of bookings.
+            </p>
+            <p>
+              Engagements run 1–2 days a week as a fractional ecosystem leader, or as scoped projects (assessments, program design, turnaround). The math is simple: senior partner leadership at a fraction of a $400K full-time hire — with operator credibility a typical <strong>GTM strategy consultant</strong> can't match.
+            </p>
+          </div>
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <Link
+              to="/services"
+              className="px-5 py-4 rounded-lg border border-border bg-card hover:border-gold/60 transition-colors"
+            >
+              <p className="font-display text-base font-semibold text-foreground mb-1">Services</p>
+              <p className="font-body text-sm text-muted-foreground">Fractional, project, and advisory engagements.</p>
+            </Link>
+            <Link
+              to="/how-i-work"
+              className="px-5 py-4 rounded-lg border border-border bg-card hover:border-gold/60 transition-colors"
+            >
+              <p className="font-display text-base font-semibold text-foreground mb-1">Methodology</p>
+              <p className="font-body text-sm text-muted-foreground">The 5-pillar partner ecosystem framework.</p>
+            </Link>
+            <Link
+              to="/results"
+              className="px-5 py-4 rounded-lg border border-border bg-card hover:border-gold/60 transition-colors"
+            >
+              <p className="font-display text-base font-semibold text-foreground mb-1">Case Studies</p>
+              <p className="font-body text-sm text-muted-foreground">Real ecosystem outcomes and partner-sourced revenue.</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Latest from the Blog */}
       {latestPosts.length > 0 && (
         <>
