@@ -7,7 +7,7 @@ import { supabase } from "@/integrations/supabase/client";
 import DiscoveryCallReassurance from "@/components/DiscoveryCallReassurance";
 import { z } from "zod";
 
-const CALENDLY_URL = "https://calendly.com/jonathan-n-shore/30min";
+const CALENDLY_URL = "https://calendly.com/jonathan-shore-strategy/15-min-discovery-call";
 const CALENDLY_SCRIPT_SRC = "https://assets.calendly.com/assets/external/widget.js";
 
 const contactSchema = z.object({
