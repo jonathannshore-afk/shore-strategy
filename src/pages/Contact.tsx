@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/accordion";
 import { z } from "zod";
 
-const CALENDLY_URL = "https://calendly.com/jonathan-shore-strategy/15-min-discovery-call";
+const CALENDLY_URL = "https://calendly.com/jonathan-shore-strategy/30-minutes-with-jonathan";
 const CALENDLY_SCRIPT_SRC = "https://assets.calendly.com/assets/external/widget.js";
 
 const contactSchema = z.object({
@@ -127,7 +127,7 @@ const Contact = () => {
     <Layout>
       <SEOHead
         title="Contact — Book a Discovery Call"
-        description="Book a 15-minute discovery call with Jonathan Shore to discuss your partner ecosystem strategy. Fractional partnerships leadership and consulting for B2B tech."
+        description="Book a 30-minute discovery call with Jonathan Shore to discuss your partner ecosystem strategy. Fractional partnerships leadership and consulting for B2B tech."
         canonical="/contact"
         schemaJson={[
           {
@@ -136,7 +136,7 @@ const Contact = () => {
             mainEntity: [
               {
                 "@type": "Question",
-                name: "What happens during the 15-minute discovery call?",
+                name: "What happens during the 30-minute discovery call?",
                 acceptedAnswer: {
                   "@type": "Answer",
                   text: "We start with a quick picture of your current partner ecosystem — what's working, where revenue is getting stuck, and what outcomes you're driving toward. Jonathan shares a point of view on the highest-leverage moves. If there's a fit, you outline what a focused engagement could look like. If not, you still leave with clarity.",
@@ -217,7 +217,7 @@ const Contact = () => {
               <ul className="space-y-3 border-t border-border/60 pt-6">
                 <li className="flex items-start gap-3 font-body text-sm text-foreground/80">
                   <span className="text-gold font-display text-base leading-none mt-0.5">✓</span>
-                  <span>15-minute discovery call — no prep required</span>
+                  <span>30-minute discovery call — no prep required</span>
                 </li>
                 <li className="flex items-start gap-3 font-body text-sm text-foreground/80">
                   <span className="text-gold font-display text-base leading-none mt-0.5">✓</span>
@@ -263,7 +263,7 @@ const Contact = () => {
       <section className="px-6 py-10 md:px-12 lg:px-24 lg:py-12 bg-cream border-t border-border">
         <div className="container max-w-3xl">
           <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">What to Expect</p>
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6">About the 15-Minute Discovery Call</h2>
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6">About the 30-Minute Discovery Call</h2>
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="what-happens" className="border-b border-border">
               <AccordionTrigger className="font-display text-base font-semibold text-foreground hover:no-underline py-4">
