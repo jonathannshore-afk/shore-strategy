@@ -225,6 +225,45 @@ const Results = () => {
         </div>
       </section>
 
+      {/* Patterns Across the Work */}
+      <section className="px-6 py-14 md:px-12 md:py-20 lg:px-24 bg-background border-t border-border">
+        <div className="container max-w-4xl">
+          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">What the Numbers Have in Common</p>
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
+            Patterns Across the Work
+          </h2>
+          <div className="font-body text-foreground/80 leading-relaxed space-y-5 text-[15px] md:text-base">
+            <p>
+              Three companies, three different stages, three different partner motions — and the same operating playbook underneath. The headline metrics on this page weren't the goal. They were the byproduct of fixing a small number of things that most partner ecosystems get wrong.
+            </p>
+            <p>
+              In every engagement, the work started in the same place: a clear-eyed audit of what was actually generating revenue versus what was generating activity. At Lumen, that meant grading 2,000+ partners against contribution, not tier. At ServiceNow, it meant mapping GSI capability to the Top 250 accounts where pipeline was actually moving. At Salesforce, it meant building scorecards that distinguished durable partners from one-quarter spikes. The pattern: <span className="text-foreground font-semibold">no program redesign without a real diagnosis first.</span>
+            </p>
+            <p>
+              The second pattern is operational, not strategic. Strategy decks don't move pipeline — cadences do. Every turnaround above required installing the unglamorous infrastructure that makes partnerships executable: deal registration that sales actually trusts, joint account planning that survives a quarter change, QBRs that end with owners and dates, and KPI dashboards that connect partner activity to sourced and influenced revenue. Most ecosystems stall not because the strategy is wrong but because no one is running the cadence that would prove it.
+            </p>
+            <p>
+              The third pattern is cross-functional. Partner-sourced pipeline under 10% of revenue is almost always a symptom of partnerships running parallel to the business — a separate org, a separate plan, a separate set of incentives. The double-digit growth numbers above only happened after Sales, Product, and Marketing were operating from the same partner plan, with shared comp, shared accounts, and shared accountability.
+            </p>
+            <p>
+              The fourth pattern is the smallest and most important: each engagement left the company with frameworks they could keep running without me. The 19% growth at Lumen, the $1B+ influenced at ServiceNow, the $3B services ecosystem at Salesforce — all sit on top of segmentation models, planning processes, and operating rhythms still in use today. The right outcome of a fractional engagement isn't a bigger retainer. It's a partner organization that compounds after you leave.
+            </p>
+          </div>
+
+          <div className="mt-10 pt-8 border-t border-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <p className="font-body text-sm text-muted-foreground max-w-md">
+              If any of these patterns sound familiar in your own ecosystem, the first conversation is free.
+            </p>
+            <Link
+              to="/contact#calendly"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors shrink-0"
+            >
+              <CalendarCheck size={18} /> Book a Discovery Call
+            </Link>
+          </div>
+        </div>
+      </section>
+
     </Layout>
   );
 };
