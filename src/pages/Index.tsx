@@ -93,7 +93,7 @@ const Index = () => {
       </Helmet>
       <SEOHead
         title="Partner Ecosystem Strategist"
-        description="Jonathan Shore helps B2B tech companies build, fix, and scale partner ecosystems that drive measurable revenue. 15+ years at Salesforce & ServiceNow."
+        description="Fractional partner ecosystem strategist for B2B tech. Build, fix, and scale partner programs that drive measurable revenue. 15+ years operator experience."
         canonical="/"
         schemaJson={{
           "@context": "https://schema.org",
