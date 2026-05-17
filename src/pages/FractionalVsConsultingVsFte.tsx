@@ -296,6 +296,33 @@ const FractionalVsConsultingVsFte = () => {
         </div>
       </section>
 
+      {/* Mid-page CTA */}
+      <section className="bg-cream py-12 md:py-16 border-t border-gold/20">
+        <div className="container max-w-3xl text-center">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">
+            Not Sure Which Model Fits Your Situation?
+          </h2>
+          <p className="font-body text-muted-foreground mb-8 max-w-xl mx-auto">
+            Book a free strategy call. I'll tell you straight which one you actually need.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              to="/contact#calendly"
+              onClick={() => trackCalendlyClick("cta_click", "/contact#calendly", { location: "fractional_vs_page_mid_cta" })}
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors"
+            >
+              <CalendarCheck size={18} /> Book a Strategy Call
+            </Link>
+            <Link
+              to="/how-i-work"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-foreground/20 text-foreground font-body font-semibold rounded hover:border-gold hover:text-gold transition-colors"
+            >
+              See How I Work <ArrowRight size={16} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="bg-cream py-12 md:py-16 border-t border-gold/20">
         <div className="container max-w-3xl">
