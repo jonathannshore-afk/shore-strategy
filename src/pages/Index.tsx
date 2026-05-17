@@ -314,6 +314,15 @@ const Index = () => {
               I'm not a career consultant who has read about partner ecosystems. I've built them, scaled them, and turned them around — with full P&L ownership and board-level accountability. The work I do for clients today is the same work I did as an operator. The only thing that's changed is who signs the contract.
             </p>
           </div>
+          <div className="mt-8">
+            <Link
+              to="/fractional-vs-consulting-vs-fte"
+              className="inline-flex items-center gap-2 font-body text-sm text-gold hover:text-gold-dark transition-colors"
+            >
+              See how fractional compares to consulting and full-time
+              <ArrowRight size={16} />
+            </Link>
+          </div>
           </div>
         </div>
       </section>
