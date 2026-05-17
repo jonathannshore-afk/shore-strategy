@@ -108,25 +108,6 @@ const engagementModels = [
 ];
 
 
-const faqs = [
-  {
-    q: "How do I know if fractional or project-based is right for us?",
-    a: "Fractional fits when you need an ongoing leader in the seat but the role doesn't yet justify a full-time hire. Project-based fits when the work is well-defined and time-bound — a launch, a segmentation, a post-M&A integration. If you're weighing fractional against a consulting firm or a full-time hire, the comparison guide walks through it side by side. If you're unsure, the first conversation should be about scoping.",
-  },
-  {
-    q: "How long do engagements typically run?",
-    a: "Fractional engagements start with a 3–6 month term and continue as long as they're creating value. Project-based runs a few weeks to a few months. Advisory is scheduled monthly or as needed, with no fixed end date.",
-  },
-  {
-    q: "Can engagements evolve over time?",
-    a: "Yes — often. A project can extend into fractional leadership; a fractional engagement can shift to advisory once a full-time leader is ramped. The model matches where the business is.",
-  },
-  {
-    q: "Do you work with companies outside B2B technology?",
-    a: "My deepest experience is B2B technology — SaaS, cloud, infrastructure, enterprise software. The frameworks travel to adjacent industries with strong channel or alliance components, but B2B tech is where I add leverage fastest.",
-  },
-];
-
 const Services = () => {
   return (
     <Layout>
@@ -134,15 +115,6 @@ const Services = () => {
         title="Services"
         description="Partner ecosystem strategy, program design, GTM planning, and revenue acceleration. Explore how Jonathan Shore drives partner-led growth."
         canonical="/services"
-        schemaJson={{
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: faqs.map((f) => ({
-            "@type": "Question",
-            name: f.q,
-            acceptedAnswer: { "@type": "Answer", text: f.a },
-          })),
-        }}
       />
 
       {/* Hero */}
