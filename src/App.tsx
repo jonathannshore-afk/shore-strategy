@@ -7,18 +7,46 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import ScrollToTop from "@/components/ScrollToTop";
 // Home is eager (LCP route); everything else is code-split.
 import Index from "./pages/Index";
-const About = lazy(() => import("./pages/About"));
-const Services = lazy(() => import("./pages/Services"));
-const Contact = lazy(() => import("./pages/Contact"));
-const Blog = lazy(() => import("./pages/Blog"));
-const BlogPost = lazy(() => import("./pages/BlogPost"));
-const Results = lazy(() => import("./pages/Results"));
-const Leadership = lazy(() => import("./pages/Leadership"));
-const HowIWork = lazy(() => import("./pages/HowIWork"));
-const FractionalVsConsultingVsFte = lazy(() => import("./pages/FractionalVsConsultingVsFte"));
-const FAQ = lazy(() => import("./pages/FAQ"));
-const NotFound = lazy(() => import("./pages/NotFound"));
-const Unsubscribe = lazy(() => import("./pages/Unsubscribe"));
+
+// Auto-recover from stale chunk errors after a redeploy: if a dynamic import
+// fails (old hashed file no longer exists), reload the page once to fetch the
+// fresh index.html with current asset hashes.
+const RELOAD_KEY = "__lovable_chunk_reload__";
+function lazyWithRetry<T extends React.ComponentType<unknown>>(
+  factory: () => Promise<{ default: T }>
+) {
+  return lazy(async () => {
+    try {
+      return await factory();
+    } catch (err) {
+      if (typeof window !== "undefined" && !sessionStorage.getItem(RELOAD_KEY)) {
+        sessionStorage.setItem(RELOAD_KEY, "1");
+        window.location.reload();
+        // Return a never-resolving promise so React doesn't render an error
+        // before the reload completes.
+        return new Promise<{ default: T }>(() => {});
+      }
+      throw err;
+    }
+  });
+}
+if (typeof window !== "undefined") {
+  // Clear the reload flag on a successful load so future stale chunks can also recover.
+  window.addEventListener("load", () => sessionStorage.removeItem(RELOAD_KEY));
+}
+
+const About = lazyWithRetry(() => import("./pages/About"));
+const Services = lazyWithRetry(() => import("./pages/Services"));
+const Contact = lazyWithRetry(() => import("./pages/Contact"));
+const Blog = lazyWithRetry(() => import("./pages/Blog"));
+const BlogPost = lazyWithRetry(() => import("./pages/BlogPost"));
+const Results = lazyWithRetry(() => import("./pages/Results"));
+const Leadership = lazyWithRetry(() => import("./pages/Leadership"));
+const HowIWork = lazyWithRetry(() => import("./pages/HowIWork"));
+const FractionalVsConsultingVsFte = lazyWithRetry(() => import("./pages/FractionalVsConsultingVsFte"));
+const FAQ = lazyWithRetry(() => import("./pages/FAQ"));
+const NotFound = lazyWithRetry(() => import("./pages/NotFound"));
+const Unsubscribe = lazyWithRetry(() => import("./pages/Unsubscribe"));
 
 const queryClient = new QueryClient();
 
