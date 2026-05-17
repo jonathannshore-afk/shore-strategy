@@ -1,112 +1,167 @@
 ## Goal
 
-Two things, in one pass:
+New page at `/fractional-vs-consulting-vs-fte` that answers the question every prospect silently asks before booking: *"Do I hire a full-time VP, retain a Big-4 consulting firm, or bring in a fractional operator?"*
 
-1. **Homepage routing fix** — get visitors deeper into `/results`, `/leadership`, and `/blog` (currently 5, 1, and 3 views/month).
-2. **Performance** — apply the handful of fixes that move real-world numbers, after honestly reading the profile.
+Positioning: not a sales page for fractional. A **decision aid** that's honest about when each model wins — which is exactly why fractional comes out looking strong for the specific buyer profile Shore Strategy serves.
 
 ---
 
-## Part 1 — Homepage changes
-
-Today the homepage flows: Hero → Career Highlights → Why Fractional → Problems → What I Do → (footer). The only outbound CTAs are `/contact` and `/how-i-work`. `/results`, `/leadership`, and `/blog` are effectively orphaned from the home experience.
-
-### Change A — Add a "Proof in Practice" section after "What I Do"
-
-A single, scannable row of 3 cards linking to the under-trafficked pages. Reuses the existing card pattern (border, gold icon chip, navy heading, body copy) so it doesn't feel bolted on.
+## Page structure
 
 ```text
-┌─────────────────────────────────────────────────────────────────┐
-│  See It In Practice                                             │
-│                                                                 │
-│  ┌───────────────┐  ┌───────────────┐  ┌───────────────┐        │
-│  │ [icon]        │  │ [icon]        │  │ [icon]        │        │
-│  │ Case Studies  │  │ Leadership    │  │ Field Notes   │        │
-│  │ Real outcomes │  │ How I lead    │  │ Latest writing│        │
-│  │ → /results    │  │ → /leadership │  │ → /blog       │        │
-│  └───────────────┘  └───────────────┘  └───────────────┘        │
-└─────────────────────────────────────────────────────────────────┘
+┌────────────────────────────────────────────────────────────────┐
+│ HERO                                                           │
+│ Eyebrow: "Decision Guide"                                      │
+│ H1: "Fractional vs. Consulting Firm vs. Full-Time Hire"        │
+│ Sub: "Three ways to add senior partner leadership.             │
+│       Here's how to pick — written by someone who's been       │
+│       hired under all three models."                           │
+│ Meta strip: 6 min read · Updated May 2026                      │
+└────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────┐
+│ TL;DR BAND (cream, 3 short cards)                              │
+│                                                                │
+│  Hire FTE when…        Retain a firm when…   Go fractional…   │
+│  the role is           the work is a one-    when you need     │
+│  permanent, scoped     time transformation   senior judgment   │
+│  for a single          with a deck as the    in the seat, but  │
+│  company, and you      deliverable.          not 5 days/week.  │
+│  can wait 6+ months                                            │
+│  to ramp.                                                      │
+└────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────┐
+│ THE COMPARISON TABLE  (the centerpiece)                        │
+│                                                                │
+│                    Fractional   Consulting    Full-Time        │
+│                    Operator     Firm          Hire             │
+│  ────────────────────────────────────────────────────────────  │
+│  Time to value     2–4 weeks    6–10 weeks    4–6 months       │
+│  Commitment        1–2 days/wk  Project SOW   5 days/week      │
+│  Typical cost      $$           $$$$          $$$$ + equity    │
+│  Who does the      The person   Partner sells,Hired leader     │
+│  work              you hired    juniors do it (eventually)     │
+│  Operator P&L      Yes          Rarely        Yes              │
+│  experience                                                    │
+│  Stays after       Optional     No            Yes              │
+│  delivery                                                      │
+│  Ramp risk         Low          Low (on deck) High             │
+│  Best for stage    Series A–C,  Enterprise    Public co or     │
+│                    PE-backed    transform     mature scale-up  │
+│  Worst fit         Need 5       Need an       Pre-product-     │
+│                    days/week    operator      market-fit       │
+│                                 in the seat                    │
+│                                                                │
+│  Mobile: collapses to 3 stacked cards, one per column          │
+└────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────┐
+│ HONEST TRADEOFFS (3 sub-sections, ~150 words each)             │
+│                                                                │
+│ 1. Where a full-time hire wins                                 │
+│    - Permanent role, 5 days/week of attention                  │
+│    - Builds long-term team, owns equity story                  │
+│    - Right when partner revenue is core to the 3-yr plan       │
+│    - Tradeoff: $400K+ all-in, 4–6 months to ramp, real         │
+│      hiring risk if you pick wrong                             │
+│                                                                │
+│ 2. Where a consulting firm wins                                │
+│    - Big transformations with executive air cover              │
+│    - Benchmarking data across many companies                   │
+│    - Right for board-mandated change programs                  │
+│    - Tradeoff: $250K–$500K+ per project, junior consultants    │
+│      do the work, deck lands and they leave                    │
+│                                                                │
+│ 3. Where fractional wins                                       │
+│    - Senior operator in the seat, week one                     │
+│    - 1–2 days/week at a fraction of FTE cost                   │
+│    - You get the person who sold you the engagement            │
+│    - Tradeoff: not full-time, so not right when the role       │
+│      truly requires 40 hrs/week                                │
+└────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────┐
+│ DECISION TREE (visual, 4–5 yes/no nodes)                       │
+│                                                                │
+│  Do you need someone in the seat 5 days/week? ──Yes──► FTE     │
+│                  │                                             │
+│                  No                                            │
+│                  ▼                                             │
+│  Is the deliverable a strategy/deck (not execution)?           │
+│                  │                                             │
+│       ──Yes──► Consulting firm                                 │
+│                  │                                             │
+│                  No                                            │
+│                  ▼                                             │
+│  Do you need operator judgment + execution cadence?            │
+│                  │                                             │
+│       ──Yes──► Fractional                                      │
+│                                                                │
+│  Rendered as styled cards w/ connecting lines on desktop,      │
+│  stacked vertical flow on mobile. Pure CSS, no chart lib.      │
+└────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────┐
+│ FAQ — 5 questions (drives FAQPage JSON-LD)                     │
+│  1. What does a fractional partner leader actually cost?       │
+│  2. How is fractional different from advisory or coaching?     │
+│  3. Can I start fractional and convert to full-time later?     │
+│  4. Why not just hire a Big-4 firm if budget allows?           │
+│  5. When is it too early to bring anyone in?                   │
+└────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────┐
+│ CTA — navy band                                                │
+│ "Still not sure which fits? That's what the discovery call is  │
+│  for. 30 minutes, no pitch — I'll tell you straight."          │
+│ [ Book a Discovery Call ]  [ See How I Work → ]                │
+└────────────────────────────────────────────────────────────────┘
 ```
 
-- "Case Studies" → `/results` (icon: `Award` or `Trophy`)
-- "Leadership Philosophy" → `/leadership` (icon: `Compass`)
-- "Field Notes" → `/blog` (icon: `BookOpen`)
+---
 
-Each card is a clickable link with hover treatment matching the rest of the home cards.
+## On pricing — the open decision
 
-### Change B — Show the latest 2 blog posts on the homepage
+I'm proposing **qualitative `$` / `$$` / `$$$$` indicators** in the table, with **directional ranges in the prose** below it ("$400K+ all-in for FTE", "$250K–$500K+ for a firm project"). Fractional cost stays vague ("a fraction of FTE — scoped per engagement") so it routes to the discovery call.
 
-Below the new "See It In Practice" row, render a compact "Latest from the Blog" strip pulling from the existing `useBlogPosts` hook. Title, date, 1-line excerpt, "Read →". This is the highest-leverage change for `/blog` (3 views/month is essentially invisible).
+Rationale: zero numbers feels evasive; hard numbers anchor against you. Bands feel honest without committing.
 
-If `useBlogPosts` is unavailable (DB down), the section silently hides — no skeleton sprawl on the homepage.
-
-### Change C — Header nav audit (small)
-
-Confirm `/results` and `/leadership` are in the primary nav at parity with Services/About. If they're buried in a dropdown or missing on mobile, surface them. (Will check `Header.tsx` during implementation; only edit if needed.)
-
-### What I will NOT change
-
-- No new testimonials, no "Proven Results" block on home (per project memory).
-- No changes to hero copy, headshot, or stats.
-- No changes to existing card content.
+If you'd rather go fully qualitative or fully numeric, easy to flip — flag it on approval.
 
 ---
 
-## Part 2 — Performance
+## Files
 
-### Honest read of the profile
+**New**
+- `src/pages/FractionalVsConsultingVsFte.tsx` — full page, semantic tokens only
 
-The profile I just ran was against the **Lovable dev preview**, which serves unbundled ES modules through Vite + HMR. Numbers like FCP 6.6s, 75 separate script requests, and 1.4s on `@vite/client` are dev-mode artifacts — they do not represent what real visitors see on `shore-strategy.lovable.app`. Production is bundled, minified, and gzipped.
+**Edited**
+- `src/App.tsx` — lazy route at `/fractional-vs-consulting-vs-fte`
+- `public/sitemap.xml` + `scripts/generate-sitemap.ts` — add route, priority 0.8
+- `public/llms.txt` — add page entry
+- `src/pages/Services.tsx` — one inline link from "How do I know if fractional or project-based is right for us?" FAQ answer → the new page
 
-So I'll do two things:
-1. Apply the changes that are clearly worth making regardless.
-2. Re-profile against the published URL to get a real baseline before/after.
-
-### Production-relevant fixes
-
-**1. Preload the hero background image**
-The hero uses `heroBg` as a CSS `background-image`. CSS background images aren't discovered until the stylesheet parses, which delays LCP. Add `<link rel="preload" as="image" href="...">` in `index.html` (or via Helmet on `/`) for the hero JPG. Likely the single biggest LCP win.
-
-**2. Preload the headshot too**
-It's marked `fetchPriority="high"` already (good), but on slow mobile a `<link rel="preload">` shaves more. Lower priority than #1.
-
-**3. Verify hero image is sized for the web**
-Quick check of the actual byte size of `hero-bg.jpg`. If it's >300KB or >2000px wide, re-export at 1920px wide, ~80% quality. Same check for the headshot (`jonathan-headshot.jpeg`).
-
-**4. Route-level code splitting**
-`App.tsx` imports every page eagerly. Convert Blog, BlogPost, Results, Leadership, HowIWork, About, Services, Contact, Unsubscribe, NotFound to `React.lazy()` with a small Suspense fallback. Keeps the homepage bundle lean — visitors who never navigate don't pay for Contact's Calendly logic, Blog's markdown renderer, or Recharts on Results.
-
-**5. Recharts is the biggest single dep**
-`ExpertiseRadar` (Recharts) is only used on a few pages. After step 4, it stops loading on home. Confirm with a production build report.
-
-**6. Calendly script — defer until needed**
-On `/contact`, Calendly's widget script loads on mount. Already async, but on mobile we could wait until the Calendly section scrolls into view (`IntersectionObserver`). Small win, only affects `/contact`.
-
-**7. Re-measure**
-
-After the above, run `browser--performance_profile` against `https://shore-strategy.lovable.app/` and report real LCP/FCP/CLS deltas, not the dev preview.
-
-### What I will NOT do
-
-- No service worker / PWA shell — overkill for a marketing site.
-- No swapping out lucide-react — tree-shaking already handles unused icons in prod.
-- No font self-hosting yet — Google Fonts is preconnected and acceptable; revisit only if real-world LCP demands it.
+**Not edited (deliberate)**
+- `Header.tsx` — keep the top nav clean; this page is for people who already landed and are evaluating
+- Home — link from Services FAQ is enough surface for v1; can promote later if it ranks
 
 ---
 
-## Order of work
+## SEO
 
-1. Add "See It In Practice" section to `Index.tsx`.
-2. Add "Latest from the Blog" strip using `useBlogPosts`.
-3. Quick `Header.tsx` audit; surface `/results` / `/leadership` if missing.
-4. Convert non-home routes to `React.lazy` in `App.tsx`.
-5. Add hero image preload in `index.html`.
-6. Check and (if needed) re-export `hero-bg.jpg` and `jonathan-headshot.jpeg`.
-7. Re-profile production URL and report deltas.
+- `<title>`: "Fractional vs. Consulting vs. Full-Time Partner Leader" (~62 chars)
+- Meta description: "Comparing fractional, consulting firm, and full-time hire models for partner ecosystem leadership in B2B tech. Cost, time to value, and when each one wins." (~157 chars)
+- Canonical: `shore-strategy.com/fractional-vs-consulting-vs-fte`
+- JSON-LD: `Article` (with author = Jonathan Shore) **+** `FAQPage` for the 5 FAQs
+- Internal links: `/services`, `/how-i-work`, `/contact#calendly`
+- Target keywords: "fractional vs consulting", "fractional VP partnerships", "when to hire fractional executive" — long-tail, low KD, high commercial intent
 
-## Technical notes
+---
 
-- Use existing semantic tokens (`gold`, `cream`, `foreground`, `border`, `card`, `muted-foreground`) — no raw colors.
-- `useBlogPosts` already exists; reuse rather than refactor.
-- Lazy-loaded routes need a Suspense boundary in `App.tsx` wrapping `<Routes>`. Fallback should be a minimal `<div className="min-h-screen" />` to avoid layout shift.
-- Hero preload: since the JPG is imported by Vite (hashed filename), the cleanest path is a `<link rel="preload">` injected via Helmet inside `Index.tsx` using the imported `heroBg` URL — that way the hash stays correct.
+## Out of scope
+
+- Pricing calculator widget
+- Lead-magnet "download the comparison PDF" gate
+- Animated decision tree (pure CSS only)
+- Homepage hero rewrite to surface this page
