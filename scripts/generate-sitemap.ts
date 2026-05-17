@@ -25,6 +25,7 @@ const staticEntries: Entry[] = [
   { path: "/results", changefreq: "monthly", priority: "0.8", lastmod: TODAY },
   { path: "/leadership", changefreq: "monthly", priority: "0.7", lastmod: TODAY },
   { path: "/fractional-vs-consulting-vs-fte", changefreq: "monthly", priority: "0.8", lastmod: TODAY },
+  { path: "/faq", changefreq: "monthly", priority: "0.6", lastmod: TODAY },
   { path: "/blog", changefreq: "weekly", priority: "0.8", lastmod: TODAY },
   { path: "/contact", changefreq: "monthly", priority: "0.7", lastmod: TODAY },
   { path: "/unsubscribe", changefreq: "yearly", priority: "0.1", lastmod: TODAY },

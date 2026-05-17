@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { ArrowRight, CalendarCheck, Check, Minus, X } from "lucide-react";
 import Layout from "@/components/Layout";
 import SEOHead from "@/components/SEOHead";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { trackCalendlyClick } from "@/lib/calendlyTracking";
 
 const columns = [
@@ -53,29 +52,6 @@ const tradeoffs = [
   },
 ];
 
-const faqs = [
-  {
-    q: "What does a fractional partner leader actually cost?",
-    a: "Fractional engagements are scoped per company, but the structure is always a monthly retainer for one to two days per week, with a six-month minimum. The all-in cost lands well below a full-time VP and well below a typical consulting project — the exact number depends on scope, stage, and how much of the work I'm leading versus advising on. I'll quote it on the discovery call once I understand the shape of the engagement.",
-  },
-  {
-    q: "How is fractional different from advisory or coaching?",
-    a: "Advisory is a thinking partner — scheduled sessions, you do the work. Fractional is in the seat — I own outcomes, run the cadence, sit in your QBRs, and represent partnerships in your exec meetings. Both have a place. If you have a strong head of partnerships who needs a sounding board, advisory is the right shape. If the seat is empty, or the person in it needs a more senior operator alongside them, fractional fits.",
-  },
-  {
-    q: "Can I start fractional and convert to a full-time hire later?",
-    a: "Yes, and that's often the cleanest path. A common pattern: I run the function for six to nine months, build the program, hire the full-time leader, and stay on briefly to ramp them. You get senior leadership immediately, a working program, and a successor who inherits something real instead of starting from zero.",
-  },
-  {
-    q: "Why not just hire a Big-4 firm if budget allows?",
-    a: "If you need a board-ready transformation deck with benchmarking and executive air cover, a Big-4 firm is well-suited. If you need someone to run partner QBRs next Thursday, design deal registration, and sit across from your top reseller's CRO, you need an operator. Firms produce strategy. Fractional produces pipeline. Different jobs.",
-  },
-  {
-    q: "When is it too early to bring anyone in?",
-    a: "Before product-market fit, before you have a repeatable direct sales motion, and before you can name the partner archetype you actually need — it's too early. Partner ecosystems amplify what's already working. They don't fix a broken core motion. If you're not sure where you are, that's a good first conversation.",
-  },
-];
-
 const Cell = ({ value, accent }: { value: string; accent: boolean }) => {
   if (value === "Yes") return <Check className={accent ? "text-gold" : "text-foreground/70"} size={18} strokeWidth={2.5} />;
   if (value === "No") return <X className="text-muted-foreground/50" size={18} strokeWidth={2.5} />;
@@ -109,15 +85,6 @@ const FractionalVsConsultingVsFte = () => {
             },
             datePublished: "2026-05-17",
             dateModified: "2026-05-17",
-          },
-          {
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: faqs.map((f) => ({
-              "@type": "Question",
-              name: f.q,
-              acceptedAnswer: { "@type": "Answer", text: f.a },
-            })),
           },
         ]}
       />
@@ -320,28 +287,6 @@ const FractionalVsConsultingVsFte = () => {
               See How I Work <ArrowRight size={16} />
             </Link>
           </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="bg-cream py-12 md:py-16 border-t border-gold/20">
-        <div className="container max-w-3xl">
-          <div className="mb-8">
-            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">FAQ</p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Common Questions</h2>
-          </div>
-          <Accordion type="single" collapsible className="w-full">
-            {faqs.map((item, i) => (
-              <AccordionItem key={i} value={`faq-${i}`} className="border-border">
-                <AccordionTrigger className="text-left font-display text-base md:text-lg font-semibold text-foreground hover:no-underline">
-                  {item.q}
-                </AccordionTrigger>
-                <AccordionContent className="font-body text-muted-foreground text-base leading-relaxed">
-                  {item.a}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
         </div>
       </section>
 

@@ -1,10 +1,8 @@
-import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import SEOHead from "@/components/SEOHead";
 import FlipCard from "@/components/FlipCard";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { ArrowRight, CalendarCheck, Compass, Handshake, Network, Settings2, Target, Users } from "lucide-react";
-import { trackCalendlyClick } from "@/lib/calendlyTracking";
+import { Link } from "react-router-dom";
+import { ArrowRight, Compass, Handshake, Network, Settings2, Target, Users } from "lucide-react";
 
 const capabilities = [
   {
@@ -109,25 +107,6 @@ const engagementModels = [
 ];
 
 
-const faqs = [
-  {
-    q: "How do I know if fractional or project-based is right for us?",
-    a: "Fractional fits when you need an ongoing leader in the seat but the role doesn't yet justify a full-time hire. Project-based fits when the work is well-defined and time-bound — a launch, a segmentation, a post-M&A integration. If you're weighing fractional against a consulting firm or a full-time hire, the comparison guide walks through it side by side. If you're unsure, the first conversation should be about scoping.",
-  },
-  {
-    q: "How long do engagements typically run?",
-    a: "Fractional engagements start with a 3–6 month term and continue as long as they're creating value. Project-based runs a few weeks to a few months. Advisory is scheduled monthly or as needed, with no fixed end date.",
-  },
-  {
-    q: "Can engagements evolve over time?",
-    a: "Yes — often. A project can extend into fractional leadership; a fractional engagement can shift to advisory once a full-time leader is ramped. The model matches where the business is.",
-  },
-  {
-    q: "Do you work with companies outside B2B technology?",
-    a: "My deepest experience is B2B technology — SaaS, cloud, infrastructure, enterprise software. The frameworks travel to adjacent industries with strong channel or alliance components, but B2B tech is where I add leverage fastest.",
-  },
-];
-
 const Services = () => {
   return (
     <Layout>
@@ -135,15 +114,6 @@ const Services = () => {
         title="Services"
         description="Partner ecosystem strategy, program design, GTM planning, and revenue acceleration. Explore how Jonathan Shore drives partner-led growth."
         canonical="/services"
-        schemaJson={{
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: faqs.map((f) => ({
-            "@type": "Question",
-            name: f.q,
-            acceptedAnswer: { "@type": "Answer", text: f.a },
-          })),
-        }}
       />
 
       {/* Hero */}
@@ -263,36 +233,18 @@ const Services = () => {
 
       {/* FAQ */}
       <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream border-t border-gold/20">
-        <div className="container max-w-3xl">
-          <div className="mb-8">
-            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">FAQ</p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Common Questions</h2>
-            <p className="font-body text-muted-foreground mt-2">
-              Quick answers on engagement models, timelines, and how to think about fit.
-            </p>
-          </div>
-          <Accordion type="single" collapsible className="w-full">
-            {faqs.map((item, i) => (
-              <AccordionItem key={i} value={`faq-${i}`} className="border-border">
-                <AccordionTrigger className="text-left font-display text-base md:text-lg font-semibold text-foreground hover:no-underline">
-                  {item.q}
-                </AccordionTrigger>
-                <AccordionContent className="font-body text-muted-foreground text-base leading-relaxed">
-                  {item.a}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-          <div className="mt-10 text-center">
-            <Link
-              to="/contact#calendly"
-              onClick={() => trackCalendlyClick("cta_click", "/contact#calendly", { location: "services_page_faq" })}
-              className="inline-flex items-center gap-2 font-body text-sm text-gold hover:text-gold-dark transition-colors"
-            >
-              Have a different question? Get in touch
-              <ArrowRight size={16} />
-            </Link>
-          </div>
+        <div className="container max-w-3xl text-center">
+          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">FAQ</p>
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">Questions?</h2>
+          <p className="font-body text-muted-foreground mb-6">
+            Engagement models, timelines, cost, and fit — answered in one place.
+          </p>
+          <Link
+            to="/faq"
+            className="inline-flex items-center gap-2 font-body text-sm text-gold hover:text-gold-dark transition-colors"
+          >
+            Read the FAQ <ArrowRight size={16} />
+          </Link>
         </div>
       </section>
 
