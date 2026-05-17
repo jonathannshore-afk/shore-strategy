@@ -15,6 +15,7 @@ const BlogPost = lazy(() => import("./pages/BlogPost"));
 const Results = lazy(() => import("./pages/Results"));
 const Leadership = lazy(() => import("./pages/Leadership"));
 const HowIWork = lazy(() => import("./pages/HowIWork"));
+const FractionalVsConsultingVsFte = lazy(() => import("./pages/FractionalVsConsultingVsFte"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const Unsubscribe = lazy(() => import("./pages/Unsubscribe"));
 
@@ -36,6 +37,7 @@ const App = () => (
           <Route path="/why-me" element={<Navigate to="/results" replace />} />
           <Route path="/how-i-work" element={<HowIWork />} />
           <Route path="/methodology" element={<Navigate to="/how-i-work" replace />} />
+          <Route path="/fractional-vs-consulting-vs-fte" element={<FractionalVsConsultingVsFte />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/leadership" element={<Leadership />} />

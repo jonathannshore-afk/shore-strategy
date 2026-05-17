@@ -112,7 +112,7 @@ const engagementModels = [
 const faqs = [
   {
     q: "How do I know if fractional or project-based is right for us?",
-    a: "Fractional fits when you need an ongoing leader in the seat but the role doesn't yet justify a full-time hire. Project-based fits when the work is well-defined and time-bound — a launch, a segmentation, a post-M&A integration. If you're unsure, the first conversation should be about scoping.",
+    a: "Fractional fits when you need an ongoing leader in the seat but the role doesn't yet justify a full-time hire. Project-based fits when the work is well-defined and time-bound — a launch, a segmentation, a post-M&A integration. If you're weighing fractional against a consulting firm or a full-time hire, the comparison guide walks through it side by side. If you're unsure, the first conversation should be about scoping.",
   },
   {
     q: "How long do engagements typically run?",

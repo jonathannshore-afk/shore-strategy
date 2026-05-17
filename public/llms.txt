@@ -10,5 +10,6 @@
 - [How I Work](/how-i-work): The 5-pillar strategic engagement methodology.
 - [Results](/results): Case studies and outcomes from past partner programs.
 - [Leadership](/leadership): Leadership philosophy and operating principles.
+- [Fractional vs. Consulting vs. Full-Time](/fractional-vs-consulting-vs-fte): Decision guide comparing the three models for adding senior partner ecosystem leadership.
 - [Blog](/blog): Field notes on partner ecosystems, GTM, and operator lessons.
 - [Contact](/contact): Book a discovery call.
