@@ -207,56 +207,6 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Discovery Call FAQ */}
-      <section className="px-6 py-10 md:px-12 lg:px-24 lg:py-12 bg-cream border-t border-border">
-        <div className="container max-w-3xl">
-          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">What to Expect</p>
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6">About the 30-Minute Discovery Call</h2>
-          <Accordion type="single" collapsible className="w-full">
-            <AccordionItem value="what-happens" className="border-b border-border">
-              <AccordionTrigger className="font-display text-base font-semibold text-foreground hover:no-underline py-4">
-                What happens during the call?
-              </AccordionTrigger>
-              <AccordionContent className="font-body text-sm text-muted-foreground leading-relaxed pb-4">
-                We start with a quick picture of your current partner ecosystem — what's working, where revenue is getting stuck, and what outcomes you're driving toward. I'll share a point of view on the highest-leverage moves. If there's a fit, we'll outline what a focused engagement could look like. If not, you'll still leave with clarity.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="who-should-join" className="border-b border-border">
-              <AccordionTrigger className="font-display text-base font-semibold text-foreground hover:no-underline py-4">
-                Who should join?
-              </AccordionTrigger>
-              <AccordionContent className="font-body text-sm text-muted-foreground leading-relaxed pb-4">
-                Revenue leaders, partnership executives, or founders building partner-led growth. If you own or influence ecosystem strategy — co-sell, channel, ISV, or alliance programs — this call is built for you.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="prep" className="border-b border-border">
-              <AccordionTrigger className="font-display text-base font-semibold text-foreground hover:no-underline py-4">
-                Do I need to prepare anything?
-              </AccordionTrigger>
-              <AccordionContent className="font-body text-sm text-muted-foreground leading-relaxed pb-4">
-                No prep required. I keep these calls conversational and lightweight. Just show up ready to talk about your ecosystem — or what's missing from it.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="obligation" className="border-b border-border">
-              <AccordionTrigger className="font-display text-base font-semibold text-foreground hover:no-underline py-4">
-                Is there any obligation?
-              </AccordionTrigger>
-              <AccordionContent className="font-body text-sm text-muted-foreground leading-relaxed pb-4">
-                Zero. I take calls even when there's no immediate engagement — because ecosystems are complex and leaders often just need a clear point of view. You'll get honest input, not a sales pitch.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="next-steps" className="border-border">
-              <AccordionTrigger className="font-display text-base font-semibold text-foreground hover:no-underline py-4">
-                What are the next steps?
-              </AccordionTrigger>
-              <AccordionContent className="font-body text-sm text-muted-foreground leading-relaxed pb-4">
-                If the conversation clicks, I'll send a short engagement proposal tailored to your stage and goals. From there, we align on scope, timeline, and the first deliverable. Most engagements kick off within one to two weeks.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </div>
-      </section>
-
       {/* Divider */}
       <div className="bg-cream">
         <div className="container px-6 md:px-12 lg:px-24 flex items-center gap-4 py-2">
