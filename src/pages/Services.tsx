@@ -2,8 +2,7 @@ import Layout from "@/components/Layout";
 import SEOHead from "@/components/SEOHead";
 import FlipCard from "@/components/FlipCard";
 import { Link } from "react-router-dom";
-import { ArrowRight, CalendarCheck, Compass, Handshake, Network, Settings2, Target, Users } from "lucide-react";
-import { trackCalendlyClick } from "@/lib/calendlyTracking";
+import { ArrowRight, Compass, Handshake, Network, Settings2, Target, Users } from "lucide-react";
 
 const capabilities = [
   {
