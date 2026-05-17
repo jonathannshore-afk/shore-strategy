@@ -86,15 +86,6 @@ const FractionalVsConsultingVsFte = () => {
             datePublished: "2026-05-17",
             dateModified: "2026-05-17",
           },
-          {
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: faqs.map((f) => ({
-              "@type": "Question",
-              name: f.q,
-              acceptedAnswer: { "@type": "Answer", text: f.a },
-            })),
-          },
         ]}
       />
 
@@ -296,28 +287,6 @@ const FractionalVsConsultingVsFte = () => {
               See How I Work <ArrowRight size={16} />
             </Link>
           </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="bg-cream py-12 md:py-16 border-t border-gold/20">
-        <div className="container max-w-3xl">
-          <div className="mb-8">
-            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">FAQ</p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Common Questions</h2>
-          </div>
-          <Accordion type="single" collapsible className="w-full">
-            {faqs.map((item, i) => (
-              <AccordionItem key={i} value={`faq-${i}`} className="border-border">
-                <AccordionTrigger className="text-left font-display text-base md:text-lg font-semibold text-foreground hover:no-underline">
-                  {item.q}
-                </AccordionTrigger>
-                <AccordionContent className="font-body text-muted-foreground text-base leading-relaxed">
-                  {item.a}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
         </div>
       </section>
 
