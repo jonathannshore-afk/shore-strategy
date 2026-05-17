@@ -234,36 +234,18 @@ const Services = () => {
 
       {/* FAQ */}
       <section className="px-6 py-12 md:px-12 lg:px-24 lg:py-16 bg-cream border-t border-gold/20">
-        <div className="container max-w-3xl">
-          <div className="mb-8">
-            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">FAQ</p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Common Questions</h2>
-            <p className="font-body text-muted-foreground mt-2">
-              Quick answers on engagement models, timelines, and how to think about fit.
-            </p>
-          </div>
-          <Accordion type="single" collapsible className="w-full">
-            {faqs.map((item, i) => (
-              <AccordionItem key={i} value={`faq-${i}`} className="border-border">
-                <AccordionTrigger className="text-left font-display text-base md:text-lg font-semibold text-foreground hover:no-underline">
-                  {item.q}
-                </AccordionTrigger>
-                <AccordionContent className="font-body text-muted-foreground text-base leading-relaxed">
-                  {item.a}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-          <div className="mt-10 text-center">
-            <Link
-              to="/contact#calendly"
-              onClick={() => trackCalendlyClick("cta_click", "/contact#calendly", { location: "services_page_faq" })}
-              className="inline-flex items-center gap-2 font-body text-sm text-gold hover:text-gold-dark transition-colors"
-            >
-              Have a different question? Get in touch
-              <ArrowRight size={16} />
-            </Link>
-          </div>
+        <div className="container max-w-3xl text-center">
+          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">FAQ</p>
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">Questions?</h2>
+          <p className="font-body text-muted-foreground mb-6">
+            Engagement models, timelines, cost, and fit — answered in one place.
+          </p>
+          <Link
+            to="/faq"
+            className="inline-flex items-center gap-2 font-body text-sm text-gold hover:text-gold-dark transition-colors"
+          >
+            Read the FAQ <ArrowRight size={16} />
+          </Link>
         </div>
       </section>
 
