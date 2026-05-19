@@ -39,14 +39,11 @@ function isServiceRoleRequest(req: Request): boolean {
   const token = auth.startsWith('Bearer ') ? auth.slice(7) : ''
   if (!token) return false
   const serviceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
-  if (token === serviceKey) return true
-  // Also accept JWTs whose payload role is service_role
-  try {
-    const payload = JSON.parse(atob(token.split('.')[1]))
-    return payload?.role === 'service_role'
-  } catch {
-    return false
-  }
+  // Only accept an exact match against the actual service role key.
+  // We intentionally do NOT trust the unverified `role` claim from a parsed JWT,
+  // since this function runs with verify_jwt = false and any attacker could forge
+  // a token with `role: service_role`.
+  return !!serviceKey && token === serviceKey
 }
 
 Deno.serve(async (req) => {
