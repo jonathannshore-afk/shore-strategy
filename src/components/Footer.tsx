@@ -56,7 +56,13 @@ const Footer = () => {
       <div className="border-t border-navy-light">
         <div className="container py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-primary-foreground/70">
           <span>© {new Date().getFullYear()} Shore Strategy Consulting, LLC. All rights reserved.</span>
-          <span><a href="mailto:jonathan@shore-strategy.com?subject=Partner%20Strategy%20Inquiry" className="hover:text-gold transition-colors">jonathan@shore-strategy.com</a> · San Francisco Bay Area</span>
+          <div className="flex items-center gap-3">
+            <Link to="/privacy" className="hover:text-gold transition-colors">Privacy Policy</Link>
+            <span>·</span>
+            <a href="mailto:jonathan@shore-strategy.com?subject=Partner%20Strategy%20Inquiry" className="hover:text-gold transition-colors">jonathan@shore-strategy.com</a>
+            <span>·</span>
+            <span>San Francisco Bay Area</span>
+          </div>
         </div>
       </div>
     </footer>
