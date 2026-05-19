@@ -14,7 +14,7 @@ const Footer = () => {
               <span className="font-display text-2xl font-bold text-gold">Jonathan</span>
               <span className="font-display text-2xl font-light text-primary-foreground">Shore</span>
             </Link>
-            <p className="font-body text-sm text-primary-foreground/60 max-w-sm leading-relaxed">
+            <p className="font-body text-sm text-primary-foreground/75 max-w-sm leading-relaxed">
               Partner Ecosystem Strategist helping B2B technology companies build, fix, and scale partner ecosystems that drive revenue growth.
             </p>
           </div>
@@ -24,7 +24,7 @@ const Footer = () => {
             <h2 className="font-display text-2xl md:text-3xl font-bold text-primary-foreground mb-3">
               Ready to Accelerate Your Partner Ecosystem?
             </h2>
-            <p className="font-body text-sm text-primary-foreground/60 mb-6">
+            <p className="font-body text-sm text-primary-foreground/75 mb-6">
               Start with a free 30-minute discovery call. No prep, no obligation — just a clear point of view on your ecosystem.
             </p>
             <div className="flex flex-wrap gap-4 md:justify-end">

@@ -18,7 +18,7 @@ const StatsMarquee = () => {
           {[...stats, ...stats].map((stat, i) => (
             <div key={i} className="flex items-center gap-2 mx-8 shrink-0">
               <span className="font-display text-xl font-bold text-gold">{stat.value}</span>
-              <span className="font-body text-sm text-primary-foreground/60">{stat.label}</span>
+              <span className="font-body text-sm text-primary-foreground/75">{stat.label}</span>
             </div>
           ))}
         </div>

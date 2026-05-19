@@ -5,7 +5,7 @@ interface Props {
 }
 
 const DiscoveryCallReassurance = ({ variant = "light", align = "left", className = "" }: Props) => {
-  const color = variant === "dark" ? "text-primary-foreground/55" : "text-muted-foreground";
+  const color = variant === "dark" ? "text-primary-foreground/75" : "text-muted-foreground";
   const alignment = align === "center" ? "text-center justify-center" : "text-left justify-start";
   return (
     <p
