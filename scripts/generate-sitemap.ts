@@ -23,11 +23,14 @@ const staticEntries: Entry[] = [
   { path: "/services", changefreq: "monthly", priority: "0.8", lastmod: TODAY },
   { path: "/how-i-work", changefreq: "monthly", priority: "0.8", lastmod: TODAY },
   { path: "/results", changefreq: "monthly", priority: "0.8", lastmod: TODAY },
+  { path: "/why-me", changefreq: "monthly", priority: "0.8", lastmod: TODAY },
+  { path: "/methodology", changefreq: "monthly", priority: "0.8", lastmod: TODAY },
   { path: "/leadership", changefreq: "monthly", priority: "0.7", lastmod: TODAY },
   { path: "/fractional-vs-consulting-vs-fte", changefreq: "monthly", priority: "0.8", lastmod: TODAY },
   { path: "/faq", changefreq: "monthly", priority: "0.6", lastmod: TODAY },
   { path: "/blog", changefreq: "weekly", priority: "0.8", lastmod: TODAY },
   { path: "/contact", changefreq: "monthly", priority: "0.7", lastmod: TODAY },
+  { path: "/privacy", changefreq: "yearly", priority: "0.3", lastmod: TODAY },
   { path: "/unsubscribe", changefreq: "yearly", priority: "0.1", lastmod: TODAY },
 ];
 
@@ -38,14 +41,22 @@ async function fetchBlogEntries(): Promise<Entry[]> {
       .from("blog_posts")
       .select("slug, date")
       .eq("status", "published");
-    if (error || !data) return [];
+    if (error) {
+      console.error("sitemap: blog fetch error:", error.message);
+      return [];
+    }
+    if (!data || data.length === 0) {
+      console.warn("sitemap: blog fetch returned 0 published rows");
+      return [];
+    }
     return data.map((row: { slug: string; date: string | null }) => ({
       path: `/blog/${row.slug}`,
       lastmod: row.date ?? TODAY,
       changefreq: "monthly",
       priority: "0.6",
     }));
-  } catch {
+  } catch (e) {
+    console.error("sitemap: blog fetch threw:", e);
     return [];
   }
 }
