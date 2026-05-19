@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
 import { ArrowRight, CalendarCheck, TrendingDown, Wrench, Unplug, Layers, Rocket, LineChart, Award, Compass, BookOpen } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
 import headshot from "@/assets/jonathan-headshot.jpeg";
 import logoServicenow from "@/assets/logo-servicenow.svg";
 import logoLumen from "@/assets/logo-lumen.png";
@@ -88,9 +86,6 @@ const Index = () => {
   const latestPosts = (blogPosts ?? []).slice(0, 2);
   return (
     <Layout>
-      <Helmet>
-        <link rel="preload" as="image" href={heroBg} fetchPriority="high" />
-      </Helmet>
       <SEOHead
         title="Partner Ecosystem Strategist"
         description="Fractional partner ecosystem strategist for B2B tech. Build, fix, and scale partner programs that drive measurable revenue. 15+ years operator experience."
@@ -119,9 +114,13 @@ const Index = () => {
 
       {/* Hero */}
       <section className="relative min-h-[60vh] md:min-h-[75vh] flex flex-col justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-navy-dark"
-          style={{ backgroundImage: `url(${heroBg})` }}
+        <img
+          src="/hero-bg.jpg"
+          alt=""
+          width="1600"
+          height="900"
+          fetchPriority="high"
+          className="absolute inset-0 w-full h-full object-cover bg-navy-dark"
         />
         <div className="absolute inset-0 bg-navy-dark/60" />
         <div className="relative z-10 container flex-1 flex items-center">
