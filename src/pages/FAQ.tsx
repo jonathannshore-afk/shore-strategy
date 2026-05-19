@@ -89,7 +89,7 @@ const FAQ = () => {
   return (
     <Layout>
       <SEOHead
-        title="FAQ — Fractional Partner Ecosystem Leadership"
+        title="FAQ — Fractional Partner Leadership"
         description="Answers on engagement models, fractional vs. consulting vs. full-time hires, timelines, cost, and what to expect from the discovery call."
         canonical="/faq"
         schemaJson={{
