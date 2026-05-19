@@ -99,7 +99,7 @@ const FractionalVsConsultingVsFte = () => {
           <p className="font-body text-lg text-primary-foreground/70 max-w-2xl">
             Three ways to add senior partner leadership. Here's how to pick — written by someone who's been hired under all three models.
           </p>
-          <p className="font-body text-xs uppercase tracking-[0.2em] text-primary-foreground/50 mt-6">
+          <p className="font-body text-xs uppercase tracking-[0.2em] text-primary-foreground/75 mt-6">
             6 min read · Updated May 2026
           </p>
         </div>
@@ -139,13 +139,13 @@ const FractionalVsConsultingVsFte = () => {
             <table className="w-full">
               <thead>
                 <tr className="bg-navy">
-                  <th className="text-left p-4 font-body text-xs uppercase tracking-[0.2em] text-primary-foreground/60 w-1/4">&nbsp;</th>
+                  <th className="text-left p-4 font-body text-xs uppercase tracking-[0.2em] text-primary-foreground/75 w-1/4">&nbsp;</th>
                   {columns.map((col) => (
                     <th key={col.key} className={`text-left p-4 ${col.accent ? "bg-navy-light" : ""}`}>
                       <div className={`font-display text-base font-semibold ${col.accent ? "text-gold" : "text-primary-foreground"}`}>
                         {col.name}
                       </div>
-                      <div className="font-body text-[11px] uppercase tracking-wider text-primary-foreground/50 mt-1">{col.tag}</div>
+                      <div className="font-body text-[11px] uppercase tracking-wider text-primary-foreground/75 mt-1">{col.tag}</div>
                     </th>
                   ))}
                 </tr>
@@ -173,7 +173,7 @@ const FractionalVsConsultingVsFte = () => {
                   <div className={`font-display text-lg font-semibold ${col.accent ? "text-foreground" : "text-primary-foreground"}`}>
                     {col.name}
                   </div>
-                  <div className={`font-body text-[11px] uppercase tracking-wider mt-1 ${col.accent ? "text-foreground/60" : "text-primary-foreground/60"}`}>
+                  <div className={`font-body text-[11px] uppercase tracking-wider mt-1 ${col.accent ? "text-foreground/60" : "text-primary-foreground/75"}`}>
                     {col.tag}
                   </div>
                 </div>

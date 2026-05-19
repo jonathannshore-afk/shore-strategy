@@ -169,7 +169,7 @@ const Index = () => {
                 <DiscoveryCallReassurance variant="dark" align="left" className="justify-center md:justify-start" />
               </div>
               <p
-                className="mt-6 md:mt-8 pt-5 border-t border-primary-foreground/15 font-body text-sm text-primary-foreground/60 max-w-xl text-center md:text-left animate-fade-in-up"
+                className="mt-6 md:mt-8 pt-5 border-t border-primary-foreground/15 font-body text-sm text-primary-foreground/75 max-w-xl text-center md:text-left animate-fade-in-up"
                 style={{ animationDelay: "0.6s" }}
               >
                 For{" "}
@@ -179,7 +179,7 @@ const Index = () => {
                 at B2B technology companies building partner-led growth.
               </p>
               <div
-                className="mt-4 pt-4 border-t border-primary-foreground/15 font-body text-xs uppercase tracking-[0.2em] text-primary-foreground/60 max-w-xl flex flex-wrap items-center justify-center md:justify-start gap-x-3 gap-y-2 animate-fade-in-up"
+                className="mt-4 pt-4 border-t border-primary-foreground/15 font-body text-xs uppercase tracking-[0.2em] text-primary-foreground/75 max-w-xl flex flex-wrap items-center justify-center md:justify-start gap-x-3 gap-y-2 animate-fade-in-up"
                 style={{ animationDelay: "0.75s" }}
               >
                 <span>15+ Years</span>
@@ -289,7 +289,7 @@ const Index = () => {
                 <div className="font-display text-4xl md:text-5xl font-bold text-gold mb-2">
                   {stat.value}
                 </div>
-                <div className="font-body text-sm text-primary-foreground/60 uppercase tracking-wider">
+                <div className="font-body text-sm text-primary-foreground/75 uppercase tracking-wider">
                   {stat.label}
                 </div>
               </div>
