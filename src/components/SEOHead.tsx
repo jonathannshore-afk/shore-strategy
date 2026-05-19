@@ -27,7 +27,7 @@ const SITE_NAME = "Shore Strategy";
 const BASE_URL = "https://shore-strategy.com";
 const DEFAULT_TITLE = "Jonathan Shore — Partner Ecosystem Strategist";
 const DEFAULT_DESCRIPTION =
-  "Jonathan Shore helps B2B technology companies build, fix, and scale partner ecosystems that drive measurable revenue growth. 15+ years at Salesforce, ServiceNow, and Lumen.";
+  "Jonathan Shore helps B2B tech companies build, fix, and scale partner ecosystems that drive measurable revenue. 15+ years experience.";
 const DEFAULT_OG_IMAGE = `${BASE_URL}/og-image.jpg`;
 
 const toAbsolute = (url?: string) => {

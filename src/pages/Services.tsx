@@ -111,7 +111,7 @@ const Services = () => {
   return (
     <Layout>
       <SEOHead
-        title="Services"
+        title="Partner Ecosystem Strategy & Program Design"
         description="Partner ecosystem strategy, program design, GTM planning, and revenue acceleration. Explore how Jonathan Shore drives partner-led growth."
         canonical="/services"
       />
