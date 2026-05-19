@@ -69,7 +69,7 @@ const Unsubscribe = () => {
     <Layout>
       <SEOHead
         title="Unsubscribe"
-        description="Manage your email subscription preferences for Shore Strategy newsletters, insights, and ecosystem strategy updates."
+        description="Manage your email subscription preferences for Shore Strategy newsletters and ecosystem strategy updates."
 
         canonical="/unsubscribe"
         noIndex
