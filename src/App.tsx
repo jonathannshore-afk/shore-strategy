@@ -47,6 +47,7 @@ const FractionalVsConsultingVsFte = lazyWithRetry(() => import("./pages/Fraction
 const FAQ = lazyWithRetry(() => import("./pages/FAQ"));
 const NotFound = lazyWithRetry(() => import("./pages/NotFound"));
 const Unsubscribe = lazyWithRetry(() => import("./pages/Unsubscribe"));
+const Privacy = lazyWithRetry(() => import("./pages/Privacy"));
 
 const queryClient = new QueryClient();
 
@@ -73,6 +74,7 @@ const App = () => (
           <Route path="/leadership" element={<Leadership />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/unsubscribe" element={<Unsubscribe />} />
+          <Route path="/privacy" element={<Privacy />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         </Suspense>
