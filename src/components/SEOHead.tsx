@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { useLocation } from "react-router-dom";
 
 interface SEOHeadProps {
   /** Page title (without site suffix). A site suffix " | Shore Strategy" is appended automatically. */
@@ -36,6 +37,18 @@ const toAbsolute = (url?: string) => {
   return `${BASE_URL}${url.startsWith("/") ? url : `/${url}`}`;
 };
 
+/**
+ * Normalize a pathname into a canonical path:
+ * - strips query/hash
+ * - removes trailing slash (except root)
+ * - lowercases
+ */
+const normalizePath = (pathname: string) => {
+  const path = pathname.split("?")[0].split("#")[0].toLowerCase();
+  if (path.length > 1 && path.endsWith("/")) return path.slice(0, -1);
+  return path || "/";
+};
+
 const SEOHead = ({
   title,
   description = DEFAULT_DESCRIPTION,
@@ -46,8 +59,10 @@ const SEOHead = ({
   type = "website",
   article,
 }: SEOHeadProps) => {
+  const location = useLocation();
+  const autoCanonical = `${BASE_URL}${normalizePath(location.pathname)}`;
   const fullTitle = title ? `${title} | ${SITE_NAME}` : DEFAULT_TITLE;
-  const canonicalUrl = toAbsolute(canonical) ?? BASE_URL;
+  const canonicalUrl = toAbsolute(canonical) ?? autoCanonical;
   const image = toAbsolute(ogImage) ?? DEFAULT_OG_IMAGE;
   const schemas = schemaJson
     ? Array.isArray(schemaJson)
