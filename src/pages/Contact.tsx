@@ -11,6 +11,17 @@ import { z } from "zod";
 const CALENDLY_URL = "https://calendly.com/jonathan-shore-strategy/30-minutes-with-jonathan";
 const CALENDLY_SCRIPT_SRC = "https://assets.calendly.com/assets/external/widget.js";
 
+type CalendlyWindow = Window & {
+  Calendly?: {
+    initInlineWidget: (opts: {
+      url: string;
+      parentElement: HTMLElement;
+      prefill?: Record<string, unknown>;
+      utm?: Record<string, unknown>;
+    }) => void;
+  };
+};
+
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100, "Name must be under 100 characters"),
   email: z.string().trim().email("Please enter a valid email").max(255, "Email must be under 255 characters"),
@@ -39,12 +50,6 @@ const Contact = () => {
       return false;
     };
 
-    // If the script (and iframe) are already present from a previous visit,
-    // don't re-inject — just mark loaded.
-    const existing = document.querySelector<HTMLScriptElement>(
-      `script[src="${CALENDLY_SCRIPT_SRC}"]`
-    );
-
     let observer: MutationObserver | undefined;
     if (calendlyRef.current) {
       observer = new MutationObserver(() => {
@@ -53,17 +58,38 @@ const Contact = () => {
       observer.observe(calendlyRef.current, { childList: true, subtree: true });
     }
 
-    if (!existing) {
-      const script = document.createElement("script");
-      script.src = CALENDLY_SCRIPT_SRC;
-      script.async = true;
-      document.body.appendChild(script);
-    } else {
-      // Script already loaded — Calendly may need a nudge to render into the new widget div.
-      onIframeReady();
-    }
+    // Explicitly initialize the widget once the Calendly script is available.
+    // The script is preloaded in index.html and may execute before React mounts
+    // this div, so relying on Calendly's auto-init (which scans the DOM once on
+    // load) is unreliable — we must call initInlineWidget ourselves.
+    let cancelled = false;
+    const init = () => {
+      if (cancelled || !calendlyRef.current) return;
+      const w = window as CalendlyWindow;
+      if (w.Calendly?.initInlineWidget) {
+        // Avoid double-init if an iframe is already present.
+        if (!calendlyRef.current.querySelector("iframe")) {
+          w.Calendly.initInlineWidget({
+            url: `${CALENDLY_URL}?hide_gdpr_banner=1`,
+            parentElement: calendlyRef.current,
+          });
+        }
+        onIframeReady();
+        return;
+      }
+      // Script not ready yet — ensure it's loading, then poll briefly.
+      if (!document.querySelector<HTMLScriptElement>(`script[src="${CALENDLY_SCRIPT_SRC}"]`)) {
+        const script = document.createElement("script");
+        script.src = CALENDLY_SCRIPT_SRC;
+        script.async = true;
+        document.body.appendChild(script);
+      }
+      setTimeout(init, 150);
+    };
+    init();
 
     return () => {
+      cancelled = true;
       observer?.disconnect();
       // Intentionally keep the script in the DOM so revisits are instant.
     };
