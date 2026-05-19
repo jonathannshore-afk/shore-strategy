@@ -37,14 +37,14 @@
          these remain the fallback for LinkedIn/Slack/Facebook social previews).
          Do NOT add <link rel="canonical"> here — react-helmet-async owns canonicals
          per route and a static one would duplicate. -->
-    <title>Jonathan Shore — Partner Ecosystem Strategist | Shore Strategy</title>
+    <title>Jonathan Shore — Partner Ecosystem Strategist</title>
     <meta name="description" content="Fractional partner ecosystem strategist for B2B tech. Build, fix, and scale partner programs that drive measurable revenue. 15+ years operator experience." />
     <meta name="keywords" content="partner ecosystem strategy, fractional partnerships leader, channel partner strategy, partner program consultant, go-to-market consultant, B2B SaaS partnerships, partner ecosystem consultant" />
 
     <!-- Open Graph -->
     <meta property="og:title" content="Jonathan Shore — Partner Ecosystem Strategist" />
     <meta property="og:description" content="Fractional partner ecosystem strategist helping B2B tech companies turn partnerships into a measurable revenue engine." />
-    <meta property="og:url" content="https://shore-strategy.com/" />
+    <!-- og:url intentionally omitted from static head — react-helmet-async sets the correct per-route URL for JS-executing crawlers; omitting prevents non-JS crawlers from being told sub-routes are the homepage. -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Shore Strategy" />
     <meta property="og:image" content="https://shore-strategy.com/og-image.jpg" />
