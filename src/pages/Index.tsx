@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, CalendarCheck, TrendingDown, Wrench, Unplug, Layers, Rocket, LineChart, Award, Compass, BookOpen } from "lucide-react";
+import { ArrowRight, CalendarCheck, TrendingDown, Wrench, Unplug, Layers, Rocket, LineChart, Award, Compass } from "lucide-react";
 import headshot from "@/assets/jonathan-headshot.jpeg";
 import logoServicenow from "@/assets/logo-servicenow.svg";
 import logoLumen from "@/assets/logo-lumen.png";
@@ -7,7 +7,6 @@ import Layout from "@/components/Layout";
 import SEOHead from "@/components/SEOHead";
 import DiscoveryCallReassurance from "@/components/DiscoveryCallReassurance";
 import { trackCalendlyClick } from "@/lib/calendlyTracking";
-import { useBlogPosts } from "@/hooks/useBlogPosts";
 
 
 
@@ -72,18 +71,9 @@ const exploreCards = [
     to: "/leadership",
     cta: "Read the philosophy",
   },
-  {
-    icon: BookOpen,
-    title: "Field Notes",
-    description: "Writing on partner ecosystems, GTM, and operator lessons.",
-    to: "/blog",
-    cta: "Browse the blog",
-  },
 ];
 
 const Index = () => {
-  const { data: blogPosts } = useBlogPosts();
-  const latestPosts = (blogPosts ?? []).slice(0, 2);
   return (
     <Layout>
       <SEOHead
@@ -510,63 +500,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
-      {/* Latest from the Blog */}
-      {latestPosts.length > 0 && (
-        <>
-          <div className="bg-cream">
-            <div className="container px-6 md:px-12 lg:px-24 flex items-center gap-4 py-2">
-              <span className="block h-px flex-1 bg-gold/40" />
-              <span className="block w-2 h-2 rotate-45 bg-gold/60" />
-              <span className="block h-px flex-1 bg-gold/40" />
-            </div>
-          </div>
-          <section className="bg-cream pb-16 md:pb-24">
-            <div className="container">
-              <div className="mb-8 flex items-end justify-between gap-4 flex-wrap max-w-5xl mx-auto">
-                <div>
-                  <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Latest Writing</p>
-                  <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-                    From the Blog
-                  </h2>
-                </div>
-                <Link
-                  to="/blog"
-                  className="inline-flex items-center gap-1.5 font-body text-sm font-semibold text-gold hover:text-gold-dark transition-colors"
-                >
-                  View all posts
-                  <ArrowRight size={14} />
-                </Link>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-                {latestPosts.map((post) => (
-                  <Link
-                    key={post.slug}
-                    to={`/blog/${post.slug}`}
-                    className="group p-6 md:p-7 rounded-lg border border-border bg-card hover:border-gold/60 hover:shadow-md transition-all flex flex-col"
-                  >
-                    <div className="flex items-center gap-3 mb-3 font-body text-xs uppercase tracking-[0.15em] text-muted-foreground">
-                      <span className="text-gold">{post.category}</span>
-                      <span className="text-gold/50">·</span>
-                      <span>{post.readTime}</span>
-                    </div>
-                    <h3 className="font-display text-xl md:text-2xl font-semibold text-foreground mb-3 group-hover:text-gold transition-colors">
-                      {post.title}
-                    </h3>
-                    <p className="font-body text-muted-foreground leading-relaxed text-sm flex-1">
-                      {post.excerpt}
-                    </p>
-                    <span className="mt-5 inline-flex items-center gap-1.5 font-body text-sm font-semibold text-gold group-hover:gap-2.5 transition-all">
-                      Read article
-                      <ArrowRight size={14} />
-                    </span>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </section>
-        </>
-      )}
 
     </Layout>
   );

@@ -6,12 +6,6 @@ const corsHeaders = {
     "authorization, x-client-info, apikey, content-type",
 };
 
-// BD Command Center (external Supabase project) — used to push scored leads
-// into the BD pipeline. Anon key only has INSERT permission on scored_leads.
-const BD_SUPABASE_URL = "https://nlfkkdgwlgcgomcnkjua.supabase.co";
-const BD_SUPABASE_ANON_KEY =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5sZmtrZGd3bGdjZ29tY25ranVhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYxMTQ5OTMsImV4cCI6MjA5MTY5MDk5M30.tD2ikxZuz2Zv4IejyfNoA3-9B9zNSxEtOwOrwX0kh6Q";
-
 const SYSTEM_PROMPT = `You are a senior B2B sales qualifier scoring inbound leads for Jonathan Shore, a Partner Ecosystem Strategist who works with B2B SaaS / tech companies on partnership programs (FTE engagements and fractional advisory).
 
 Score each lead on TWO axes, each 0-50:
