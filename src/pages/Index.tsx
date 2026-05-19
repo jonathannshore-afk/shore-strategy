@@ -86,9 +86,6 @@ const Index = () => {
   const latestPosts = (blogPosts ?? []).slice(0, 2);
   return (
     <Layout>
-      <Helmet>
-        <link rel="preload" as="image" href={heroBg} fetchPriority="high" />
-      </Helmet>
       <SEOHead
         title="Partner Ecosystem Strategist"
         description="Fractional partner ecosystem strategist for B2B tech. Build, fix, and scale partner programs that drive measurable revenue. 15+ years operator experience."
