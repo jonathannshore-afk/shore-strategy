@@ -38,8 +38,6 @@ if (typeof window !== "undefined") {
 const About = lazyWithRetry(() => import("./pages/About"));
 const Services = lazyWithRetry(() => import("./pages/Services"));
 const Contact = lazyWithRetry(() => import("./pages/Contact"));
-const Blog = lazyWithRetry(() => import("./pages/Blog"));
-const BlogPost = lazyWithRetry(() => import("./pages/BlogPost"));
 const Results = lazyWithRetry(() => import("./pages/Results"));
 const Leadership = lazyWithRetry(() => import("./pages/Leadership"));
 const HowIWork = lazyWithRetry(() => import("./pages/HowIWork"));
@@ -69,8 +67,6 @@ const App = () => (
           <Route path="/methodology" element={<Navigate to="/how-i-work" replace />} />
           <Route path="/fractional-vs-consulting-vs-fte" element={<FractionalVsConsultingVsFte />} />
           <Route path="/faq" element={<FAQ />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/leadership" element={<Leadership />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/unsubscribe" element={<Unsubscribe />} />

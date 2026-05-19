@@ -1,14 +1,9 @@
 // Runs before `vite dev` and `vite build`; writes public/sitemap.xml.
 import { writeFileSync } from "fs";
 import { resolve } from "path";
-import { createClient } from "@supabase/supabase-js";
 
 const BASE_URL = "https://shore-strategy.lovable.app";
 const TODAY = new Date().toISOString().slice(0, 10);
-
-const BD_URL = "https://nlfkkdgwlgcgomcnkjua.supabase.co";
-const BD_KEY =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5sZmtrZGd3bGdjZ29tY25ranVhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYxMTQ5OTMsImV4cCI6MjA5MTY5MDk5M30.tD2ikxZuz2Zv4IejyfNoA3-9B9zNSxEtOwOrwX0kh6Q";
 
 interface Entry {
   path: string;
@@ -28,38 +23,10 @@ const staticEntries: Entry[] = [
   { path: "/leadership", changefreq: "monthly", priority: "0.7", lastmod: TODAY },
   { path: "/fractional-vs-consulting-vs-fte", changefreq: "monthly", priority: "0.8", lastmod: TODAY },
   { path: "/faq", changefreq: "monthly", priority: "0.6", lastmod: TODAY },
-  { path: "/blog", changefreq: "weekly", priority: "0.8", lastmod: TODAY },
   { path: "/contact", changefreq: "monthly", priority: "0.7", lastmod: TODAY },
   { path: "/privacy", changefreq: "yearly", priority: "0.3", lastmod: TODAY },
   { path: "/unsubscribe", changefreq: "yearly", priority: "0.1", lastmod: TODAY },
 ];
-
-async function fetchBlogEntries(): Promise<Entry[]> {
-  try {
-    const client = createClient(BD_URL, BD_KEY);
-    const { data, error } = await client
-      .from("blog_posts")
-      .select("slug, date")
-      .eq("status", "published");
-    if (error) {
-      console.error("sitemap: blog fetch error:", error.message);
-      return [];
-    }
-    if (!data || data.length === 0) {
-      console.warn("sitemap: blog fetch returned 0 published rows");
-      return [];
-    }
-    return data.map((row: { slug: string; date: string | null }) => ({
-      path: `/blog/${row.slug}`,
-      lastmod: row.date ?? TODAY,
-      changefreq: "monthly",
-      priority: "0.6",
-    }));
-  } catch (e) {
-    console.error("sitemap: blog fetch threw:", e);
-    return [];
-  }
-}
 
 function render(entries: Entry[]) {
   const urls = entries.map((e) =>
@@ -84,8 +51,7 @@ function render(entries: Entry[]) {
 }
 
 (async () => {
-  const blog = await fetchBlogEntries();
-  const entries = [...staticEntries, ...blog];
+  const entries = [...staticEntries];
   writeFileSync(resolve("public/sitemap.xml"), render(entries));
   console.log(`sitemap.xml written (${entries.length} entries)`);
 })();

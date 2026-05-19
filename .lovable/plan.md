@@ -1,167 +1,44 @@
 ## Goal
 
-New page at `/fractional-vs-consulting-vs-fte` that answers the question every prospect silently asks before booking: *"Do I hire a full-time VP, retain a Big-4 consulting firm, or bring in a fractional operator?"*
+Disconnect the external "BD Command Center" Supabase project from this site entirely, and remove the blog/Insights feature since you're tabling it.
 
-Positioning: not a sales page for fractional. A **decision aid** that's honest about when each model wins — which is exactly why fractional comes out looking strong for the specific buyer profile Shore Strategy serves.
+## What gets removed
 
----
+**BD Command Center integration**
+- `src/integrations/supabase/bdClient.ts` (external Supabase client) — delete
+- BD push block in `supabase/functions/score-lead/index.ts` — strip the `BD_SUPABASE_URL`/`BD_SUPABASE_ANON_KEY` constants and the "Push to BD Command Center" section. `score-lead` will still score the lead and email the alert; it just won't forward to BD.
+- BD fetch in `scripts/generate-sitemap.ts` — remove the dynamic blog fetch and BD constants. Sitemap becomes static-routes only.
 
-## Page structure
+**Blog / Insights feature (frontend)**
+- Routes in `src/App.tsx`: remove `/blog` and `/blog/:slug` and their lazy imports.
+- Pages: delete `src/pages/Blog.tsx` and `src/pages/BlogPost.tsx`.
+- Hooks/data: delete `src/hooks/useBlogPosts.ts` and `src/data/blogPosts.ts`.
+- Blog components: delete `src/components/blog/` (`ArticleContent.tsx`, `LinkedInDraftCard.tsx`, `ShareToolbar.tsx`).
+- `src/pages/Index.tsx`: remove the `useBlogPosts` import/usage, the "From the Blog" section (lines ~514–569), and the "Field Notes / Browse the blog" tile in the navigation card array (lines ~75–81).
+- Header/Footer: verify and remove any "Insights"/"Blog" nav links if present.
 
-```text
-┌────────────────────────────────────────────────────────────────┐
-│ HERO                                                           │
-│ Eyebrow: "Decision Guide"                                      │
-│ H1: "Fractional vs. Consulting Firm vs. Full-Time Hire"        │
-│ Sub: "Three ways to add senior partner leadership.             │
-│       Here's how to pick — written by someone who's been       │
-│       hired under all three models."                           │
-│ Meta strip: 6 min read · Updated May 2026                      │
-└────────────────────────────────────────────────────────────────┘
+**Public files**
+- `public/sitemap.xml`: remove the `/blog` URL entry.
+- `public/llms.txt`: remove the `- [Blog](/blog) ...` line.
+- `scripts/generate-sitemap.ts`: drop `/blog` from `staticEntries` and remove `@supabase/supabase-js` import/BD code.
 
-┌────────────────────────────────────────────────────────────────┐
-│ TL;DR BAND (cream, 3 short cards)                              │
-│                                                                │
-│  Hire FTE when…        Retain a firm when…   Go fractional…   │
-│  the role is           the work is a one-    when you need     │
-│  permanent, scoped     time transformation   senior judgment   │
-│  for a single          with a deck as the    in the seat, but  │
-│  company, and you      deliverable.          not 5 days/week.  │
-│  can wait 6+ months                                            │
-│  to ramp.                                                      │
-└────────────────────────────────────────────────────────────────┘
+**Docs / memory**
+- Delete `BLOG_GUIDE.md`.
+- Update project memory: remove the "Blog DB" core line and the `[Blog Sharing]`, `[Blog Layout]`, `[Blog Architecture]` memory entries from `mem://index.md`, and delete those memory files.
 
-┌────────────────────────────────────────────────────────────────┐
-│ THE COMPARISON TABLE  (the centerpiece)                        │
-│                                                                │
-│                    Fractional   Consulting    Full-Time        │
-│                    Operator     Firm          Hire             │
-│  ────────────────────────────────────────────────────────────  │
-│  Time to value     2–4 weeks    6–10 weeks    4–6 months       │
-│  Commitment        1–2 days/wk  Project SOW   5 days/week      │
-│  Typical cost      $$           $$$$          $$$$ + equity    │
-│  Who does the      The person   Partner sells,Hired leader     │
-│  work              you hired    juniors do it (eventually)     │
-│  Operator P&L      Yes          Rarely        Yes              │
-│  experience                                                    │
-│  Stays after       Optional     No            Yes              │
-│  delivery                                                      │
-│  Ramp risk         Low          Low (on deck) High             │
-│  Best for stage    Series A–C,  Enterprise    Public co or     │
-│                    PE-backed    transform     mature scale-up  │
-│  Worst fit         Need 5       Need an       Pre-product-     │
-│                    days/week    operator      market-fit       │
-│                                 in the seat                    │
-│                                                                │
-│  Mobile: collapses to 3 stacked cards, one per column          │
-└────────────────────────────────────────────────────────────────┘
+## What stays
 
-┌────────────────────────────────────────────────────────────────┐
-│ HONEST TRADEOFFS (3 sub-sections, ~150 words each)             │
-│                                                                │
-│ 1. Where a full-time hire wins                                 │
-│    - Permanent role, 5 days/week of attention                  │
-│    - Builds long-term team, owns equity story                  │
-│    - Right when partner revenue is core to the 3-yr plan       │
-│    - Tradeoff: $400K+ all-in, 4–6 months to ramp, real         │
-│      hiring risk if you pick wrong                             │
-│                                                                │
-│ 2. Where a consulting firm wins                                │
-│    - Big transformations with executive air cover              │
-│    - Benchmarking data across many companies                   │
-│    - Right for board-mandated change programs                  │
-│    - Tradeoff: $250K–$500K+ per project, junior consultants    │
-│      do the work, deck lands and they leave                    │
-│                                                                │
-│ 3. Where fractional wins                                       │
-│    - Senior operator in the seat, week one                     │
-│    - 1–2 days/week at a fraction of FTE cost                   │
-│    - You get the person who sold you the engagement            │
-│    - Tradeoff: not full-time, so not right when the role       │
-│      truly requires 40 hrs/week                                │
-└────────────────────────────────────────────────────────────────┘
+- Lovable Cloud (this project's own Supabase) — untouched.
+- `score-lead` edge function — still scores submissions with AI and sends the operator email alert. Only the BD forwarding step is removed.
+- Contact form, Calendly, email queue, lead alerts, and all other pages.
 
-┌────────────────────────────────────────────────────────────────┐
-│ DECISION TREE (visual, 4–5 yes/no nodes)                       │
-│                                                                │
-│  Do you need someone in the seat 5 days/week? ──Yes──► FTE     │
-│                  │                                             │
-│                  No                                            │
-│                  ▼                                             │
-│  Is the deliverable a strategy/deck (not execution)?           │
-│                  │                                             │
-│       ──Yes──► Consulting firm                                 │
-│                  │                                             │
-│                  No                                            │
-│                  ▼                                             │
-│  Do you need operator judgment + execution cadence?            │
-│                  │                                             │
-│       ──Yes──► Fractional                                      │
-│                                                                │
-│  Rendered as styled cards w/ connecting lines on desktop,      │
-│  stacked vertical flow on mobile. Pure CSS, no chart lib.      │
-└────────────────────────────────────────────────────────────────┘
+## After-change behavior
 
-┌────────────────────────────────────────────────────────────────┐
-│ FAQ — 5 questions (drives FAQPage JSON-LD)                     │
-│  1. What does a fractional partner leader actually cost?       │
-│  2. How is fractional different from advisory or coaching?     │
-│  3. Can I start fractional and convert to full-time later?     │
-│  4. Why not just hire a Big-4 firm if budget allows?           │
-│  5. When is it too early to bring anyone in?                   │
-└────────────────────────────────────────────────────────────────┘
-
-┌────────────────────────────────────────────────────────────────┐
-│ CTA — navy band                                                │
-│ "Still not sure which fits? That's what the discovery call is  │
-│  for. 30 minutes, no pitch — I'll tell you straight."          │
-│ [ Book a Discovery Call ]  [ See How I Work → ]                │
-└────────────────────────────────────────────────────────────────┘
-```
-
----
-
-## On pricing — the open decision
-
-I'm proposing **qualitative `$` / `$$` / `$$$$` indicators** in the table, with **directional ranges in the prose** below it ("$400K+ all-in for FTE", "$250K–$500K+ for a firm project"). Fractional cost stays vague ("a fraction of FTE — scoped per engagement") so it routes to the discovery call.
-
-Rationale: zero numbers feels evasive; hard numbers anchor against you. Bands feel honest without committing.
-
-If you'd rather go fully qualitative or fully numeric, easy to flip — flag it on approval.
-
----
-
-## Files
-
-**New**
-- `src/pages/FractionalVsConsultingVsFte.tsx` — full page, semantic tokens only
-
-**Edited**
-- `src/App.tsx` — lazy route at `/fractional-vs-consulting-vs-fte`
-- `public/sitemap.xml` + `scripts/generate-sitemap.ts` — add route, priority 0.8
-- `public/llms.txt` — add page entry
-- `src/pages/Services.tsx` — one inline link from "How do I know if fractional or project-based is right for us?" FAQ answer → the new page
-
-**Not edited (deliberate)**
-- `Header.tsx` — keep the top nav clean; this page is for people who already landed and are evaluating
-- Home — link from Services FAQ is enough surface for v1; can promote later if it ranks
-
----
-
-## SEO
-
-- `<title>`: "Fractional vs. Consulting vs. Full-Time Partner Leader" (~62 chars)
-- Meta description: "Comparing fractional, consulting firm, and full-time hire models for partner ecosystem leadership in B2B tech. Cost, time to value, and when each one wins." (~157 chars)
-- Canonical: `shore-strategy.com/fractional-vs-consulting-vs-fte`
-- JSON-LD: `Article` (with author = Jonathan Shore) **+** `FAQPage` for the 5 FAQs
-- Internal links: `/services`, `/how-i-work`, `/contact#calendly`
-- Target keywords: "fractional vs consulting", "fractional VP partnerships", "when to hire fractional executive" — long-tail, low KD, high commercial intent
-
----
+- Navigating to `/blog` or `/blog/:slug` will hit the existing `NotFound` page.
+- New contact submissions are scored and emailed to you, but nothing is pushed to the BD Command Center database anymore (you can keep using BD independently — it just won't auto-receive leads from this site).
+- Sitemap will list only the 13 remaining static routes.
 
 ## Out of scope
 
-- Pricing calculator widget
-- Lead-magnet "download the comparison PDF" gate
-- Animated decision tree (pure CSS only)
-- Homepage hero rewrite to surface this page
+- Any changes to the BD Command Center Supabase project itself (that's a separate project you control).
+- No DB migrations in this project — nothing in this project's schema references BD.

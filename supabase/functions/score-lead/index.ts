@@ -6,12 +6,6 @@ const corsHeaders = {
     "authorization, x-client-info, apikey, content-type",
 };
 
-// BD Command Center (external Supabase project) — used to push scored leads
-// into the BD pipeline. Anon key only has INSERT permission on scored_leads.
-const BD_SUPABASE_URL = "https://nlfkkdgwlgcgomcnkjua.supabase.co";
-const BD_SUPABASE_ANON_KEY =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5sZmtrZGd3bGdjZ29tY25ranVhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYxMTQ5OTMsImV4cCI6MjA5MTY5MDk5M30.tD2ikxZuz2Zv4IejyfNoA3-9B9zNSxEtOwOrwX0kh6Q";
-
 const SYSTEM_PROMPT = `You are a senior B2B sales qualifier scoring inbound leads for Jonathan Shore, a Partner Ecosystem Strategist who works with B2B SaaS / tech companies on partnership programs (FTE engagements and fractional advisory).
 
 Score each lead on TWO axes, each 0-50:
@@ -272,38 +266,7 @@ Deno.serve(async (req) => {
     console.error("AI scoring failed:", e);
   }
 
-  // 2. Push to BD Command Center (best-effort, non-blocking on failure)
-  let bdPushStatus: "success" | "failed" | "skipped" = "skipped";
-  try {
-    const bd = createClient(BD_SUPABASE_URL, BD_SUPABASE_ANON_KEY);
-    const { error: bdErr } = await bd.from("scored_leads").insert({
-      source: "shore_strategy_contact",
-      source_id: submissionId,
-      name,
-      email,
-      company: company ?? null,
-      raw_message: message,
-      score: scoring.score,
-      tier: scoring.tier,
-      fit_score: scoring.fit_score,
-      intent_score: scoring.intent_score,
-      rationale: scoring.rationale,
-      signals: scoring.signals,
-      suggested_next_step: scoring.suggested_next_step,
-      status: "new",
-    });
-    if (bdErr) {
-      console.error("BD push failed:", bdErr);
-      bdPushStatus = "failed";
-    } else {
-      bdPushStatus = "success";
-    }
-  } catch (e) {
-    console.error("BD push exception:", e);
-    bdPushStatus = "failed";
-  }
-
-  // 3. Email alert to operator (best-effort)
+  // 2. Email alert to operator (best-effort)
   try {
     const recipient = Deno.env.get("LEAD_ALERT_EMAIL");
     if (!recipient) {
@@ -330,7 +293,6 @@ Deno.serve(async (req) => {
               rationale: scoring.rationale,
               signals: scoring.signals,
               suggestedNextStep: scoring.suggested_next_step,
-              bdPushStatus,
             },
           },
         },
@@ -346,7 +308,6 @@ Deno.serve(async (req) => {
       ok: true,
       score: scoring.score,
       tier: scoring.tier,
-      bdPushStatus,
     }),
     {
       status: 200,
