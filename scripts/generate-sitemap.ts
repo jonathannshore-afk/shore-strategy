@@ -3,7 +3,7 @@ import { writeFileSync } from "fs";
 import { resolve } from "path";
 import { createClient } from "@supabase/supabase-js";
 
-const BASE_URL = "https://shore-strategy.com";
+const BASE_URL = "https://shore-strategy.lovable.app";
 const TODAY = new Date().toISOString().slice(0, 10);
 
 const BD_URL = "https://nlfkkdgwlgcgomcnkjua.supabase.co";
