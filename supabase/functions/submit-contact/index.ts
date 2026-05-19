@@ -26,10 +26,13 @@ Deno.serve(async (req) => {
     Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
   );
 
-  // Get client IP
+  // Get client IP. Prefer cf-connecting-ip (set by Cloudflare, not spoofable
+  // on CF-proxied traffic). Fall back to the LAST entry of X-Forwarded-For,
+  // which is appended by the outermost trusted proxy — the first entry is
+  // client-controlled and can be spoofed to bypass the rate limit.
   const ip =
-    req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
     req.headers.get("cf-connecting-ip") ||
+    req.headers.get("x-forwarded-for")?.split(",").at(-1)?.trim() ||
     "unknown";
 
   try {
