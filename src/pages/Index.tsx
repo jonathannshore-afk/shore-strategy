@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
 import { ArrowRight, CalendarCheck, TrendingDown, Wrench, Unplug, Layers, Rocket, LineChart, Award, Compass, BookOpen } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
 import headshot from "@/assets/jonathan-headshot.jpeg";
 import logoServicenow from "@/assets/logo-servicenow.svg";
 import logoLumen from "@/assets/logo-lumen.png";
