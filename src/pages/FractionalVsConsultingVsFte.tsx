@@ -63,7 +63,7 @@ const FractionalVsConsultingVsFte = () => {
   return (
     <Layout>
       <SEOHead
-        title="Fractional vs. Consulting vs. Full-Time Partner Leader"
+        title="Fractional vs. Consulting vs. FTE"
         description="Comparing fractional, consulting firm, and full-time hire models for partner ecosystem leadership in B2B tech. Cost, time to value, and when each one wins."
         canonical="/fractional-vs-consulting-vs-fte"
         type="article"
