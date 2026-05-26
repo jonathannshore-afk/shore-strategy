@@ -18,8 +18,6 @@ const staticEntries: Entry[] = [
   { path: "/services", changefreq: "monthly", priority: "0.8", lastmod: TODAY },
   { path: "/how-i-work", changefreq: "monthly", priority: "0.8", lastmod: TODAY },
   { path: "/results", changefreq: "monthly", priority: "0.8", lastmod: TODAY },
-  { path: "/why-me", changefreq: "monthly", priority: "0.8", lastmod: TODAY },
-  { path: "/methodology", changefreq: "monthly", priority: "0.8", lastmod: TODAY },
   { path: "/leadership", changefreq: "monthly", priority: "0.7", lastmod: TODAY },
   { path: "/fractional-vs-consulting-vs-fte", changefreq: "monthly", priority: "0.8", lastmod: TODAY },
   { path: "/faq", changefreq: "monthly", priority: "0.6", lastmod: TODAY },
