@@ -133,7 +133,7 @@ const HowIWork = () => {
   return (
     <Layout>
       <SEOHead
-        title="How I Work | Jonathan Shore"
+        title="How I Run Partner Ecosystem Engagements — Method, 90-Day Plan & Diagnostic"
         description="The delivery method, the first 90 days, and the diagnostic on-ramp. A transparent look at how Jonathan Shore runs partner ecosystem engagements."
         canonical="/how-i-work"
       />
