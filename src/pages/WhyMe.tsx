@@ -14,7 +14,7 @@ const WhyMe = () => {
   return (
     <Layout>
       <SEOHead
-        title="Why Me — Redirecting to Results"
+        title="Why Work With Jonathan Shore"
         description="This page has moved. View partner ecosystem case studies and proof of work on the Results page."
         canonical="/why-me"
         noIndex
