@@ -192,6 +192,15 @@ const Services = () => {
               Curious how engagements actually run? See How I Work
               <ArrowRight size={16} />
             </Link>
+            <div className="mt-3">
+              <Link
+                to="/fractional-vs-consulting-vs-fte"
+                className="inline-flex items-center gap-2 font-body text-sm text-gold hover:text-gold-dark transition-colors"
+              >
+                Comparing fractional, consulting, and full-time hires
+                <ArrowRight size={16} />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
