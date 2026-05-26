@@ -20,7 +20,7 @@ const stats = [
 const problems = [
   {
     icon: TrendingDown,
-    title: "Partner-sourced pipeline stuck under 10%",
+    title: "Partners not meeting expectations",
     description: "Programs launched, partners signed — but revenue attribution never materializes.",
   },
   {
