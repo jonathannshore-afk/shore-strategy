@@ -101,8 +101,8 @@ const Results = () => {
   return (
     <Layout>
       <SEOHead
-        title="Results | Jonathan Shore"
-        description="Three companies. Three transformations. The track record behind the strategy. See why companies trust Jonathan Shore to build and scale partner ecosystems."
+        title="Partner Ecosystem Results — Three Transformations, Measurable Revenue"
+        description="Three companies, three transformations. The operator track record behind the strategy: pipeline lifted, programs rebuilt, partner revenue scaled."
         canonical="/results"
       />
 
