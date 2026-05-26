@@ -20,7 +20,7 @@ const stats = [
 const problems = [
   {
     icon: TrendingDown,
-    title: "Partner-sourced pipeline stuck under 10%",
+    title: "Partners not meeting expectations",
     description: "Programs launched, partners signed — but revenue attribution never materializes.",
   },
   {
@@ -469,7 +469,7 @@ const Index = () => {
               Most B2B SaaS and enterprise technology companies don't need another <strong>partner ecosystem strategy</strong> deck — they need an operator who has built one. Jonathan Shore is a <strong>fractional partnerships leader</strong> and <strong>partner ecosystem consultant</strong> who has carried full P&amp;L ownership of $1.6B ARR ecosystems at Salesforce, ServiceNow, and Lumen Technologies.
             </p>
             <p>
-              The work spans <strong>channel partner strategy</strong>, ISV and co-sell motion design, alliance program architecture, partner-led <strong>go-to-market</strong> planning, deal registration, enablement, and the operating cadences that turn signed partners into measurable pipeline. No abstract frameworks — only the program design and execution infrastructure required to move partner-sourced revenue past 10% of bookings.
+              The work spans <strong>channel partner strategy</strong>, ISV and co-sell motion design, alliance program architecture, partner-led <strong>go-to-market</strong> planning, deal registration, enablement, and the operating cadences that turn signed partners into measurable pipeline. No abstract frameworks — only the program design and execution infrastructure required to move partner-sourced revenue past expectations.
             </p>
             <p>
               Engagements run 1–2 days a week as a fractional ecosystem leader, or as scoped projects (assessments, program design, turnaround). The math is simple: senior partner leadership at a fraction of a $400K full-time hire — with operator credibility a typical <strong>GTM strategy consultant</strong> can't match.
