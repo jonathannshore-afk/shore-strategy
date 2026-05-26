@@ -314,6 +314,19 @@ const FractionalVsConsultingVsFte = () => {
               See How I Work <ArrowRight size={16} />
             </Link>
           </div>
+          <div className="mt-10 pt-8 border-t border-primary-foreground/10 flex flex-col sm:flex-row gap-4 justify-center text-sm">
+            <Link to="/leadership" className="inline-flex items-center gap-2 font-body text-gold hover:text-gold-dark transition-colors">
+              How I lead: leadership philosophy <ArrowRight size={14} />
+            </Link>
+            <span className="hidden sm:inline text-primary-foreground/30">·</span>
+            <Link to="/methodology" className="inline-flex items-center gap-2 font-body text-gold hover:text-gold-dark transition-colors">
+              The methodology I run <ArrowRight size={14} />
+            </Link>
+            <span className="hidden sm:inline text-primary-foreground/30">·</span>
+            <Link to="/services" className="inline-flex items-center gap-2 font-body text-gold hover:text-gold-dark transition-colors">
+              Services & engagement models <ArrowRight size={14} />
+            </Link>
+          </div>
         </div>
       </section>
     </Layout>
