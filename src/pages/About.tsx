@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
-import { CalendarCheck, Linkedin, Handshake, BarChart3, Heart, Cog, Zap, Users } from "lucide-react";
+import { CalendarCheck, Linkedin, Handshake, BarChart3, Heart, Cog, Zap, Users, ArrowRight } from "lucide-react";
 import { trackCalendlyClick } from "@/lib/calendlyTracking";
 import DiscoveryCallReassurance from "@/components/DiscoveryCallReassurance";
 import {
@@ -300,6 +300,15 @@ const About = () => {
                 </div>
               </div>
             ))}
+          </div>
+          <div className="mt-8 text-center md:text-left">
+            <Link
+              to="/leadership"
+              className="inline-flex items-center gap-2 font-body text-sm text-gold hover:text-gold-dark transition-colors"
+            >
+              Read the full leadership philosophy
+              <ArrowRight size={16} />
+            </Link>
           </div>
         </div>
       </section>

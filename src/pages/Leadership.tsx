@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { CalendarCheck, Handshake, BarChart3, Heart, Cog, Zap, Users } from "lucide-react";
+import { CalendarCheck, Handshake, BarChart3, Heart, Cog, Zap, Users, ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
 import SEOHead from "@/components/SEOHead";
 import { trackCalendlyClick } from "@/lib/calendlyTracking";
@@ -119,6 +119,19 @@ const Leadership = () => {
           </Link>
           <div className="mt-5">
             <DiscoveryCallReassurance variant="light" align="center" />
+          </div>
+          <div className="mt-10 pt-8 border-t border-gold/20 flex flex-col sm:flex-row gap-4 justify-center text-sm">
+            <Link to="/fractional-vs-consulting-vs-fte" className="inline-flex items-center gap-2 font-body text-gold hover:text-gold-dark transition-colors">
+              Compare fractional vs. consulting vs. FTE <ArrowRight size={14} />
+            </Link>
+            <span className="hidden sm:inline text-muted-foreground/40">·</span>
+            <Link to="/how-i-work" className="inline-flex items-center gap-2 font-body text-gold hover:text-gold-dark transition-colors">
+              See how engagements run <ArrowRight size={14} />
+            </Link>
+            <span className="hidden sm:inline text-muted-foreground/40">·</span>
+            <Link to="/methodology" className="inline-flex items-center gap-2 font-body text-gold hover:text-gold-dark transition-colors">
+              Read the methodology <ArrowRight size={14} />
+            </Link>
           </div>
         </div>
       </section>
