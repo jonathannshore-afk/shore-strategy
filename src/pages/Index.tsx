@@ -21,7 +21,7 @@ const problems = [
   {
     icon: TrendingDown,
     title: "Partners not meeting expectations",
-    description: "Programs launched, partners signed — but revenue attribution never materializes.",
+    description: "Partners' growth has plateaued, and disengaged despite your efforts.",
   },
   {
     icon: Wrench,
