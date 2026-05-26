@@ -301,6 +301,15 @@ const About = () => {
               </div>
             ))}
           </div>
+          <div className="mt-8 text-center md:text-left">
+            <Link
+              to="/leadership"
+              className="inline-flex items-center gap-2 font-body text-sm text-gold hover:text-gold-dark transition-colors"
+            >
+              Read the full leadership philosophy
+              <ArrowRight size={16} />
+            </Link>
+          </div>
         </div>
       </section>
 
