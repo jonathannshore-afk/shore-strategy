@@ -25,8 +25,8 @@ const problems = [
   },
   {
     icon: Wrench,
-    title: "A strategy deck with no one to execute it",
-    description: "The plan exists. The cadence, deal reg, and enablement infrastructure to run it don't.",
+    title: "Partners not driving your strategic priorities",
+    description: "Misalignment between the internal and external incentives, can drive the wrong behavior",
   },
   {
     icon: Unplug,
