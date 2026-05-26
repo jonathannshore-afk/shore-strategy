@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
-import { CalendarCheck, Linkedin, Handshake, BarChart3, Heart, Cog, Zap, Users } from "lucide-react";
+import { CalendarCheck, Linkedin, Handshake, BarChart3, Heart, Cog, Zap, Users, ArrowRight } from "lucide-react";
 import { trackCalendlyClick } from "@/lib/calendlyTracking";
 import DiscoveryCallReassurance from "@/components/DiscoveryCallReassurance";
 import {
