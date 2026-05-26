@@ -41,6 +41,7 @@ const Contact = lazyWithRetry(() => import("./pages/Contact"));
 const Results = lazyWithRetry(() => import("./pages/Results"));
 const Leadership = lazyWithRetry(() => import("./pages/Leadership"));
 const HowIWork = lazyWithRetry(() => import("./pages/HowIWork"));
+const WhyMe = lazyWithRetry(() => import("./pages/WhyMe"));
 const FractionalVsConsultingVsFte = lazyWithRetry(() => import("./pages/FractionalVsConsultingVsFte"));
 const FAQ = lazyWithRetry(() => import("./pages/FAQ"));
 const NotFound = lazyWithRetry(() => import("./pages/NotFound"));
@@ -62,7 +63,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/results" element={<Results />} />
-          <Route path="/why-me" element={<Navigate to="/results" replace />} />
+          <Route path="/why-me" element={<WhyMe />} />
           <Route path="/how-i-work" element={<HowIWork />} />
           <Route path="/methodology" element={<Navigate to="/how-i-work" replace />} />
           <Route path="/fractional-vs-consulting-vs-fte" element={<FractionalVsConsultingVsFte />} />
