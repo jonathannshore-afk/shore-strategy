@@ -52,29 +52,14 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Sitemap links */}
-      <div className="border-t border-navy-light">
-        <div className="container py-8">
-          <p className="font-body text-[11px] uppercase tracking-[0.2em] text-primary-foreground/60 mb-4">Explore</p>
-          <nav aria-label="Footer navigation" className="flex flex-wrap gap-x-6 gap-y-3 font-body text-sm">
-            <Link to="/about" className="text-primary-foreground/75 hover:text-gold transition-colors">About</Link>
-            <Link to="/services" className="text-primary-foreground/75 hover:text-gold transition-colors">Services</Link>
-            <Link to="/how-i-work" className="text-primary-foreground/75 hover:text-gold transition-colors">How I Work</Link>
-            <Link to="/results" className="text-primary-foreground/75 hover:text-gold transition-colors">Results</Link>
-            <Link to="/leadership" className="text-primary-foreground/75 hover:text-gold transition-colors">Leadership Philosophy</Link>
-            <Link to="/fractional-vs-consulting-vs-fte" className="text-primary-foreground/75 hover:text-gold transition-colors">Fractional vs. Consulting vs. FTE</Link>
-            <Link to="/faq" className="text-primary-foreground/75 hover:text-gold transition-colors">FAQ</Link>
-            <Link to="/contact" className="text-primary-foreground/75 hover:text-gold transition-colors">Contact</Link>
-          </nav>
-        </div>
-      </div>
-
       {/* Bottom bar */}
       <div className="border-t border-navy-light">
         <div className="container py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-primary-foreground/70">
           <span>© {new Date().getFullYear()} Shore Strategy Consulting, LLC. All rights reserved.</span>
           <div className="flex items-center gap-3">
             <Link to="/privacy" className="hover:text-gold transition-colors">Privacy Policy</Link>
+            <span>·</span>
+            <Link to="/sitemap" className="hover:text-gold transition-colors">Sitemap</Link>
             <span>·</span>
             <a href="mailto:jonathan@shore-strategy.com?subject=Partner%20Strategy%20Inquiry" className="hover:text-gold transition-colors">jonathan@shore-strategy.com</a>
             <span>·</span>
