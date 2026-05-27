@@ -47,6 +47,7 @@ const FAQ = lazyWithRetry(() => import("./pages/FAQ"));
 const NotFound = lazyWithRetry(() => import("./pages/NotFound"));
 const Unsubscribe = lazyWithRetry(() => import("./pages/Unsubscribe"));
 const Privacy = lazyWithRetry(() => import("./pages/Privacy"));
+const Sitemap = lazyWithRetry(() => import("./pages/Sitemap"));
 
 const queryClient = new QueryClient();
 
@@ -72,6 +73,7 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/unsubscribe" element={<Unsubscribe />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/sitemap" element={<Sitemap />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         </Suspense>
