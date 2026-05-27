@@ -178,8 +178,6 @@ const Index = () => {
                 <span>ServiceNow</span>
                 <span className="text-gold/70">·</span>
                 <span>Lumen</span>
-                <span className="text-gold/70">·</span>
-                <span>$1.6B ARR Ecosystems</span>
               </div>
             </div>
             <div
