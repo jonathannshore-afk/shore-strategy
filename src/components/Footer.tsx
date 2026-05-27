@@ -60,9 +60,7 @@ const Footer = () => {
             <Link to="/about" className="text-primary-foreground/75 hover:text-gold transition-colors">About</Link>
             <Link to="/services" className="text-primary-foreground/75 hover:text-gold transition-colors">Services</Link>
             <Link to="/how-i-work" className="text-primary-foreground/75 hover:text-gold transition-colors">How I Work</Link>
-            <Link to="/methodology" className="text-primary-foreground/75 hover:text-gold transition-colors">Methodology</Link>
             <Link to="/results" className="text-primary-foreground/75 hover:text-gold transition-colors">Results</Link>
-            <Link to="/why-me" className="text-primary-foreground/75 hover:text-gold transition-colors">Why Me</Link>
             <Link to="/leadership" className="text-primary-foreground/75 hover:text-gold transition-colors">Leadership Philosophy</Link>
             <Link to="/fractional-vs-consulting-vs-fte" className="text-primary-foreground/75 hover:text-gold transition-colors">Fractional vs. Consulting vs. FTE</Link>
             <Link to="/faq" className="text-primary-foreground/75 hover:text-gold transition-colors">FAQ</Link>
