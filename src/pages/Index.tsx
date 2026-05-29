@@ -418,7 +418,7 @@ const Index = () => {
               See It In Practice
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {exploreCards.map((card) => (
               <Link
                 key={card.to}
