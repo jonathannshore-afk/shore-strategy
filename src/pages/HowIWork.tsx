@@ -162,20 +162,6 @@ const HowIWork = () => {
             </p>
           </div>
 
-          {/* Sequential progression indicator */}
-          <div className="hidden md:flex flex-col gap-2 max-w-5xl mx-auto mb-6">
-            {[["01", "02", "03"], ["04", "05", "06"]].map((row, rIdx) => (
-              <div key={rIdx} className="flex items-center justify-center gap-3 font-body text-xs uppercase tracking-[0.2em] text-gold/70">
-                {row.map((num, i) => (
-                  <span key={num} className="flex items-center gap-3">
-                    <span className="font-display font-semibold text-gold">{num}</span>
-                    {i < row.length - 1 && <span className="text-gold/50">→</span>}
-                  </span>
-                ))}
-              </div>
-            ))}
-          </div>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto auto-rows-[380px]">
             {pillars.map((p) => (
               <FlipCard
