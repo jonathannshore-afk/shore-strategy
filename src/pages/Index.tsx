@@ -230,40 +230,6 @@ const Index = () => {
             </div>
           </div>
         </div>
-        <div className="relative z-10 container pb-8 pt-6 md:hidden">
-          <p className="font-body text-[10px] uppercase tracking-[0.2em] text-primary-foreground/70 text-center mb-4">
-            Experience Built At
-          </p>
-          <div className="flex items-center justify-center gap-8 flex-wrap">
-            <img
-              alt="Salesforce"
-              className="h-6 object-contain opacity-70 brightness-0 invert"
-              src="/lovable-uploads/f6d67dad-429a-49a3-8c20-fff68acb27d4.png"
-              width={80}
-              height={24}
-              loading="lazy"
-              decoding="async"
-            />
-            <img
-              src={logoServicenow}
-              alt="ServiceNow"
-              className="h-5 object-contain opacity-70 brightness-0 invert"
-              width={80}
-              height={20}
-              loading="lazy"
-              decoding="async"
-            />
-            <img
-              src={logoLumen}
-              alt="Lumen Technologies"
-              className="h-5 object-contain opacity-70 brightness-0 invert"
-              width={80}
-              height={20}
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-        </div>
       </section>
 
       {/* Career Highlights */}
