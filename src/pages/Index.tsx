@@ -327,7 +327,6 @@ const Index = () => {
       <section className="bg-cream py-14 md:py-20">
         <div className="container">
           <div className="mb-10 max-w-2xl">
-            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">The Challenge</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
               The Problems I'm Called In To Solve
             </h2>
