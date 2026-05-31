@@ -353,7 +353,7 @@ const Index = () => {
       </section>
 
       {/* Divider */}
-      <div className="bg-cream hidden md:block">
+      <div className="bg-cream">
         <div className="container px-6 md:px-12 lg:px-24 flex items-center gap-4 py-2">
           <span className="block h-px flex-1 bg-gold/40" />
           <span className="block w-2 h-2 rotate-45 bg-gold/60" />
@@ -445,7 +445,7 @@ const Index = () => {
       </section>
 
       {/* Divider */}
-      <div className="bg-cream hidden md:block">
+      <div className="bg-cream">
         <div className="container px-6 md:px-12 lg:px-24 flex items-center gap-4 py-2">
           <span className="block h-px flex-1 bg-gold/40" />
           <span className="block w-2 h-2 rotate-45 bg-gold/60" />
@@ -473,7 +473,7 @@ const Index = () => {
               Engagements run 1–2 days a week as a fractional ecosystem leader, or as scoped projects (assessments, program design, turnaround). The math is simple: senior partner leadership at a fraction of a $400K full-time hire — with operator credibility a typical <strong>GTM strategy consultant</strong> can't match.
             </p>
           </div>
-          <div className="mt-8 hidden md:grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
             <Link
               to="/services"
               className="px-5 py-4 rounded-lg border border-border bg-card hover:border-gold/60 transition-colors"
