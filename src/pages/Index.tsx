@@ -168,7 +168,7 @@ const Index = () => {
                 at B2B technology companies building partner-led growth.
               </p>
               <div
-                className="mt-4 pt-4 border-t border-primary-foreground/15 font-body text-xs uppercase tracking-[0.2em] text-primary-foreground/75 max-w-xl flex flex-wrap items-center justify-center md:justify-start gap-x-3 gap-y-2 animate-fade-in-up"
+                className="mt-4 pt-4 border-t border-primary-foreground/15 font-body text-xs uppercase tracking-[0.2em] text-primary-foreground/75 max-w-xl hidden md:flex flex-wrap items-center justify-center md:justify-start gap-x-3 gap-y-2 animate-fade-in-up"
                 style={{ animationDelay: "0.75s" }}
               >
                 <span>15+ Years</span>
@@ -181,7 +181,7 @@ const Index = () => {
               </div>
             </div>
             <div
-              className="flex flex-col items-center w-56 sm:w-64 md:w-72 lg:w-80 shrink-0 animate-fade-in-up order-first md:order-none"
+              className="flex flex-col items-center w-56 sm:w-64 md:w-72 lg:w-80 shrink-0 animate-fade-in-up order-last md:order-none"
               style={{ animationDelay: "0.3s" }}
             >
               <img
@@ -228,40 +228,6 @@ const Index = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div className="relative z-10 container pb-8 pt-6 md:hidden">
-          <p className="font-body text-[10px] uppercase tracking-[0.2em] text-primary-foreground/70 text-center mb-4">
-            Experience Built At
-          </p>
-          <div className="flex items-center justify-center gap-8 flex-wrap">
-            <img
-              alt="Salesforce"
-              className="h-6 object-contain opacity-70 brightness-0 invert"
-              src="/lovable-uploads/f6d67dad-429a-49a3-8c20-fff68acb27d4.png"
-              width={80}
-              height={24}
-              loading="lazy"
-              decoding="async"
-            />
-            <img
-              src={logoServicenow}
-              alt="ServiceNow"
-              className="h-5 object-contain opacity-70 brightness-0 invert"
-              width={80}
-              height={20}
-              loading="lazy"
-              decoding="async"
-            />
-            <img
-              src={logoLumen}
-              alt="Lumen Technologies"
-              className="h-5 object-contain opacity-70 brightness-0 invert"
-              width={80}
-              height={20}
-              loading="lazy"
-              decoding="async"
-            />
           </div>
         </div>
       </section>
@@ -327,6 +293,7 @@ const Index = () => {
       <section className="bg-cream py-14 md:py-20">
         <div className="container">
           <div className="mb-10 max-w-2xl">
+            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">The Challenge</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
               The Problems I'm Called In To Solve
             </h2>
@@ -353,7 +320,7 @@ const Index = () => {
       </section>
 
       {/* Divider */}
-      <div className="bg-cream">
+      <div className="bg-cream hidden md:block">
         <div className="container px-6 md:px-12 lg:px-24 flex items-center gap-4 py-2">
           <span className="block h-px flex-1 bg-gold/40" />
           <span className="block w-2 h-2 rotate-45 bg-gold/60" />
@@ -445,7 +412,7 @@ const Index = () => {
       </section>
 
       {/* Divider */}
-      <div className="bg-cream">
+      <div className="bg-cream hidden md:block">
         <div className="container px-6 md:px-12 lg:px-24 flex items-center gap-4 py-2">
           <span className="block h-px flex-1 bg-gold/40" />
           <span className="block w-2 h-2 rotate-45 bg-gold/60" />
@@ -473,7 +440,7 @@ const Index = () => {
               Engagements run 1–2 days a week as a fractional ecosystem leader, or as scoped projects (assessments, program design, turnaround). The math is simple: senior partner leadership at a fraction of a $400K full-time hire — with operator credibility a typical <strong>GTM strategy consultant</strong> can't match.
             </p>
           </div>
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="mt-8 hidden md:grid grid-cols-1 sm:grid-cols-3 gap-4">
             <Link
               to="/services"
               className="px-5 py-4 rounded-lg border border-border bg-card hover:border-gold/60 transition-colors"
