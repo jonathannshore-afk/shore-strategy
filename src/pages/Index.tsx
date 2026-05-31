@@ -181,7 +181,7 @@ const Index = () => {
               </div>
             </div>
             <div
-              className="flex flex-col items-center w-56 sm:w-64 md:w-72 lg:w-80 shrink-0 animate-fade-in-up order-last md:order-none"
+              className="flex flex-col items-center w-56 sm:w-64 md:w-72 lg:w-80 shrink-0 animate-fade-in-up order-first md:order-none"
               style={{ animationDelay: "0.3s" }}
             >
               <img
