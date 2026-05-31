@@ -320,7 +320,7 @@ const Index = () => {
       </section>
 
       {/* Divider */}
-      <div className="bg-cream">
+      <div className="bg-cream hidden md:block">
         <div className="container px-6 md:px-12 lg:px-24 flex items-center gap-4 py-2">
           <span className="block h-px flex-1 bg-gold/40" />
           <span className="block w-2 h-2 rotate-45 bg-gold/60" />
