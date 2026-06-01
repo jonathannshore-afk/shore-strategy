@@ -129,7 +129,7 @@ const Leadership = () => {
               See how engagements run <ArrowRight size={14} />
             </Link>
             <span className="hidden sm:inline text-muted-foreground/40">·</span>
-            <Link to="/methodology" className="inline-flex items-center gap-2 font-body text-gold hover:text-gold-dark transition-colors">
+            <Link to="/how-i-work" className="inline-flex items-center gap-2 font-body text-gold hover:text-gold-dark transition-colors">
               Read the methodology <ArrowRight size={14} />
             </Link>
           </div>
