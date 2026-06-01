@@ -2,7 +2,7 @@
 import { writeFileSync } from "fs";
 import { resolve } from "path";
 
-const BASE_URL = "https://shore-strategy.lovable.app";
+const BASE_URL = "https://shore-strategy.com";
 const TODAY = new Date().toISOString().slice(0, 10);
 
 interface Entry {
