@@ -6,8 +6,8 @@ import DiscoveryCallReassurance from "@/components/DiscoveryCallReassurance";
 const Footer = () => {
   return (
     <footer className="bg-navy text-primary-foreground/70 border-t border-gold/30">
-      <div className="container pt-16 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div className="container pt-10 pb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           {/* Left — Brand */}
           <div>
             <Link to="/" className="inline-flex items-center gap-2 mb-3">
