@@ -435,7 +435,7 @@ const Index = () => {
       {/* SEO-focused content block: Partner Ecosystem Strategy Consulting */}
       <section className="bg-cream py-14 md:py-20">
         <div className="container max-w-4xl">
-          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">
+          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3 font-bold">
             Partner Ecosystem Strategy Consulting for B2B Tech
           </p>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-5">
