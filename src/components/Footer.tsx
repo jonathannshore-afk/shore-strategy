@@ -11,8 +11,8 @@ const Footer = () => {
           {/* Left — Brand */}
           <div>
             <Link to="/" className="inline-flex items-center gap-2 mb-3">
-              <span className="font-display text-2xl font-bold text-gold">Jonathan</span>
-              <span className="font-display text-2xl font-light text-primary-foreground">Shore</span>
+              <span className="font-display text-2xl font-bold text-gold">Shore Strategy</span>
+              <span className="font-display text-2xl font-light text-primary-foreground">Consulting</span>
             </Link>
             <p className="font-body text-sm text-primary-foreground/75 max-w-sm leading-relaxed">
               Partner Ecosystem Strategist helping B2B technology companies build, fix, and scale partner ecosystems that drive revenue growth.
