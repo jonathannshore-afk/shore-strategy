@@ -24,10 +24,7 @@ const Footer = () => {
             <h2 className="font-display text-2xl md:text-3xl font-bold text-primary-foreground mb-3">
               Ready to Accelerate Your Partner Ecosystem?
             </h2>
-            <p className="font-body text-sm text-primary-foreground/75 mb-6">
-              Start with a free 30-minute discovery call. No prep, no obligation.
-            </p>
-            <div className="flex flex-wrap gap-4 md:justify-end">
+            <div className="flex flex-wrap gap-4 md:justify-end mt-6">
               <Link
                 to="/contact#calendly"
                 onClick={() => trackCalendlyClick("cta_click", "/contact#calendly", { location: "footer" })}
