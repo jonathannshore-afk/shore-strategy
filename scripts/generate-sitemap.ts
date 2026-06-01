@@ -24,6 +24,7 @@ const staticEntries: Entry[] = [
   { path: "/contact", changefreq: "monthly", priority: "0.7", lastmod: TODAY },
   { path: "/privacy", changefreq: "yearly", priority: "0.3", lastmod: TODAY },
   { path: "/unsubscribe", changefreq: "yearly", priority: "0.1", lastmod: TODAY },
+  { path: "/sitemap", changefreq: "yearly", priority: "0.2", lastmod: TODAY },
 ];
 
 function render(entries: Entry[]) {
