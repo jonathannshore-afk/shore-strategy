@@ -1,20 +1,34 @@
-## Objective
-Reorder the "Ways to Work Together" cards on the Services page and revise the Fractional Leadership description to remove the word "owning".
+## Home Hero Cleanup
 
-## Changes
+Tighten the home page hero in `src/pages/Index.tsx` by removing redundant content. No copy rewrites, no layout restructure — just targeted removals.
 
-### 1. Card Reorder
-In `src/pages/Services.tsx`, reorder the `engagementModels` array so the display order is:
-1. Advisory & Coaching
-2. Project-Based Engagement
-3. Fractional Leadership
+### Changes
 
-### 2. Copy Edit
-Change the Fractional Leadership `desc` field from:
-> "I embed part-time as your head of partnerships — owning strategy, execution, and results."
+1. **Remove the eyebrow line** above the H1:
+   - "ex-Salesforce · ServiceNow · Lumen Technologies"
+   - Reason: the logo strip already communicates this visually.
 
-to:
-> "I embed part-time as your head of partnerships — driving strategy, execution, and results."
+2. **Remove the secondary CTA** in the button row:
+   - "See How I Work" button (keeps the primary "Book a Discovery Call").
+   - The button row collapses to a single primary action.
 
-## Files Modified
-- `src/pages/Services.tsx`
+3. **Remove the credentials row** under the headshot:
+   - "15+ Years · Salesforce · ServiceNow · Lumen"
+   - Reason: fully redundant with the logo strip directly above it.
+
+### Kept as-is
+
+- H1 and subhead copy
+- Reassurance microcopy ("Free 30-minute discovery call…")
+- Audience line ("For revenue and partnership leaders…")
+- Headshot
+- Desktop "Experience Built At" logo strip under the headshot
+- Mobile-only logo strip at the bottom of the hero
+
+### Files touched
+
+- `src/pages/Index.tsx` — hero `<section>` only (roughly lines 119–181 and the credentials block on lines 170–181).
+
+### Expected outcome
+
+Shorter, more focused hero. One headline, one subhead, one CTA, one reassurance line, one audience line, headshot + logos. Removes three redundant Salesforce/ServiceNow/Lumen mentions down to one (the logo strip).

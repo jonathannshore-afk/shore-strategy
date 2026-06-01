@@ -116,9 +116,6 @@ const Index = () => {
         <div className="relative z-10 container flex-1 flex items-center">
           <div className="flex flex-col md:flex-row items-center gap-6 md:gap-16 w-full">
             <div className="flex-1 text-center md:text-left">
-              <p className="text-gold font-body text-sm uppercase tracking-[0.3em] mb-3 md:mb-6 animate-fade-in-up">
-                ex-Salesforce · ServiceNow · Lumen Technologies
-              </p>
               <h1
                 className="font-display text-3xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-3 md:mb-5 animate-fade-in-up"
                 style={{ animationDelay: "0.15s" }}
@@ -144,12 +141,6 @@ const Index = () => {
                 >
                   <CalendarCheck size={18} /> Book a Discovery Call
                 </Link>
-                <Link
-                  to="/how-i-work"
-                  className="inline-flex items-center gap-2 px-8 py-3.5 border border-primary-foreground/30 text-primary-foreground font-body font-semibold rounded hover:border-gold hover:text-gold transition-colors"
-                >
-                  See How I Work <ArrowRight size={16} />
-                </Link>
               </div>
               <div
                 className="mt-4 animate-fade-in-up"
@@ -167,18 +158,6 @@ const Index = () => {
                 </span>{" "}
                 at B2B technology companies building partner-led growth.
               </p>
-              <div
-                className="mt-4 pt-4 border-t border-primary-foreground/15 font-body text-xs uppercase tracking-[0.2em] text-primary-foreground/75 max-w-xl flex flex-wrap items-center justify-center md:justify-start gap-x-3 gap-y-2 animate-fade-in-up"
-                style={{ animationDelay: "0.75s" }}
-              >
-                <span>15+ Years</span>
-                <span className="text-gold/70">·</span>
-                <span>Salesforce</span>
-                <span className="text-gold/70">·</span>
-                <span>ServiceNow</span>
-                <span className="text-gold/70">·</span>
-                <span>Lumen</span>
-              </div>
             </div>
             <div
               className="flex flex-col items-center w-56 sm:w-64 md:w-72 lg:w-80 shrink-0 animate-fade-in-up order-first md:order-none"
