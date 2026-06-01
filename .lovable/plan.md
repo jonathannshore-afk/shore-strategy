@@ -1,7 +1,20 @@
-Update two internal links that currently point to `/methodology` (which redirects to `/how-i-work`) to instead link directly to `/how-i-work`.
+## Objective
+Reorder the "Ways to Work Together" cards on the Services page and revise the Fractional Leadership description to remove the word "owning".
 
-**Files to change:**
-1. `src/pages/Leadership.tsx` — change `to="/methodology"` to `to="/how-i-work"`
-2. `src/pages/FractionalVsConsultingVsFte.tsx` — change `to="/methodology"` to `to="/how-i-work"`
+## Changes
 
-No other changes.
+### 1. Card Reorder
+In `src/pages/Services.tsx`, reorder the `engagementModels` array so the display order is:
+1. Advisory & Coaching
+2. Project-Based Engagement
+3. Fractional Leadership
+
+### 2. Copy Edit
+Change the Fractional Leadership `desc` field from:
+> "I embed part-time as your head of partnerships — owning strategy, execution, and results."
+
+to:
+> "I embed part-time as your head of partnerships — driving strategy, execution, and results."
+
+## Files Modified
+- `src/pages/Services.tsx`
