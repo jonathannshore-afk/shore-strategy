@@ -1,34 +1,17 @@
-## Home Hero Cleanup
+## Lighter Hero Background
 
-Tighten the home page hero in `src/pages/Index.tsx` by removing redundant content. No copy rewrites, no layout restructure — just targeted removals.
+Generate a new hero background image with the same navy + gold-line motif as today, but far fewer lines and more negative space, then swap it in.
 
-### Changes
+### Steps
 
-1. **Remove the eyebrow line** above the H1:
-   - "ex-Salesforce · ServiceNow · Lumen Technologies"
-   - Reason: the logo strip already communicates this visually.
-
-2. **Remove the secondary CTA** in the button row:
-   - "See How I Work" button (keeps the primary "Book a Discovery Call").
-   - The button row collapses to a single primary action.
-
-3. **Remove the credentials row** under the headshot:
-   - "15+ Years · Salesforce · ServiceNow · Lumen"
-   - Reason: fully redundant with the logo strip directly above it.
-
-### Kept as-is
-
-- H1 and subhead copy
-- Reassurance microcopy ("Free 30-minute discovery call…")
-- Audience line ("For revenue and partnership leaders…")
-- Headshot
-- Desktop "Experience Built At" logo strip under the headshot
-- Mobile-only logo strip at the bottom of the hero
+1. Generate `public/hero-bg.jpg` replacement using `imagegen` with a 16:9 prompt: deep navy background (#1B2A4A), only 4–6 long, thin, very faint gold diagonal lines scattered across the frame with lots of empty space, subtle vignette, abstract — no text, no people, no dense grids.
+2. Save the new image to `public/hero-bg.jpg` (overwriting the current one). Same path means no code changes required in `src/pages/Index.tsx`.
+3. QA: view the generated image to confirm it reads as "sparse" vs. the current cluttered version. If too busy, regenerate with stricter constraints (fewer lines, more negative space).
 
 ### Files touched
 
-- `src/pages/Index.tsx` — hero `<section>` only (roughly lines 119–181 and the credentials block on lines 170–181).
+- `public/hero-bg.jpg` — replaced in place.
 
-### Expected outcome
+### Not changing
 
-Shorter, more focused hero. One headline, one subhead, one CTA, one reassurance line, one audience line, headshot + logos. Removes three redundant Salesforce/ServiceNow/Lumen mentions down to one (the logo strip).
+- Hero layout, copy, overlay opacity, or any code in `Index.tsx`.
