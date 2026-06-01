@@ -248,7 +248,7 @@ const Index = () => {
       {/* Career Highlights */}
       <section className="bg-navy border-t border-primary-foreground/10">
         <div className="container py-5 md:py-7">
-          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-2">Career Highlights</p>
+          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-2 font-bold">Career Highlights</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
@@ -268,7 +268,7 @@ const Index = () => {
       <section className="bg-cream py-14 md:py-20">
         <div className="container">
           <div className="max-w-3xl">
-          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-2">A Deliberate Choice</p>
+          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-2 font-bold">A Deliberate Choice</p>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-5">
             Why Fractional, Why Now
           </h2>
@@ -344,7 +344,7 @@ const Index = () => {
       <section className="bg-cream py-14 md:py-20">
         <div className="container">
           <div className="mb-10 max-w-2xl">
-            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">What I Do</p>
+            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3 font-bold">What I Do</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
               From Broken Ecosystem to Revenue Engine
             </h2>
@@ -392,7 +392,7 @@ const Index = () => {
       <section className="bg-cream py-14 md:py-20">
         <div className="container">
           <div className="mb-10 max-w-2xl">
-            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Go Deeper</p>
+            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3 font-bold">Go Deeper</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
               See It In Practice
             </h2>
@@ -435,7 +435,7 @@ const Index = () => {
       {/* SEO-focused content block: Partner Ecosystem Strategy Consulting */}
       <section className="bg-cream py-14 md:py-20">
         <div className="container max-w-4xl">
-          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">
+          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3 font-bold">
             Partner Ecosystem Strategy Consulting for B2B Tech
           </p>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-5">
