@@ -103,7 +103,7 @@ const Index = () => {
       />
 
       {/* Hero */}
-      <section className="relative min-h-[60vh] md:min-h-[75vh] flex flex-col justify-center overflow-hidden">
+      <section className="relative min-h-[50vh] md:min-h-[60vh] flex flex-col justify-center overflow-hidden py-10 md:py-14">
         <img
           src="/hero-bg.jpg"
           alt=""
@@ -247,9 +247,9 @@ const Index = () => {
 
       {/* Career Highlights */}
       <section className="bg-navy border-t border-primary-foreground/10">
-        <div className="container py-12 md:py-16">
-          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-6">Career Highlights</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="container py-8 md:py-10">
+          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-4">Career Highlights</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
                 <div className="font-display text-4xl md:text-5xl font-bold text-gold mb-2">
