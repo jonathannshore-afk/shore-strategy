@@ -66,7 +66,6 @@ const App = () => (
           <Route path="/results" element={<Results />} />
           <Route path="/why-me" element={<WhyMe />} />
           <Route path="/how-i-work" element={<HowIWork />} />
-          <Route path="/methodology" element={<Navigate to="/how-i-work" replace />} />
           <Route path="/fractional-vs-consulting-vs-fte" element={<FractionalVsConsultingVsFte />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/leadership" element={<Leadership />} />
