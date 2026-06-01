@@ -139,7 +139,7 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
             <div className="pt-2">
               <h1 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-4">
-                About <span className="text-gold">Jonathan</span>
+                About <span className="text-gold">Shore Strategy Consulting</span>
               </h1>
               <p className="font-body text-lg text-primary-foreground/80 leading-relaxed">
                 15+ years building and transforming partner ecosystems at Salesforce, ServiceNow, and Lumen Technologies. I help B2B leaders unlock partner-led revenue through strategic consulting and fractional executive leadership.
