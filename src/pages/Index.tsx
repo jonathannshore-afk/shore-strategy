@@ -247,15 +247,15 @@ const Index = () => {
 
       {/* Career Highlights */}
       <section className="bg-navy border-t border-primary-foreground/10">
-        <div className="container py-8 md:py-10">
-          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-4">Career Highlights</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="container py-5 md:py-7">
+          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-2">Career Highlights</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
-                <div className="font-display text-4xl md:text-5xl font-bold text-gold mb-2">
+                <div className="font-display text-3xl md:text-4xl font-bold text-gold mb-1">
                   {stat.value}
                 </div>
-                <div className="font-body text-sm text-primary-foreground/75 uppercase tracking-wider">
+                <div className="font-body text-xs md:text-sm text-primary-foreground/75 uppercase tracking-wider">
                   {stat.label}
                 </div>
               </div>
