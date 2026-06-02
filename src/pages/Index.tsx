@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, CalendarCheck, TrendingDown, Wrench, Unplug, Layers, Rocket, LineChart, Award, Compass } from "lucide-react";
+import { ArrowRight, CalendarCheck, Layers, Rocket, LineChart } from "lucide-react";
 import headshot from "@/assets/jonathan-headshot.jpeg";
 import logoServicenow from "@/assets/logo-servicenow.svg";
 import logoLumen from "@/assets/logo-lumen.png";
@@ -11,28 +11,10 @@ import { trackCalendlyClick } from "@/lib/calendlyTracking";
 
 
 const stats = [
-  { value: "$1.6B", label: "ARR Ecosystem Managed" },
-  { value: "$800M+", label: "Annual Bookings Influenced" },
-  { value: "19%", label: "YoY Channel Revenue Growth" },
-  { value: "2K+", label: "Partners Across Fortune 500 Ecosystems" },
-];
-
-const problems = [
-  {
-    icon: TrendingDown,
-    title: "Partners not meeting expectations",
-    description: "Partners' growth has plateaued, and disengaged despite your efforts.",
-  },
-  {
-    icon: Wrench,
-    title: "Partners not driving your strategic priorities",
-    description: "Misalignment between the internal and external incentives, can drive the wrong behavior",
-  },
-  {
-    icon: Unplug,
-    title: "Partnerships running parallel to the business",
-    description: "Sales doesn't trust it. Product ignores it. Marketing works around it.",
-  },
+  { value: "15+ Years", label: "Enterprise Partner-Operator Experience" },
+  { value: "19% YoY", label: "Channel Revenue Growth" },
+  { value: "$12M ARR", label: "From a New ISV Motion in Year One" },
+  { value: "3 Fortune 500", label: "Programs Built, Scaled, Turned Around" },
 ];
 
 const whatIDo = [
@@ -40,36 +22,19 @@ const whatIDo = [
     icon: Layers,
     title: "Build the Right Program",
     description:
-      "Partner tiers, incentive models, and routes-to-market designed for your stage, motion, and market. No generic frameworks — built for how your business actually sells.",
+      "Partner tiers, incentive models, and routes-to-market designed for how your business actually sells.",
   },
   {
     icon: Rocket,
     title: "Activate the Revenue Motion",
     description:
-      "Co-sell playbooks, enablement frameworks, and deal registration that partners actually use. The operational infrastructure that turns signed partners into pipeline.",
+      "Co-sell playbooks, shared comp, and deal registration that sales actually trusts.",
   },
   {
     icon: LineChart,
-    title: "Instrument and Scale",
+    title: "Instrument the Engine",
     description:
-      "KPI frameworks, performance analytics, and operating cadences that give you board-ready visibility and compound results quarter over quarter.",
-  },
-];
-
-const exploreCards = [
-  {
-    icon: Award,
-    title: "Case Studies",
-    description: "Real outcomes from partner programs I've built and turned around.",
-    to: "/results",
-    cta: "See the results",
-  },
-  {
-    icon: Compass,
-    title: "Leadership Philosophy",
-    description: "How I lead teams, run cadences, and operate with partners.",
-    to: "/leadership",
-    cta: "Read the philosophy",
+      "KPIs, scorecards, and operating cadences that turn partner activity into measurable, board-ready revenue.",
   },
 ];
 
@@ -77,8 +42,8 @@ const Index = () => {
   return (
     <Layout>
       <SEOHead
-        title="Partner Ecosystem Strategist"
-        description="Fractional partner ecosystem strategist for B2B tech. Build, fix, and scale partner programs that drive measurable revenue. 15+ years operator experience."
+        title="Fractional Partner Ecosystem Leadership for B2B SaaS"
+        description="Fractional partner ecosystem leadership for Series B–D B2B SaaS and AI companies — bringing enterprise operator discipline from Salesforce, ServiceNow, and Lumen to scale partner revenue, without the enterprise headcount."
         canonical="/"
         schemaJson={{
           "@context": "https://schema.org",
