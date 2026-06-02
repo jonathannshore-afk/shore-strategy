@@ -203,7 +203,7 @@ const Index = () => {
       {/* Career Highlights */}
       <section className="bg-navy border-t border-primary-foreground/10">
         <div className="container py-5 md:py-7">
-          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-2 font-bold">Career Highlights</p>
+          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-2 font-bold">Enterprise muscle. Right-sized for scale-ups.</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
