@@ -93,7 +93,7 @@ const Index = () => {
                 className="font-body text-base md:text-xl text-primary-foreground/80 max-w-xl mb-5 md:mb-8 animate-fade-in-up"
                 style={{ animationDelay: "0.3s" }}
               >
-                I help B2B technology companies build, fix, and scale partner ecosystems that drive measurable revenue growth.
+                Fractional partner ecosystem leadership for Series B–D B2B SaaS and AI companies — scaling partner revenue with enterprise operator discipline, without the enterprise headcount.
               </p>
               <div
                 className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start animate-fade-in-up"
@@ -113,16 +113,6 @@ const Index = () => {
               >
                 <DiscoveryCallReassurance variant="dark" align="left" className="justify-center md:justify-start" />
               </div>
-              <p
-                className="mt-6 md:mt-8 pt-5 border-t border-primary-foreground/15 font-body text-sm text-primary-foreground/75 max-w-xl text-center md:text-left animate-fade-in-up"
-                style={{ animationDelay: "0.6s" }}
-              >
-                For{" "}
-                <span className="text-primary-foreground/80">
-                  revenue and partnership leaders
-                </span>{" "}
-                at B2B technology companies building partner-led growth.
-              </p>
             </div>
             <div
               className="flex flex-col items-center w-56 sm:w-64 md:w-72 lg:w-80 shrink-0 animate-fade-in-up order-first md:order-none"
