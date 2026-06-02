@@ -147,7 +147,7 @@ const Contact = () => {
     <Layout>
       <SEOHead
         title="Contact — Book a Discovery Call"
-        description="Book a 30-minute discovery call with Jonathan Shore to discuss your partner ecosystem strategy. Fractional partnerships leadership and consulting for B2B tech."
+        description="Book a 25-minute discovery call with Jonathan Shore to discuss your partner ecosystem strategy. Fractional partnerships leadership and consulting for B2B tech."
         canonical="/contact"
         schemaJson={[
           {
@@ -191,7 +191,7 @@ const Contact = () => {
               <ul className="space-y-3 border-t border-border/60 pt-6">
                 <li className="flex items-start gap-3 font-body text-sm text-foreground/80">
                   <span className="text-gold font-display text-base leading-none mt-0.5">✓</span>
-                  <span>30-minute discovery call — no prep required</span>
+                  <span>25-minute discovery call — no prep required</span>
                 </li>
                 <li className="flex items-start gap-3 font-body text-sm text-foreground/80">
                   <span className="text-gold font-display text-base leading-none mt-0.5">✓</span>
