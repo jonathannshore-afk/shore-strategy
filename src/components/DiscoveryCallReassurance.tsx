@@ -11,7 +11,7 @@ const DiscoveryCallReassurance = ({ variant = "light", align = "left", className
     <p
       className={`font-body text-xs uppercase tracking-[0.15em] ${color} ${alignment} flex flex-wrap items-center gap-x-2 gap-y-1 ${className}`}
     >
-      <span>Free 30-minute discovery call</span>
+      <span>25-minute discovery call</span>
       <span className="text-gold" aria-hidden="true">·</span>
       <span>No prep required</span>
       <span className="text-gold" aria-hidden="true">·</span>
