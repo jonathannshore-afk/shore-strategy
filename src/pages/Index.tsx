@@ -229,10 +229,13 @@ const Index = () => {
           </h2>
           <div className="font-body text-foreground/80 leading-relaxed space-y-4 text-[15px] md:text-base">
             <p>
-              Most B2B technology companies need the strategy, program design, and executive presence of a senior partnerships leader — but a $400K+ full-time hire isn't always the right answer. That's the gap I exist to close. I embed 1-2 days a week, bring the same operator experience, and cost a fraction of the full-time alternative.
+              I spent 15+ years inside Salesforce, ServiceNow, and Lumen — running partner programs from the inside, with real P&L, real boards, and ecosystems that scaled past $1.6B ARR. I went fractional because Series B–D B2B SaaS and AI companies need that operator playbook today — but they can't yet justify a $400K+ Head of Partnerships. That's the gap I exist to close.
             </p>
             <p>
-              I'm not a career consultant who has read about partner ecosystems. I've built them, scaled them, and turned them around — with full P&L ownership and board-level accountability. The work I do for clients today is the same work I did as an operator. The only thing that's changed is who signs the contract.
+              I embed 1–2 days a week, bring the same operator discipline I ran inside, and cost a fraction of the full-time alternative.
+            </p>
+            <p>
+              I'm not a career consultant who's read about partner ecosystems. I've built them, scaled them, and turned them around — with full P&L ownership and board-level accountability. The work I do for clients today is the same work I did as an operator. The only thing that's changed is who signs the contract.
             </p>
           </div>
           <div className="mt-8">
