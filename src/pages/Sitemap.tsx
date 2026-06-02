@@ -11,7 +11,7 @@ const links = [
   { to: "/leadership", label: "Leadership Philosophy", description: "How I lead teams and operate with partners." },
   { to: "/fractional-vs-consulting-vs-fte", label: "Fractional vs. Consulting vs. FTE", description: "Which engagement model fits your situation." },
   { to: "/faq", label: "FAQ", description: "Common questions about fractional partnerships work." },
-  { to: "/contact", label: "Contact", description: "Book a 30-minute discovery call or send a message." },
+  { to: "/contact", label: "Contact", description: "Book a 25-minute discovery call or send a message." },
   { to: "/privacy", label: "Privacy Policy", description: "How we collect, use, and protect your information." },
 ];
 

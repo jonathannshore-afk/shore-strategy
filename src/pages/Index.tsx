@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, CalendarCheck, TrendingDown, Wrench, Unplug, Layers, Rocket, LineChart, Award, Compass } from "lucide-react";
+import { ArrowRight, CalendarCheck, Layers, Rocket, LineChart } from "lucide-react";
 import headshot from "@/assets/jonathan-headshot.jpeg";
 import logoServicenow from "@/assets/logo-servicenow.svg";
 import logoLumen from "@/assets/logo-lumen.png";
@@ -11,28 +11,10 @@ import { trackCalendlyClick } from "@/lib/calendlyTracking";
 
 
 const stats = [
-  { value: "$1.6B", label: "ARR Ecosystem Managed" },
-  { value: "$800M+", label: "Annual Bookings Influenced" },
-  { value: "19%", label: "YoY Channel Revenue Growth" },
-  { value: "2K+", label: "Partners Across Fortune 500 Ecosystems" },
-];
-
-const problems = [
-  {
-    icon: TrendingDown,
-    title: "Partners not meeting expectations",
-    description: "Partners' growth has plateaued, and disengaged despite your efforts.",
-  },
-  {
-    icon: Wrench,
-    title: "Partners not driving your strategic priorities",
-    description: "Misalignment between the internal and external incentives, can drive the wrong behavior",
-  },
-  {
-    icon: Unplug,
-    title: "Partnerships running parallel to the business",
-    description: "Sales doesn't trust it. Product ignores it. Marketing works around it.",
-  },
+  { value: "15+ Years", label: "Enterprise Partner-Operator Experience" },
+  { value: "19% YoY", label: "Channel Revenue Growth" },
+  { value: "$12M ARR", label: "From a New ISV Motion in Year One" },
+  { value: "3 Fortune 500", label: "Programs Built, Scaled, Turned Around" },
 ];
 
 const whatIDo = [
@@ -40,36 +22,19 @@ const whatIDo = [
     icon: Layers,
     title: "Build the Right Program",
     description:
-      "Partner tiers, incentive models, and routes-to-market designed for your stage, motion, and market. No generic frameworks — built for how your business actually sells.",
+      "Partner tiers, incentive models, and routes-to-market designed for how your business actually sells.",
   },
   {
     icon: Rocket,
     title: "Activate the Revenue Motion",
     description:
-      "Co-sell playbooks, enablement frameworks, and deal registration that partners actually use. The operational infrastructure that turns signed partners into pipeline.",
+      "Co-sell playbooks, shared comp, and deal registration that sales actually trusts.",
   },
   {
     icon: LineChart,
-    title: "Instrument and Scale",
+    title: "Instrument the Engine",
     description:
-      "KPI frameworks, performance analytics, and operating cadences that give you board-ready visibility and compound results quarter over quarter.",
-  },
-];
-
-const exploreCards = [
-  {
-    icon: Award,
-    title: "Case Studies",
-    description: "Real outcomes from partner programs I've built and turned around.",
-    to: "/results",
-    cta: "See the results",
-  },
-  {
-    icon: Compass,
-    title: "Leadership Philosophy",
-    description: "How I lead teams, run cadences, and operate with partners.",
-    to: "/leadership",
-    cta: "Read the philosophy",
+      "KPIs, scorecards, and operating cadences that turn partner activity into measurable, board-ready revenue.",
   },
 ];
 
@@ -77,8 +42,8 @@ const Index = () => {
   return (
     <Layout>
       <SEOHead
-        title="Partner Ecosystem Strategist"
-        description="Fractional partner ecosystem strategist for B2B tech. Build, fix, and scale partner programs that drive measurable revenue. 15+ years operator experience."
+        title="Fractional Partner Ecosystem Leadership for B2B SaaS"
+        description="Fractional partner ecosystem leadership for Series B–D B2B SaaS and AI companies — bringing enterprise operator discipline from Salesforce, ServiceNow, and Lumen to scale partner revenue, without the enterprise headcount."
         canonical="/"
         schemaJson={{
           "@context": "https://schema.org",
@@ -128,7 +93,7 @@ const Index = () => {
                 className="font-body text-base md:text-xl text-primary-foreground/80 max-w-xl mb-5 md:mb-8 animate-fade-in-up"
                 style={{ animationDelay: "0.3s" }}
               >
-                I help B2B technology companies build, fix, and scale partner ecosystems that drive measurable revenue growth.
+                Fractional partner ecosystem leadership for Series B–D B2B SaaS and AI companies — scaling partner revenue with enterprise operator discipline, without the enterprise headcount.
               </p>
               <div
                 className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start animate-fade-in-up"
@@ -148,16 +113,6 @@ const Index = () => {
               >
                 <DiscoveryCallReassurance variant="dark" align="left" className="justify-center md:justify-start" />
               </div>
-              <p
-                className="mt-6 md:mt-8 pt-5 border-t border-primary-foreground/15 font-body text-sm text-primary-foreground/75 max-w-xl text-center md:text-left animate-fade-in-up"
-                style={{ animationDelay: "0.6s" }}
-              >
-                For{" "}
-                <span className="text-primary-foreground/80">
-                  revenue and partnership leaders
-                </span>{" "}
-                at B2B technology companies building partner-led growth.
-              </p>
             </div>
             <div
               className="flex flex-col items-center w-56 sm:w-64 md:w-72 lg:w-80 shrink-0 animate-fade-in-up order-first md:order-none"
@@ -248,7 +203,7 @@ const Index = () => {
       {/* Career Highlights */}
       <section className="bg-navy border-t border-primary-foreground/10">
         <div className="container py-5 md:py-7">
-          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-2 font-bold">Career Highlights</p>
+          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-2 font-bold">Enterprise muscle. Right-sized for scale-ups.</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
@@ -274,10 +229,13 @@ const Index = () => {
           </h2>
           <div className="font-body text-foreground/80 leading-relaxed space-y-4 text-[15px] md:text-base">
             <p>
-              Most B2B technology companies need the strategy, program design, and executive presence of a senior partnerships leader — but a $400K+ full-time hire isn't always the right answer. That's the gap I exist to close. I embed 1-2 days a week, bring the same operator experience, and cost a fraction of the full-time alternative.
+              I spent 15+ years inside Salesforce, ServiceNow, and Lumen — running partner programs from the inside, with real P&L, real boards, and ecosystems that scaled past $1.6B ARR. I went fractional because Series B–D B2B SaaS and AI companies need that operator playbook today — but they can't yet justify a $400K+ Head of Partnerships. That's the gap I exist to close.
             </p>
             <p>
-              I'm not a career consultant who has read about partner ecosystems. I've built them, scaled them, and turned them around — with full P&L ownership and board-level accountability. The work I do for clients today is the same work I did as an operator. The only thing that's changed is who signs the contract.
+              I embed 1–2 days a week, bring the same operator discipline I ran inside, and cost a fraction of the full-time alternative.
+            </p>
+            <p>
+              I'm not a career consultant who's read about partner ecosystems. I've built them, scaled them, and turned them around — with full P&L ownership and board-level accountability. The work I do for clients today is the same work I did as an operator. The only thing that's changed is who signs the contract.
             </p>
           </div>
           <div className="mt-8">
@@ -302,52 +260,17 @@ const Index = () => {
         </div>
       </div>
 
-      {/* The Problem */}
+      {/* If This Sounds Familiar */}
       <section className="bg-cream py-14 md:py-20">
         <div className="container">
-          <div className="mb-10 max-w-2xl">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-              The Problems I'm Called In To Solve
+          <div className="mb-10 max-w-3xl">
+            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3 font-bold">When You Bring Me In</p>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-5">
+              If This Sounds Familiar...
             </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {problems.map((p) => (
-              <div
-                key={p.title}
-                className="p-6 md:p-7 rounded-lg border border-border bg-card"
-              >
-                <div className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center mb-5">
-                  <p.icon className="text-gold" size={24} strokeWidth={1.5} />
-                </div>
-                <h3 className="font-display text-xl font-semibold text-foreground mb-3">
-                  {p.title}
-                </h3>
-                <p className="font-body text-muted-foreground leading-relaxed text-sm">
-                  {p.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="bg-cream">
-        <div className="container px-6 md:px-12 lg:px-24 flex items-center gap-4 py-2">
-          <span className="block h-px flex-1 bg-gold/40" />
-          <span className="block w-2 h-2 rotate-45 bg-gold/60" />
-          <span className="block h-px flex-1 bg-gold/40" />
-        </div>
-      </div>
-
-      {/* What I Do */}
-      <section className="bg-cream py-14 md:py-20">
-        <div className="container">
-          <div className="mb-10 max-w-2xl">
-            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3 font-bold">What I Do</p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-              From Broken Ecosystem to Revenue Engine
-            </h2>
+            <p className="font-body text-foreground/80 leading-relaxed text-[15px] md:text-base">
+              Your partners aren't meeting expectations. They're not driving your strategic priorities. The whole motion is running parallel to the business — sales doesn't trust it, product ignores it, marketing works around it. If any of that sounds familiar, here's the work that turns it around.
+            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {whatIDo.map((item) => (
@@ -378,106 +301,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
-      {/* Divider */}
-      <div className="bg-cream">
-        <div className="container px-6 md:px-12 lg:px-24 flex items-center gap-4 py-2">
-          <span className="block h-px flex-1 bg-gold/40" />
-          <span className="block w-2 h-2 rotate-45 bg-gold/60" />
-          <span className="block h-px flex-1 bg-gold/40" />
-        </div>
-      </div>
-
-      {/* See It In Practice */}
-      <section className="bg-cream py-14 md:py-20">
-        <div className="container">
-          <div className="mb-10 max-w-2xl">
-            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3 font-bold">Go Deeper</p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-              See It In Practice
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            {exploreCards.map((card) => (
-              <Link
-                key={card.to}
-                to={card.to}
-                className="group p-6 md:p-7 rounded-lg border border-border bg-card hover:border-gold/60 hover:shadow-md transition-all flex flex-col"
-              >
-                <div className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center mb-5">
-                  <card.icon className="text-gold" size={24} strokeWidth={1.5} />
-                </div>
-                <h3 className="font-display text-xl font-semibold text-foreground mb-3">
-                  {card.title}
-                </h3>
-                <p className="font-body text-muted-foreground leading-relaxed text-sm flex-1">
-                  {card.description}
-                </p>
-                <span className="mt-5 inline-flex items-center gap-1.5 font-body text-sm font-semibold text-gold group-hover:gap-2.5 transition-all">
-                  {card.cta}
-                  <ArrowRight size={14} />
-                </span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="bg-cream">
-        <div className="container px-6 md:px-12 lg:px-24 flex items-center gap-4 py-2">
-          <span className="block h-px flex-1 bg-gold/40" />
-          <span className="block w-2 h-2 rotate-45 bg-gold/60" />
-          <span className="block h-px flex-1 bg-gold/40" />
-        </div>
-      </div>
-
-      {/* SEO-focused content block: Partner Ecosystem Strategy Consulting */}
-      <section className="bg-cream py-14 md:py-20">
-        <div className="container max-w-4xl">
-          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3 font-bold">
-            Partner Ecosystem Strategy Consulting for B2B Tech
-          </p>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-5">
-            Fractional Partnerships Leadership That Actually Ships Revenue
-          </h2>
-          <div className="font-body text-foreground/80 leading-relaxed space-y-4 text-[15px] md:text-base">
-            <p>
-              Most B2B SaaS and enterprise technology companies don't need another <strong>partner ecosystem strategy</strong> deck — they need an operator who has built one. Jonathan Shore is a <strong>fractional partnerships leader</strong> and <strong>partner ecosystem consultant</strong> who has carried full P&amp;L ownership of $1.6B ARR ecosystems at Salesforce, ServiceNow, and Lumen Technologies.
-            </p>
-            <p>
-              The work spans <strong>channel partner strategy</strong>, ISV and co-sell motion design, alliance program architecture, partner-led <strong>go-to-market</strong> planning, deal registration, enablement, and the operating cadences that turn signed partners into measurable pipeline. No abstract frameworks — only the program design and execution infrastructure required to move partner-sourced revenue past expectations.
-            </p>
-            <p>
-              Engagements run 1–2 days a week as a fractional ecosystem leader, or as scoped projects (assessments, program design, turnaround). The math is simple: senior partner leadership at a fraction of a $400K full-time hire — with operator credibility a typical <strong>GTM strategy consultant</strong> can't match.
-            </p>
-          </div>
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <Link
-              to="/services"
-              className="px-5 py-4 rounded-lg border border-border bg-card hover:border-gold/60 transition-colors"
-            >
-              <p className="font-display text-base font-semibold text-foreground mb-1">Services</p>
-              <p className="font-body text-sm text-muted-foreground">Fractional, project, and advisory engagements.</p>
-            </Link>
-            <Link
-              to="/how-i-work"
-              className="px-5 py-4 rounded-lg border border-border bg-card hover:border-gold/60 transition-colors"
-            >
-              <p className="font-display text-base font-semibold text-foreground mb-1">Methodology</p>
-              <p className="font-body text-sm text-muted-foreground">The 5-pillar partner ecosystem framework.</p>
-            </Link>
-            <Link
-              to="/results"
-              className="px-5 py-4 rounded-lg border border-border bg-card hover:border-gold/60 transition-colors"
-            >
-              <p className="font-display text-base font-semibold text-foreground mb-1">Case Studies</p>
-              <p className="font-body text-sm text-muted-foreground">Real ecosystem outcomes and partner-sourced revenue.</p>
-            </Link>
-          </div>
-        </div>
-      </section>
-
     </Layout>
   );
 };
