@@ -4,6 +4,8 @@ import { useLocation } from "react-router-dom";
 interface SEOHeadProps {
   /** Page title (without site suffix). A site suffix " | Shore Strategy" is appended automatically. */
   title?: string;
+  /** Short social title for og:title / twitter:title. Falls back to the page title. */
+  ogTitle?: string;
   /** Meta description (~150–160 chars). */
   description?: string;
   /** Absolute or path-relative canonical URL. Required for proper canonicalization per page. */
@@ -51,6 +53,7 @@ const normalizePath = (pathname: string) => {
 
 const SEOHead = ({
   title,
+  ogTitle,
   description = DEFAULT_DESCRIPTION,
   canonical,
   ogImage,
@@ -62,6 +65,7 @@ const SEOHead = ({
   const location = useLocation();
   const autoCanonical = `${BASE_URL}${normalizePath(location.pathname)}`;
   const fullTitle = title ? `${title} | ${SITE_NAME}` : DEFAULT_TITLE;
+  const socialTitle = ogTitle ?? fullTitle;
   const canonicalUrl = toAbsolute(canonical) ?? autoCanonical;
   const image = toAbsolute(ogImage) ?? DEFAULT_OG_IMAGE;
   const schemas = schemaJson
@@ -78,7 +82,7 @@ const SEOHead = ({
       {noIndex && <meta name="robots" content="noindex,nofollow" />}
 
       {/* Open Graph */}
-      <meta property="og:title" content={fullTitle} />
+      <meta property="og:title" content={socialTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:type" content={type} />
@@ -89,7 +93,7 @@ const SEOHead = ({
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={fullTitle} />
+      <meta name="twitter:title" content={socialTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
 
