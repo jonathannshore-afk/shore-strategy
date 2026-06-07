@@ -101,8 +101,8 @@ const Results = () => {
   return (
     <Layout>
       <SEOHead
-        title="Partner Ecosystem Results & Case Studies"
-        description="Three companies, three transformations. The operator track record behind the strategy: pipeline lifted, programs rebuilt, partner revenue scaled."
+        title="Channel Partner Strategy Results & Case Studies"
+        description="Channel partner strategy and partner ecosystem case studies: three transformations, pipeline lifted, programs rebuilt, partner-sourced revenue scaled."
         canonical="/results"
       />
 

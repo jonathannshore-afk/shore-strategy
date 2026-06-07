@@ -42,9 +42,9 @@ const Index = () => {
   return (
     <Layout>
       <SEOHead
-        title="Fractional Partner Ecosystem Leadership for B2B SaaS"
-        ogTitle="Fractional Partner Ecosystem Leadership | Shore Strategy"
-        description="Fractional partner ecosystem leadership for Series B–D B2B SaaS and AI companies. Scale partner revenue with enterprise discipline, without the headcount."
+        title="Partner Ecosystem Strategy & Fractional GTM Leadership"
+        ogTitle="Partner Ecosystem Strategy & GTM | Shore Strategy"
+        description="Partner ecosystem strategy and fractional partner GTM leadership for Series B–D B2B SaaS and AI. Scale partner revenue with enterprise discipline."
         canonical="/"
         schemaJson={{
           "@context": "https://schema.org",
