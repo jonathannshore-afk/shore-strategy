@@ -133,7 +133,7 @@ const Index = () => {
                 </p>
                 <div className="flex items-center justify-between gap-4">
                   <img
-                    alt="Salesforce"
+                    alt="Salesforce logo"
                     className="h-6 object-contain opacity-70 brightness-0 invert"
                     src="/lovable-uploads/f6d67dad-429a-49a3-8c20-fff68acb27d4.png"
                     width={80}
@@ -143,7 +143,7 @@ const Index = () => {
                   />
                   <img
                     src={logoServicenow}
-                    alt="ServiceNow"
+                    alt="ServiceNow logo"
                     className="h-5 object-contain opacity-70 brightness-0 invert"
                     width={80}
                     height={20}
@@ -170,7 +170,7 @@ const Index = () => {
           </p>
           <div className="flex items-center justify-center gap-8 flex-wrap">
             <img
-              alt="Salesforce"
+              alt="Salesforce logo"
               className="h-6 object-contain opacity-70 brightness-0 invert"
               src="/lovable-uploads/f6d67dad-429a-49a3-8c20-fff68acb27d4.png"
               width={80}
@@ -180,7 +180,7 @@ const Index = () => {
             />
             <img
               src={logoServicenow}
-              alt="ServiceNow"
+              alt="ServiceNow logo"
               className="h-5 object-contain opacity-70 brightness-0 invert"
               width={80}
               height={20}

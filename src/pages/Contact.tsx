@@ -263,8 +263,9 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className="space-y-5" noValidate>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div>
-                    <label className="font-body text-sm font-medium text-foreground mb-2 block">Name *</label>
+                    <label htmlFor="contact-name" className="font-body text-sm font-medium text-foreground mb-2 block">Name *</label>
                     <input
+                      id="contact-name"
                       type="text"
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
@@ -275,8 +276,9 @@ const Contact = () => {
                     {errors.name && <p className="text-destructive text-xs mt-1 font-body">{errors.name}</p>}
                   </div>
                   <div>
-                    <label className="font-body text-sm font-medium text-foreground mb-2 block">Email *</label>
+                    <label htmlFor="contact-email" className="font-body text-sm font-medium text-foreground mb-2 block">Email *</label>
                     <input
+                      id="contact-email"
                       type="email"
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
@@ -288,8 +290,9 @@ const Contact = () => {
                   </div>
                 </div>
                 <div>
-                  <label className="font-body text-sm font-medium text-foreground mb-2 block">Company</label>
+                  <label htmlFor="contact-company" className="font-body text-sm font-medium text-foreground mb-2 block">Company</label>
                   <input
+                    id="contact-company"
                     type="text"
                     value={form.company}
                     onChange={(e) => setForm({ ...form, company: e.target.value })}
@@ -300,8 +303,9 @@ const Contact = () => {
                   {errors.company && <p className="text-destructive text-xs mt-1 font-body">{errors.company}</p>}
                 </div>
                 <div>
-                  <label className="font-body text-sm font-medium text-foreground mb-2 block">Message *</label>
+                  <label htmlFor="contact-message" className="font-body text-sm font-medium text-foreground mb-2 block">Message *</label>
                   <textarea
+                    id="contact-message"
                     rows={5}
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
