@@ -43,7 +43,8 @@ const Index = () => {
     <Layout>
       <SEOHead
         title="Fractional Partner Ecosystem Leadership for B2B SaaS"
-        description="Fractional partner ecosystem leadership for Series B–D B2B SaaS and AI companies — bringing enterprise operator discipline from Salesforce, ServiceNow, and Lumen to scale partner revenue, without the enterprise headcount."
+        ogTitle="Fractional Partner Ecosystem Leadership | Shore Strategy"
+        description="Fractional partner ecosystem leadership for Series B–D B2B SaaS and AI companies. Scale partner revenue with enterprise discipline, without the headcount."
         canonical="/"
         schemaJson={{
           "@context": "https://schema.org",
