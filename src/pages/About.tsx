@@ -126,8 +126,8 @@ const About = () => {
   return (
     <Layout>
       <SEOHead
-        title="About Jonathan Shore"
-        description="15+ years leading partner ecosystems at Salesforce, ServiceNow, and Lumen Technologies. Learn about Jonathan Shore's background, experience, and approach."
+        title="About Jonathan Shore — Partner Ecosystem Strategist"
+        description="Fractional partnerships leader with 15+ years building partner ecosystems at Salesforce, ServiceNow, and Lumen Technologies. Background, experience, approach."
         canonical="/about"
         type="profile"
         schemaJson={personJsonLd}
