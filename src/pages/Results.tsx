@@ -125,10 +125,10 @@ const Results = () => {
           <div className="mb-10">
             <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Proof of Work</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-              Case Studies
+              Operator Track Record
             </h2>
             <p className="font-body text-muted-foreground mt-2 max-w-2xl">
-              Each card shows the headline metrics at a glance. Expand any study to see the full challenge, approach, and results.
+              These results come from my operating roles inside these companies — the partner programs I built and ran as an employee. I now bring that same operator experience to growing B2B companies as a fractional leader.
             </p>
           </div>
 
@@ -155,6 +155,9 @@ const Results = () => {
                         </h3>
                         <p className="font-body text-sm text-muted-foreground">
                           {cs.company}
+                        </p>
+                        <p className="font-body text-xs text-muted-foreground/70 mt-0.5">
+                          {cs.role} ({cs.period})
                         </p>
                       </div>
                     </div>
