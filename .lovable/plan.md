@@ -1,68 +1,35 @@
-## Short answer
+Change every discovery-call duration reference to "30-minute" and every booking CTA button to "Book a Discovery Call", with one noted exception.
 
-Yes — those inquiries map directly to real (low-competition) Google searches your ideal buyers are running. Using them as a content + on-page SEO blueprint is a realistic path to ranking, especially because the difficulty scores are low. But two honest caveats:
+**Files to edit:**
 
-1. Your domain (shore-strategy.lovable.app) has no Semrush footprint yet — Google sees it as a brand-new site. Rankings take 2–4 months of consistent publishing to materialize.
-2. Volumes are modest (most terms 30–700/mo). That's actually good for you — these are high-intent buyer searches, not vanity traffic. A handful of right-fit visitors per month is what closes fractional engagements.
+1. `src/components/DiscoveryCallReassurance.tsx`
+   - Change "25-minute discovery call" → "30-minute discovery call"
+   - This single change fixes the microcopy on Home hero, Footer, and About automatically.
 
-## What the data says (Semrush, US market)
+2. `src/pages/Index.tsx`
+   - No direct text change needed (uses the component above), but confirm the hero and closing block render correctly after the component update.
 
-| Keyword | Volume/mo | Difficulty | Verdict |
-|---|---|---|---|
-| partner enablement | 720 | 15 (easy) | **Top priority** — highest volume, very winnable |
-| partner ecosystem | 590 | low | Strong supporting term |
-| channel partner enablement | 210 | low | Pillar sub-topic |
-| partner enablement strategy | 210 | low | Pillar sub-topic |
-| channel partner strategy | 170 | 6 (very easy) | Easy win |
-| partner enablement framework | 90 | low | Long-tail authority |
-| partner onboarding checklist | 90 | low | Lead-magnet candidate |
-| partner ecosystem strategy | 70 | 27 (easy) | Service-page anchor |
-| partner gtm strategy | 40 | 0 | Service-page anchor |
+3. `src/pages/Contact.tsx`
+   - SEO description: "25-minute discovery call" → "30-minute discovery call"
+   - "How I Can Help" bullet: "25-minute discovery call" → "30-minute discovery call"
+   - Calendly section heading: "Book a Conversation" → "Book a Discovery Call"
+   - "Prefer to schedule directly?" link: "Book a Conversation" → "Book a Discovery Call"
 
-Plus a juicy list of question-style searches ("what is partner enablement", "how to create a partner enablement program", "how to incentivize partner enablement", "how to run partner enablement after meeting at conferences") — these map almost 1:1 to the inquiry clusters from the earlier conversation.
+4. `src/pages/FAQ.tsx`
+   - FAQ question: "What happens during the 25-minute discovery call?" → "30-minute discovery call"
 
-## Proposed plan
+5. `src/pages/About.tsx`
+   - CTA button: "Book a Call" → "Book a Discovery Call"
 
-### 1. On-page optimization (existing pages)
-- **Home (Index.tsx)** — work "partner ecosystem strategy" + "partner GTM" into H1, intro, and meta description.
-- **How I Work** — anchor to "partner enablement framework" + "channel partner strategy".
-- **Why Me** — anchor to "fractional partnerships leader" + "partner program manager" (low volume but high intent).
-- **About** — keep brand-led; add one supporting paragraph that names the service terms.
-- Update SEO meta titles/descriptions in `SEOHead` per route to lead with the target keyword.
+6. `src/components/Footer.tsx`
+   - CTA button: "Book a Call" → "Book a Discovery Call"
 
-### 2. Blog content roadmap (one post every 2–3 weeks)
-Each post targets one cluster from your inquiries, mapped to a real keyword:
+7. `src/pages/FractionalVsConsultingVsFte.tsx`
+   - Mid-page CTA button: "Book a Strategy Call" → "Book a Discovery Call"
 
-1. *What is partner enablement? A practical framework for B2B SaaS* → "what is partner enablement" + "partner enablement framework"
-2. *The partner onboarding checklist I use with every new alliance* → "partner onboarding checklist" (great lead magnet)
-3. *Channel partner strategy: how to pick partners worth your time* → "channel partner strategy" + "partner selection"
-4. *Co-selling without channel conflict: deal-reg models that actually work* → "co-selling strategy" + deal registration
-5. *Building a partner ecosystem strategy from zero* → "partner ecosystem strategy"
-6. *How to incentivize partner enablement (and what breaks if you don't)* → "how to incentivize partner enablement"
-7. *Partner GTM plan: the 5-pillar template* → ties to your existing Methodology page
+**Do NOT change:**
+- How I Work "Book a Scoping Call" button inside the Partner Ecosystem Diagnostic section (deliberately distinct call).
+- Contact form submit button "Send Message".
 
-### 3. Technical SEO supports already in place
-Recently fixed: alt text, form labels, OG metadata, sitemap. Next adds:
-- JSON-LD `Article` schema on each new blog post (already supported in your blog component)
-- Internal linking: each blog post links to the relevant service page and to 2 related posts
-- Update `sitemap.xml` as posts ship
-
-### 4. What I'd skip
-- Anything paid (CPC numbers don't matter for you — organic only)
-- Generic "partnerships" or "B2B sales" — too broad, won't rank, won't convert
-- Vanity high-volume terms — your ICP isn't searching them
-
-## Realistic outcome
-
-- 0–8 weeks: indexing + a few long-tail queries appearing in Google Search Console
-- 2–4 months: ranking page 1 for 3–5 low-difficulty terms ("partner gtm strategy", "fractional partnerships leader", "channel partner strategy")
-- 6+ months: competitive on "partner enablement framework" and "partner ecosystem strategy" with consistent publishing
-
-## Technical notes
-- Stack: react-helmet-async via existing `SEOHead.tsx` — per-route metadata is already wired.
-- Blog posts live in the external Supabase BD Command Center DB; no schema changes needed, just author drafts there.
-- Canonical and OG fallbacks in `index.html` are already correct after the recent SEO fixes.
-
-## What I need from you to start building
-- Confirm the priority topic (or "all of the above, start with #1")
-- Whether you want me to draft the first blog post now, or start with the on-page optimization pass across Home / How I Work / Why Me
+**Already consistent — no edits needed:**
+- About, Services, FAQ body text, and Fractional-vs-Consulting-vs-FTE footer already reference "30-minute" correctly.

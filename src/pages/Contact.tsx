@@ -147,7 +147,7 @@ const Contact = () => {
     <Layout>
       <SEOHead
         title="Contact — Book a Discovery Call"
-        description="Book a 25-minute discovery call with Jonathan Shore to discuss your partner ecosystem strategy. Fractional partnerships leadership and consulting for B2B tech."
+        description="Book a 30-minute discovery call with Jonathan Shore to discuss your partner ecosystem strategy. Fractional partnerships leadership and consulting for B2B tech."
         canonical="/contact"
         schemaJson={[
           {
@@ -191,7 +191,7 @@ const Contact = () => {
               <ul className="space-y-3 border-t border-border/60 pt-6">
                 <li className="flex items-start gap-3 font-body text-sm text-foreground/80">
                   <span className="text-gold font-display text-base leading-none mt-0.5">✓</span>
-                  <span>25-minute discovery call — no prep required</span>
+                  <span>30-minute discovery call — no prep required</span>
                 </li>
                 <li className="flex items-start gap-3 font-body text-sm text-foreground/80">
                   <span className="text-gold font-display text-base leading-none mt-0.5">✓</span>
@@ -208,7 +208,7 @@ const Contact = () => {
             <div className="flex flex-col">
               <div className="flex items-center gap-3 mb-4">
                 <Calendar className="text-gold" size={28} strokeWidth={1.5} />
-                <h2 className="font-display text-2xl font-bold text-foreground">Book a Conversation</h2>
+                <h2 className="font-display text-2xl font-bold text-foreground">Book a Discovery Call</h2>
               </div>
               <div className="relative flex-1 h-[560px] sm:h-[600px] lg:h-auto lg:min-h-[640px] w-full max-w-full overflow-hidden">
                 {/* Skeleton placeholder shown until the Calendly iframe is ready */}
@@ -257,7 +257,7 @@ const Contact = () => {
                   className="inline-flex items-center gap-1 text-gold font-semibold hover:text-gold-dark transition-colors underline-offset-4 hover:underline"
                 >
                   <Calendar size={14} strokeWidth={2} />
-                  Book a Conversation
+                  Book a Discovery Call
                 </a>
               </p>
               <form onSubmit={handleSubmit} className="space-y-5" noValidate>
