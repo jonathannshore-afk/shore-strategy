@@ -151,10 +151,10 @@ const About = () => {
                 <p className="font-body text-xs uppercase tracking-[0.2em] text-primary-foreground/70 mb-3">
                   Experience Built At
                 </p>
-                <div className="flex items-center gap-8 flex-wrap">
-                  <img src={logoSalesforce} alt="Salesforce logo" width={160} height={56} loading="lazy" decoding="async" className="h-12 md:h-14 object-contain opacity-60 hover:opacity-100 transition-opacity brightness-0 invert" />
-                  <img src={logoServicenow} alt="ServiceNow logo" width={160} height={48} loading="lazy" decoding="async" className="h-10 md:h-12 object-contain opacity-60 hover:opacity-100 transition-opacity brightness-0 invert" />
-                  <img src={logoLumen} alt="Lumen Technologies" width={120} height={32} loading="lazy" decoding="async" className="h-6 md:h-8 object-contain opacity-60 hover:opacity-100 transition-opacity brightness-0 invert" />
+                <div className="flex items-center gap-5 md:gap-8 flex-wrap">
+                  <img src={logoSalesforce} alt="Salesforce logo" width={160} height={56} loading="lazy" decoding="async" className="h-9 md:h-14 object-contain opacity-60 hover:opacity-100 transition-opacity brightness-0 invert" />
+                  <img src={logoServicenow} alt="ServiceNow logo" width={160} height={48} loading="lazy" decoding="async" className="h-7 md:h-12 object-contain opacity-60 hover:opacity-100 transition-opacity brightness-0 invert" />
+                  <img src={logoLumen} alt="Lumen Technologies" width={120} height={32} loading="lazy" decoding="async" className="h-5 md:h-8 object-contain opacity-60 hover:opacity-100 transition-opacity brightness-0 invert" />
                 </div>
               </div>
 
@@ -222,9 +222,9 @@ const About = () => {
               <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-3">Experience</p>
               <Accordion type="single" collapsible className="space-y-2">
                 {experience.map((exp) => (
-                  <AccordionItem key={exp.company} value={exp.company} className="bg-card rounded-lg border border-border px-5">
-                    <AccordionTrigger className="py-3 hover:no-underline">
-                      <div className="flex items-center gap-4 text-left">
+                  <AccordionItem key={exp.company} value={exp.company} className="bg-card rounded-lg border border-border px-4 md:px-5">
+                    <AccordionTrigger className="py-3 hover:no-underline gap-2">
+                      <div className="flex items-center gap-3 md:gap-4 text-left min-w-0 flex-1">
                         <img
                           src={exp.logo}
                           alt={`${exp.company} logo`}
@@ -232,16 +232,16 @@ const About = () => {
                           decoding="async"
                           className={`w-auto object-contain shrink-0 opacity-70 ${
                             exp.company === "Salesforce"
-                              ? "h-14"
+                              ? "h-10 md:h-14"
                               : exp.company === "ServiceNow"
-                              ? "h-12"
-                              : "h-6"
+                              ? "h-8 md:h-12"
+                              : "h-5 md:h-6"
                           }`}
                         />
-                        <div>
-                          <div className="flex items-center gap-3">
+                        <div className="min-w-0 flex-1">
+                          <div className="flex flex-wrap items-baseline gap-x-3 gap-y-0.5">
                             <h3 className="font-display text-base font-semibold text-foreground">{exp.company}</h3>
-                            <span className="font-body text-xs text-muted-foreground">{exp.period}</span>
+                            <span className="font-body text-xs text-muted-foreground whitespace-nowrap">{exp.period}</span>
                           </div>
                           <p className="font-body text-gold text-sm font-medium">{exp.role}</p>
                         </div>
