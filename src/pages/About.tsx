@@ -145,6 +145,18 @@ const About = () => {
                 15+ years building and transforming partner ecosystems at Salesforce, ServiceNow, and Lumen Technologies. I help B2B leaders unlock partner-led revenue through strategic consulting and fractional executive leadership.
               </p>
 
+              <div className="flex justify-center md:justify-start my-6">
+                <img
+                  src={headshot}
+                  alt="Jonathan Shore"
+                  width={420}
+                  height={525}
+                  fetchPriority="high"
+                  decoding="async"
+                  className="w-full max-w-[320px] rounded-lg shadow-lg border border-border"
+                />
+              </div>
+
               <div className="border-t border-primary-foreground/15 mt-5 mb-5" />
 
               <div>
