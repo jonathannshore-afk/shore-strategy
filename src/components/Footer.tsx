@@ -10,9 +10,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           {/* Left — Brand */}
           <div>
-            <Link to="/" className="inline-flex items-center gap-2 mb-3">
-              <span className="font-display text-2xl font-bold text-gold">Jonathan Shore</span>
-              <span className="font-display text-2xl font-light text-primary-foreground">/ Partner Ecosystem Strategist</span>
+            <Link to="/" className="inline-flex flex-col mb-3">
+              <span className="font-display text-2xl font-bold text-gold">Shore Strategy Consulting</span>
+              <span className="font-display text-base font-light text-primary-foreground/80 tracking-wide">Partner GTM Strategist</span>
             </Link>
             <p className="font-body text-sm text-primary-foreground/75 max-w-sm leading-relaxed">
               Partner Ecosystem Strategist helping B2B technology companies build, fix, and scale partner ecosystems that drive revenue growth.
