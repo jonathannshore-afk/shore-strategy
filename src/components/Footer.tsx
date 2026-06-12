@@ -30,7 +30,7 @@ const Footer = () => {
                 onClick={() => trackCalendlyClick("cta_click", "/contact#calendly", { location: "footer" })}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors"
               >
-                <CalendarCheck size={16} /> Book a Call
+                <CalendarCheck size={16} /> Book a Discovery Call
               </Link>
 
               <a

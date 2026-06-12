@@ -278,7 +278,7 @@ const FractionalVsConsultingVsFte = () => {
               onClick={() => trackCalendlyClick("cta_click", "/contact#calendly", { location: "fractional_vs_page_mid_cta" })}
               className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-gold text-accent-foreground font-body font-semibold rounded hover:bg-gold-dark transition-colors"
             >
-              <CalendarCheck size={18} /> Book a Strategy Call
+              <CalendarCheck size={18} /> Book a Discovery Call
             </Link>
             <Link
               to="/how-i-work"

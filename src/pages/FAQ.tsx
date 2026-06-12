@@ -56,7 +56,7 @@ const modelFaqs: QA[] = [
 
 const discoveryFaqs: QA[] = [
   {
-    q: "What happens during the 25-minute discovery call?",
+    q: "What happens during the 30-minute discovery call?",
     a: "We start with a quick picture of your current partner ecosystem — what's working, where revenue is getting stuck, and what outcomes you're driving toward. I'll share a point of view on the highest-leverage moves. If there's a fit, we'll outline what a focused engagement could look like. If not, you'll still leave with clarity.",
   },
   {
