@@ -193,17 +193,6 @@ const About = () => {
                 <DiscoveryCallReassurance variant="dark" />
               </div>
             </div>
-            <div className="flex justify-center md:justify-end">
-              <img
-                src={headshot}
-                alt="Jonathan Shore"
-                width={420}
-                height={525}
-                fetchPriority="high"
-                decoding="async"
-                className="w-full max-w-[360px] md:max-w-[420px] rounded-lg shadow-lg border border-border"
-              />
-            </div>
           </div>
         </div>
       </section>
