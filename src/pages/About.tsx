@@ -151,10 +151,10 @@ const About = () => {
                 <p className="font-body text-xs uppercase tracking-[0.2em] text-primary-foreground/70 mb-3">
                   Experience Built At
                 </p>
-                <div className="flex items-center gap-5 md:gap-8 flex-wrap">
-                  <img src={logoSalesforce} alt="Salesforce logo" width={160} height={56} loading="lazy" decoding="async" className="h-9 md:h-14 object-contain opacity-60 hover:opacity-100 transition-opacity brightness-0 invert" />
-                  <img src={logoServicenow} alt="ServiceNow logo" width={160} height={48} loading="lazy" decoding="async" className="h-7 md:h-12 object-contain opacity-60 hover:opacity-100 transition-opacity brightness-0 invert" />
-                  <img src={logoLumen} alt="Lumen Technologies" width={120} height={32} loading="lazy" decoding="async" className="h-5 md:h-8 object-contain opacity-60 hover:opacity-100 transition-opacity brightness-0 invert" />
+                <div className="flex items-center justify-start gap-5 md:gap-8 flex-wrap">
+                  <img src={logoSalesforce} alt="Salesforce logo" width={160} height={56} loading="lazy" decoding="async" className="h-9 md:h-14 w-auto max-w-[90px] md:max-w-none object-contain opacity-60 hover:opacity-100 transition-opacity brightness-0 invert" />
+                  <img src={logoServicenow} alt="ServiceNow logo" width={160} height={48} loading="lazy" decoding="async" className="h-7 md:h-12 w-auto max-w-[110px] md:max-w-none object-contain opacity-60 hover:opacity-100 transition-opacity brightness-0 invert" />
+                  <img src={logoLumen} alt="Lumen Technologies" width={120} height={32} loading="lazy" decoding="async" className="h-5 md:h-8 w-auto max-w-[80px] md:max-w-none object-contain opacity-60 hover:opacity-100 transition-opacity brightness-0 invert" />
                 </div>
               </div>
 
