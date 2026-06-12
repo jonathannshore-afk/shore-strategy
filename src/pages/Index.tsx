@@ -302,6 +302,24 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Why an Enterprise Operator */}
+      <section className="bg-cream py-14 md:py-20">
+        <div className="container">
+          <div className="max-w-3xl">
+            <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-2 font-bold">The Operator Advantage</p>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-5">
+              Why an Enterprise Operator for a Growing Company?
+            </h2>
+            <div className="font-body text-foreground/80 leading-relaxed space-y-4 text-[15px] md:text-base">
+              <p>
+                The partner playbooks that scaled Salesforce, ServiceNow, and Lumen are the same ones a growing B2B company needs — adapted to your stage. I spent 12+ years building and running partner programs inside those enterprises. Now I bring that operator experience to Series B–D companies, so you get proven partnership strategy without the enterprise overhead or the multi-year learning curve.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </Layout>
   );
 };
